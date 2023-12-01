@@ -1,0 +1,178 @@
+@startuml
+set namespaceSeparator ::
+
+enum DBType {
+    MYSQL
+    POSTGRESQL
+    ORACLE
+    SQLSERVER
+}
+
+class Services::DatabaseManager {
+    ..Attributes..
+    - database : Database
+    - clientMapping : ClientMapping
+    - stocksMapping : StocksMapping
+    - ordersMapping : OrdersMapping
+    --Methods--
+    ..Constructors..
+    +DatabaseManager()
+    +DatabaseManager(int dbType);
+}
+
+class Services::Database {
+    ..Attributes..
+    - conn : SQLConn
+    --Methods--
+    ..Constructors..
+    +Database()
+    ..Getters..
+    +getConn() : SQLConn
+    ..Setters..
+    +setConn(conn : SQLConn) : void
+}
+
+abstract class Components::DatabaseConn {
+    ..Attributes..
+    - conn : Connection
+    - dbType : DBType
+    --Methods--
+    ..Constructors..
+    +DatabaseConn()
+    +DatabaseConn(int dbType, string host, string port, string dbName, string user, string password)
+    ..Getters..
+    +getConn() : Connection
+    +getDbType() : DBType
+    ..Setters..
+}
+
+abstract class Components::ClientMapping {
+    ..Attributes..
+    - dbType : DBType
+    --Methods--
+    ..Constructors..
+    +ClientMapping()
+    +ClientMapping(int dbType)
+}
+
+abstract class Components::StocksMapping {
+    ..Attributes..
+    - dbType : DBType
+    --Methods--
+    ..Constructors..
+    +StocksMapping()
+    +StocksMapping(int dbType)
+}
+
+abstract class Components::OrdersMapping {
+    ..Attributes..
+    - dbType : DBType
+    --Methods--
+    ..Constructors..
+    +OrdersMapping()
+    +OrdersMapping(int dbType)
+}
+
+abstract class Components::StatsMapping {
+    ..Attributes..
+    - dbType : DBType
+    --Methods--
+    ..Constructors..
+    +StatsMapping()
+    +StatsMapping(int dbType)
+}
+
+abstract class Components::Requests {
+    ..Attributes..
+    - dbType : DBType
+    --Methods--
+    ..Constructors..
+    +Requests()
+    +Requests(int dbType)
+}
+
+class Components::SQLConn<extends DatabaseConn> {
+    ..Attributes..
+    - conn : Connection
+    - dbType : DBType
+    --Methods--
+    ..Constructors..
+    +SQLConn()
+    +SQLConn(int dbType, string host, string port, string dbName, string user, string password)
+    ..Getters..
+    +getConn() : Connection
+    +getDbType() : DBType
+    ..Setters..
+}
+
+class Components::SQLRequest<extends Requests> {
+    ..Attributes..
+    - dbType : DBType
+    --Methods--
+    ..Constructors..
+    +SQLRequest()
+    +SQLRequest(int dbType)
+}
+
+class Components::ClientSQLMapping<extends ClientMapping> {
+    ..Attributes..
+    - dbType : DBType
+    --Methods--
+    ..Constructors..
+    +ClientSQLMapping()
+    +ClientSQLMapping(int dbType)
+}
+
+class Components::StocksSQLMapping<extends StocksMapping> {
+    ..Attributes..
+    - dbType : DBType
+    --Methods--
+    ..Constructors..
+    +StocksSQLMapping()
+    +StocksSQLMapping(int dbType)
+}
+
+class Components::OrdersSQLMapping<extends OrdersMapping> {
+    ..Attributes..
+    - dbType : DBType
+    --Methods--
+    ..Constructors..
+    +OrdersSQLMapping()
+    +OrdersSQLMapping(int dbType)
+}
+
+class Components::StatsSQLMapping<extends StatsMapping> {
+    ..Attributes..
+    - dbType : DBType
+    --Methods--
+    ..Constructors..
+    +StatsSQLMapping()
+    +StatsSQLMapping(int dbType)
+}
+
+Services::DatabaseManager --> Services::Database
+Services::DatabaseManager --> Components::ClientMapping
+Services::DatabaseManager --> Components::StocksMapping
+Services::DatabaseManager --> Components::OrdersMapping
+Services::DatabaseManager --> Components::StatsMapping
+Services::DatabaseManager --> Components::Requests
+
+Services::Database --> Components::DatabaseConn
+
+Components::DatabaseConn --|> Components::SQLConn
+Components::Requests --|> Components::SQLRequest
+Components::ClientMapping --|> Components::ClientSQLMapping
+Components::StocksMapping --|> Components::StocksSQLMapping
+Components::OrdersMapping --|> Components::OrdersSQLMapping
+Components::StatsMapping --|> Components::StatsSQLMapping
+
+DBType <-- Services::DatabaseManager
+DBType <-- Components::DatabaseConn
+DBType <-- Components::ClientMapping
+DBType <-- Components::StocksMapping
+DBType <-- Components::OrdersMapping
+DBType <-- Components::StatsMapping
+DBType <-- Components::Requests
+
+
+@enduml
