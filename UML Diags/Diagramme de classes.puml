@@ -1,4 +1,4 @@
-@startuml
+@startuml Diagramme de classe
 set namespaceSeparator ::
 
 enum DBType {
