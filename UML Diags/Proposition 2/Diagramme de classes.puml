@@ -1,5 +1,7 @@
 @startuml Diagramme de classe
+
 set namespaceSeparator ::
+' skinparam Linetype ortho
 
 namespace ClientManager {
 
@@ -34,7 +36,6 @@ namespace ClientManager {
                 + Client()
                 + Client(System::Data::DataRow^)
                 + Client(System::Windows::Forms::DataGridViewRow^)
-                + Client(System::String^, System::String^)
                 -- Méthodes --
                 + id() : int
                 + firstname(System::String^) : void
@@ -48,7 +49,10 @@ namespace ClientManager {
                 + birthdate(System::DateTime^) : void
                 + birthdate(int, int, int) : void
                 + birthdate() : System::DateTime^
-                + addresses() : array<Address^>^
+                + logo(System::String^) : void
+                + logo() : System::String^
+                + company(System::String^) : void
+                + company() : System::String^
 
                 + toDataRow() : System::Data::DataRow^
                 + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
@@ -60,6 +64,8 @@ namespace ClientManager {
                 - __phone : System::String^
                 - __email : System::String^
                 - __birthdate : System::DateTime^
+                - __logo : System::String^
+                - __company : System::String^
                 == Statique ==
                 -- Méthodes --
                 + toArray(System::Data::DataTable^) : array<Client^>^
@@ -73,26 +79,18 @@ namespace ClientManager {
                 + Address()
                 + Address(System::Data::DataRow^)
                 + Address(System::Windows::Forms::DataGridViewRow^)
-                + Address(System::String^, System::String^, int, System::String^, System::String^, int, int, int)
-                + Address(System::String^, System::String^, int, System::String^, System::String^, int, int, Client^)
                 -- Méthodes --
                 + id() : int
                 + number(System::String^) : void
                 + number() : System::String^
                 + street(System::String^) : void
                 + street() : System::String^
-                + city(System::String^) : void
-                + city() : System::String^
+                + city(int) : void
+                + city() : int
                 + zipCode(int) : void
                 + zipCode() : int
-                + country(System::String^) : void
-                + country() : System::String^
-                + floor(int) : void
-                + floor() : int
-                + door(int) : void
-                + door() : int
-                + client(Client^) : void
-                + client() : Client^
+                + country(int) : void
+                + country() : int
                 + clientId(int) : void
                 + clientId() : int
 
@@ -104,11 +102,8 @@ namespace ClientManager {
                 - __number : System::String^
                 - __street : System::String^
                 - __city : int
-                - __zipCode : System::String^
-                - __country : System::String^
-                - __floor : int
-                - __door : int
-                - __client : Client^
+                - __zipCode : int
+                - __country : int
                 - __clientId : int
                 == Statique ==
                 -- Méthodes --
@@ -123,7 +118,6 @@ namespace ClientManager {
                 + Article()
                 + Article(System::Data::DataRow^)
                 + Article(System::Windows::Forms::DataGridViewRow^)
-                + Article(System::String^, System::String^, int)
                 -- Méthodes --
                 + id() : int
                 + name(System::String^) : void
@@ -132,8 +126,6 @@ namespace ClientManager {
                 + description() : System::String^
                 + cost(float) : void
                 + cost() : float
-                + quantity(int) : void
-                + quantity() : int
 
                 + toDataRow() : System::Data::DataRow^
                 + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
@@ -143,7 +135,6 @@ namespace ClientManager {
                 - __name : System::String^
                 - __description : System::String^
                 - __cost : float
-                - __quantity : int
                 == Statique ==
                 -- Méthodes --
                 + toArray(System::Data::DataTable^) : array<Article^>^
@@ -151,26 +142,56 @@ namespace ClientManager {
                 + toDataTable(array<Article^>^) : System::Data::DataTable^
                 + toDataGridViewRowCollection(array<Article^>^) : System::Windows::Forms::DataGridViewRowCollection^
             }
+            class Stock {
+                == Public ==
+                -- Constructeur --
+                + Stock()
+                + Stock(System::Data::DataRow^)
+                + Stock(System::Windows::Forms::DataGridViewRow^)
+                -- Méthodes --
+                + id() : int
+                + articleId(int) : void
+                + articleId() : int
+                + quantity(int) : void
+                + quantity() : int
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                -- Attributs --
+                - __id : int
+                - __articleId : int
+                - __quantity : int
+                == Statique ==
+                -- Méthodes --
+                + toArray(System::Data::DataTable^) : array<Stock^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Stock^>^
+                + toDataTable(array<Stock^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Stock^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
             class Order {
                 == Public ==
                 -- Constructeur --
                 + Order()
                 + Order(System::Data::DataRow^)
                 + Order(System::Windows::Forms::DataGridViewRow^)
-                + Order(System::String^, System::String^, int)
                 -- Méthodes --
                 + id() : int
                 + paymentDate(System::DateTime^) : void
-                + paymentDate(int, int, int) : void
+                + paymentDate(int) : void
                 + paymentDate() : System::DateTime^
                 + creationDate(System::DateTime^) : void
-                + creationDate(int, int, int) : void
+                + creationDate(int) : void
                 + creationDate() : System::DateTime^
                 + deliveryDate(System::DateTime^) : void
-                + deliveryDate(int, int, int) : void
+                + deliveryDate(int) : void
                 + deliveryDate() : System::DateTime^
+                + cost(float) : void
+                + cost() : float
                 + paymentMode(System::String^) : void
                 + paymentMode() : System::String^
+                + client(int) : void
+                + client() : int
 
                 + toDataRow() : System::Data::DataRow^
                 + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
@@ -180,7 +201,9 @@ namespace ClientManager {
                 - __paymentDate : System::DateTime^
                 - __creationDate : System::DateTime^
                 - __deliveryDate : System::DateTime^
+                - __cost : float
                 - __paymentMode : System::String^
+                - __client : int
                 == Statique ==
                 -- Méthodes --
                 + toArray(System::Data::DataTable^) : array<Order^>^
@@ -201,78 +224,141 @@ namespace ClientManager {
             - __connection : System::Data::SQLite::SQLiteConnection
         }
 
-        namespace Request {
+        namespace RequestMapping {
 
-            class Request {
-                == Public ==
+            ' skinparam ClassBorderColor<<RequestMapping>> blue
+
+            class ClientRequestMapping <<RequestMapping>> {
+                == Statique ==
                 -- Méthodes --
-                + {abstract} toString() : System::String^
+                + {static} getClients() : RequestGet^
+                + {static} getClient(int) : RequestGet^
+                + {static} addClient(String^, String^, String^, String^, DateTime^, String^, String^) : RequestInsert^
+                + {static} updateClient(int, String^, String^, String^, String^, DateTime, String^, String^) : RequestUpdate^
+                + {static} deleteClient(int) : RequestDelete^
             }
-            class RequestGet<extends Request> {
-                == Public ==
+            class AddressRequestMapping <<RequestMapping>> {
+                == Statique ==
                 -- Méthodes --
-                + select(System::String^) : RequestGet^
-                + where(System::String^) : RequestGet^
-                + orderBy(System::String^) : RequestGet^
-                + limit(int) : RequestGet^
-
-                + toString() : System::String^
-                == Privé ==
-                -- Attributs --
-                - __selects : array<array<System::String^>^>^
-                - __conditions : array<System::String^>^
-                - __order : System::String^
-                - __limit : int
+                + {static} getAddresses() : RequestGet^
+                + {static} getAddresses(int) : RequestGet^
+                + {static} getAddress(int) : RequestGet^
+                + {static} addAddress(String^, String^, int, int, int, int) : RequestInsert^
+                + {static} updateAddress(int, String^, String^, int, int, int, int) : RequestUpdate^
+                + {static} deleteAddress(int) : RequestDelete^
             }
-            class RequestDelete<extends Request> {
-                == Public ==
+            class ArticleRequestMapping <<RequestMapping>> {
+                == Statique ==
                 -- Méthodes --
-                + from(System::String^) : RequestDelete^
-                + where(System::String^) : RequestDelete^
-                + limit(int) : RequestDelete^
-
-                + toString() : System::String^
-                == Privé ==
-                -- Attributs --
-                - __table : System::String^
-                - __conditions : array<System::String^>^
-                - __limit : int
+                + {static} getArticles() : RequestGet^
+                + {static} getArticle(int) : RequestGet^
+                + {static} addArticle(String^, String^, float) : RequestInsert^
+                + {static} updateArticle(int, String^, String^, float) : RequestUpdate^
+                + {static} deleteArticle(int) : RequestDelete^
             }
-            class RequestInsert<extends Request> {
-                == Public ==
+            class StockRequestMapping <<RequestMapping>> {
+                == Statique ==
                 -- Méthodes --
-                + into(System::String^) : RequestInsert^
-                + value(System::String^, System::String^) : RequestInsert^
-
-                + toString() : System::String^
-                == Privé ==
-                -- Attributs --
-                - __column : System::String^
-                - __values : System::String^
+                + {static} getStocks() : RequestGet^
+                + {static} getStock(int) : RequestGet^
+                + {static} addStock(int, int) : RequestInsert^
+                + {static} updateStock(int, int, int) : RequestUpdate^
+                + {static} deleteStock(int) : RequestDelete^
             }
-            class RequestUpdate<extends Request> {
-                == Public ==
+            class OrderRequestMapping <<RequestMapping>> {
+                == Statique ==
                 -- Méthodes --
-                + into(System::String^) : RequestUpdate
-                + set(System::String^, System::String^) : RequestUpdate
-                + where(System::String^) : RequestUpdate
-                + limit(int) : RequestUpdate
-
-                + toString() : System::String^
-                == Privé ==
-                -- Attributs --
-                - __table : System::String^
-                - __sets : array<System::String^>^
-                - __conditions : array<System::String^>^
-                - __limit : int
+                + {static} getOrders() : RequestGet^
+                + {static} getOrders(int) : RequestGet^
+                + {static} getOrder(int) : RequestGet^
+                + {static} addOrder(DateTime^, DateTime^, DateTime^, String^, float, int) : RequestInsert^
+                + {static} updateOrder(int, DateTime^, DateTime^, DateTime^, String^, float, int) : RequestUpdate^
+                + {static} deleteOrder(int) : RequestDelete^
             }
-
-            RequestGet <|-- Request
-            RequestDelete <|-- Request
-            RequestInsert <|-- Request
-            RequestUpdate <|-- Request
-
         }
+
+        class Request {
+            == Public ==
+            -- Méthodes --
+            + 
+            + SQL() : System::String^
+            == Privé ==
+            -- Attributs --
+            - __sql : System::String^
+        }
+
+        ' namespace Request {
+
+        '     class Request {
+        '         == Public ==
+        '         -- Méthodes --
+        '         + {abstract} toString() : System::String^
+        '     }
+        '     class RequestGet<extends Request> {
+        '         == Public ==
+        '         -- Méthodes --
+        '         + select(System::String^) : RequestGet^
+        '         + where(System::String^) : RequestGet^
+        '         + orderBy(System::String^) : RequestGet^
+        '         + limit(int) : RequestGet^
+
+        '         + toString() : System::String^
+        '         == Privé ==
+        '         -- Attributs --
+        '         - __selects : array<array<System::String^>^>^
+        '         - __conditions : array<System::String^>^
+        '         - __order : System::String^
+        '         - __limit : int
+        '     }
+        '     class RequestDelete<extends Request> {
+        '         == Public ==
+        '         -- Méthodes --
+        '         + from(System::String^) : RequestDelete^
+        '         + where(System::String^) : RequestDelete^
+        '         + limit(int) : RequestDelete^
+
+        '         + toString() : System::String^
+        '         == Privé ==
+        '         -- Attributs --
+        '         - __table : System::String^
+        '         - __conditions : array<System::String^>^
+        '         - __limit : int
+        '     }
+        '     class RequestInsert<extends Request> {
+        '         == Public ==
+        '         -- Méthodes --
+        '         + into(System::String^) : RequestInsert^
+        '         + value(System::String^, System::String^) : RequestInsert^
+
+        '         + toString() : System::String^
+        '         == Privé ==
+        '         -- Attributs --
+        '         - __column : System::String^
+        '         - __values : System::String^
+        '     }
+        '     class RequestUpdate<extends Request> {
+        '         == Public ==
+        '         -- Méthodes --
+        '         + into(System::String^) : RequestUpdate
+        '         + set(System::String^, System::String^) : RequestUpdate
+        '         + where(System::String^) : RequestUpdate
+        '         + limit(int) : RequestUpdate
+
+        '         + toString() : System::String^
+        '         == Privé ==
+        '         -- Attributs --
+        '         - __table : System::String^
+        '         - __sets : array<System::String^>^
+        '         - __conditions : array<System::String^>^
+        '         - __limit : int
+        '     }
+
+        '     RequestGet <|-- Request
+        '     RequestDelete <|-- Request
+        '     RequestInsert <|-- Request
+        '     RequestUpdate <|-- Request
+
+        ' }
 
     }
 
@@ -329,48 +415,53 @@ namespace ClientManager {
 
     App <|-- MyForm
 
-    ' App --o ClientManager::Services::ClientsService
-    ' App --o ClientManager::Services::StocksService
-    ' App --o ClientManager::Services::OrdersService
-
     App --o ClientManager::Services
 
     App --o ClientManager::Components::Database
 
-    ' ClientManager::Services::ClientsService --o ClientManager::Components::Request::RequestGet
-    ' ClientManager::Services::ClientsService --o ClientManager::Components::Request::RequestDelete
-    ' ClientManager::Services::ClientsService --o ClientManager::Components::Request::RequestInsert
-    ' ClientManager::Services::ClientsService --o ClientManager::Components::Request::RequestUpdate
+    ' ========================================
+    '                DataType
+    ' ========================================
 
-    ClientManager::Services::ClientsService --o ClientManager::Components::DataType::Client
-    ClientManager::Services::ClientsService --o ClientManager::Components::DataType::Address
+    App --o ClientManager::Components::DataType
 
-    ' ClientManager::Services::StocksService --o ClientManager::Components::Request::RequestGet
-    ' ClientManager::Services::StocksService --o ClientManager::Components::Request::RequestDelete
-    ' ClientManager::Services::StocksService --o ClientManager::Components::Request::RequestInsert
-    ' ClientManager::Services::StocksService --o ClientManager::Components::Request::RequestUpdate
+    ClientManager::Services --o ClientManager::Components::DataType
 
-    ' ClientManager::Services::StocksService --o ClientManager::Components::DataType::Client
-    ' ClientManager::Services::StocksService --o ClientManager::Components::DataType::Address
-    ClientManager::Services::StocksService --o ClientManager::Components::DataType::Article
+    ' ClientManager::Services::ClientsService -[#Red]-o ClientManager::Components::DataType::Client
+    ' ClientManager::Services::ClientsService -[#Red]-o ClientManager::Components::DataType::Address
 
-    ' ClientManager::Services::OrdersService --o ClientManager::Components::Request::RequestGet
-    ' ClientManager::Services::OrdersService --o ClientManager::Components::Request::RequestDelete
-    ' ClientManager::Services::OrdersService --o ClientManager::Components::Request::RequestInsert
-    ' ClientManager::Services::OrdersService --o ClientManager::Components::Request::RequestUpdate
+    ' ClientManager::Services::StocksService -[#Red]-o ClientManager::Components::DataType::Article
+    ' ClientManager::Services::StocksService -[#Red]-o ClientManager::Components::DataType::Stock
 
-    ClientManager::Services::OrdersService --o ClientManager::Components::DataType::Client
-    ClientManager::Services::OrdersService --o ClientManager::Components::DataType::Address
-    ClientManager::Services::OrdersService --o ClientManager::Components::DataType::Article
-    ClientManager::Services::OrdersService --o ClientManager::Components::DataType::Order
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Client
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Address
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Article
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Order
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Stock
 
-    ' ClientManager::Services::ClientsService --o ClientManager::Components::Request
-    ' ClientManager::Services::StocksService --o ClientManager::Components::Request
-    ' ClientManager::Services::OrdersService --o ClientManager::Components::Request
+    ' ========================================
+    '              RequestMapping
+    ' ========================================
+
+    ClientManager::Services::ClientsService -[#blue]-o ClientManager::Components::RequestMapping::ClientRequestMapping
+    ClientManager::Services::ClientsService -[#blue]-o ClientManager::Components::RequestMapping::AddressRequestMapping
+
+    ClientManager::Services::StocksService -[#blue]-o ClientManager::Components::RequestMapping::ArticleRequestMapping
+    ClientManager::Services::StocksService -[#blue]-o ClientManager::Components::RequestMapping::StockRequestMapping
+
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::ClientRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::AddressRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::ArticleRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::OrderRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::StockRequestMapping
+
+    ' ========================================
+    '                 Request
+    ' ========================================
 
     ClientManager::Services --o ClientManager::Components::Request
 
-    ClientManager::App --o ClientManager::Components::DataType
+    ClientManager::Components::RequestMapping --o ClientManager::Components::Request
 }
 
 @enduml

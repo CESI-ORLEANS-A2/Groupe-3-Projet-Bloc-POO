@@ -50,7 +50,7 @@ Les méthodes correspondant aux *handlers* sont passées en virtuel pour être s
 Cette classe hérite de la classe `MyForm`, elle permet de mettre de code du projet dans un autre fichier que `MyForm.h`.
 Elle est donc instanciée dans le fichier `Main.cpp`.
 
-```cs
+```cpp
 Application::run(gcnew ClientsManager::App());
 ```
 
