@@ -112,12 +112,12 @@ namespace ClientManager {
                 + toDataTable(array<Address^>^) : System::Data::DataTable^
                 + toDataGridViewRowCollection(array<Address^>^) : System::Windows::Forms::DataGridViewRowCollection^
             }
-            class Article {
+            class Product {
                 == Public ==
                 -- Constructeur --
-                + Article()
-                + Article(System::Data::DataRow^)
-                + Article(System::Windows::Forms::DataGridViewRow^)
+                + Product()
+                + Product(System::Data::DataRow^)
+                + Product(System::Windows::Forms::DataGridViewRow^)
                 -- Méthodes --
                 + id() : int
                 + name(System::String^) : void
@@ -126,6 +126,8 @@ namespace ClientManager {
                 + description() : System::String^
                 + cost(float) : void
                 + cost() : float
+                + quantity(int) : void
+                + quantity() : int
 
                 + toDataRow() : System::Data::DataRow^
                 + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
@@ -135,40 +137,41 @@ namespace ClientManager {
                 - __name : System::String^
                 - __description : System::String^
                 - __cost : float
-                == Statique ==
-                -- Méthodes --
-                + toArray(System::Data::DataTable^) : array<Article^>^
-                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Article^>^
-                + toDataTable(array<Article^>^) : System::Data::DataTable^
-                + toDataGridViewRowCollection(array<Article^>^) : System::Windows::Forms::DataGridViewRowCollection^
-            }
-            class Stock {
-                == Public ==
-                -- Constructeur --
-                + Stock()
-                + Stock(System::Data::DataRow^)
-                + Stock(System::Windows::Forms::DataGridViewRow^)
-                -- Méthodes --
-                + id() : int
-                + articleId(int) : void
-                + articleId() : int
-                + quantity(int) : void
-                + quantity() : int
-
-                + toDataRow() : System::Data::DataRow^
-                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
-                == Privé ==
-                -- Attributs --
-                - __id : int
-                - __articleId : int
                 - __quantity : int
                 == Statique ==
                 -- Méthodes --
-                + toArray(System::Data::DataTable^) : array<Stock^>^
-                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Stock^>^
-                + toDataTable(array<Stock^>^) : System::Data::DataTable^
-                + toDataGridViewRowCollection(array<Stock^>^) : System::Windows::Forms::DataGridViewRowCollection^
+                + toArray(System::Data::DataTable^) : array<Product^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Product^>^
+                + toDataTable(array<Product^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Product^>^) : System::Windows::Forms::DataGridViewRowCollection^
             }
+            ' class Stock {
+            '     == Public ==
+            '     -- Constructeur --
+            '     + Stock()
+            '     + Stock(System::Data::DataRow^)
+            '     + Stock(System::Windows::Forms::DataGridViewRow^)
+            '     -- Méthodes --
+            '     + id() : int
+            '     + ProductId(int) : void
+            '     + ProductId() : int
+            '     + quantity(int) : void
+            '     + quantity() : int
+
+            '     + toDataRow() : System::Data::DataRow^
+            '     + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+            '     == Privé ==
+            '     -- Attributs --
+            '     - __id : int
+            '     - __ProductId : int
+            '     - __quantity : int
+            '     == Statique ==
+            '     -- Méthodes --
+            '     + toArray(System::Data::DataTable^) : array<Stock^>^
+            '     + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Stock^>^
+            '     + toDataTable(array<Stock^>^) : System::Data::DataTable^
+            '     + toDataGridViewRowCollection(array<Stock^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            ' }
             class Order {
                 == Public ==
                 -- Constructeur --
@@ -247,24 +250,24 @@ namespace ClientManager {
                 + {static} updateAddress(int, String^, String^, int, int, int, int) : RequestUpdate^
                 + {static} deleteAddress(int) : RequestDelete^
             }
-            class ArticleRequestMapping <<RequestMapping>> {
+            class ProductRequestMapping <<RequestMapping>> {
                 == Statique ==
                 -- Méthodes --
-                + {static} getArticles() : RequestGet^
-                + {static} getArticle(int) : RequestGet^
-                + {static} addArticle(String^, String^, float) : RequestInsert^
-                + {static} updateArticle(int, String^, String^, float) : RequestUpdate^
-                + {static} deleteArticle(int) : RequestDelete^
+                + {static} getProducts() : RequestGet^
+                + {static} getProduct(int) : RequestGet^
+                + {static} addProduct(String^, String^, float) : RequestInsert^
+                + {static} updateProduct(int, String^, String^, float) : RequestUpdate^
+                + {static} deleteProduct(int) : RequestDelete^
             }
-            class StockRequestMapping <<RequestMapping>> {
-                == Statique ==
-                -- Méthodes --
-                + {static} getStocks() : RequestGet^
-                + {static} getStock(int) : RequestGet^
-                + {static} addStock(int, int) : RequestInsert^
-                + {static} updateStock(int, int, int) : RequestUpdate^
-                + {static} deleteStock(int) : RequestDelete^
-            }
+            ' class StockRequestMapping <<RequestMapping>> {
+            '     == Statique ==
+            '     -- Méthodes --
+            '     + {static} getStocks() : RequestGet^
+            '     + {static} getStock(int) : RequestGet^
+            '     + {static} addStock(int, int) : RequestInsert^
+            '     + {static} updateStock(int, int, int) : RequestUpdate^
+            '     + {static} deleteStock(int) : RequestDelete^
+            ' }
             class OrderRequestMapping <<RequestMapping>> {
                 == Statique ==
                 -- Méthodes --
@@ -385,12 +388,12 @@ namespace ClientManager {
             -- Constructeurs --
             + StockServices(Database^)
             -- Méthodes --
-            + addArticle(Article^) : Article^
-            + addArticle(System::String^, System::String^, float, int) : Article^
-            + updateArticle(Article^) : Article^
-            + updateArticle(int, System::String^, System::String^, float, int) : Article^
-            + removeArticle(Article^) : Article^
-            + removeArticle(int) : Article^
+            + addProduct(Product^) : Product^
+            + addProduct(System::String^, System::String^, float, int) : Product^
+            + updateProduct(Product^) : Product^
+            + updateProduct(int, System::String^, System::String^, float, int) : Product^
+            + removeProduct(Product^) : Product^
+            + removeProduct(int) : Product^
             == Privé ==
             -- Attributs --
             - __database : Database^
@@ -430,12 +433,12 @@ namespace ClientManager {
     ' ClientManager::Services::ClientsService -[#Red]-o ClientManager::Components::DataType::Client
     ' ClientManager::Services::ClientsService -[#Red]-o ClientManager::Components::DataType::Address
 
-    ' ClientManager::Services::StocksService -[#Red]-o ClientManager::Components::DataType::Article
+    ' ClientManager::Services::StocksService -[#Red]-o ClientManager::Components::DataType::Product
     ' ClientManager::Services::StocksService -[#Red]-o ClientManager::Components::DataType::Stock
 
     ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Client
     ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Address
-    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Article
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Product
     ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Order
     ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Stock
 
@@ -446,14 +449,14 @@ namespace ClientManager {
     ClientManager::Services::ClientsService -[#blue]-o ClientManager::Components::RequestMapping::ClientRequestMapping
     ClientManager::Services::ClientsService -[#blue]-o ClientManager::Components::RequestMapping::AddressRequestMapping
 
-    ClientManager::Services::StocksService -[#blue]-o ClientManager::Components::RequestMapping::ArticleRequestMapping
-    ClientManager::Services::StocksService -[#blue]-o ClientManager::Components::RequestMapping::StockRequestMapping
+    ClientManager::Services::StocksService -[#blue]-o ClientManager::Components::RequestMapping::ProductRequestMapping
+    ' ClientManager::Services::StocksService -[#blue]-o ClientManager::Components::RequestMapping::StockRequestMapping
 
     ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::ClientRequestMapping
     ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::AddressRequestMapping
-    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::ArticleRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::ProductRequestMapping
     ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::OrderRequestMapping
-    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::StockRequestMapping
+    ' ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::StockRequestMapping
 
     ' ========================================
     '                 Request
