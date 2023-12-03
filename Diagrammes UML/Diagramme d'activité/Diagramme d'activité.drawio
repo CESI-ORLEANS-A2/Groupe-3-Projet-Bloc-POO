@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-12-03T17:16:17.478Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="4e0RLMCA9E2NrGnqCx-z" version="22.1.2" type="device">
+<mxfile host="Electron" modified="2023-12-03T23:27:28.495Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="bLJZFB29RH5wCCk1O_8V" version="22.1.2" type="device">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="4776" dy="3224" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1592" dy="1075" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -538,7 +538,7 @@
         <mxCell id="DJRFasF-yW1EyUBaLKps-256" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="DJRFasF-yW1EyUBaLKps-257" target="DJRFasF-yW1EyUBaLKps-262">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="DJRFasF-yW1EyUBaLKps-257" value="Afficher la liste des clients" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="DJRFasF-yW1EyUBaLKps-257" value="Afficher la liste des commandes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="1360.0299999999997" y="879.5" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="DJRFasF-yW1EyUBaLKps-258" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="DJRFasF-yW1EyUBaLKps-262" target="DJRFasF-yW1EyUBaLKps-264">
@@ -562,13 +562,13 @@
             <mxPoint x="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="DJRFasF-yW1EyUBaLKps-262" value="Cliquer sur un &lt;br&gt;client" style="rhombus;whiteSpace=wrap;html=1;fillColor=none;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="DJRFasF-yW1EyUBaLKps-262" value="Cliquer sur un &lt;br&gt;commande" style="rhombus;whiteSpace=wrap;html=1;fillColor=none;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="1510.0299999999997" y="977" width="120" height="120" as="geometry" />
         </mxCell>
         <mxCell id="DJRFasF-yW1EyUBaLKps-263" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="DJRFasF-yW1EyUBaLKps-264" target="DJRFasF-yW1EyUBaLKps-281">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="DJRFasF-yW1EyUBaLKps-264" value="Afficher les détails du client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="DJRFasF-yW1EyUBaLKps-264" value="Afficher les détails du commande" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="1670.0299999999997" y="1077" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="DJRFasF-yW1EyUBaLKps-265" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="DJRFasF-yW1EyUBaLKps-267" target="DJRFasF-yW1EyUBaLKps-273">
@@ -742,7 +742,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="DJRFasF-yW1EyUBaLKps-301" value="Le client &lt;br&gt;est nouveau" style="rhombus;whiteSpace=wrap;html=1;fillColor=none;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="DJRFasF-yW1EyUBaLKps-301" value="La commande&lt;br&gt;est nouveau" style="rhombus;whiteSpace=wrap;html=1;fillColor=none;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="1320" y="1227" width="120" height="120" as="geometry" />
         </mxCell>
         <mxCell id="DJRFasF-yW1EyUBaLKps-302" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="DJRFasF-yW1EyUBaLKps-303" target="DJRFasF-yW1EyUBaLKps-289">

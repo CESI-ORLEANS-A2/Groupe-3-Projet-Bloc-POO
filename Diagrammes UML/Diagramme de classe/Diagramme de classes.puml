@@ -8,15 +8,20 @@ namespace ClientManager {
     class App {
         == Public ==
         -- Constructeurs --
-        # App()
-        == Protégé ==
+        + App()
+        == Privé ==
         .. Handlers ..
-        # submit_Click(Object^, EventArgs^) : void
+        # submit_Click(Object^, EventArgs^) : void // Exemple
+        .. Attributs ..
+        # __database : Components::Database^
+        # __clientService : Services::ClientsService^
+        # __stockService : Services::StocksService^
+        # __orderService : Services::OrdersService^
     }
     class MyForm {
         == Public ==
         -- Constructeurs --
-        # MyForm()
+        + MyForm()
         == Protégé ==
         -- Méthodes --
         # InitializeComponent() : void
@@ -229,9 +234,7 @@ namespace ClientManager {
 
         namespace RequestMapping {
 
-            ' skinparam ClassBorderColor<<RequestMapping>> blue
-
-            class ClientRequestMapping <<RequestMapping>> {
+            class ClientRequestMapping {
                 == Statique ==
                 -- Méthodes --
                 + {static} getClients() : RequestGet^
@@ -240,7 +243,7 @@ namespace ClientManager {
                 + {static} updateClient(int, String^, String^, String^, String^, DateTime, String^, String^) : RequestUpdate^
                 + {static} deleteClient(int) : RequestDelete^
             }
-            class AddressRequestMapping <<RequestMapping>> {
+            class AddressRequestMapping {
                 == Statique ==
                 -- Méthodes --
                 + {static} getAddresses() : RequestGet^
@@ -250,7 +253,7 @@ namespace ClientManager {
                 + {static} updateAddress(int, String^, String^, int, int, int, int) : RequestUpdate^
                 + {static} deleteAddress(int) : RequestDelete^
             }
-            class ProductRequestMapping <<RequestMapping>> {
+            class ProductRequestMapping {
                 == Statique ==
                 -- Méthodes --
                 + {static} getProducts() : RequestGet^
@@ -259,7 +262,7 @@ namespace ClientManager {
                 + {static} updateProduct(int, String^, String^, float) : RequestUpdate^
                 + {static} deleteProduct(int) : RequestDelete^
             }
-            ' class StockRequestMapping <<RequestMapping>> {
+            ' class StockRequestMapping {
             '     == Statique ==
             '     -- Méthodes --
             '     + {static} getStocks() : RequestGet^
@@ -268,7 +271,7 @@ namespace ClientManager {
             '     + {static} updateStock(int, int, int) : RequestUpdate^
             '     + {static} deleteStock(int) : RequestDelete^
             ' }
-            class OrderRequestMapping <<RequestMapping>> {
+            class OrderRequestMapping {
                 == Statique ==
                 -- Méthodes --
                 + {static} getOrders() : RequestGet^
