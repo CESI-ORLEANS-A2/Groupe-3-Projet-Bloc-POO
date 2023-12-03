@@ -1,0 +1,72 @@
+@startuml Client
+
+participant "Formulaire" as Form
+participant "OrderService" as Service
+participant "OrderMapping" as Mapping
+participant "Database" as DB
+
+activate Form
+activate Service
+activate DB
+
+' Créer une commande
+group Créer une commande
+
+Form -> Service : createOrder(datePaiement, dateEmission...)
+Service -> Mapping : insertOrder(datePaiement, dateEmission...)
+activate Mapping
+Service <- Mapping : Request^ order
+deactivate Mapping
+Service -> DB : insertRequest(Request^ order)
+DB -> Service : int response
+Service -> Form : int response
+Form -> Form : updateInterface()
+
+end
+
+' Modifier une commande
+group Modifier une commande
+
+Form -> Service : updateOrder(Datatype::Order^ order)
+Service -> Mapping : updateOrder(idOrder, datePaiement, dateEmission...)
+activate Mapping
+Service <- Mapping : Request^ order
+deactivate Mapping
+Service -> DB : updateRequest(Request^ order)
+DB -> Service : int response
+Service -> Form : int response
+Form -> Form : updateInterface()
+
+end
+
+' Supprimer une commande
+group Supprimer une commande
+
+Form -> Service : deleteOrder(Datatype::Order^ order)
+Service -> Mapping : deleteOrder(idOrder)
+activate Mapping
+Service <- Mapping : Request^ order
+deactivate Mapping
+Service -> DB : deleteRequest(Request^ order)
+DB -> Service : int response
+Service -> Form : int response
+Form -> Form : updateInterface()
+
+end
+
+' Afficher une commande
+group Afficher une commande
+
+Form -> Service : getOrder(idOrder)
+Service -> Mapping : getOrder(idOrder)
+activate Mapping
+Service <- Mapping : Request^
+deactivate Mapping
+Service -> DB : getRequest(Request^)
+DB -> Service : DataTable order
+Service -> Form : Datatype::Order^ order
+Form -> Form : updateInterface()
+
+end
+
+@enduml
