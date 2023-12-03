@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+actor "Admin" as ad
+rectangle Application {
+rectangle Client{
+  usecase "Modify a client" as UC1
+  usecase "Add a client" as UC2
+  usecase "Delete a client" as UC3
+  usecase "View a client" as UC4
+  }
+  rectangle Order{
+  usecase "Modify an order" as UC5
+  usecase "Add an order" as UC6
+  usecase "Delete an order" as UC7
+  usecase "View an order" as UC8
+  }
+  rectangle Storage{
+  usecase "Modify an article" as UC9
+  usecase "Add an article" as UC10
+  usecase "Delete an article" as UC11
+  usecase "View an article" as UC12
+  }
+}
+
+ad --> Client
+ad --> Storage
+ad --> Order
+@enduml
