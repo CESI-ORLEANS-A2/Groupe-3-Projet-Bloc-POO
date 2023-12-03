@@ -231,7 +231,7 @@ namespace ClientManager {
 
             ' skinparam ClassBorderColor<<RequestMapping>> blue
 
-            class ClientRequestMapping <<RequestMapping>> {
+            class ClientRequestMapping {
                 == Statique ==
                 -- Méthodes --
                 + {static} getClients() : RequestGet^
@@ -240,7 +240,7 @@ namespace ClientManager {
                 + {static} updateClient(int, String^, String^, String^, String^, DateTime, String^, String^) : RequestUpdate^
                 + {static} deleteClient(int) : RequestDelete^
             }
-            class AddressRequestMapping <<RequestMapping>> {
+            class AddressRequestMapping {
                 == Statique ==
                 -- Méthodes --
                 + {static} getAddresses() : RequestGet^
@@ -250,7 +250,7 @@ namespace ClientManager {
                 + {static} updateAddress(int, String^, String^, int, int, int, int) : RequestUpdate^
                 + {static} deleteAddress(int) : RequestDelete^
             }
-            class ProductRequestMapping <<RequestMapping>> {
+            class ProductRequestMapping {
                 == Statique ==
                 -- Méthodes --
                 + {static} getProducts() : RequestGet^
@@ -268,7 +268,7 @@ namespace ClientManager {
             '     + {static} updateStock(int, int, int) : RequestUpdate^
             '     + {static} deleteStock(int) : RequestDelete^
             ' }
-            class OrderRequestMapping <<RequestMapping>> {
+            class OrderRequestMapping {
                 == Statique ==
                 -- Méthodes --
                 + {static} getOrders() : RequestGet^
