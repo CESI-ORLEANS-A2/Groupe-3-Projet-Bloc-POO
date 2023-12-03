@@ -23,7 +23,7 @@ namespace ClientManager {
         .. Handlers ..
         # {abstract} submit_Click(Object^, EventArgs^) : void
         -- Attributs --
-        # button_Submit : System::Windows::Forms::Button 
+        # button_Submit : System::Windows::Forms::Button
     }
 
     namespace Components {
@@ -224,7 +224,7 @@ namespace ClientManager {
             + runScalar(Request^) : System::Object^
             == Privé ==
             -- Attributs --
-            - __connection : System::Data::SQLite::SQLiteConnection
+            - __connection : System::Data::MySQL::MySQLConnection
         }
 
         namespace RequestMapping {

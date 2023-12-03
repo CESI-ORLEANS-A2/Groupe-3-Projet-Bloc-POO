@@ -1,1 +1,159 @@
-<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="544px" preserveAspectRatio="none" style="width:1026px;height:544px;background:#FFFFFF;" version="1.1" viewBox="0 0 1026 544" width="1026px" zoomAndPan="magnify"><defs/><g><!--cluster Application--><g id="cluster_Application"><rect fill="none" height="503" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="952" x="68" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="93" x="497.5" y="21.9951">Application</text></g><!--cluster Client--><g id="cluster_Client"><rect fill="none" height="189" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="413" x="103" y="58"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="47" x="286" y="72.9951">Client</text></g><!--cluster Order--><g id="cluster_Order"><rect fill="none" height="191" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="419" x="100" y="287"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="45" x="287" y="301.9951">Order</text></g><!--cluster Storage--><g id="cluster_Storage"><rect fill="none" height="193" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="429" x="559" y="172"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="64" x="741.5" y="186.9951">Storage</text></g><g id="elem_UC1"><ellipse cx="201.6066" cy="185.8213" fill="#F1F1F1" rx="74.6066" ry="17.3213" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="146.1066" y="189.5689">Modify a client</text></g><g id="elem_UC2"><ellipse cx="201.6678" cy="116.8336" fill="#F1F1F1" rx="67.1678" ry="15.8336" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="156.1678" y="120.5811">Add a client</text></g><g id="elem_UC3"><ellipse cx="416.9948" cy="186.899" fill="#F1F1F1" rx="74.9948" ry="17.399" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="360.9948" y="190.6465">Delete a client</text></g><g id="elem_UC4"><ellipse cx="416.8288" cy="117.7658" fill="#F1F1F1" rx="69.3288" ry="16.2658" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="368.3288" y="121.5133">View a client</text></g><g id="elem_UC5"><ellipse cx="201.3536" cy="416.8707" fill="#F1F1F1" rx="77.3536" ry="17.8707" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="142.6333" y="420.5454">Modify an order</text></g><g id="elem_UC6"><ellipse cx="201.6952" cy="346.839" fill="#F1F1F1" rx="69.6952" ry="16.339" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="152.6952" y="350.5866">Add an order</text></g><g id="elem_UC7"><ellipse cx="416.7532" cy="416.9506" fill="#F1F1F1" rx="77.7532" ry="17.9506" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="357.6994" y="420.5809">Delete an order</text></g><g id="elem_UC8"><ellipse cx="416.9293" cy="346.7859" fill="#F1F1F1" rx="71.9293" ry="16.7859" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="364.9293" y="350.5334">View an order</text></g><g id="elem_UC9"><ellipse cx="663.1963" cy="302.9393" fill="#F1F1F1" rx="80.1963" ry="18.4393" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="602.1039" y="306.2979">Modify an article</text></g><g id="elem_UC10"><ellipse cx="662.8073" cy="231.8615" fill="#F1F1F1" rx="72.3073" ry="16.8615" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="610.3073" y="235.609">Add an article</text></g><g id="elem_UC11"><ellipse cx="883.6107" cy="304.0221" fill="#F1F1F1" rx="80.6107" ry="18.5221" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="822.1726" y="307.3348">Delete an article</text></g><g id="elem_UC12"><ellipse cx="883.6066" cy="232.8213" fill="#F1F1F1" rx="74.6066" ry="17.3213" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="828.1066" y="236.5689">View an article</text></g><!--entity ad--><g id="elem_ad"><ellipse cx="29" cy="440.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M29,448.5 L29,475.5 M16,456.5 L42,456.5 M29,475.5 L16,490.5 M29,475.5 L42,490.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="6" y="504.9951">Admin</text></g><!--link ad to Client--><g id="link_ad_Client"><path d="M33.5594,431.821 C37.9391,391.826 46.4991,332.315 60,314 C80.6722,285.9565 115.0313,267.3498 144.5962,255.6839 C151.9874,252.7674 159.079,250.2847 165.5822,248.1969 C166.3951,247.9359 167.1989,247.6811 167.9928,247.4324 C168.3898,247.308 163.0525,248.959 163.4445,248.8377 " fill="none" id="ad-to-Client" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="169.1763,247.0638,159.3961,245.9035,164.3998,248.5421,161.7612,253.5458,169.1763,247.0638" style="stroke:#181818;stroke-width:1.0;"/></g><!--link ad to Storage--><g id="link_ad_Storage"><path d="M52.1244,483.3064 C54.7096,484.403 57.3658,485.3414 60,486 C265.363,537.3408 338.934,530.7986 535,451 C567.0135,437.9705 598.2793,414.9955 621.7781,395.0215 C633.5276,385.0345 643.3353,375.7978 650.3239,368.9296 C651.1975,368.071 652.027,367.2495 652.8108,366.4682 C653.2026,366.0775 653.5831,365.6969 653.9519,365.3267 C654.0441,365.2341 649.9046,369.3965 649.9953,369.3053 " fill="none" id="ad-to-Storage" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="654.2263,365.051,645.0436,368.6118,650.7005,368.5963,650.716,374.2531,654.2263,365.051" style="stroke:#181818;stroke-width:1.0;"/></g><!--link ad to Order--><g id="link_ad_Order"><path d="M52.2899,470 C63.6634,470 78.4149,470 94.193,470 C95.1791,470 96.1692,470 97.1628,470 C97.6596,470 98.1573,470 98.6557,470 C98.9049,470 93.1543,470 93.4039,470 " fill="none" id="ad-to-Order" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="99.4039,470,90.4039,466,94.4039,470,90.4039,474,99.4039,470" style="stroke:#181818;stroke-width:1.0;"/></g><!--SRC=[TP5D2y8m38Rl_HLXTy7vxKKOyoeUHE-XZJDGM-ag8k9_TniJjwuUSaZU9-KXrNJsu2quBYuU53kIdgqHABrra6JgoYO1B06Lg3CqXIR8RZVD4ciINfrvhfcCVmc0UqaIIu9aPnMVdu0WcwnvwvYdNIHJAimdtNnBcZo5oBIBd9WU8J2hW7TLFxszK-IYTWPidRMRyu5TFr_4xFh8ScZN1rO3kqDrSIpeZnywpr9JkxsE6FQ9T1oN3AWqvXamaqRrBGGg68qsxIz_krRxspOt_W00]--></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1001px" preserveAspectRatio="none" style="width:414px;height:1001px;background:#FFFFFF;" version="1.1" viewBox="0 0 414 1001" width="414px" zoomAndPan="magnify"><defs/><g><!--MD5=[d64883541e3d62e3241c4d12decf100d]
+cluster Application--><g id="cluster_Application"><rect fill="none" height="988" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="231" x="65" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="78" x="141.5" y="23.5332">Application</text></g><!--MD5=[406b65fecc21e832f7a9b6ebadc6dce1]
+cluster Client--><g id="cluster_Client"><rect fill="none" height="287" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="174" x="93.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="41" x="160" y="67.5332">Client</text></g><!--MD5=[4523f918a499262345e8d765b0fe948b]
+cluster Order--><g id="cluster_Order"><rect fill="none" height="291" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="180" x="90.5" y="362"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="41" x="160" y="378.5332">Order</text></g><!--MD5=[562ed55e840afc79d9783beef242227d]
+cluster Storage--><g id="cluster_Storage"><rect fill="none" height="294" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="183" x="89" y="677"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="55" x="153" y="693.5332">Storage</text></g><g id="elem_UC1"><ellipse cx="180.3567" cy="104.0713" fill="#F1F1F1" rx="70.8567" ry="16.5713" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="132.3567" y="108.5879">Modify a client</text></g><g id="elem_UC2"><ellipse cx="180.602" cy="171.1136" fill="#F1F1F1" rx="64.602" ry="15.6136" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="140.602" y="175.6302">Add a client</text></g><g id="elem_UC3"><ellipse cx="180.3567" cy="238.0713" fill="#F1F1F1" rx="70.8567" ry="16.5713" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="132.3567" y="242.5879">Delete a client</text></g><g id="elem_UC4"><ellipse cx="180.2537" cy="305.7507" fill="#F1F1F1" rx="66.7537" ry="15.7507" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="138.2537" y="310.2673">View a client</text></g><g id="elem_UC5"><ellipse cx="180.6111" cy="415.2222" fill="#F1F1F1" rx="74.1111" ry="17.2222" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="128.1111" y="419.7388">Modify an order</text></g><g id="elem_UC6"><ellipse cx="180.4277" cy="483.0855" fill="#F1F1F1" rx="68.4277" ry="16.0855" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="135.9277" y="487.6021">Add an order</text></g><g id="elem_UC7"><ellipse cx="180.6111" cy="551.2222" fill="#F1F1F1" rx="74.1111" ry="17.2222" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="128.1111" y="555.7388">Delete an order</text></g><g id="elem_UC8"><ellipse cx="180.3041" cy="619.8608" fill="#F1F1F1" rx="69.8041" ry="16.3608" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="133.8041" y="624.3774">View an order</text></g><g id="elem_UC9"><ellipse cx="180.6002" cy="731.02" fill="#F1F1F1" rx="75.6002" ry="17.52" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="126.1002" y="735.5366">Modify an article</text></g><g id="elem_UC10"><ellipse cx="180.3041" cy="799.8608" fill="#F1F1F1" rx="69.8041" ry="16.3608" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="133.8041" y="804.3774">Add an article</text></g><g id="elem_UC11"><ellipse cx="180.6002" cy="869.02" fill="#F1F1F1" rx="75.6002" ry="17.52" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="126.1002" y="873.5366">Delete an article</text></g><g id="elem_UC12"><ellipse cx="180.7113" cy="938.1423" fill="#F1F1F1" rx="71.2113" ry="16.6423" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="132.2113" y="942.6589">View an article</text></g><!--MD5=[a2a1127a9e0c3d5a4af797120761d109]
+entity ad--><g id="elem_ad"><ellipse cx="25.5" cy="486.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M25.5,494.5 L25.5,521.5 M12.5,502.5 L38.5,502.5 M25.5,521.5 L12.5,536.5 M25.5,521.5 L38.5,536.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="6" y="552.5332">Admin</text></g><!--MD5=[7468467f3b6b392f1d176d828c753b77]
+entity db--><g id="elem_db"><path d="M316,503.5 C316,493.5 356.5,493.5 356.5,493.5 C356.5,493.5 397,493.5 397,503.5 L397,530.1094 C397,540.1094 356.5,540.1094 356.5,540.1094 C356.5,540.1094 316,540.1094 316,530.1094 L316,503.5 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><path d="M316,503.5 C316,513.5 356.5,513.5 356.5,513.5 C356.5,513.5 397,513.5 397,503.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="326" y="532.0332">Database</text></g><!--MD5=[652ea441908c2f339856a99edaa9b770]
+link ad to UC1--><g id="link_ad_UC1"><path d="M27.14,477.98 C29.01,386.46 35.7,163.8 57,138 C69.33,123.07 87.6,114.37 106.29,109.4 " fill="none" id="ad-to-UC1" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="111.57,108.09,101.8674,106.399,106.7201,109.306,103.8131,114.1588,111.57,108.09" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[aeb67fcf5970a613e2e37a9bbe55e241]
+link ad to UC2--><g id="link_ad_UC2"><path d="M27.86,477.76 C30.95,398.37 39.65,224.5 57,204 C70.7,187.81 91.42,179.13 111.95,174.61 " fill="none" id="ad-to-UC2" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="116.88,173.59,107.2619,171.4704,111.981,174.5898,108.8616,179.3089,116.88,173.59" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[37057213f3f9c42167d28362c5f3e764]
+link ad to UC3--><g id="link_ad_UC3"><path d="M26.26,477.84 C26.7,416.6 31.1,302.02 57,272 C69.65,257.34 88.02,248.73 106.71,243.75 " fill="none" id="ad-to-UC3" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="111.98,242.44,102.2833,240.7154,107.1259,243.6392,104.2021,248.4819,111.98,242.44" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[d3028d9e1105cd1f0152a8dccdb23c2c]
+link ad to UC4--><g id="link_ad_UC4"><path d="M27.41,477.97 C29.84,449.1 37,410.09 57,382 C77.11,353.77 111.31,333.84 138.47,321.49 " fill="none" id="ad-to-UC4" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="143.11,319.43,133.2612,319.45,138.5451,321.47,136.5251,326.7539,143.11,319.43" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a40d63ae95774625fe06fd1ed105e80b]
+link ad to UC5--><g id="link_ad_UC5"><path d="M37.2,477.88 C41.78,467.25 48.17,456.59 57,449 C71.46,436.57 90.11,428.66 108.47,423.63 " fill="none" id="ad-to-UC5" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="113.64,422.29,103.9237,420.6797,108.8004,423.5463,105.9338,428.423,113.64,422.29" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[9d480822158ffb225a983d7dad375d72]
+link ad to UC6--><g id="link_ad_UC6"><path d="M45.26,512.83 C65.09,508.42 97.3,501.27 125.2,495.07 " fill="none" id="ad-to-UC6" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="130.35,493.92,120.6954,491.9736,125.4697,495.0077,122.4357,499.782,130.35,493.92" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b78c0d2d118275592b8e40ea280e2469]
+link ad to UC7--><g id="link_ad_UC7"><path d="M45.26,521.17 C64.27,525.39 94.64,532.14 121.69,538.15 " fill="none" id="ad-to-UC7" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="126.7,539.27,118.782,533.4129,121.8191,538.1853,117.0466,541.2224,126.7,539.27" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[46a2fed7010a998cf677797a483e92c5]
+link ad to UC8--><g id="link_ad_UC8"><path d="M37.24,556.08 C41.81,566.71 48.2,577.38 57,585 C72.41,598.35 92.61,606.62 112.15,611.74 " fill="none" id="ad-to-UC8" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="117.1,612.98,109.3389,606.9166,112.2493,611.7673,107.3986,614.6777,117.1,612.98" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[95a1ca5f4b72cf115fa0f3400b707d49]
+link ad to UC9--><g id="link_ad_UC9"><path d="M27.43,556.25 C29.88,585.29 37.05,624.58 57,653 C76.59,680.89 109.64,701.08 136.49,713.92 " fill="none" id="ad-to-UC9" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="141.08,716.07,134.6364,708.6215,136.5549,713.9431,131.2333,715.8616,141.08,716.07" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[52d608acc25e468c1480cac0571af098]
+link ad to UC10--><g id="link_ad_UC10"><path d="M26.17,556.04 C26.46,618.09 30.6,735.35 57,766 C69.77,780.83 88.39,789.46 107.27,794.42 " fill="none" id="ad-to-UC10" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="112.6,795.72,104.8054,789.6997,107.7426,794.5342,102.9081,797.4715,112.6,795.72" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[8db4e90104465dac0bd6550155280890]
+link ad to UC11--><g id="link_ad_UC11"><path d="M27.83,556.11 C30.89,636.19 39.56,813.05 57,834 C68.84,848.22 86.01,856.88 103.78,862.1 " fill="none" id="ad-to-UC11" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="108.8,863.49,101.1712,857.261,103.9765,862.1732,99.0643,864.9786,108.8,863.49" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[2a4c2b18049ed4a6dc5e19061a2f8e27]
+link ad to UC12--><g id="link_ad_UC12"><path d="M27.08,556.16 C28.8,649.16 35.22,877.57 57,904 C69.32,918.95 87.59,927.64 106.27,932.61 " fill="none" id="ad-to-UC12" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="111.55,933.92,103.7721,927.8781,106.6959,932.7208,101.8533,935.6446,111.55,933.92" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[cd8237b90b10c8fc32db2ed4c0b2af1b]
+link UC1 to db--><g id="link_UC1_db"><path d="M248.91,108.53 C269.36,113.26 290.07,122.04 304,138 C349.56,190.2 355.06,409.11 355.54,488.28 " fill="none" id="UC1-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="355.57,493.29,359.5443,484.2786,355.5557,488.29,351.5443,484.3015,355.57,493.29" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[fe8e1e10e82425d6249fb7735345da5a]
+link UC2 to db--><g id="link_UC2_db"><path d="M243.84,174.18 C265.76,178.46 288.71,187.09 304,204 C341.54,245.49 351.93,418.33 354.62,487.85 " fill="none" id="UC2-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="354.82,493.07,358.4832,483.9277,354.6344,488.0734,350.4887,484.2247,354.82,493.07" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[d753b2e5fb9bfb01fff6c8467fee4c34]
+link UC3 to db--><g id="link_UC3_db"><path d="M248.25,243.14 C268.65,247.91 289.5,256.55 304,272 C333.16,303.07 347.86,430.28 353.15,488.13 " fill="none" id="UC3-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="353.6,493.17,356.7615,483.8424,353.1435,488.1909,348.7949,484.5728,353.6,493.17" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[dd5259b64fa0f75820647f050bd954bf]
+link UC4 to db--><g id="link_UC4_db"><path d="M215.65,319.79 C242.91,332.35 280.34,353.33 304,382 C329.89,413.37 343.64,459.15 350.25,488.51 " fill="none" id="UC4-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="351.32,493.43,353.2993,483.7821,350.249,488.5461,345.485,485.4957,351.32,493.43" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[dca0dc7d97df355e3553d480c0706225]
+link UC5 to db--><g id="link_UC5_db"><path d="M243.44,423.98 C263.96,429.02 286.11,436.85 304,449 C318.86,459.09 331.2,474.89 340.07,488.71 " fill="none" id="UC5-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="342.94,493.32,341.5768,483.5659,340.2964,489.076,334.7864,487.7957,342.94,493.32" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[240135957d8c6b643486873c5e93550a]
+link UC6 to db--><g id="link_UC6_db"><path d="M233.71,493.2 C258.28,498 287.3,503.67 310.84,508.27 " fill="none" id="UC6-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="315.78,509.24,307.7107,503.5932,310.8722,508.2841,306.1813,511.4456,315.78,509.24" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[10aefb095d76f72368f4d4d307232a10]
+link UC7 to db--><g id="link_UC7_db"><path d="M237.51,540.06 C261.25,535.42 288.53,530.09 310.87,525.72 " fill="none" id="UC7-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="315.85,524.75,306.2501,522.5496,310.9427,525.7086,307.7838,530.4012,315.85,524.75" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[519de2cb77a18778ffcf747f351626e9]
+link UC8 to db--><g id="link_UC8_db"><path d="M240.01,611.31 C261.47,606.13 285.11,597.93 304,585 C318.82,574.85 331.16,559.05 340.04,545.24 " fill="none" id="UC8-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="342.92,540.64,334.753,546.1446,340.2662,544.8776,341.5332,550.3907,342.92,540.64" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a4799336976e9658d45ba0a0736ead79]
+link UC9 to db--><g id="link_UC9_db"><path d="M217.61,715.72 C244.69,702.62 280.93,681.36 304,653 C329.83,621.25 343.6,575.17 350.22,545.64 " fill="none" id="UC9-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="351.3,540.69,345.465,548.6243,350.229,545.5739,353.2793,550.3379,351.3,540.69" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[413cf17d82051661d4ae628aeb2e37a5]
+link UC10 to db--><g id="link_UC10_db"><path d="M247.64,795.04 C268.25,790.3 289.38,781.64 304,766 C333.64,734.31 348.12,604.48 353.25,545.91 " fill="none" id="UC10-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="353.69,540.8,348.9339,549.4244,353.2618,545.7816,356.9045,550.1095,353.69,540.8" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[ad4ea9b10eec9fd35b8ad89d84d5c550]
+link UC11 to db--><g id="link_UC11_db"><path d="M251.58,862.95 C271.07,857.91 290.55,849.12 304,834 C341.73,791.56 352.02,615.96 354.65,545.98 " fill="none" id="UC11-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="354.84,540.73,350.5087,549.5753,354.6544,545.7266,358.5032,549.8723,354.84,540.73" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[62813e4f32c22a4fe825963e0ff403f0]
+link UC12 to db--><g id="link_UC12_db"><path d="M248.94,933.49 C269.39,928.76 290.09,919.98 304,904 C350.54,850.53 355.41,626.1 355.63,545.76 " fill="none" id="UC12-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="355.64,540.68,351.64,549.68,355.64,545.68,359.64,549.68,355.64,540.68" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[d8b4f05d900cc0f786b388eb83816afd]
+@startuml
+left to right direction
+
+actor "Admin" as ad
+database "Database" as db
+
+rectangle Application {
+  rectangle Client{
+    usecase "Modify a client" as UC1
+    usecase "Add a client" as UC2
+    usecase "Delete a client" as UC3
+    usecase "View a client" as UC4
+  }
+  rectangle Order{
+    usecase "Modify an order" as UC5
+    usecase "Add an order" as UC6
+    usecase "Delete an order" as UC7
+    usecase "View an order" as UC8
+  }
+  rectangle Storage{
+    usecase "Modify an article" as UC9
+    usecase "Add an article" as UC10
+    usecase "Delete an article" as UC11
+    usecase "View an article" as UC12
+  }
+}
+
+' ad - -> Client
+' ad - -> Storage
+' ad - -> Order
+
+' Client - -> db
+' Storage - -> db
+' Order - -> db
+
+ad - -> UC1
+ad - -> UC2
+ad - -> UC3
+ad - -> UC4
+ad - -> UC5
+ad - -> UC6
+ad - -> UC7
+ad - -> UC8
+ad - -> UC9
+ad - -> UC10
+ad - -> UC11
+ad - -> UC12
+
+UC1 - -> db
+UC2 - -> db
+UC3 - -> db
+UC4 - -> db
+UC5 - -> db
+UC6 - -> db
+UC7 - -> db
+UC8 - -> db
+UC9 - -> db
+UC10 - -> db
+UC11 - -> db
+UC12 - -> db
+
+@enduml
+
+@startuml
+left to right direction
+
+actor "Admin" as ad
+database "Database" as db
+
+rectangle Application {
+  rectangle Client{
+    usecase "Modify a client" as UC1
+    usecase "Add a client" as UC2
+    usecase "Delete a client" as UC3
+    usecase "View a client" as UC4
+  }
+  rectangle Order{
+    usecase "Modify an order" as UC5
+    usecase "Add an order" as UC6
+    usecase "Delete an order" as UC7
+    usecase "View an order" as UC8
+  }
+  rectangle Storage{
+    usecase "Modify an article" as UC9
+    usecase "Add an article" as UC10
+    usecase "Delete an article" as UC11
+    usecase "View an article" as UC12
+  }
+}
+
+
+
+ad - -> UC1
+ad - -> UC2
+ad - -> UC3
+ad - -> UC4
+ad - -> UC5
+ad - -> UC6
+ad - -> UC7
+ad - -> UC8
+ad - -> UC9
+ad - -> UC10
+ad - -> UC11
+ad - -> UC12
+
+UC1 - -> db
+UC2 - -> db
+UC3 - -> db
+UC4 - -> db
+UC5 - -> db
+UC6 - -> db
+UC7 - -> db
+UC8 - -> db
+UC9 - -> db
+UC10 - -> db
+UC11 - -> db
+UC12 - -> db
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: fr
+Country: FR
+--></g></svg>

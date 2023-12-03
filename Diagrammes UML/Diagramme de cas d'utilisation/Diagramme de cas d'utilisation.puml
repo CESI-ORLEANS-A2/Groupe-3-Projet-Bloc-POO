@@ -1,28 +1,62 @@
 @startuml
 left to right direction
+
 actor "Admin" as ad
+database "Database" as db
+
 rectangle Application {
-rectangle Client{
-  usecase "Modify a client" as UC1
-  usecase "Add a client" as UC2
-  usecase "Delete a client" as UC3
-  usecase "View a client" as UC4
+  rectangle Client{
+    usecase "Modify a client" as UC1
+    usecase "Add a client" as UC2
+    usecase "Delete a client" as UC3
+    usecase "View a client" as UC4
   }
   rectangle Order{
-  usecase "Modify an order" as UC5
-  usecase "Add an order" as UC6
-  usecase "Delete an order" as UC7
-  usecase "View an order" as UC8
+    usecase "Modify an order" as UC5
+    usecase "Add an order" as UC6
+    usecase "Delete an order" as UC7
+    usecase "View an order" as UC8
   }
   rectangle Storage{
-  usecase "Modify an article" as UC9
-  usecase "Add an article" as UC10
-  usecase "Delete an article" as UC11
-  usecase "View an article" as UC12
+    usecase "Modify an article" as UC9
+    usecase "Add an article" as UC10
+    usecase "Delete an article" as UC11
+    usecase "View an article" as UC12
   }
 }
 
-ad --> Client
-ad --> Storage
-ad --> Order
+' ad --> Client
+' ad --> Storage
+' ad --> Order
+
+' Client --> db
+' Storage --> db
+' Order --> db
+
+ad --> UC1
+ad --> UC2
+ad --> UC3
+ad --> UC4
+ad --> UC5
+ad --> UC6
+ad --> UC7
+ad --> UC8
+ad --> UC9
+ad --> UC10
+ad --> UC11
+ad --> UC12
+
+UC1 --> db
+UC2 --> db
+UC3 --> db
+UC4 --> db
+UC5 --> db
+UC6 --> db
+UC7 --> db
+UC8 --> db
+UC9 --> db
+UC10 --> db
+UC11 --> db
+UC12 --> db
+
 @enduml
