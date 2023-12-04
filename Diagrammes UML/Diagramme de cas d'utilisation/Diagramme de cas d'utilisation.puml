@@ -2,6 +2,9 @@
 left to right direction
 
 actor "Admin" as ad
+actor "Storage Employee" as Es
+actor "Order Employee" as Eo
+actor "Client Employee" as Ec
 database "Database" as db
 
 rectangle Application {
@@ -33,18 +36,27 @@ rectangle Application {
 ' Storage --> db
 ' Order --> db
 
-ad --> UC1
-ad --> UC2
-ad --> UC3
-ad --> UC4
-ad --> UC5
-ad --> UC6
-ad --> UC7
-ad --> UC8
-ad --> UC9
-ad --> UC10
-ad --> UC11
-ad --> UC12
+Ec --> UC1
+Ec --> UC2
+Ec --> UC3
+Ec --> UC4
+Ec --> UC8
+
+Es --> UC9
+Es --> UC10
+Es --> UC11
+Es --> UC12
+Es --> UC8
+
+Eo --> UC4
+Eo --> UC5
+Eo --> UC6
+Eo --> UC7
+Eo --> UC8
+Eo --> UC12
+
+
+
 
 UC1 --> db
 UC2 --> db
@@ -59,4 +71,7 @@ UC10 --> db
 UC11 --> db
 UC12 --> db
 
+ad --|>Es
+ad --|>Ec
+ad --|>Eo
 @enduml
