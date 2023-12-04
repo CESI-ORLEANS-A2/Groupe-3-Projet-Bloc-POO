@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1001px" preserveAspectRatio="none" style="width:590px;height:1001px;background:#FFFFFF;" version="1.1" viewBox="0 0 590 1001" width="590px" zoomAndPan="magnify"><defs/><g><!--MD5=[d64883541e3d62e3241c4d12decf100d]
+cluster Application--><g id="cluster_Application"><rect fill="none" height="988" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="231" x="241" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="78" x="317.5" y="23.5332">Application</text></g><!--MD5=[406b65fecc21e832f7a9b6ebadc6dce1]
+cluster Client--><g id="cluster_Client"><rect fill="none" height="287" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="174" x="269.5" y="684"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="41" x="336" y="700.5332">Client</text></g><!--MD5=[4523f918a499262345e8d765b0fe948b]
+cluster Order--><g id="cluster_Order"><rect fill="none" height="291" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="180" x="266.5" y="369"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="41" x="336" y="385.5332">Order</text></g><!--MD5=[562ed55e840afc79d9783beef242227d]
+cluster Storage--><g id="cluster_Storage"><rect fill="none" height="294" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="183" x="265" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="55" x="329" y="67.5332">Storage</text></g><g id="elem_UC1"><ellipse cx="356.3567" cy="938.0713" fill="#F1F1F1" rx="70.8567" ry="16.5713" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="308.3567" y="942.5879">Modify a client</text></g><g id="elem_UC2"><ellipse cx="356.602" cy="803.1136" fill="#F1F1F1" rx="64.602" ry="15.6136" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="316.602" y="807.6302">Add a client</text></g><g id="elem_UC3"><ellipse cx="356.3567" cy="870.0713" fill="#F1F1F1" rx="70.8567" ry="16.5713" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="308.3567" y="874.5879">Delete a client</text></g><g id="elem_UC4"><ellipse cx="356.2537" cy="735.7507" fill="#F1F1F1" rx="66.7537" ry="15.7507" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="314.2537" y="740.2673">View a client</text></g><g id="elem_UC5"><ellipse cx="356.6111" cy="422.2222" fill="#F1F1F1" rx="74.1111" ry="17.2222" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="304.1111" y="426.7388">Modify an order</text></g><g id="elem_UC6"><ellipse cx="356.4277" cy="490.0855" fill="#F1F1F1" rx="68.4277" ry="16.0855" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="311.9277" y="494.6021">Add an order</text></g><g id="elem_UC7"><ellipse cx="356.6111" cy="558.2222" fill="#F1F1F1" rx="74.1111" ry="17.2222" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="304.1111" y="562.7388">Delete an order</text></g><g id="elem_UC8"><ellipse cx="356.3041" cy="626.8608" fill="#F1F1F1" rx="69.8041" ry="16.3608" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="309.8041" y="631.3774">View an order</text></g><g id="elem_UC9"><ellipse cx="356.6002" cy="243.02" fill="#F1F1F1" rx="75.6002" ry="17.52" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="302.1002" y="247.5366">Modify an article</text></g><g id="elem_UC10"><ellipse cx="356.3041" cy="103.8608" fill="#F1F1F1" rx="69.8041" ry="16.3608" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="309.8041" y="108.3774">Add an article</text></g><g id="elem_UC11"><ellipse cx="356.6002" cy="173.02" fill="#F1F1F1" rx="75.6002" ry="17.52" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="302.1002" y="177.5366">Delete an article</text></g><g id="elem_UC12"><ellipse cx="356.7113" cy="312.1423" fill="#F1F1F1" rx="71.2113" ry="16.6423" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="308.2113" y="316.6589">View an article</text></g><!--MD5=[a2a1127a9e0c3d5a4af797120761d109]
+entity ad--><g id="elem_ad"><ellipse cx="25.5" cy="493.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M25.5,501.5 L25.5,528.5 M12.5,509.5 L38.5,509.5 M25.5,528.5 L12.5,543.5 M25.5,528.5 L38.5,543.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="6" y="559.5332">Admin</text></g><!--MD5=[0609a1cc72d835750fd97d370c14f191]
+entity Es--><g id="elem_Es"><ellipse cx="163" cy="247.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M163,255.5 L163,282.5 M150,263.5 L176,263.5 M163,282.5 L150,297.5 M163,282.5 L176,297.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="105" y="313.5332">Storage Employee</text></g><!--MD5=[01d3a5802489db31dbc754643853babe]
+entity Eo--><g id="elem_Eo"><ellipse cx="163" cy="493.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M163,501.5 L163,528.5 M150,509.5 L176,509.5 M163,528.5 L150,543.5 M163,528.5 L176,543.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="111.5" y="559.5332">Order Employee</text></g><!--MD5=[294dede5b7d496dd48e99b538ec4b0f1]
+entity Ec--><g id="elem_Ec"><ellipse cx="163" cy="738.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M163,746.5 L163,773.5 M150,754.5 L176,754.5 M163,773.5 L150,788.5 M163,773.5 L176,788.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="112" y="804.5332">Client Employee</text></g><!--MD5=[7468467f3b6b392f1d176d828c753b77]
+entity db--><g id="elem_db"><path d="M492,510.5 C492,500.5 532.5,500.5 532.5,500.5 C532.5,500.5 573,500.5 573,510.5 L573,537.1094 C573,547.1094 532.5,547.1094 532.5,547.1094 C532.5,547.1094 492,547.1094 492,537.1094 L492,510.5 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><path d="M492,510.5 C492,520.5 532.5,520.5 532.5,520.5 C532.5,520.5 573,520.5 573,510.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="502" y="539.0332">Database</text></g><!--MD5=[f3de66d44c97d2bec34eb4717c5039fd]
+link Ec to UC1--><g id="link_Ec_UC1"><path d="M174.57,808.28 C184.72,838.65 203.02,879.53 233,904 C248.45,916.61 268.25,924.55 287.41,929.55 " fill="none" id="Ec-to-UC1" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="292.26,930.76,284.4862,924.7128,287.4068,929.5574,282.5621,932.478,292.26,930.76" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a37c632e5c466dd4b468d179c181e771]
+link Ec to UC2--><g id="link_Ec_UC2"><path d="M214.31,777.93 C240.4,782.56 272.33,788.23 299.23,793.01 " fill="none" id="Ec-to-UC2" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="304.19,793.89,296.0239,788.3841,299.2664,793.0194,294.631,796.2619,304.19,793.89" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[29efad554e0a32aea3d7dc5cde9a0b70]
+link Ec to UC3--><g id="link_Ec_UC3"><path d="M197.68,808.25 C208.12,818.49 220.25,828.69 233,836 C251.44,846.58 273.35,854.01 293.51,859.16 " fill="none" id="Ec-to-UC3" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="298.59,860.43,290.8121,854.3881,293.7359,859.2308,288.8933,862.1546,298.59,860.43" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a6fe9e4975c3aa2e8eb721f5bc50b3b1]
+link Ec to UC4--><g id="link_Ec_UC4"><path d="M214.31,760.33 C239.46,756 270.04,750.73 296.3,746.2 " fill="none" id="Ec-to-UC4" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="301.5,745.31,291.9477,742.9112,296.5739,746.1667,293.3185,750.7929,301.5,745.31" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e207382325c6a695a46a625396f62566]
+link Ec to UC8--><g id="link_Ec_UC8"><path d="M202.96,729.82 C212.47,720.96 222.85,711.85 233,704 C262.18,681.43 298.2,659.41 323.6,644.75 " fill="none" id="Ec-to-UC8" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="328.22,642.09,318.4234,643.1031,323.8841,644.5799,322.4073,650.0406,328.22,642.09" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[4a42d400de8169b02f51724a50cd99ac]
+link Es to UC9--><g id="link_Es_UC9"><path d="M221.2,267.55 C243.33,263.5 268.76,258.85 291.5,254.7 " fill="none" id="Es-to-UC9" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="296.61,253.76,287.0367,251.4467,291.6918,254.6607,288.4778,259.3159,296.61,253.76" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[7221e1df58f6a6672f889cbf171b1f54]
+link Es to UC10--><g id="link_Es_UC10"><path d="M173.69,238.89 C183.51,207.25 201.8,163.84 233,138 C248.51,125.15 268.53,117.14 287.88,112.15 " fill="none" id="Es-to-UC10" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="292.78,110.95,283.0833,109.2254,287.9259,112.1492,285.0021,116.9919,292.78,110.95" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[0c1d61e3b643b7b5cf2c7acbbb9cedbf]
+link Es to UC11--><g id="link_Es_UC11"><path d="M195.7,238.85 C206.51,227.55 219.35,216.1 233,208 C250.62,197.54 271.54,190.07 291.05,184.79 " fill="none" id="Es-to-UC11" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="295.98,183.5,286.2581,181.9236,291.1448,184.7732,288.2952,189.6599,295.98,183.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[4bdab7f1ea41a4f129772389664a43d4]
+link Es to UC12--><g id="link_Es_UC12"><path d="M221.2,288.16 C244.35,292.27 271.11,297.02 294.62,301.19 " fill="none" id="Es-to-UC12" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="299.59,302.07,291.4267,296.56,294.6668,301.197,290.0298,304.4371,299.59,302.07" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5cfa9d7c0711ce97922804e2e857af66]
+link Es to UC8--><g id="link_Es_UC8"><path d="M178.32,317.25 C191.53,355.08 210.61,414.21 221,467 C226.39,494.38 215.15,570.55 233,592 C245.78,607.36 264.8,616.24 284.06,621.29 " fill="none" id="Es-to-UC8" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="288.96,622.5,281.1862,616.4528,284.1068,621.2974,279.2621,624.218,288.96,622.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[fc6261f1ae46669f342b5c540e586896]
+link Eo to UC4--><g id="link_Eo_UC4"><path d="M177.26,563.19 C188.61,592.39 207.22,631.91 233,660 C257.08,686.23 292.23,706.78 318.7,719.86 " fill="none" id="Eo-to-UC4" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="323.21,722.06,316.862,714.5298,318.7125,719.8755,313.3668,721.7259,323.21,722.06" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[3b77e5520b10d014d546632f461d0bf4]
+link Eo to UC5--><g id="link_Eo_UC5"><path d="M196.88,484.86 C207.48,474.23 219.9,463.58 233,456 C250.79,445.71 271.84,438.41 291.43,433.28 " fill="none" id="Eo-to-UC5" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="296.38,432.02,286.6727,430.3559,291.5335,433.2495,288.6399,438.1103,296.38,432.02" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[58bc7f969a884373837772def903a792]
+link Eo to UC6--><g id="link_Eo_UC6"><path d="M214.56,515.02 C239.6,510.58 269.99,505.18 296.12,500.54 " fill="none" id="Eo-to-UC6" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="301.29,499.62,291.7298,497.2529,296.3668,500.493,293.1267,505.13,301.29,499.62" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[134812ae42f2539ac126569be2c553fa]
+link Eo to UC7--><g id="link_Eo_UC7"><path d="M214.56,532.98 C238.46,537.22 267.22,542.33 292.52,546.82 " fill="none" id="Eo-to-UC7" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="297.53,547.71,289.3639,542.2041,292.6064,546.8394,287.971,550.0819,297.53,547.71" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[d9c9a443102aa1c37e63296d390b9d3f]
+link Eo to UC8--><g id="link_Eo_UC8"><path d="M196.92,563.07 C207.52,573.7 219.93,584.37 233,592 C251.84,602.99 274.33,610.71 294.88,616.04 " fill="none" id="Eo-to-UC8" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="299.78,617.28,292.0399,611.1897,294.9335,616.0505,290.0727,618.9441,299.78,617.28" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[2eb0094d47559a3e768001f18f819021]
+link Eo to UC12--><g id="link_Eo_UC12"><path d="M177.49,484.85 C188.91,455.91 207.5,416.87 233,389 C256.89,362.9 291.57,342.21 317.94,328.88 " fill="none" id="Eo-to-UC12" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="322.43,326.64,312.5913,327.0872,317.9579,328.8761,316.169,334.2426,322.43,326.64" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[cd8237b90b10c8fc32db2ed4c0b2af1b]
+link UC1 to db--><g id="link_UC1_db"><path d="M424.92,933.47 C445.36,928.74 466.07,919.97 480,904 C525.72,851.6 531.12,631.66 531.55,552.52 " fill="none" id="UC1-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="531.58,547.51,527.5543,556.4985,531.5657,552.51,535.5543,556.5214,531.58,547.51" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[fe8e1e10e82425d6249fb7735345da5a]
+link UC2 to db--><g id="link_UC2_db"><path d="M419.16,798.98 C441.13,794.49 464.29,785.74 480,769 C509.16,737.93 523.86,610.72 529.15,552.87 " fill="none" id="UC2-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="529.6,547.83,524.7949,556.4272,529.1435,552.8091,532.7615,557.1576,529.6,547.83" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[d753b2e5fb9bfb01fff6c8467fee4c34]
+link UC3 to db--><g id="link_UC3_db"><path d="M424.65,865.23 C445.08,860.49 465.84,851.76 480,836 C517.27,794.5 527.82,622.3 530.59,553.04 " fill="none" id="UC3-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="530.79,547.84,526.4578,556.6849,530.6039,552.8365,534.4522,556.9827,530.79,547.84" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[dd5259b64fa0f75820647f050bd954bf]
+link UC4 to db--><g id="link_UC4_db"><path d="M391.67,722.23 C418.94,709.67 456.38,688.69 480,660 C506.01,628.4 519.73,582.28 526.3,552.7 " fill="none" id="UC4-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="527.37,547.74,521.5571,555.6905,526.3126,552.6269,529.3762,557.3824,527.37,547.74" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[dca0dc7d97df355e3553d480c0706225]
+link UC5 to db--><g id="link_UC5_db"><path d="M419.44,430.98 C439.96,436.02 462.11,443.85 480,456 C494.86,466.09 507.2,481.89 516.07,495.71 " fill="none" id="UC5-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="518.94,500.32,517.5768,490.5659,516.2964,496.076,510.7864,494.7957,518.94,500.32" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[240135957d8c6b643486873c5e93550a]
+link UC6 to db--><g id="link_UC6_db"><path d="M409.71,500.2 C434.28,505 463.3,510.67 486.84,515.27 " fill="none" id="UC6-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="491.78,516.24,483.7107,510.5932,486.8722,515.2841,482.1813,518.4456,491.78,516.24" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[10aefb095d76f72368f4d4d307232a10]
+link UC7 to db--><g id="link_UC7_db"><path d="M413.51,547.06 C437.25,542.42 464.53,537.09 486.87,532.72 " fill="none" id="UC7-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="491.85,531.75,482.2501,529.5496,486.9427,532.7086,483.7838,537.4012,491.85,531.75" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[519de2cb77a18778ffcf747f351626e9]
+link UC8 to db--><g id="link_UC8_db"><path d="M416.01,618.31 C437.47,613.13 461.11,604.93 480,592 C494.82,581.85 507.16,566.05 516.04,552.24 " fill="none" id="UC8-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="518.92,547.64,510.753,553.1446,516.2662,551.8776,517.5332,557.3907,518.92,547.64" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a4799336976e9658d45ba0a0736ead79]
+link UC9 to db--><g id="link_UC9_db"><path d="M427.16,249.43 C446.63,254.49 466.21,263.18 480,278 C509.21,309.4 523.93,437.61 529.19,495.46 " fill="none" id="UC9-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="529.64,500.5,532.8257,491.1806,529.1964,495.5197,524.8572,491.8904,529.64,500.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[413cf17d82051661d4ae628aeb2e37a5]
+link UC10 to db--><g id="link_UC10_db"><path d="M424.3,108.37 C444.95,113.06 465.94,121.85 480,138 C526.43,191.33 531.37,415.18 531.62,495.31 " fill="none" id="UC10-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="531.63,500.38,535.6043,491.3686,531.6157,495.38,527.6043,491.3915,531.63,500.38" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[ad4ea9b10eec9fd35b8ad89d84d5c550]
+link UC11 to db--><g id="link_UC11_db"><path d="M427.58,179.05 C447.06,184.1 466.55,192.88 480,208 C517.63,250.3 527.98,425.34 530.64,495.11 " fill="none" id="UC11-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="530.83,500.35,534.4932,491.2077,530.6444,495.3534,526.4987,491.5047,530.83,500.35" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[62813e4f32c22a4fe825963e0ff403f0]
+link UC12 to db--><g id="link_UC12_db"><path d="M392.2,326.33 C419.41,339.16 456.5,360.35 480,389 C505.79,420.44 519.57,466.2 526.21,495.54 " fill="none" id="UC12-to-db" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="527.29,500.46,529.2693,490.8121,526.219,495.5761,521.455,492.5257,527.29,500.46" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[57f040bfc3d7c8efd5f49345e44df3fb]
+link ad to Es--><g id="link_ad_Es"><path d="M45.06,490.31 C67.05,450.38 104.06,383.19 130.55,335.09 " fill="none" id="ad-to-Es" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="124.53,331.51,140.31,317.37,136.8,338.27,124.53,331.51" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[f4bcdc108936d950e925f2e2333dc8ce]
+link ad to Ec--><g id="link_ad_Ec"><path d="M45.06,557.55 C67.05,597.32 104.06,664.23 130.55,712.14 " fill="none" id="ad-to-Ec" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="136.76,708.9,140.31,729.79,124.51,715.67,136.76,708.9" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[82cd914067582461d553a040dfcd4be5]
+link ad to Eo--><g id="link_ad_Eo"><path d="M45.06,524 C57.23,524 74.01,524 91.05,524 " fill="none" id="ad-to-Eo" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="91.31,517,111.31,524,91.31,531,91.31,517" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[3702567cd9ed9d2914e2d7450323fd06]
+@startuml
+left to right direction
+
+actor "Admin" as ad
+actor "Storage Employee" as Es
+actor "Order Employee" as Eo
+actor "Client Employee" as Ec
+database "Database" as db
+
+rectangle Application {
+  rectangle Client{
+    usecase "Modify a client" as UC1
+    usecase "Add a client" as UC2
+    usecase "Delete a client" as UC3
+    usecase "View a client" as UC4
+  }
+  rectangle Order{
+    usecase "Modify an order" as UC5
+    usecase "Add an order" as UC6
+    usecase "Delete an order" as UC7
+    usecase "View an order" as UC8
+  }
+  rectangle Storage{
+    usecase "Modify an article" as UC9
+    usecase "Add an article" as UC10
+    usecase "Delete an article" as UC11
+    usecase "View an article" as UC12
+  }
+}
+
+' ad - -> Client
+' ad - -> Storage
+' ad - -> Order
+
+' Client - -> db
+' Storage - -> db
+' Order - -> db
+
+Ec - -> UC1
+Ec - -> UC2
+Ec - -> UC3
+Ec - -> UC4
+Ec - -> UC8
+
+Es - -> UC9
+Es - -> UC10
+Es - -> UC11
+Es - -> UC12
+Es - -> UC8
+
+Eo - -> UC4
+Eo - -> UC5
+Eo - -> UC6
+Eo - -> UC7
+Eo - -> UC8
+Eo - -> UC12
+
+
+
+
+UC1 - -> db
+UC2 - -> db
+UC3 - -> db
+UC4 - -> db
+UC5 - -> db
+UC6 - -> db
+UC7 - -> db
+UC8 - -> db
+UC9 - -> db
+UC10 - -> db
+UC11 - -> db
+UC12 - -> db
+
+ad - -|>Es
+ad - -|>Ec
+ad - -|>Eo
+@enduml
+
+@startuml
+left to right direction
+
+actor "Admin" as ad
+actor "Storage Employee" as Es
+actor "Order Employee" as Eo
+actor "Client Employee" as Ec
+database "Database" as db
+
+rectangle Application {
+  rectangle Client{
+    usecase "Modify a client" as UC1
+    usecase "Add a client" as UC2
+    usecase "Delete a client" as UC3
+    usecase "View a client" as UC4
+  }
+  rectangle Order{
+    usecase "Modify an order" as UC5
+    usecase "Add an order" as UC6
+    usecase "Delete an order" as UC7
+    usecase "View an order" as UC8
+  }
+  rectangle Storage{
+    usecase "Modify an article" as UC9
+    usecase "Add an article" as UC10
+    usecase "Delete an article" as UC11
+    usecase "View an article" as UC12
+  }
+}
+
+
+
+Ec - -> UC1
+Ec - -> UC2
+Ec - -> UC3
+Ec - -> UC4
+Ec - -> UC8
+
+Es - -> UC9
+Es - -> UC10
+Es - -> UC11
+Es - -> UC12
+Es - -> UC8
+
+Eo - -> UC4
+Eo - -> UC5
+Eo - -> UC6
+Eo - -> UC7
+Eo - -> UC8
+Eo - -> UC12
+
+
+
+
+UC1 - -> db
+UC2 - -> db
+UC3 - -> db
+UC4 - -> db
+UC5 - -> db
+UC6 - -> db
+UC7 - -> db
+UC8 - -> db
+UC9 - -> db
+UC10 - -> db
+UC11 - -> db
+UC12 - -> db
+
+ad - -|>Es
+ad - -|>Ec
+ad - -|>Eo
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: fr
+Country: FR
+--></g></svg>
