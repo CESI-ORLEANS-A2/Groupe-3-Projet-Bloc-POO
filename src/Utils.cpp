@@ -8,7 +8,7 @@ void Groupe3ProjetBlocPOO::openLink(String^ link, LinkLabel^ label) {
 	label->LinkVisited = true;
 }
 
-Groupe3ProjetBlocPOO::ElementsCustomization::CustomizeTextBox::CustomizeTextBox() {};
+Groupe3ProjetBlocPOO::ElementsCustomization::CustomizeTextBox::CustomizeTextBox() { };
 Groupe3ProjetBlocPOO::ElementsCustomization::CustomizeTextBox::CustomizeTextBox(TextBox^ textBox, String^ placeholder)
 {
 	this->__textBox = textBox;
