@@ -1,0 +1,70 @@
+@startuml Client
+
+participant "Formulaire" as Form
+participant "ProductService" as Service
+participant "ProductMapping" as Mapping
+participant "Database" as DB
+
+activate Form
+activate Service
+activate DB
+
+' Créer un article
+group Créer un article
+Form -> Service : createProduct(name, quantity, price...)
+Service -> Mapping : insertProduct(name, quantity, price...)
+activate Mapping
+Service <- Mapping : Request^ product
+deactivate Mapping
+Service -> DB : insertRequest(Request^ product)
+DB -> Service : int response
+Service -> Form : int response
+
+end
+
+' Modifier un article
+group Modifier un article
+
+Form -> Service : updateProduct(Datatype::Product^ product)
+Service -> Mapping : updateProduct(id, name, quantity, price...)
+activate Mapping
+Service <- Mapping : Request^ product
+deactivate Mapping
+Service -> DB : updateRequest(Request^ product)
+DB -> Service : int response
+Service -> Form : int response
+Form -> Form : updateInterface()
+
+end
+
+' Supprimer un article
+group Supprimer un article
+
+Form -> Service : deleteProduct(Datatype::Product^ product)
+Service -> Mapping : deleteProduct(id)
+activate Mapping
+Service <- Mapping : Request^ product
+deactivate Mapping
+Service -> DB : deleteRequest(Request^ product)
+DB -> Service : int response
+Service -> Form : int response
+Form -> Form : updateInterface()
+
+end
+
+' Afficher un article
+group Afficher un article
+
+Form -> Service : getProduct(id)
+Service -> Mapping : getProduct(id)
+activate Mapping
+Service <- Mapping : Request^ product
+deactivate Mapping
+Service -> DB : getRequest(Request^ product)
+DB -> Service : DataTable product
+Service -> Form : Datatype::Product^ product
+Form -> Form : updateInterface()
+
+end
+
+@enduml

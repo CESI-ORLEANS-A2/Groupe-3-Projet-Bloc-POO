@@ -1,0 +1,473 @@
+@startuml Diagramme de classe
+
+set namespaceSeparator ::
+' skinparam Linetype ortho
+
+namespace ClientManager {
+
+    class App {
+        == Public ==
+        -- Constructeurs --
+        + App()
+        == Privé ==
+        .. Handlers ..
+        # submit_Click(Object^, EventArgs^) : void // Exemple
+        .. Attributs ..
+        # __database : Components::Database^
+        # __clientService : Services::ClientsService^
+        # __stockService : Services::StocksService^
+        # __orderService : Services::OrdersService^
+    }
+    class MyForm {
+        == Public ==
+        -- Constructeurs --
+        + MyForm()
+        == Protégé ==
+        -- Méthodes --
+        # InitializeComponent() : void
+        .. Handlers ..
+        # {abstract} submit_Click(Object^, EventArgs^) : void
+        -- Attributs --
+        # button_Submit : System::Windows::Forms::Button
+    }
+
+    namespace Components {
+
+        namespace DataType {
+
+            class Client {
+                == Public ==
+                -- Constructeur --
+                + Client()
+                + Client(System::Data::DataRow^)
+                + Client(System::Windows::Forms::DataGridViewRow^)
+                -- Méthodes --
+                + id() : int
+                + firstname(System::String^) : void
+                + firstname() : System::String^
+                + lastname(System::String^) : void
+                + lastname() : System::String^
+                + phone(System::String^) : void
+                + phone() : System::String^
+                + email(System::String^) : void
+                + email() : System::String^
+                + birthdate(System::DateTime^) : void
+                + birthdate(int, int, int) : void
+                + birthdate() : System::DateTime^
+                + logo(System::String^) : void
+                + logo() : System::String^
+                + company(System::String^) : void
+                + company() : System::String^
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                -- Attributs --
+                - __id : int
+                - __firstname : System::String^
+                - __lastname : System::String^
+                - __phone : System::String^
+                - __email : System::String^
+                - __birthdate : System::DateTime^
+                - __logo : System::String^
+                - __company : System::String^
+                == Statique ==
+                -- Méthodes --
+                + toArray(System::Data::DataTable^) : array<Client^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Client^>^
+                + toDataTable(array<Client^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Client^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
+            class Address {
+                == Public ==
+                -- Constructeur --
+                + Address()
+                + Address(System::Data::DataRow^)
+                + Address(System::Windows::Forms::DataGridViewRow^)
+                -- Méthodes --
+                + id() : int
+                + number(System::String^) : void
+                + number() : System::String^
+                + street(System::String^) : void
+                + street() : System::String^
+                + city(int) : void
+                + city() : int
+                + zipCode(int) : void
+                + zipCode() : int
+                + country(int) : void
+                + country() : int
+                + clientId(int) : void
+                + clientId() : int
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                -- Attributs --
+                - __id : int
+                - __number : System::String^
+                - __street : System::String^
+                - __city : int
+                - __zipCode : int
+                - __country : int
+                - __clientId : int
+                == Statique ==
+                -- Méthodes --
+                + toArray(System::Data::DataTable^) : array<Address^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Address^>^
+                + toDataTable(array<Address^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Address^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
+            class Product {
+                == Public ==
+                -- Constructeur --
+                + Product()
+                + Product(System::Data::DataRow^)
+                + Product(System::Windows::Forms::DataGridViewRow^)
+                -- Méthodes --
+                + id() : int
+                + name(System::String^) : void
+                + name() : System::String^
+                + description(System::String^) : void
+                + description() : System::String^
+                + cost(float) : void
+                + cost() : float
+                + quantity(int) : void
+                + quantity() : int
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                -- Attributs --
+                - __id : int
+                - __name : System::String^
+                - __description : System::String^
+                - __cost : float
+                - __quantity : int
+                == Statique ==
+                -- Méthodes --
+                + toArray(System::Data::DataTable^) : array<Product^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Product^>^
+                + toDataTable(array<Product^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Product^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
+            ' class Stock {
+            '     == Public ==
+            '     -- Constructeur --
+            '     + Stock()
+            '     + Stock(System::Data::DataRow^)
+            '     + Stock(System::Windows::Forms::DataGridViewRow^)
+            '     -- Méthodes --
+            '     + id() : int
+            '     + ProductId(int) : void
+            '     + ProductId() : int
+            '     + quantity(int) : void
+            '     + quantity() : int
+
+            '     + toDataRow() : System::Data::DataRow^
+            '     + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+            '     == Privé ==
+            '     -- Attributs --
+            '     - __id : int
+            '     - __ProductId : int
+            '     - __quantity : int
+            '     == Statique ==
+            '     -- Méthodes --
+            '     + toArray(System::Data::DataTable^) : array<Stock^>^
+            '     + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Stock^>^
+            '     + toDataTable(array<Stock^>^) : System::Data::DataTable^
+            '     + toDataGridViewRowCollection(array<Stock^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            ' }
+            class Order {
+                == Public ==
+                -- Constructeur --
+                + Order()
+                + Order(System::Data::DataRow^)
+                + Order(System::Windows::Forms::DataGridViewRow^)
+                -- Méthodes --
+                + id() : int
+                + paymentDate(System::DateTime^) : void
+                + paymentDate(int) : void
+                + paymentDate() : System::DateTime^
+                + creationDate(System::DateTime^) : void
+                + creationDate(int) : void
+                + creationDate() : System::DateTime^
+                + deliveryDate(System::DateTime^) : void
+                + deliveryDate(int) : void
+                + deliveryDate() : System::DateTime^
+                + cost(float) : void
+                + cost() : float
+                + paymentMode(System::String^) : void
+                + paymentMode() : System::String^
+                + client(int) : void
+                + client() : int
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                -- Attributs --
+                - __id : int
+                - __paymentDate : System::DateTime^
+                - __creationDate : System::DateTime^
+                - __deliveryDate : System::DateTime^
+                - __cost : float
+                - __paymentMode : System::String^
+                - __client : int
+                == Statique ==
+                -- Méthodes --
+                + toArray(System::Data::DataTable^) : array<Order^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Order^>^
+                + toDataTable(array<Order^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Order^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
+
+        }
+
+        class Database {
+            == Public ==
+            -- Méthodes --
+            + runQuery(Request^) : System::Data::DataSet^
+            + runScalar(Request^) : System::Object^
+            == Privé ==
+            -- Attributs --
+            - __connection : System::Data::MySQL::MySQLConnection
+        }
+
+        namespace RequestMapping {
+
+            class ClientRequestMapping {
+                == Statique ==
+                -- Méthodes --
+                + {static} getClients() : RequestGet^
+                + {static} getClient(int) : RequestGet^
+                + {static} addClient(String^, String^, String^, String^, DateTime^, String^, String^) : RequestInsert^
+                + {static} updateClient(int, String^, String^, String^, String^, DateTime, String^, String^) : RequestUpdate^
+                + {static} deleteClient(int) : RequestDelete^
+            }
+            class AddressRequestMapping {
+                == Statique ==
+                -- Méthodes --
+                + {static} getAddresses() : RequestGet^
+                + {static} getAddresses(int) : RequestGet^
+                + {static} getAddress(int) : RequestGet^
+                + {static} addAddress(String^, String^, int, int, int, int) : RequestInsert^
+                + {static} updateAddress(int, String^, String^, int, int, int, int) : RequestUpdate^
+                + {static} deleteAddress(int) : RequestDelete^
+            }
+            class ProductRequestMapping {
+                == Statique ==
+                -- Méthodes --
+                + {static} getProducts() : RequestGet^
+                + {static} getProduct(int) : RequestGet^
+                + {static} addProduct(String^, String^, float) : RequestInsert^
+                + {static} updateProduct(int, String^, String^, float) : RequestUpdate^
+                + {static} deleteProduct(int) : RequestDelete^
+            }
+            ' class StockRequestMapping {
+            '     == Statique ==
+            '     -- Méthodes --
+            '     + {static} getStocks() : RequestGet^
+            '     + {static} getStock(int) : RequestGet^
+            '     + {static} addStock(int, int) : RequestInsert^
+            '     + {static} updateStock(int, int, int) : RequestUpdate^
+            '     + {static} deleteStock(int) : RequestDelete^
+            ' }
+            class OrderRequestMapping {
+                == Statique ==
+                -- Méthodes --
+                + {static} getOrders() : RequestGet^
+                + {static} getOrders(int) : RequestGet^
+                + {static} getOrder(int) : RequestGet^
+                + {static} addOrder(DateTime^, DateTime^, DateTime^, String^, float, int) : RequestInsert^
+                + {static} updateOrder(int, DateTime^, DateTime^, DateTime^, String^, float, int) : RequestUpdate^
+                + {static} deleteOrder(int) : RequestDelete^
+            }
+        }
+
+        class Request {
+            == Public ==
+            -- Méthodes --
+            + 
+            + SQL() : System::String^
+            == Privé ==
+            -- Attributs --
+            - __sql : System::String^
+        }
+
+        ' namespace Request {
+
+        '     class Request {
+        '         == Public ==
+        '         -- Méthodes --
+        '         + {abstract} toString() : System::String^
+        '     }
+        '     class RequestGet<extends Request> {
+        '         == Public ==
+        '         -- Méthodes --
+        '         + select(System::String^) : RequestGet^
+        '         + where(System::String^) : RequestGet^
+        '         + orderBy(System::String^) : RequestGet^
+        '         + limit(int) : RequestGet^
+
+        '         + toString() : System::String^
+        '         == Privé ==
+        '         -- Attributs --
+        '         - __selects : array<array<System::String^>^>^
+        '         - __conditions : array<System::String^>^
+        '         - __order : System::String^
+        '         - __limit : int
+        '     }
+        '     class RequestDelete<extends Request> {
+        '         == Public ==
+        '         -- Méthodes --
+        '         + from(System::String^) : RequestDelete^
+        '         + where(System::String^) : RequestDelete^
+        '         + limit(int) : RequestDelete^
+
+        '         + toString() : System::String^
+        '         == Privé ==
+        '         -- Attributs --
+        '         - __table : System::String^
+        '         - __conditions : array<System::String^>^
+        '         - __limit : int
+        '     }
+        '     class RequestInsert<extends Request> {
+        '         == Public ==
+        '         -- Méthodes --
+        '         + into(System::String^) : RequestInsert^
+        '         + value(System::String^, System::String^) : RequestInsert^
+
+        '         + toString() : System::String^
+        '         == Privé ==
+        '         -- Attributs --
+        '         - __column : System::String^
+        '         - __values : System::String^
+        '     }
+        '     class RequestUpdate<extends Request> {
+        '         == Public ==
+        '         -- Méthodes --
+        '         + into(System::String^) : RequestUpdate
+        '         + set(System::String^, System::String^) : RequestUpdate
+        '         + where(System::String^) : RequestUpdate
+        '         + limit(int) : RequestUpdate
+
+        '         + toString() : System::String^
+        '         == Privé ==
+        '         -- Attributs --
+        '         - __table : System::String^
+        '         - __sets : array<System::String^>^
+        '         - __conditions : array<System::String^>^
+        '         - __limit : int
+        '     }
+
+        '     RequestGet <|-- Request
+        '     RequestDelete <|-- Request
+        '     RequestInsert <|-- Request
+        '     RequestUpdate <|-- Request
+
+        ' }
+
+    }
+
+    namespace Services {
+
+        class ClientsService {
+            == Public ==
+            -- Constructeurs --
+            + ClientsService(Database^)
+            -- Méthodes --
+            + createClient(Client) : Client^
+            + createClient(System::String^, System::String^) : Client^
+            + updateClient(Client) : Client^
+            + deleteClient(Client) : Client^
+            + getClient(Client) : Client^
+            + getClient(int) : Client^
+            + getAllClients() : array<Client^>^
+            == Privé ==
+            -- Attributs --
+            - __database : Database^
+        }
+        class StocksService {
+            == Public ==
+            -- Constructeurs --
+            + StockServices(Database^)
+            -- Méthodes --
+            + addProduct(Product^) : Product^
+            + addProduct(System::String^, System::String^, float, int) : Product^
+            + updateProduct(Product^) : Product^
+            + updateProduct(int, System::String^, System::String^, float, int) : Product^
+            + removeProduct(Product^) : Product^
+            + removeProduct(int) : Product^
+            == Privé ==
+            -- Attributs --
+            - __database : Database^
+        }
+        class OrdersService {
+            == Public ==
+            -- Constructeurs --
+            + OrdersService(Database^)
+            -- Méthodes --
+            + addOrder(Order^) : Order^
+            + addOrder(System::DateTime^, System::DateTime^, System::DateTime^, System::String^) : Order^
+            + updateOrder(Order^) : Order^
+            + updateOrder(int, System::DateTime^, System::DateTime^, System::DateTime^, System::String^) : Order^
+            + removeOrder(Order^) : Order^
+            + removeOrder(int) : Order^
+            == Privé ==
+            -- Attributs --
+            - __database : Database^
+        }
+
+    }
+
+    App <|-- MyForm
+
+    App --o ClientManager::Services
+
+    App --o ClientManager::Components::Database
+
+    ' ========================================
+    '                DataType
+    ' ========================================
+
+    App --o ClientManager::Components::DataType
+
+    ClientManager::Services --o ClientManager::Components::DataType
+
+    ' ClientManager::Services::ClientsService -[#Red]-o ClientManager::Components::DataType::Client
+    ' ClientManager::Services::ClientsService -[#Red]-o ClientManager::Components::DataType::Address
+
+    ' ClientManager::Services::StocksService -[#Red]-o ClientManager::Components::DataType::Product
+    ' ClientManager::Services::StocksService -[#Red]-o ClientManager::Components::DataType::Stock
+
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Client
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Address
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Product
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Order
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Stock
+
+    ' ========================================
+    '              RequestMapping
+    ' ========================================
+
+    ClientManager::Services::ClientsService -[#blue]-o ClientManager::Components::RequestMapping::ClientRequestMapping
+    ClientManager::Services::ClientsService -[#blue]-o ClientManager::Components::RequestMapping::AddressRequestMapping
+
+    ClientManager::Services::StocksService -[#blue]-o ClientManager::Components::RequestMapping::ProductRequestMapping
+    ' ClientManager::Services::StocksService -[#blue]-o ClientManager::Components::RequestMapping::StockRequestMapping
+
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::ClientRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::AddressRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::ProductRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::OrderRequestMapping
+    ' ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::StockRequestMapping
+
+    ' ========================================
+    '                 Request
+    ' ========================================
+
+    ClientManager::Services --o ClientManager::Components::Request
+
+    ClientManager::Components::RequestMapping --o ClientManager::Components::Request
+}
+
+@enduml
