@@ -1,7 +1,4 @@
 #include "./ProductRequestMapping.h"
-using namespace System::Windows::Forms;
-using namespace std;
-using namespace MySql::Data::MySqlClient;
 
 
 Request^ ProductRequestMapping::getProducts(int rows) {
