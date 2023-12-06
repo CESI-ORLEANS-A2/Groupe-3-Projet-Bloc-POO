@@ -16,7 +16,7 @@ App::App() {
 
 void App::InitializeComponent() {
 	// TODO ajoutez la fenêtre de connexion
-	// 
+	// 	
 
 	// On rappelle le constructeur de la classe mère
 	__super::InitializeComponent();
