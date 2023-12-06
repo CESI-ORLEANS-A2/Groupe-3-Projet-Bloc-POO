@@ -11,6 +11,7 @@ namespace Groupe3ProjetBlocPOO {
 	namespace Components {
 		namespace Mapping {
 			class ClientRequestMapping {
+			public:
 				static Request^ getClients();
 				static Request^ getClients(int limit);
 				static Request^ getClients(int limit, int offset);

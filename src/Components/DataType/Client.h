@@ -17,6 +17,7 @@ namespace Groupe3ProjetBlocPOO {
 
 			public:
 				Client();
+				Client(int id);
 				Client(DataRow^);
 				Client(DataGridViewRow^);
 

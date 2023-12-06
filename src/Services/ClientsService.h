@@ -1,32 +1,34 @@
 #pragma once
 
 #include "../Components/Database.h"
+#include "../Components/Mapping/ClientRequestMapping.h"
 #include "../Components/DataType/Client.h"
 #include "../Components/DataType/Address.h"
 
 using namespace Groupe3ProjetBlocPOO::Components;
 using namespace Groupe3ProjetBlocPOO::Components::DataType;
+using namespace Groupe3ProjetBlocPOO::Components::Mapping;
 
 namespace Groupe3ProjetBlocPOO {
 	namespace Services {
 		public ref class ClientService {
 		public:
-			ClientService(Components::Database^ database);
+			ClientService(Database^ database);
 
-			Components::DataType::Client^ createClient(Components::DataType::Client^ client);
-			Components::DataType::Client^ createClient(String^ firstname, String^ lastname, String^ phone, String^ email, DateTime^ birthdate, String^ logo, String^ company);
-			Components::DataType::Client^ updateClient(Components::DataType::Client^ client);
-			Components::DataType::Client^ updateClient(int id, String^ firstname, String^ lastname, String^ phone, String^ email, DateTime^ birthdate, String^ logo, String^ company);
-			Components::DataType::Client^ deleteClient(Components::DataType::Client^ client);
-			Components::DataType::Client^ deleteClient(int id);
-			Components::DataType::Client^ getClient(int id);
-			Components::DataType::Client^ getClient(Components::DataType::Client^ client);
+			Client^ createClient(Client^ client);
+			Client^ createClient(String^ firstname, String^ lastname, String^ phone, String^ email, DateTime^ birthdate, String^ logo, String^ company);
+			Client^ updateClient(Client^ client);
+			Client^ updateClient(int id, String^ firstname, String^ lastname, String^ phone, String^ email, DateTime^ birthdate, String^ logo, String^ company);
+			Client^ deleteClient(Client^ client);
+			Client^ deleteClient(int id);
+			Client^ getClient(int id);
+			Client^ getClient(Client^ client);
 			array<Client^>^ getClients();
 			array<Client^>^ getClients(int limit);
 			array<Client^>^ getClients(int limit, int offset);
 
 		private:
-			Components::Database^ __database;
+			Database^ __database;
 		};
 	}
 }

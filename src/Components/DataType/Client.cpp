@@ -52,6 +52,9 @@ DataGridView^ dataGridView = gcnew DataGridView();
 Groupe3ProjetBlocPOO::Components::DataType::Client::Client() {
 	this->__id = -1;
 }
+Groupe3ProjetBlocPOO::Components::DataType::Client::Client(int id) {
+	this->__id = id;
+}
 Groupe3ProjetBlocPOO::Components::DataType::Client::Client(DataRow^ row) {
 	this->__id = Convert::ToInt32(row->ItemArray[0]);
 	this->__firstname = Convert::ToString(row->ItemArray[1]);

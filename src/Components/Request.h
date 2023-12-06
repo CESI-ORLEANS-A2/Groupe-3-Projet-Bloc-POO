@@ -5,7 +5,7 @@ using namespace MySql::Data::MySqlClient;
 
 namespace Groupe3ProjetBlocPOO {
 	namespace Components {
-		ref class Request {
+		public ref class Request {
 		public:
 			Request(String^ sql);
 			Request(MySqlCommand^ cmd);
