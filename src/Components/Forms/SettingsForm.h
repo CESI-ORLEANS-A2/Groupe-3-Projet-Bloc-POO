@@ -1,6 +1,6 @@
 #pragma once
 
-//#include "../Database.h"
+#include "../Database.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -12,7 +12,6 @@ using namespace System::Text::RegularExpressions;
 using namespace System::Configuration;
 
 namespace Groupe3ProjetBlocPOO {
-
 	/// <summary>
 	/// Summary for SettingsForm
 	/// </summary>
@@ -60,6 +59,7 @@ namespace Groupe3ProjetBlocPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+
 			int winHeight = 460;
 			int winWidth = 460;
 			float textBoxFactor = 0.6;

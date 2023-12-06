@@ -73,7 +73,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -81,7 +83,12 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>WinMain</EntryPointSymbol>
     </Link>
+    <PostBuildEvent>
+      <Command>copy app.config "$(TargetPath).config"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -111,9 +118,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.2.0\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -126,7 +138,15 @@
     <ClCompile Include="src\Components\Forms\MainForm.cpp" />
     <ClCompile Include="src\Components\Forms\SettingsForm.cpp" />
     <ClCompile Include="src\Components\Forms\StartForm.cpp" />
+    <ClCompile Include="src\Components\Mapping\ClientRequestMapping.cpp" />
+    <ClCompile Include="src\Components\Mapping\OrderRequestMapping.cpp" />
+    <ClCompile Include="src\Components\Mapping\ProductRequestMapping.cpp" />
+    <ClCompile Include="src\Components\Request.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Services\ClientsService.cpp" />
+    <ClCompile Include="src\Services\OrdersService.cpp" />
+    <ClCompile Include="src\Services\ProductsService.cpp" />
+    <ClCompile Include="src\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Components\Database.h" />
@@ -143,10 +163,23 @@
     <ClInclude Include="src\Components\Forms\StartForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="src\Components\Mapping\ClientRequestMapping.h" />
+    <ClInclude Include="src\Components\Mapping\OrderRequestMapping.h" />
+    <ClInclude Include="src\Components\Mapping\ProductRequestMapping.h" />
+    <ClInclude Include="src\Components\Request.h" />
     <ClInclude Include="src\Main.h" />
+    <ClInclude Include="src\Services\ClientsService.h" />
+    <ClInclude Include="src\Services\OrdersService.h" />
+    <ClInclude Include="src\Services\ProductsService.h" />
+    <ClInclude Include="src\Utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <EmbeddedResource Include="src\Components\Forms\MainForm.resx">
+      <DependentUpon>src\Components\Forms\MainForm.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
