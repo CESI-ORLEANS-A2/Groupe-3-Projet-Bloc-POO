@@ -11,25 +11,34 @@ Database::Database() {
             "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
     }
 }
-
-Data::DataTable^ Database::runQuery(Request^query){
-    String^ data= query->ToString();
+Data::DataTable^ Database::runQuery(String^ query) {
     Data::DataSet^ dataset;
     MySqlDataAdapter^ adapter = gcnew MySqlDataAdapter();
-    adapter->SelectCommand = gcnew MySqlCommand(data,__connection);
-    adapter->Fill(dataset,"result");
+    adapter->SelectCommand = gcnew MySqlCommand(query, __connection);
+    adapter->Fill(dataset, "result");
     return dataset->Tables["result"];
 }
-Object^ Database::runScalar(Request^query){
-    String^ data = query->ToString();
-    MySqlCommand^ cmd = gcnew MySqlCommand(data,__connection);
-    Object^result = cmd->ExecuteScalar();
+
+Data::DataTable^ Database::runQuery(Request^query){
+    return this->runQuery(query->ToString());
+   
+}
+Object^ Database::runScalar(String^ query) {
+    MySqlCommand^ cmd = gcnew MySqlCommand(query, __connection);
+    Object^ result = cmd->ExecuteScalar();
     return result;
+}
+Object^ Database::runScalar(Request^query){
+    return this->runScalar(query->ToString());
+    
 }
 
 void Database::createTable(String^table, Dictionary<String^, String^>^ schema) {
     String^ query = "CREATE TABLE IF NOT EXIST" + table + "(";
-    for (int i; i < schema->Count; i++) {
-        query += schema[Convert::ToString(i), Convert::ToString(0)];
+    for each(KeyValuePair<String^, String^>^ kvp in schema) {
+        query += kvp->Key + "=" + kvp->Value;
+        query += ",";
      }
+    query += ")";
+    this->runScalar(query);
 }

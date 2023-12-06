@@ -12,6 +12,8 @@ public :
 	Database();
 	void createTable(String^, Dictionary<String^, String^>^schema);
 	Data::DataTable^ runQuery(Request^);
+	Data::DataTable^ runQuery(String^ query);
+	Object^ runScalar(String^ query);
 	Object^ runScalar(Request^);
 };
 

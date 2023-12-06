@@ -55,8 +55,7 @@ int Product::quantity(void) {
 }
 
 Data::DataRow^ Product::toDataRow() {
-	Data::DataRow^ row;
-	row =
+	
 }
 
 Windows::Forms::DataGridViewRow^ Product::toDataGridViewRow() {
