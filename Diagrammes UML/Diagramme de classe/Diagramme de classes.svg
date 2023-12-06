@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="2487px" preserveAspectRatio="none" style="width:4255px;height:2487px;background:#FFFFFF;" version="1.1" viewBox="0 0 4255 2487" width="4255px" zoomAndPan="magnify"><defs/><g><!--MD5=[edae2f27b33173d88ddec0fcb2eef9ed]
+cluster ClientManager--><g id="cluster_ClientManager"><path d="M8.5,6 L112.5,6 A3.75,3.75 0 0 1 115,8.5 L122,29.6094 L4238.5,29.6094 A2.5,2.5 0 0 1 4241,32.1094 L4241,2477.5 A2.5,2.5 0 0 1 4238.5,2480 L8.5,2480 A2.5,2.5 0 0 1 6,2477.5 L6,8.5 A2.5,2.5 0 0 1 8.5,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="122" y1="29.6094" y2="29.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="103" x="10" y="22.5332">ClientManager</text></g><!--MD5=[16206b02e89314548f1721a09862909c]
+cluster ClientManager::Components--><g id="cluster_ClientManager::Components"><path d="M32.5,653 L122.5,653 A3.75,3.75 0 0 1 125,655.5 L132,676.6094 L4214.5,676.6094 A2.5,2.5 0 0 1 4217,679.1094 L4217,2453.5 A2.5,2.5 0 0 1 4214.5,2456 L32.5,2456 A2.5,2.5 0 0 1 30,2453.5 L30,655.5 A2.5,2.5 0 0 1 32.5,653 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="30" x2="132" y1="676.6094" y2="676.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="89" x="34" y="669.5332">Components</text></g><!--MD5=[690dac0f207a7a13e870ad79c23cb13b]
+cluster ClientManager::Components::DataType--><g id="cluster_ClientManager::Components::DataType"><path d="M463.5,705 L528.5,705 A3.75,3.75 0 0 1 531,707.5 L538,728.6094 L1928.5,728.6094 A2.5,2.5 0 0 1 1931,731.1094 L1931,2421.5 A2.5,2.5 0 0 1 1928.5,2424 L463.5,2424 A2.5,2.5 0 0 1 461,2421.5 L461,707.5 A2.5,2.5 0 0 1 463.5,705 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="461" x2="538" y1="728.6094" y2="728.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="64" x="465" y="721.5332">DataType</text></g><!--MD5=[ff49695d9c7a6fe249adf42d03130051]
+cluster ClientManager::Components::RequestMapping--><g id="cluster_ClientManager::Components::RequestMapping"><path d="M1973.5,1010 L2094.5,1010 A3.75,3.75 0 0 1 2097,1012.5 L2104,1033.6094 L4182.5,1033.6094 A2.5,2.5 0 0 1 4185,1036.1094 L4185,1269.5 A2.5,2.5 0 0 1 4182.5,1272 L1973.5,1272 A2.5,2.5 0 0 1 1971,1269.5 L1971,1012.5 A2.5,2.5 0 0 1 1973.5,1010 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="1971" x2="2104" y1="1033.6094" y2="1033.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="120" x="1975" y="1026.5332">RequestMapping</text></g><!--MD5=[ca2ab3ebf76d5408dcb0ac4ed7b89cfe]
+cluster ClientManager::Services--><g id="cluster_ClientManager::Services"><path d="M1887.5,237 L1950.5,237 A3.75,3.75 0 0 1 1953,239.5 L1960,260.6094 L3535.5,260.6094 A2.5,2.5 0 0 1 3538,263.1094 L3538,618.5 A2.5,2.5 0 0 1 3535.5,621 L1887.5,621 A2.5,2.5 0 0 1 1885,618.5 L1885,239.5 A2.5,2.5 0 0 1 1887.5,237 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="1885" x2="1960" y1="260.6094" y2="260.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="62" x="1889" y="253.5332">Services</text></g><!--MD5=[ed9e4f81ba49ea081d8147cf67704ce3]
+class ClientManager::App--><g id="elem_ClientManager::App"><rect codeLine="7" fill="#F1F1F1" height="171.2656" id="ClientManager::App" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="277" x="311.5" y="42"/><ellipse cx="433.25" cy="58" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M436.0156,53.875 Q436.1719,53.6563 436.3594,53.5469 Q436.5469,53.4375 436.7656,53.4375 Q437.1406,53.4375 437.375,53.6953 Q437.6094,53.9531 437.6094,54.5625 L437.6094,56.0156 Q437.6094,56.625 437.375,56.8906 Q437.1406,57.1563 436.7656,57.1563 Q436.4219,57.1563 436.2188,56.9531 Q436.0156,56.7656 435.9063,56.25 Q435.8594,55.8906 435.6719,55.7031 Q435.3438,55.3281 434.7344,55.1094 Q434.125,54.8906 433.5,54.8906 Q432.7344,54.8906 432.1016,55.2188 Q431.4688,55.5469 430.9766,56.2969 Q430.4844,57.0469 430.4844,58.0781 L430.4844,59.1719 Q430.4844,60.4063 431.375,61.2266 Q432.2656,62.0469 433.8594,62.0469 Q434.7969,62.0469 435.4531,61.7969 Q435.8438,61.6406 436.2656,61.2031 Q436.5313,60.9375 436.6797,60.8594 Q436.8281,60.7813 437.0313,60.7813 Q437.3594,60.7813 437.6172,61.0391 Q437.875,61.2969 437.875,61.6406 Q437.875,61.9844 437.5313,62.3906 Q437.0313,62.9688 436.2344,63.2969 Q435.1563,63.75 433.8594,63.75 Q432.3438,63.75 431.1406,63.125 Q430.1563,62.625 429.4688,61.5547 Q428.7813,60.4844 428.7813,59.2031 L428.7813,58.0469 Q428.7813,56.7188 429.3984,55.5703 Q430.0156,54.4219 431.1094,53.8047 Q432.2031,53.1875 433.4375,53.1875 Q434.1719,53.1875 434.8203,53.3516 Q435.4688,53.5156 436.0156,53.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25" x="453.75" y="63.7285">App</text><line style="stroke:#181818;stroke-width:0.5;" x1="312.5" x2="587.5" y1="74" y2="74"/><line style="stroke:#181818;stroke-width:1.0;" x1="312.5" x2="431" y1="90.8047" y2="90.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="312.5" x2="431" y1="92.8047" y2="92.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="431" y="96.0332">Public</text><line style="stroke:#181818;stroke-width:1.0;" x1="469" x2="587.5" y1="90.8047" y2="90.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="469" x2="587.5" y1="92.8047" y2="92.8047"/><polygon fill="#FFFF44" points="322.5,131.3281,326.5,135.3281,322.5,139.3281,318.5,135.3281" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="331.5" y="140.5566">App()</text><line style="stroke:#181818;stroke-width:1.0;" x1="312.5" x2="405.5" y1="117.2188" y2="117.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="405.5" y="122.4473">Constructeurs</text><line style="stroke:#181818;stroke-width:1.0;" x1="494.5" x2="587.5" y1="117.2188" y2="117.2188"/><line style="stroke:#181818;stroke-width:1.0;" x1="312.5" x2="425" y1="156.4375" y2="156.4375"/><line style="stroke:#181818;stroke-width:1.0;" x1="312.5" x2="425" y1="158.4375" y2="158.4375"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="425" y="161.666">Protégé</text><line style="stroke:#181818;stroke-width:1.0;" x1="475" x2="587.5" y1="156.4375" y2="156.4375"/><line style="stroke:#181818;stroke-width:1.0;" x1="475" x2="587.5" y1="158.4375" y2="158.4375"/><polygon fill="#FFFF44" points="322.5,196.9609,326.5,200.9609,322.5,204.9609,318.5,200.9609" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="251" x="331.5" y="206.1895">submit_Click(Object^, EventArgs^) : void</text><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:1.0,2.0;" x1="312.5" x2="422" y1="182.8516" y2="182.8516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="422" y="188.0801">Handlers</text><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:1.0,2.0;" x1="478" x2="587.5" y1="182.8516" y2="182.8516"/></g><!--MD5=[823d2d70d432d3b3b3e99ddae00e6ad7]
+class ClientManager::MyForm--><g id="elem_ClientManager::MyForm"><rect codeLine="15" fill="#F1F1F1" height="249.7031" id="ClientManager::MyForm" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="336" x="60" y="314"/><ellipse cx="198.25" cy="330" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M201.0156,325.875 Q201.1719,325.6563 201.3594,325.5469 Q201.5469,325.4375 201.7656,325.4375 Q202.1406,325.4375 202.375,325.6953 Q202.6094,325.9531 202.6094,326.5625 L202.6094,328.0156 Q202.6094,328.625 202.375,328.8906 Q202.1406,329.1563 201.7656,329.1563 Q201.4219,329.1563 201.2188,328.9531 Q201.0156,328.7656 200.9063,328.25 Q200.8594,327.8906 200.6719,327.7031 Q200.3438,327.3281 199.7344,327.1094 Q199.125,326.8906 198.5,326.8906 Q197.7344,326.8906 197.1016,327.2188 Q196.4688,327.5469 195.9766,328.2969 Q195.4844,329.0469 195.4844,330.0781 L195.4844,331.1719 Q195.4844,332.4063 196.375,333.2266 Q197.2656,334.0469 198.8594,334.0469 Q199.7969,334.0469 200.4531,333.7969 Q200.8438,333.6406 201.2656,333.2031 Q201.5313,332.9375 201.6797,332.8594 Q201.8281,332.7813 202.0313,332.7813 Q202.3594,332.7813 202.6172,333.0391 Q202.875,333.2969 202.875,333.6406 Q202.875,333.9844 202.5313,334.3906 Q202.0313,334.9688 201.2344,335.2969 Q200.1563,335.75 198.8594,335.75 Q197.3438,335.75 196.1406,335.125 Q195.1563,334.625 194.4688,333.5547 Q193.7813,332.4844 193.7813,331.2031 L193.7813,330.0469 Q193.7813,328.7188 194.3984,327.5703 Q195.0156,326.4219 196.1094,325.8047 Q197.2031,325.1875 198.4375,325.1875 Q199.1719,325.1875 199.8203,325.3516 Q200.4688,325.5156 201.0156,325.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="218.75" y="335.7285">MyForm</text><line style="stroke:#181818;stroke-width:0.5;" x1="61" x2="395" y1="346" y2="346"/><line style="stroke:#181818;stroke-width:1.0;" x1="61" x2="209" y1="362.8047" y2="362.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="61" x2="209" y1="364.8047" y2="364.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="209" y="368.0332">Public</text><line style="stroke:#181818;stroke-width:1.0;" x1="247" x2="395" y1="362.8047" y2="362.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="247" x2="395" y1="364.8047" y2="364.8047"/><polygon fill="#FFFF44" points="71,403.3281,75,407.3281,71,411.3281,67,407.3281" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="80" y="412.5566">MyForm()</text><line style="stroke:#181818;stroke-width:1.0;" x1="61" x2="183.5" y1="389.2188" y2="389.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="183.5" y="394.4473">Constructeurs</text><line style="stroke:#181818;stroke-width:1.0;" x1="272.5" x2="395" y1="389.2188" y2="389.2188"/><line style="stroke:#181818;stroke-width:1.0;" x1="61" x2="203" y1="428.4375" y2="428.4375"/><line style="stroke:#181818;stroke-width:1.0;" x1="61" x2="203" y1="430.4375" y2="430.4375"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="203" y="433.666">Protégé</text><line style="stroke:#181818;stroke-width:1.0;" x1="253" x2="395" y1="428.4375" y2="428.4375"/><line style="stroke:#181818;stroke-width:1.0;" x1="253" x2="395" y1="430.4375" y2="430.4375"/><polygon fill="#FFFF44" points="71,468.9609,75,472.9609,71,476.9609,67,472.9609" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="80" y="478.1895">InitializeComponent() : void</text><line style="stroke:#181818;stroke-width:1.0;" x1="61" x2="197" y1="454.8516" y2="454.8516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="197" y="460.0801">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="259" x2="395" y1="454.8516" y2="454.8516"/><polygon fill="#FFFF44" points="71,508.1797,75,512.1797,71,516.1797,67,512.1797" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="254" x="80" y="517.4082">submit_Click(Object^, EventArgs^) : void</text><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:1.0,2.0;" x1="61" x2="200" y1="494.0703" y2="494.0703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="200" y="499.2988">Handlers</text><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:1.0,2.0;" x1="256" x2="395" y1="494.0703" y2="494.0703"/><polygon fill="none" points="71,547.3984,75,551.3984,71,555.3984,67,551.3984" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="310" x="80" y="556.627">button_Submit : System::Windows::Forms::Button</text><line style="stroke:#181818;stroke-width:1.0;" x1="61" x2="202" y1="533.2891" y2="533.2891"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="202" y="538.5176">Attributs</text><line style="stroke:#181818;stroke-width:1.0;" x1="254" x2="395" y1="533.2891" y2="533.2891"/></g><!--MD5=[c83409c21ac8478922af7aae3e378f11]
+class ClientManager::Components::Database--><g id="elem_ClientManager::Components::Database"><rect codeLine="219" fill="#F1F1F1" height="188.875" id="ClientManager::Components::Database" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="387" x="46.5" y="1056.5"/><ellipse cx="205.25" cy="1072.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M208.0156,1068.375 Q208.1719,1068.1563 208.3594,1068.0469 Q208.5469,1067.9375 208.7656,1067.9375 Q209.1406,1067.9375 209.375,1068.1953 Q209.6094,1068.4531 209.6094,1069.0625 L209.6094,1070.5156 Q209.6094,1071.125 209.375,1071.3906 Q209.1406,1071.6563 208.7656,1071.6563 Q208.4219,1071.6563 208.2188,1071.4531 Q208.0156,1071.2656 207.9063,1070.75 Q207.8594,1070.3906 207.6719,1070.2031 Q207.3438,1069.8281 206.7344,1069.6094 Q206.125,1069.3906 205.5,1069.3906 Q204.7344,1069.3906 204.1016,1069.7188 Q203.4688,1070.0469 202.9766,1070.7969 Q202.4844,1071.5469 202.4844,1072.5781 L202.4844,1073.6719 Q202.4844,1074.9063 203.375,1075.7266 Q204.2656,1076.5469 205.8594,1076.5469 Q206.7969,1076.5469 207.4531,1076.2969 Q207.8438,1076.1406 208.2656,1075.7031 Q208.5313,1075.4375 208.6797,1075.3594 Q208.8281,1075.2813 209.0313,1075.2813 Q209.3594,1075.2813 209.6172,1075.5391 Q209.875,1075.7969 209.875,1076.1406 Q209.875,1076.4844 209.5313,1076.8906 Q209.0313,1077.4688 208.2344,1077.7969 Q207.1563,1078.25 205.8594,1078.25 Q204.3438,1078.25 203.1406,1077.625 Q202.1563,1077.125 201.4688,1076.0547 Q200.7813,1074.9844 200.7813,1073.7031 L200.7813,1072.5469 Q200.7813,1071.2188 201.3984,1070.0703 Q202.0156,1068.9219 203.1094,1068.3047 Q204.2031,1067.6875 205.4375,1067.6875 Q206.1719,1067.6875 206.8203,1067.8516 Q207.4688,1068.0156 208.0156,1068.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="225.75" y="1078.2285">Database</text><line style="stroke:#181818;stroke-width:0.5;" x1="47.5" x2="432.5" y1="1088.5" y2="1088.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="47.5" x2="221" y1="1105.3047" y2="1105.3047"/><line style="stroke:#181818;stroke-width:1.0;" x1="47.5" x2="221" y1="1107.3047" y2="1107.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="221" y="1110.5332">Public</text><line style="stroke:#181818;stroke-width:1.0;" x1="259" x2="432.5" y1="1105.3047" y2="1105.3047"/><line style="stroke:#181818;stroke-width:1.0;" x1="259" x2="432.5" y1="1107.3047" y2="1107.3047"/><ellipse cx="57.5" cy="1150.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="288" x="66.5" y="1155.0566">runQuery(Request^) : System::Data::DataSet^</text><ellipse cx="57.5" cy="1168.4375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="241" x="66.5" y="1172.666">runScalar(Request^) : System::Object^</text><line style="stroke:#181818;stroke-width:1.0;" x1="47.5" x2="209" y1="1131.7188" y2="1131.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="209" y="1136.9473">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="271" x2="432.5" y1="1131.7188" y2="1131.7188"/><line style="stroke:#181818;stroke-width:1.0;" x1="47.5" x2="224" y1="1188.5469" y2="1188.5469"/><line style="stroke:#181818;stroke-width:1.0;" x1="47.5" x2="224" y1="1190.5469" y2="1190.5469"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="224" y="1193.7754">Privé</text><line style="stroke:#181818;stroke-width:1.0;" x1="256" x2="432.5" y1="1188.5469" y2="1188.5469"/><line style="stroke:#181818;stroke-width:1.0;" x1="256" x2="432.5" y1="1190.5469" y2="1190.5469"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="54.5" y="1231.0703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="361" x="66.5" y="1238.2988">__connection : System::Data::MySQL::MySQLConnection</text><line style="stroke:#181818;stroke-width:1.0;" x1="47.5" x2="214" y1="1214.9609" y2="1214.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="214" y="1220.1895">Attributs</text><line style="stroke:#181818;stroke-width:1.0;" x1="266" x2="432.5" y1="1214.9609" y2="1214.9609"/></g><!--MD5=[8fb5559108576dac1d9938df752e79e4]
+class ClientManager::Components::Request--><g id="elem_ClientManager::Components::Request"><rect codeLine="282" fill="#F1F1F1" height="188.875" id="ClientManager::Components::Request" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="172" x="2992" y="1912"/><ellipse cx="3047.25" cy="1928" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M3050.0156,1923.875 Q3050.1719,1923.6563 3050.3594,1923.5469 Q3050.5469,1923.4375 3050.7656,1923.4375 Q3051.1406,1923.4375 3051.375,1923.6953 Q3051.6094,1923.9531 3051.6094,1924.5625 L3051.6094,1926.0156 Q3051.6094,1926.625 3051.375,1926.8906 Q3051.1406,1927.1563 3050.7656,1927.1563 Q3050.4219,1927.1563 3050.2188,1926.9531 Q3050.0156,1926.7656 3049.9063,1926.25 Q3049.8594,1925.8906 3049.6719,1925.7031 Q3049.3438,1925.3281 3048.7344,1925.1094 Q3048.125,1924.8906 3047.5,1924.8906 Q3046.7344,1924.8906 3046.1016,1925.2188 Q3045.4688,1925.5469 3044.9766,1926.2969 Q3044.4844,1927.0469 3044.4844,1928.0781 L3044.4844,1929.1719 Q3044.4844,1930.4063 3045.375,1931.2266 Q3046.2656,1932.0469 3047.8594,1932.0469 Q3048.7969,1932.0469 3049.4531,1931.7969 Q3049.8438,1931.6406 3050.2656,1931.2031 Q3050.5313,1930.9375 3050.6797,1930.8594 Q3050.8281,1930.7813 3051.0313,1930.7813 Q3051.3594,1930.7813 3051.6172,1931.0391 Q3051.875,1931.2969 3051.875,1931.6406 Q3051.875,1931.9844 3051.5313,1932.3906 Q3051.0313,1932.9688 3050.2344,1933.2969 Q3049.1563,1933.75 3047.8594,1933.75 Q3046.3438,1933.75 3045.1406,1933.125 Q3044.1563,1932.625 3043.4688,1931.5547 Q3042.7813,1930.4844 3042.7813,1929.2031 L3042.7813,1928.0469 Q3042.7813,1926.7188 3043.3984,1925.5703 Q3044.0156,1924.4219 3045.1094,1923.8047 Q3046.2031,1923.1875 3047.4375,1923.1875 Q3048.1719,1923.1875 3048.8203,1923.3516 Q3049.4688,1923.5156 3050.0156,1923.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="3067.75" y="1933.7285">Request</text><line style="stroke:#181818;stroke-width:0.5;" x1="2993" x2="3163" y1="1944" y2="1944"/><line style="stroke:#181818;stroke-width:1.0;" x1="2993" x2="3059" y1="1960.8047" y2="1960.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="2993" x2="3059" y1="1962.8047" y2="1962.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="3059" y="1966.0332">Public</text><line style="stroke:#181818;stroke-width:1.0;" x1="3097" x2="3163" y1="1960.8047" y2="1960.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="3097" x2="3163" y1="1962.8047" y2="1962.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="3012" y="2010.5566">+</text><ellipse cx="3003" cy="2023.9375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="3012" y="2028.166">SQL() : System::String^</text><line style="stroke:#181818;stroke-width:1.0;" x1="2993" x2="3047" y1="1987.2188" y2="1987.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="3047" y="1992.4473">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="3109" x2="3163" y1="1987.2188" y2="1987.2188"/><line style="stroke:#181818;stroke-width:1.0;" x1="2993" x2="3062" y1="2044.0469" y2="2044.0469"/><line style="stroke:#181818;stroke-width:1.0;" x1="2993" x2="3062" y1="2046.0469" y2="2046.0469"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="3062" y="2049.2754">Privé</text><line style="stroke:#181818;stroke-width:1.0;" x1="3094" x2="3163" y1="2044.0469" y2="2044.0469"/><line style="stroke:#181818;stroke-width:1.0;" x1="3094" x2="3163" y1="2046.0469" y2="2046.0469"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3000" y="2086.5703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="3012" y="2093.7988">__sql : System::String^</text><line style="stroke:#181818;stroke-width:1.0;" x1="2993" x2="3052" y1="2070.4609" y2="2070.4609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="3052" y="2075.6895">Attributs</text><line style="stroke:#181818;stroke-width:1.0;" x1="3104" x2="3163" y1="2070.4609" y2="2070.4609"/></g><!--MD5=[e96e64ed43c3f13942d59949001f1bc9]
+class ClientManager::Components::DataType::Client--><g id="elem_ClientManager::Components::DataType::Client"><rect codeLine="32" fill="#F1F1F1" height="804.3984" id="ClientManager::Components::DataType::Client" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="676" x="504" y="749"/><ellipse cx="819.75" cy="765" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M822.5156,760.875 Q822.6719,760.6563 822.8594,760.5469 Q823.0469,760.4375 823.2656,760.4375 Q823.6406,760.4375 823.875,760.6953 Q824.1094,760.9531 824.1094,761.5625 L824.1094,763.0156 Q824.1094,763.625 823.875,763.8906 Q823.6406,764.1563 823.2656,764.1563 Q822.9219,764.1563 822.7188,763.9531 Q822.5156,763.7656 822.4063,763.25 Q822.3594,762.8906 822.1719,762.7031 Q821.8438,762.3281 821.2344,762.1094 Q820.625,761.8906 820,761.8906 Q819.2344,761.8906 818.6016,762.2188 Q817.9688,762.5469 817.4766,763.2969 Q816.9844,764.0469 816.9844,765.0781 L816.9844,766.1719 Q816.9844,767.4063 817.875,768.2266 Q818.7656,769.0469 820.3594,769.0469 Q821.2969,769.0469 821.9531,768.7969 Q822.3438,768.6406 822.7656,768.2031 Q823.0313,767.9375 823.1797,767.8594 Q823.3281,767.7813 823.5313,767.7813 Q823.8594,767.7813 824.1172,768.0391 Q824.375,768.2969 824.375,768.6406 Q824.375,768.9844 824.0313,769.3906 Q823.5313,769.9688 822.7344,770.2969 Q821.6563,770.75 820.3594,770.75 Q818.8438,770.75 817.6406,770.125 Q816.6563,769.625 815.9688,768.5547 Q815.2813,767.4844 815.2813,766.2031 L815.2813,765.0469 Q815.2813,763.7188 815.8984,762.5703 Q816.5156,761.4219 817.6094,760.8047 Q818.7031,760.1875 819.9375,760.1875 Q820.6719,760.1875 821.3203,760.3516 Q821.9688,760.5156 822.5156,760.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="840.25" y="770.7285">Client</text><line style="stroke:#181818;stroke-width:0.5;" x1="505" x2="1179" y1="781" y2="781"/><line style="stroke:#181818;stroke-width:1.0;" x1="505" x2="823" y1="797.8047" y2="797.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="505" x2="823" y1="799.8047" y2="799.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="823" y="803.0332">Public</text><line style="stroke:#181818;stroke-width:1.0;" x1="861" x2="1179" y1="797.8047" y2="797.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="861" x2="1179" y1="799.8047" y2="799.8047"/><ellipse cx="515" cy="843.3281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="524" y="847.5566">Client()</text><ellipse cx="515" cy="860.9375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="200" x="524" y="865.166">Client(System::Data::DataRow^)</text><ellipse cx="515" cy="878.5469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="330" x="524" y="882.7754">Client(System::Windows::Forms::DataGridViewRow^)</text><line style="stroke:#181818;stroke-width:1.0;" x1="505" x2="801" y1="824.2188" y2="824.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="801" y="829.4473">Constructeur</text><line style="stroke:#181818;stroke-width:1.0;" x1="883" x2="1179" y1="824.2188" y2="824.2188"/><ellipse cx="515" cy="917.7656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="524" y="921.9941">id() : int</text><ellipse cx="515" cy="935.375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202" x="524" y="939.6035">firstname(System::String^) : void</text><ellipse cx="515" cy="952.9844" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176" x="524" y="957.2129">firstname() : System::String^</text><ellipse cx="515" cy="970.5938" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="524" y="974.8223">lastname(System::String^) : void</text><ellipse cx="515" cy="988.2031" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="524" y="992.4316">lastname() : System::String^</text><ellipse cx="515" cy="1005.8125" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="524" y="1010.041">phone(System::String^) : void</text><ellipse cx="515" cy="1023.4219" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="158" x="524" y="1027.6504">phone() : System::String^</text><ellipse cx="515" cy="1041.0313" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="524" y="1045.2598">email(System::String^) : void</text><ellipse cx="515" cy="1058.6406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="524" y="1062.8691">email() : System::String^</text><ellipse cx="515" cy="1076.25" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224" x="524" y="1080.4785">birthdate(System::DateTime^) : void</text><ellipse cx="515" cy="1093.8594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="524" y="1098.0879">birthdate(int, int, int) : void</text><ellipse cx="515" cy="1111.4688" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="524" y="1115.6973">birthdate() : System::DateTime^</text><ellipse cx="515" cy="1129.0781" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="524" y="1133.3066">logo(System::String^) : void</text><ellipse cx="515" cy="1146.6875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="524" y="1150.916">logo() : System::String^</text><ellipse cx="515" cy="1164.2969" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="524" y="1168.5254">company(System::String^) : void</text><ellipse cx="515" cy="1181.9063" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="524" y="1186.1348">company() : System::String^</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="524" y="1203.7441"> </text><ellipse cx="515" cy="1217.125" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="245" x="524" y="1221.3535">toDataRow() : System::Data::DataRow^</text><ellipse cx="515" cy="1234.7344" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="431" x="524" y="1238.9629">toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^</text><line style="stroke:#181818;stroke-width:1.0;" x1="505" x2="811" y1="898.6563" y2="898.6563"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="811" y="903.8848">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="873" x2="1179" y1="898.6563" y2="898.6563"/><line style="stroke:#181818;stroke-width:1.0;" x1="505" x2="826" y1="1254.8438" y2="1254.8438"/><line style="stroke:#181818;stroke-width:1.0;" x1="505" x2="826" y1="1256.8438" y2="1256.8438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="826" y="1260.0723">Privé</text><line style="stroke:#181818;stroke-width:1.0;" x1="858" x2="1179" y1="1254.8438" y2="1254.8438"/><line style="stroke:#181818;stroke-width:1.0;" x1="858" x2="1179" y1="1256.8438" y2="1256.8438"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512" y="1297.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="524" y="1304.5957">__id : int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512" y="1314.9766"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="524" y="1322.2051">__firstname : System::String^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512" y="1332.5859"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="524" y="1339.8145">__lastname : System::String^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512" y="1350.1953"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="524" y="1357.4238">__phone : System::String^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512" y="1367.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="524" y="1375.0332">__email : System::String^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512" y="1385.4141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="204" x="524" y="1392.6426">__birthdate : System::DateTime^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512" y="1403.0234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="524" y="1410.252">__logo : System::String^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512" y="1420.6328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="524" y="1427.8613">__company : System::String^</text><line style="stroke:#181818;stroke-width:1.0;" x1="505" x2="816" y1="1281.2578" y2="1281.2578"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="816" y="1286.4863">Attributs</text><line style="stroke:#181818;stroke-width:1.0;" x1="868" x2="1179" y1="1281.2578" y2="1281.2578"/><line style="stroke:#181818;stroke-width:1.0;" x1="505" x2="816" y1="1443.7422" y2="1443.7422"/><line style="stroke:#181818;stroke-width:1.0;" x1="505" x2="816" y1="1445.7422" y2="1445.7422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="816" y="1448.9707">Statique</text><line style="stroke:#181818;stroke-width:1.0;" x1="868" x2="1179" y1="1443.7422" y2="1443.7422"/><line style="stroke:#181818;stroke-width:1.0;" x1="868" x2="1179" y1="1445.7422" y2="1445.7422"/><ellipse cx="515" cy="1489.2656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="326" x="524" y="1493.4941">toArray(System::Data::DataTable^) : array&lt;Client^&gt;^</text><ellipse cx="515" cy="1506.875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="509" x="524" y="1511.1035">toArray(System::Windows::Forms::DataGridViewRowCollection^) : array&lt;Client^&gt;^</text><ellipse cx="515" cy="1524.4844" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="358" x="524" y="1528.7129">toDataTable(array&lt;Client^&gt;^) : System::Data::DataTable^</text><ellipse cx="515" cy="1542.0938" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="650" x="524" y="1546.3223">toDataGridViewRowCollection(array&lt;Client^&gt;^) : System::Windows::Forms::DataGridViewRowCollection^</text><line style="stroke:#181818;stroke-width:1.0;" x1="505" x2="811" y1="1470.1563" y2="1470.1563"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="811" y="1475.3848">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="873" x2="1179" y1="1470.1563" y2="1470.1563"/></g><!--MD5=[d0779c86c1d55e2b21b6ab99e62996ea]
+class ClientManager::Components::DataType::Address--><g id="elem_ClientManager::Components::DataType::Address"><rect codeLine="75" fill="#F1F1F1" height="733.9609" id="ClientManager::Components::DataType::Address" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="692" x="1215" y="784"/><ellipse cx="1530.75" cy="800" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1533.5156,795.875 Q1533.6719,795.6563 1533.8594,795.5469 Q1534.0469,795.4375 1534.2656,795.4375 Q1534.6406,795.4375 1534.875,795.6953 Q1535.1094,795.9531 1535.1094,796.5625 L1535.1094,798.0156 Q1535.1094,798.625 1534.875,798.8906 Q1534.6406,799.1563 1534.2656,799.1563 Q1533.9219,799.1563 1533.7188,798.9531 Q1533.5156,798.7656 1533.4063,798.25 Q1533.3594,797.8906 1533.1719,797.7031 Q1532.8438,797.3281 1532.2344,797.1094 Q1531.625,796.8906 1531,796.8906 Q1530.2344,796.8906 1529.6016,797.2188 Q1528.9688,797.5469 1528.4766,798.2969 Q1527.9844,799.0469 1527.9844,800.0781 L1527.9844,801.1719 Q1527.9844,802.4063 1528.875,803.2266 Q1529.7656,804.0469 1531.3594,804.0469 Q1532.2969,804.0469 1532.9531,803.7969 Q1533.3438,803.6406 1533.7656,803.2031 Q1534.0313,802.9375 1534.1797,802.8594 Q1534.3281,802.7813 1534.5313,802.7813 Q1534.8594,802.7813 1535.1172,803.0391 Q1535.375,803.2969 1535.375,803.6406 Q1535.375,803.9844 1535.0313,804.3906 Q1534.5313,804.9688 1533.7344,805.2969 Q1532.6563,805.75 1531.3594,805.75 Q1529.8438,805.75 1528.6406,805.125 Q1527.6563,804.625 1526.9688,803.5547 Q1526.2813,802.4844 1526.2813,801.2031 L1526.2813,800.0469 Q1526.2813,798.7188 1526.8984,797.5703 Q1527.5156,796.4219 1528.6094,795.8047 Q1529.7031,795.1875 1530.9375,795.1875 Q1531.6719,795.1875 1532.3203,795.3516 Q1532.9688,795.5156 1533.5156,795.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="1551.25" y="805.7285">Address</text><line style="stroke:#181818;stroke-width:0.5;" x1="1216" x2="1906" y1="816" y2="816"/><line style="stroke:#181818;stroke-width:1.0;" x1="1216" x2="1542" y1="832.8047" y2="832.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="1216" x2="1542" y1="834.8047" y2="834.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1542" y="838.0332">Public</text><line style="stroke:#181818;stroke-width:1.0;" x1="1580" x2="1906" y1="832.8047" y2="832.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="1580" x2="1906" y1="834.8047" y2="834.8047"/><ellipse cx="1226" cy="878.3281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="1235" y="882.5566">Address()</text><ellipse cx="1226" cy="895.9375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="1235" y="900.166">Address(System::Data::DataRow^)</text><ellipse cx="1226" cy="913.5469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="346" x="1235" y="917.7754">Address(System::Windows::Forms::DataGridViewRow^)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1216" x2="1520" y1="859.2188" y2="859.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="1520" y="864.4473">Constructeur</text><line style="stroke:#181818;stroke-width:1.0;" x1="1602" x2="1906" y1="859.2188" y2="859.2188"/><ellipse cx="1226" cy="952.7656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="1235" y="956.9941">id() : int</text><ellipse cx="1226" cy="970.375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="1235" y="974.6035">number(System::String^) : void</text><ellipse cx="1226" cy="987.9844" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="1235" y="992.2129">number() : System::String^</text><ellipse cx="1226" cy="1005.5938" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="1235" y="1009.8223">street(System::String^) : void</text><ellipse cx="1226" cy="1023.2031" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="1235" y="1027.4316">street() : System::String^</text><ellipse cx="1226" cy="1040.8125" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="1235" y="1045.041">city(int) : void</text><ellipse cx="1226" cy="1058.4219" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="1235" y="1062.6504">city() : int</text><ellipse cx="1226" cy="1076.0313" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="1235" y="1080.2598">zipCode(int) : void</text><ellipse cx="1226" cy="1093.6406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="1235" y="1097.8691">zipCode() : int</text><ellipse cx="1226" cy="1111.25" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="1235" y="1115.4785">country(int) : void</text><ellipse cx="1226" cy="1128.8594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="1235" y="1133.0879">country() : int</text><ellipse cx="1226" cy="1146.4688" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="1235" y="1150.6973">clientId(int) : void</text><ellipse cx="1226" cy="1164.0781" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="1235" y="1168.3066">clientId() : int</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1235" y="1185.916"> </text><ellipse cx="1226" cy="1199.2969" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="245" x="1235" y="1203.5254">toDataRow() : System::Data::DataRow^</text><ellipse cx="1226" cy="1216.9063" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="431" x="1235" y="1221.1348">toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^</text><line style="stroke:#181818;stroke-width:1.0;" x1="1216" x2="1530" y1="933.6563" y2="933.6563"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="1530" y="938.8848">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="1592" x2="1906" y1="933.6563" y2="933.6563"/><line style="stroke:#181818;stroke-width:1.0;" x1="1216" x2="1545" y1="1237.0156" y2="1237.0156"/><line style="stroke:#181818;stroke-width:1.0;" x1="1216" x2="1545" y1="1239.0156" y2="1239.0156"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="1545" y="1242.2441">Privé</text><line style="stroke:#181818;stroke-width:1.0;" x1="1577" x2="1906" y1="1237.0156" y2="1237.0156"/><line style="stroke:#181818;stroke-width:1.0;" x1="1577" x2="1906" y1="1239.0156" y2="1239.0156"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1223" y="1279.5391"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="1235" y="1286.7676">__id : int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1223" y="1297.1484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="1235" y="1304.377">__number : System::String^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1223" y="1314.7578"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="1235" y="1321.9863">__street : System::String^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1223" y="1332.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="1235" y="1339.5957">__city : int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1223" y="1349.9766"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="1235" y="1357.2051">__zipCode : int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1223" y="1367.5859"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="1235" y="1374.8145">__country : int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1223" y="1385.1953"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="1235" y="1392.4238">__clientId : int</text><line style="stroke:#181818;stroke-width:1.0;" x1="1216" x2="1535" y1="1263.4297" y2="1263.4297"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="1535" y="1268.6582">Attributs</text><line style="stroke:#181818;stroke-width:1.0;" x1="1587" x2="1906" y1="1263.4297" y2="1263.4297"/><line style="stroke:#181818;stroke-width:1.0;" x1="1216" x2="1535" y1="1408.3047" y2="1408.3047"/><line style="stroke:#181818;stroke-width:1.0;" x1="1216" x2="1535" y1="1410.3047" y2="1410.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="1535" y="1413.5332">Statique</text><line style="stroke:#181818;stroke-width:1.0;" x1="1587" x2="1906" y1="1408.3047" y2="1408.3047"/><line style="stroke:#181818;stroke-width:1.0;" x1="1587" x2="1906" y1="1410.3047" y2="1410.3047"/><ellipse cx="1226" cy="1453.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="342" x="1235" y="1458.0566">toArray(System::Data::DataTable^) : array&lt;Address^&gt;^</text><ellipse cx="1226" cy="1471.4375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="525" x="1235" y="1475.666">toArray(System::Windows::Forms::DataGridViewRowCollection^) : array&lt;Address^&gt;^</text><ellipse cx="1226" cy="1489.0469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="374" x="1235" y="1493.2754">toDataTable(array&lt;Address^&gt;^) : System::Data::DataTable^</text><ellipse cx="1226" cy="1506.6563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="666" x="1235" y="1510.8848">toDataGridViewRowCollection(array&lt;Address^&gt;^) : System::Windows::Forms::DataGridViewRowCollection^</text><line style="stroke:#181818;stroke-width:1.0;" x1="1216" x2="1530" y1="1434.7188" y2="1434.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="1530" y="1439.9473">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="1592" x2="1906" y1="1434.7188" y2="1434.7188"/></g><!--MD5=[69753cf596fb542beedb5e1e0e104587]
+class ClientManager::Components::DataType::Product--><g id="elem_ClientManager::Components::DataType::Product"><rect codeLine="114" fill="#F1F1F1" height="628.3047" id="ClientManager::Components::DataType::Product" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="689" x="504.5" y="1692.5"/><ellipse cx="820.25" cy="1708.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M823.0156,1704.375 Q823.1719,1704.1563 823.3594,1704.0469 Q823.5469,1703.9375 823.7656,1703.9375 Q824.1406,1703.9375 824.375,1704.1953 Q824.6094,1704.4531 824.6094,1705.0625 L824.6094,1706.5156 Q824.6094,1707.125 824.375,1707.3906 Q824.1406,1707.6563 823.7656,1707.6563 Q823.4219,1707.6563 823.2188,1707.4531 Q823.0156,1707.2656 822.9063,1706.75 Q822.8594,1706.3906 822.6719,1706.2031 Q822.3438,1705.8281 821.7344,1705.6094 Q821.125,1705.3906 820.5,1705.3906 Q819.7344,1705.3906 819.1016,1705.7188 Q818.4688,1706.0469 817.9766,1706.7969 Q817.4844,1707.5469 817.4844,1708.5781 L817.4844,1709.6719 Q817.4844,1710.9063 818.375,1711.7266 Q819.2656,1712.5469 820.8594,1712.5469 Q821.7969,1712.5469 822.4531,1712.2969 Q822.8438,1712.1406 823.2656,1711.7031 Q823.5313,1711.4375 823.6797,1711.3594 Q823.8281,1711.2813 824.0313,1711.2813 Q824.3594,1711.2813 824.6172,1711.5391 Q824.875,1711.7969 824.875,1712.1406 Q824.875,1712.4844 824.5313,1712.8906 Q824.0313,1713.4688 823.2344,1713.7969 Q822.1563,1714.25 820.8594,1714.25 Q819.3438,1714.25 818.1406,1713.625 Q817.1563,1713.125 816.4688,1712.0547 Q815.7813,1710.9844 815.7813,1709.7031 L815.7813,1708.5469 Q815.7813,1707.2188 816.3984,1706.0703 Q817.0156,1704.9219 818.1094,1704.3047 Q819.2031,1703.6875 820.4375,1703.6875 Q821.1719,1703.6875 821.8203,1703.8516 Q822.4688,1704.0156 823.0156,1704.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="840.75" y="1714.2285">Product</text><line style="stroke:#181818;stroke-width:0.5;" x1="505.5" x2="1192.5" y1="1724.5" y2="1724.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="505.5" x2="830" y1="1741.3047" y2="1741.3047"/><line style="stroke:#181818;stroke-width:1.0;" x1="505.5" x2="830" y1="1743.3047" y2="1743.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="830" y="1746.5332">Public</text><line style="stroke:#181818;stroke-width:1.0;" x1="868" x2="1192.5" y1="1741.3047" y2="1741.3047"/><line style="stroke:#181818;stroke-width:1.0;" x1="868" x2="1192.5" y1="1743.3047" y2="1743.3047"/><ellipse cx="515.5" cy="1786.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="524.5" y="1791.0566">Product()</text><ellipse cx="515.5" cy="1804.4375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="213" x="524.5" y="1808.666">Product(System::Data::DataRow^)</text><ellipse cx="515.5" cy="1822.0469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="343" x="524.5" y="1826.2754">Product(System::Windows::Forms::DataGridViewRow^)</text><line style="stroke:#181818;stroke-width:1.0;" x1="505.5" x2="808" y1="1767.7188" y2="1767.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="808" y="1772.9473">Constructeur</text><line style="stroke:#181818;stroke-width:1.0;" x1="890" x2="1192.5" y1="1767.7188" y2="1767.7188"/><ellipse cx="515.5" cy="1861.2656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="524.5" y="1865.4941">id() : int</text><ellipse cx="515.5" cy="1878.875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="524.5" y="1883.1035">name(System::String^) : void</text><ellipse cx="515.5" cy="1896.4844" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="524.5" y="1900.7129">name() : System::String^</text><ellipse cx="515.5" cy="1914.0938" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="213" x="524.5" y="1918.3223">description(System::String^) : void</text><ellipse cx="515.5" cy="1931.7031" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="524.5" y="1935.9316">description() : System::String^</text><ellipse cx="515.5" cy="1949.3125" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="524.5" y="1953.541">cost(float) : void</text><ellipse cx="515.5" cy="1966.9219" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="524.5" y="1971.1504">cost() : float</text><ellipse cx="515.5" cy="1984.5313" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="524.5" y="1988.7598">quantity(int) : void</text><ellipse cx="515.5" cy="2002.1406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="524.5" y="2006.3691">quantity() : int</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="524.5" y="2023.9785"> </text><ellipse cx="515.5" cy="2037.3594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="245" x="524.5" y="2041.5879">toDataRow() : System::Data::DataRow^</text><ellipse cx="515.5" cy="2054.9688" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="431" x="524.5" y="2059.1973">toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^</text><line style="stroke:#181818;stroke-width:1.0;" x1="505.5" x2="818" y1="1842.1563" y2="1842.1563"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="818" y="1847.3848">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="880" x2="1192.5" y1="1842.1563" y2="1842.1563"/><line style="stroke:#181818;stroke-width:1.0;" x1="505.5" x2="833" y1="2075.0781" y2="2075.0781"/><line style="stroke:#181818;stroke-width:1.0;" x1="505.5" x2="833" y1="2077.0781" y2="2077.0781"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="833" y="2080.3066">Privé</text><line style="stroke:#181818;stroke-width:1.0;" x1="865" x2="1192.5" y1="2075.0781" y2="2075.0781"/><line style="stroke:#181818;stroke-width:1.0;" x1="865" x2="1192.5" y1="2077.0781" y2="2077.0781"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512.5" y="2117.6016"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="524.5" y="2124.8301">__id : int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512.5" y="2135.2109"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="524.5" y="2142.4395">__name : System::String^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512.5" y="2152.8203"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="193" x="524.5" y="2160.0488">__description : System::String^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512.5" y="2170.4297"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="524.5" y="2177.6582">__cost : float</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="512.5" y="2188.0391"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="524.5" y="2195.2676">__quantity : int</text><line style="stroke:#181818;stroke-width:1.0;" x1="505.5" x2="823" y1="2101.4922" y2="2101.4922"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="823" y="2106.7207">Attributs</text><line style="stroke:#181818;stroke-width:1.0;" x1="875" x2="1192.5" y1="2101.4922" y2="2101.4922"/><line style="stroke:#181818;stroke-width:1.0;" x1="505.5" x2="823" y1="2211.1484" y2="2211.1484"/><line style="stroke:#181818;stroke-width:1.0;" x1="505.5" x2="823" y1="2213.1484" y2="2213.1484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="823" y="2216.377">Statique</text><line style="stroke:#181818;stroke-width:1.0;" x1="875" x2="1192.5" y1="2211.1484" y2="2211.1484"/><line style="stroke:#181818;stroke-width:1.0;" x1="875" x2="1192.5" y1="2213.1484" y2="2213.1484"/><ellipse cx="515.5" cy="2256.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="339" x="524.5" y="2260.9004">toArray(System::Data::DataTable^) : array&lt;Product^&gt;^</text><ellipse cx="515.5" cy="2274.2813" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="522" x="524.5" y="2278.5098">toArray(System::Windows::Forms::DataGridViewRowCollection^) : array&lt;Product^&gt;^</text><ellipse cx="515.5" cy="2291.8906" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="371" x="524.5" y="2296.1191">toDataTable(array&lt;Product^&gt;^) : System::Data::DataTable^</text><ellipse cx="515.5" cy="2309.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="663" x="524.5" y="2313.7285">toDataGridViewRowCollection(array&lt;Product^&gt;^) : System::Windows::Forms::DataGridViewRowCollection^</text><line style="stroke:#181818;stroke-width:1.0;" x1="505.5" x2="818" y1="2237.5625" y2="2237.5625"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="818" y="2242.791">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="880" x2="1192.5" y1="2237.5625" y2="2237.5625"/></g><!--MD5=[a99683eb20320c3dc8dab2e0b29ba8bd]
+class ClientManager::Components::DataType::Order--><g id="elem_ClientManager::Components::DataType::Order"><rect codeLine="174" fill="#F1F1F1" height="786.7891" id="ClientManager::Components::DataType::Order" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="677" x="1228.5" y="1613"/><ellipse cx="1544.25" cy="1629" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1547.0156,1624.875 Q1547.1719,1624.6563 1547.3594,1624.5469 Q1547.5469,1624.4375 1547.7656,1624.4375 Q1548.1406,1624.4375 1548.375,1624.6953 Q1548.6094,1624.9531 1548.6094,1625.5625 L1548.6094,1627.0156 Q1548.6094,1627.625 1548.375,1627.8906 Q1548.1406,1628.1563 1547.7656,1628.1563 Q1547.4219,1628.1563 1547.2188,1627.9531 Q1547.0156,1627.7656 1546.9063,1627.25 Q1546.8594,1626.8906 1546.6719,1626.7031 Q1546.3438,1626.3281 1545.7344,1626.1094 Q1545.125,1625.8906 1544.5,1625.8906 Q1543.7344,1625.8906 1543.1016,1626.2188 Q1542.4688,1626.5469 1541.9766,1627.2969 Q1541.4844,1628.0469 1541.4844,1629.0781 L1541.4844,1630.1719 Q1541.4844,1631.4063 1542.375,1632.2266 Q1543.2656,1633.0469 1544.8594,1633.0469 Q1545.7969,1633.0469 1546.4531,1632.7969 Q1546.8438,1632.6406 1547.2656,1632.2031 Q1547.5313,1631.9375 1547.6797,1631.8594 Q1547.8281,1631.7813 1548.0313,1631.7813 Q1548.3594,1631.7813 1548.6172,1632.0391 Q1548.875,1632.2969 1548.875,1632.6406 Q1548.875,1632.9844 1548.5313,1633.3906 Q1548.0313,1633.9688 1547.2344,1634.2969 Q1546.1563,1634.75 1544.8594,1634.75 Q1543.3438,1634.75 1542.1406,1634.125 Q1541.1563,1633.625 1540.4688,1632.5547 Q1539.7813,1631.4844 1539.7813,1630.2031 L1539.7813,1629.0469 Q1539.7813,1627.7188 1540.3984,1626.5703 Q1541.0156,1625.4219 1542.1094,1624.8047 Q1543.2031,1624.1875 1544.4375,1624.1875 Q1545.1719,1624.1875 1545.8203,1624.3516 Q1546.4688,1624.5156 1547.0156,1624.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="1564.75" y="1634.7285">Order</text><line style="stroke:#181818;stroke-width:0.5;" x1="1229.5" x2="1904.5" y1="1645" y2="1645"/><line style="stroke:#181818;stroke-width:1.0;" x1="1229.5" x2="1548" y1="1661.8047" y2="1661.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="1229.5" x2="1548" y1="1663.8047" y2="1663.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1548" y="1667.0332">Public</text><line style="stroke:#181818;stroke-width:1.0;" x1="1586" x2="1904.5" y1="1661.8047" y2="1661.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="1586" x2="1904.5" y1="1663.8047" y2="1663.8047"/><ellipse cx="1239.5" cy="1707.3281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="1248.5" y="1711.5566">Order()</text><ellipse cx="1239.5" cy="1724.9375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="1248.5" y="1729.166">Order(System::Data::DataRow^)</text><ellipse cx="1239.5" cy="1742.5469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="331" x="1248.5" y="1746.7754">Order(System::Windows::Forms::DataGridViewRow^)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1229.5" x2="1526" y1="1688.2188" y2="1688.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="1526" y="1693.4473">Constructeur</text><line style="stroke:#181818;stroke-width:1.0;" x1="1608" x2="1904.5" y1="1688.2188" y2="1688.2188"/><ellipse cx="1239.5" cy="1781.7656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="1248.5" y="1785.9941">id() : int</text><ellipse cx="1239.5" cy="1799.375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="252" x="1248.5" y="1803.6035">paymentDate(System::DateTime^) : void</text><ellipse cx="1239.5" cy="1816.9844" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="1248.5" y="1821.2129">paymentDate(int) : void</text><ellipse cx="1239.5" cy="1834.5938" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="1248.5" y="1838.8223">paymentDate() : System::DateTime^</text><ellipse cx="1239.5" cy="1852.2031" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="249" x="1248.5" y="1856.4316">creationDate(System::DateTime^) : void</text><ellipse cx="1239.5" cy="1869.8125" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="1248.5" y="1874.041">creationDate(int) : void</text><ellipse cx="1239.5" cy="1887.4219" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="223" x="1248.5" y="1891.6504">creationDate() : System::DateTime^</text><ellipse cx="1239.5" cy="1905.0313" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="247" x="1248.5" y="1909.2598">deliveryDate(System::DateTime^) : void</text><ellipse cx="1239.5" cy="1922.6406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="1248.5" y="1926.8691">deliveryDate(int) : void</text><ellipse cx="1239.5" cy="1940.25" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="221" x="1248.5" y="1944.4785">deliveryDate() : System::DateTime^</text><ellipse cx="1239.5" cy="1957.8594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="1248.5" y="1962.0879">cost(float) : void</text><ellipse cx="1239.5" cy="1975.4688" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="1248.5" y="1979.6973">cost() : float</text><ellipse cx="1239.5" cy="1993.0781" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="233" x="1248.5" y="1997.3066">paymentMode(System::String^) : void</text><ellipse cx="1239.5" cy="2010.6875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="1248.5" y="2014.916">paymentMode() : System::String^</text><ellipse cx="1239.5" cy="2028.2969" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="1248.5" y="2032.5254">client(int) : void</text><ellipse cx="1239.5" cy="2045.9063" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="1248.5" y="2050.1348">client() : int</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1248.5" y="2067.7441"> </text><ellipse cx="1239.5" cy="2081.125" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="245" x="1248.5" y="2085.3535">toDataRow() : System::Data::DataRow^</text><ellipse cx="1239.5" cy="2098.7344" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="431" x="1248.5" y="2102.9629">toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^</text><line style="stroke:#181818;stroke-width:1.0;" x1="1229.5" x2="1536" y1="1762.6563" y2="1762.6563"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="1536" y="1767.8848">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="1598" x2="1904.5" y1="1762.6563" y2="1762.6563"/><line style="stroke:#181818;stroke-width:1.0;" x1="1229.5" x2="1551" y1="2118.8438" y2="2118.8438"/><line style="stroke:#181818;stroke-width:1.0;" x1="1229.5" x2="1551" y1="2120.8438" y2="2120.8438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="1551" y="2124.0723">Privé</text><line style="stroke:#181818;stroke-width:1.0;" x1="1583" x2="1904.5" y1="2118.8438" y2="2118.8438"/><line style="stroke:#181818;stroke-width:1.0;" x1="1583" x2="1904.5" y1="2120.8438" y2="2120.8438"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1236.5" y="2161.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="1248.5" y="2168.5957">__id : int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1236.5" y="2178.9766"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="232" x="1248.5" y="2186.2051">__paymentDate : System::DateTime^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1236.5" y="2196.5859"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="1248.5" y="2203.8145">__creationDate : System::DateTime^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1236.5" y="2214.1953"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="227" x="1248.5" y="2221.4238">__deliveryDate : System::DateTime^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1236.5" y="2231.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="1248.5" y="2239.0332">__cost : float</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1236.5" y="2249.4141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="213" x="1248.5" y="2256.6426">__paymentMode : System::String^</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1236.5" y="2267.0234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="1248.5" y="2274.252">__client : int</text><line style="stroke:#181818;stroke-width:1.0;" x1="1229.5" x2="1541" y1="2145.2578" y2="2145.2578"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="1541" y="2150.4863">Attributs</text><line style="stroke:#181818;stroke-width:1.0;" x1="1593" x2="1904.5" y1="2145.2578" y2="2145.2578"/><line style="stroke:#181818;stroke-width:1.0;" x1="1229.5" x2="1541" y1="2290.1328" y2="2290.1328"/><line style="stroke:#181818;stroke-width:1.0;" x1="1229.5" x2="1541" y1="2292.1328" y2="2292.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="1541" y="2295.3613">Statique</text><line style="stroke:#181818;stroke-width:1.0;" x1="1593" x2="1904.5" y1="2290.1328" y2="2290.1328"/><line style="stroke:#181818;stroke-width:1.0;" x1="1593" x2="1904.5" y1="2292.1328" y2="2292.1328"/><ellipse cx="1239.5" cy="2335.6563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="327" x="1248.5" y="2339.8848">toArray(System::Data::DataTable^) : array&lt;Order^&gt;^</text><ellipse cx="1239.5" cy="2353.2656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="510" x="1248.5" y="2357.4941">toArray(System::Windows::Forms::DataGridViewRowCollection^) : array&lt;Order^&gt;^</text><ellipse cx="1239.5" cy="2370.875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="359" x="1248.5" y="2375.1035">toDataTable(array&lt;Order^&gt;^) : System::Data::DataTable^</text><ellipse cx="1239.5" cy="2388.4844" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="651" x="1248.5" y="2392.7129">toDataGridViewRowCollection(array&lt;Order^&gt;^) : System::Windows::Forms::DataGridViewRowCollection^</text><line style="stroke:#181818;stroke-width:1.0;" x1="1229.5" x2="1536" y1="2316.5469" y2="2316.5469"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="1536" y="2321.7754">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="1598" x2="1904.5" y1="2316.5469" y2="2316.5469"/></g><!--MD5=[0f02d5043db039c9cce3c1e1dce08064]
+class ClientManager::Components::RequestMapping::ClientRequestMapping--><g id="elem_ClientManager::Components::RequestMapping::ClientRequestMapping"><rect codeLine="233" fill="#F1F1F1" height="176.0703" id="ClientManager::Components::RequestMapping::ClientRequestMapping" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="615" x="3545.5" y="1063"/><ellipse cx="3777.25" cy="1079" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M3780.0156,1074.875 Q3780.1719,1074.6563 3780.3594,1074.5469 Q3780.5469,1074.4375 3780.7656,1074.4375 Q3781.1406,1074.4375 3781.375,1074.6953 Q3781.6094,1074.9531 3781.6094,1075.5625 L3781.6094,1077.0156 Q3781.6094,1077.625 3781.375,1077.8906 Q3781.1406,1078.1563 3780.7656,1078.1563 Q3780.4219,1078.1563 3780.2188,1077.9531 Q3780.0156,1077.7656 3779.9063,1077.25 Q3779.8594,1076.8906 3779.6719,1076.7031 Q3779.3438,1076.3281 3778.7344,1076.1094 Q3778.125,1075.8906 3777.5,1075.8906 Q3776.7344,1075.8906 3776.1016,1076.2188 Q3775.4688,1076.5469 3774.9766,1077.2969 Q3774.4844,1078.0469 3774.4844,1079.0781 L3774.4844,1080.1719 Q3774.4844,1081.4063 3775.375,1082.2266 Q3776.2656,1083.0469 3777.8594,1083.0469 Q3778.7969,1083.0469 3779.4531,1082.7969 Q3779.8438,1082.6406 3780.2656,1082.2031 Q3780.5313,1081.9375 3780.6797,1081.8594 Q3780.8281,1081.7813 3781.0313,1081.7813 Q3781.3594,1081.7813 3781.6172,1082.0391 Q3781.875,1082.2969 3781.875,1082.6406 Q3781.875,1082.9844 3781.5313,1083.3906 Q3781.0313,1083.9688 3780.2344,1084.2969 Q3779.1563,1084.75 3777.8594,1084.75 Q3776.3438,1084.75 3775.1406,1084.125 Q3774.1563,1083.625 3773.4688,1082.5547 Q3772.7813,1081.4844 3772.7813,1080.2031 L3772.7813,1079.0469 Q3772.7813,1077.7188 3773.3984,1076.5703 Q3774.0156,1075.4219 3775.1094,1074.8047 Q3776.2031,1074.1875 3777.4375,1074.1875 Q3778.1719,1074.1875 3778.8203,1074.3516 Q3779.4688,1074.5156 3780.0156,1074.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="3797.75" y="1084.7285">ClientRequestMapping</text><line style="stroke:#181818;stroke-width:0.5;" x1="3546.5" x2="4159.5" y1="1095" y2="1095"/><line style="stroke:#181818;stroke-width:1.0;" x1="3546.5" x2="3827" y1="1111.8047" y2="1111.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="3546.5" x2="3827" y1="1113.8047" y2="1113.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="3827" y="1117.0332">Statique</text><line style="stroke:#181818;stroke-width:1.0;" x1="3879" x2="4159.5" y1="1111.8047" y2="1111.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="3879" x2="4159.5" y1="1113.8047" y2="1113.8047"/><ellipse cx="3556.5" cy="1157.3281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="166" x="3565.5" y="1161.5566">getClients() : RequestGet^</text><ellipse cx="3556.5" cy="1174.9375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="174" x="3565.5" y="1179.166">getClient(int) : RequestGet^</text><ellipse cx="3556.5" cy="1192.5469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="541" x="3565.5" y="1196.7754">addClient(String^, String^, String^, String^, DateTime^, String^, String^) : RequestInsert^</text><ellipse cx="3556.5" cy="1210.1563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="589" x="3565.5" y="1214.3848">updateClient(int, String^, String^, String^, String^, DateTime, String^, String^) : RequestUpdate^</text><ellipse cx="3556.5" cy="1227.7656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="211" x="3565.5" y="1231.9941">deleteClient(int) : RequestDelete^</text><line style="stroke:#181818;stroke-width:1.0;" x1="3546.5" x2="3822" y1="1138.2188" y2="1138.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="3822" y="1143.4473">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="3884" x2="4159.5" y1="1138.2188" y2="1138.2188"/></g><!--MD5=[021b0e060039a5cedef51558ec9f7159]
+class ClientManager::Components::RequestMapping::AddressRequestMapping--><g id="elem_ClientManager::Components::RequestMapping::AddressRequestMapping"><rect codeLine="242" fill="#F1F1F1" height="193.6797" id="ClientManager::Components::RequestMapping::AddressRequestMapping" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="454" x="3056" y="1054"/><ellipse cx="3199.25" cy="1070" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M3202.0156,1065.875 Q3202.1719,1065.6563 3202.3594,1065.5469 Q3202.5469,1065.4375 3202.7656,1065.4375 Q3203.1406,1065.4375 3203.375,1065.6953 Q3203.6094,1065.9531 3203.6094,1066.5625 L3203.6094,1068.0156 Q3203.6094,1068.625 3203.375,1068.8906 Q3203.1406,1069.1563 3202.7656,1069.1563 Q3202.4219,1069.1563 3202.2188,1068.9531 Q3202.0156,1068.7656 3201.9063,1068.25 Q3201.8594,1067.8906 3201.6719,1067.7031 Q3201.3438,1067.3281 3200.7344,1067.1094 Q3200.125,1066.8906 3199.5,1066.8906 Q3198.7344,1066.8906 3198.1016,1067.2188 Q3197.4688,1067.5469 3196.9766,1068.2969 Q3196.4844,1069.0469 3196.4844,1070.0781 L3196.4844,1071.1719 Q3196.4844,1072.4063 3197.375,1073.2266 Q3198.2656,1074.0469 3199.8594,1074.0469 Q3200.7969,1074.0469 3201.4531,1073.7969 Q3201.8438,1073.6406 3202.2656,1073.2031 Q3202.5313,1072.9375 3202.6797,1072.8594 Q3202.8281,1072.7813 3203.0313,1072.7813 Q3203.3594,1072.7813 3203.6172,1073.0391 Q3203.875,1073.2969 3203.875,1073.6406 Q3203.875,1073.9844 3203.5313,1074.3906 Q3203.0313,1074.9688 3202.2344,1075.2969 Q3201.1563,1075.75 3199.8594,1075.75 Q3198.3438,1075.75 3197.1406,1075.125 Q3196.1563,1074.625 3195.4688,1073.5547 Q3194.7813,1072.4844 3194.7813,1071.2031 L3194.7813,1070.0469 Q3194.7813,1068.7188 3195.3984,1067.5703 Q3196.0156,1066.4219 3197.1094,1065.8047 Q3198.2031,1065.1875 3199.4375,1065.1875 Q3200.1719,1065.1875 3200.8203,1065.3516 Q3201.4688,1065.5156 3202.0156,1065.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="3219.75" y="1075.7285">AddressRequestMapping</text><line style="stroke:#181818;stroke-width:0.5;" x1="3057" x2="3509" y1="1086" y2="1086"/><line style="stroke:#181818;stroke-width:1.0;" x1="3057" x2="3257" y1="1102.8047" y2="1102.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="3057" x2="3257" y1="1104.8047" y2="1104.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="3257" y="1108.0332">Statique</text><line style="stroke:#181818;stroke-width:1.0;" x1="3309" x2="3509" y1="1102.8047" y2="1102.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="3309" x2="3509" y1="1104.8047" y2="1104.8047"/><ellipse cx="3067" cy="1148.3281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="190" x="3076" y="1152.5566">getAddresses() : RequestGet^</text><ellipse cx="3067" cy="1165.9375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="205" x="3076" y="1170.166">getAddresses(int) : RequestGet^</text><ellipse cx="3067" cy="1183.5469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="190" x="3076" y="1187.7754">getAddress(int) : RequestGet^</text><ellipse cx="3067" cy="1201.1563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="375" x="3076" y="1205.3848">addAddress(String^, String^, int, int, int, int) : RequestInsert^</text><ellipse cx="3067" cy="1218.7656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="428" x="3076" y="1222.9941">updateAddress(int, String^, String^, int, int, int, int) : RequestUpdate^</text><ellipse cx="3067" cy="1236.375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="227" x="3076" y="1240.6035">deleteAddress(int) : RequestDelete^</text><line style="stroke:#181818;stroke-width:1.0;" x1="3057" x2="3252" y1="1129.2188" y2="1129.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="3252" y="1134.4473">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="3314" x2="3509" y1="1129.2188" y2="1129.2188"/></g><!--MD5=[3130326b01dfc28dba07dfd9158065b4]
+class ClientManager::Components::RequestMapping::ProductRequestMapping--><g id="elem_ClientManager::Components::RequestMapping::ProductRequestMapping"><rect codeLine="252" fill="#F1F1F1" height="176.0703" id="ClientManager::Components::RequestMapping::ProductRequestMapping" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="394" x="2014" y="1063"/><ellipse cx="2128.75" cy="1079" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2131.5156,1074.875 Q2131.6719,1074.6563 2131.8594,1074.5469 Q2132.0469,1074.4375 2132.2656,1074.4375 Q2132.6406,1074.4375 2132.875,1074.6953 Q2133.1094,1074.9531 2133.1094,1075.5625 L2133.1094,1077.0156 Q2133.1094,1077.625 2132.875,1077.8906 Q2132.6406,1078.1563 2132.2656,1078.1563 Q2131.9219,1078.1563 2131.7188,1077.9531 Q2131.5156,1077.7656 2131.4063,1077.25 Q2131.3594,1076.8906 2131.1719,1076.7031 Q2130.8438,1076.3281 2130.2344,1076.1094 Q2129.625,1075.8906 2129,1075.8906 Q2128.2344,1075.8906 2127.6016,1076.2188 Q2126.9688,1076.5469 2126.4766,1077.2969 Q2125.9844,1078.0469 2125.9844,1079.0781 L2125.9844,1080.1719 Q2125.9844,1081.4063 2126.875,1082.2266 Q2127.7656,1083.0469 2129.3594,1083.0469 Q2130.2969,1083.0469 2130.9531,1082.7969 Q2131.3438,1082.6406 2131.7656,1082.2031 Q2132.0313,1081.9375 2132.1797,1081.8594 Q2132.3281,1081.7813 2132.5313,1081.7813 Q2132.8594,1081.7813 2133.1172,1082.0391 Q2133.375,1082.2969 2133.375,1082.6406 Q2133.375,1082.9844 2133.0313,1083.3906 Q2132.5313,1083.9688 2131.7344,1084.2969 Q2130.6563,1084.75 2129.3594,1084.75 Q2127.8438,1084.75 2126.6406,1084.125 Q2125.6563,1083.625 2124.9688,1082.5547 Q2124.2813,1081.4844 2124.2813,1080.2031 L2124.2813,1079.0469 Q2124.2813,1077.7188 2124.8984,1076.5703 Q2125.5156,1075.4219 2126.6094,1074.8047 Q2127.7031,1074.1875 2128.9375,1074.1875 Q2129.6719,1074.1875 2130.3203,1074.3516 Q2130.9688,1074.5156 2131.5156,1074.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156" x="2149.25" y="1084.7285">ProductRequestMapping</text><line style="stroke:#181818;stroke-width:0.5;" x1="2015" x2="2407" y1="1095" y2="1095"/><line style="stroke:#181818;stroke-width:1.0;" x1="2015" x2="2185" y1="1111.8047" y2="1111.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="2015" x2="2185" y1="1113.8047" y2="1113.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="2185" y="1117.0332">Statique</text><line style="stroke:#181818;stroke-width:1.0;" x1="2237" x2="2407" y1="1111.8047" y2="1111.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="2237" x2="2407" y1="1113.8047" y2="1113.8047"/><ellipse cx="2025" cy="1157.3281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="179" x="2034" y="1161.5566">getProducts() : RequestGet^</text><ellipse cx="2025" cy="1174.9375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="187" x="2034" y="1179.166">getProduct(int) : RequestGet^</text><ellipse cx="2025" cy="1192.5469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="315" x="2034" y="1196.7754">addProduct(String^, String^, float) : RequestInsert^</text><ellipse cx="2025" cy="1210.1563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="368" x="2034" y="1214.3848">updateProduct(int, String^, String^, float) : RequestUpdate^</text><ellipse cx="2025" cy="1227.7656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="224" x="2034" y="1231.9941">deleteProduct(int) : RequestDelete^</text><line style="stroke:#181818;stroke-width:1.0;" x1="2015" x2="2180" y1="1138.2188" y2="1138.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="2180" y="1143.4473">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="2242" x2="2407" y1="1138.2188" y2="1138.2188"/></g><!--MD5=[f6f72c1d5f6db26714bd83d5fc6f107a]
+class ClientManager::Components::RequestMapping::OrderRequestMapping--><g id="elem_ClientManager::Components::RequestMapping::OrderRequestMapping"><rect codeLine="270" fill="#F1F1F1" height="193.6797" id="ClientManager::Components::RequestMapping::OrderRequestMapping" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="577" x="2443.5" y="1054"/><ellipse cx="2655.75" cy="1070" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2658.5156,1065.875 Q2658.6719,1065.6563 2658.8594,1065.5469 Q2659.0469,1065.4375 2659.2656,1065.4375 Q2659.6406,1065.4375 2659.875,1065.6953 Q2660.1094,1065.9531 2660.1094,1066.5625 L2660.1094,1068.0156 Q2660.1094,1068.625 2659.875,1068.8906 Q2659.6406,1069.1563 2659.2656,1069.1563 Q2658.9219,1069.1563 2658.7188,1068.9531 Q2658.5156,1068.7656 2658.4063,1068.25 Q2658.3594,1067.8906 2658.1719,1067.7031 Q2657.8438,1067.3281 2657.2344,1067.1094 Q2656.625,1066.8906 2656,1066.8906 Q2655.2344,1066.8906 2654.6016,1067.2188 Q2653.9688,1067.5469 2653.4766,1068.2969 Q2652.9844,1069.0469 2652.9844,1070.0781 L2652.9844,1071.1719 Q2652.9844,1072.4063 2653.875,1073.2266 Q2654.7656,1074.0469 2656.3594,1074.0469 Q2657.2969,1074.0469 2657.9531,1073.7969 Q2658.3438,1073.6406 2658.7656,1073.2031 Q2659.0313,1072.9375 2659.1797,1072.8594 Q2659.3281,1072.7813 2659.5313,1072.7813 Q2659.8594,1072.7813 2660.1172,1073.0391 Q2660.375,1073.2969 2660.375,1073.6406 Q2660.375,1073.9844 2660.0313,1074.3906 Q2659.5313,1074.9688 2658.7344,1075.2969 Q2657.6563,1075.75 2656.3594,1075.75 Q2654.8438,1075.75 2653.6406,1075.125 Q2652.6563,1074.625 2651.9688,1073.5547 Q2651.2813,1072.4844 2651.2813,1071.2031 L2651.2813,1070.0469 Q2651.2813,1068.7188 2651.8984,1067.5703 Q2652.5156,1066.4219 2653.6094,1065.8047 Q2654.7031,1065.1875 2655.9375,1065.1875 Q2656.6719,1065.1875 2657.3203,1065.3516 Q2657.9688,1065.5156 2658.5156,1065.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="2676.25" y="1075.7285">OrderRequestMapping</text><line style="stroke:#181818;stroke-width:0.5;" x1="2444.5" x2="3019.5" y1="1086" y2="1086"/><line style="stroke:#181818;stroke-width:1.0;" x1="2444.5" x2="2706" y1="1102.8047" y2="1102.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="2444.5" x2="2706" y1="1104.8047" y2="1104.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="2706" y="1108.0332">Statique</text><line style="stroke:#181818;stroke-width:1.0;" x1="2758" x2="3019.5" y1="1102.8047" y2="1102.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="2758" x2="3019.5" y1="1104.8047" y2="1104.8047"/><ellipse cx="2454.5" cy="1148.3281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="167" x="2463.5" y="1152.5566">getOrders() : RequestGet^</text><ellipse cx="2454.5" cy="1165.9375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="182" x="2463.5" y="1170.166">getOrders(int) : RequestGet^</text><ellipse cx="2454.5" cy="1183.5469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="175" x="2463.5" y="1187.7754">getOrder(int) : RequestGet^</text><ellipse cx="2454.5" cy="1201.1563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="498" x="2463.5" y="1205.3848">addOrder(DateTime^, DateTime^, DateTime^, String^, float, int) : RequestInsert^</text><ellipse cx="2454.5" cy="1218.7656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="551" x="2463.5" y="1222.9941">updateOrder(int, DateTime^, DateTime^, DateTime^, String^, float, int) : RequestUpdate^</text><ellipse cx="2454.5" cy="1236.375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="212" x="2463.5" y="1240.6035">deleteOrder(int) : RequestDelete^</text><line style="stroke:#181818;stroke-width:1.0;" x1="2444.5" x2="2701" y1="1129.2188" y2="1129.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="2701" y="1134.4473">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="2763" x2="3019.5" y1="1129.2188" y2="1129.2188"/></g><!--MD5=[60d0738b96b6ddd5154154087bd7320c]
+class ClientManager::Services::ClientsService--><g id="elem_ClientManager::Services::ClientsService"><rect codeLine="369" fill="#F1F1F1" height="316.1406" id="ClientManager::Services::ClientsService" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="365" x="3148.5" y="281"/><ellipse cx="3281.75" cy="297" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M3284.5156,292.875 Q3284.6719,292.6563 3284.8594,292.5469 Q3285.0469,292.4375 3285.2656,292.4375 Q3285.6406,292.4375 3285.875,292.6953 Q3286.1094,292.9531 3286.1094,293.5625 L3286.1094,295.0156 Q3286.1094,295.625 3285.875,295.8906 Q3285.6406,296.1563 3285.2656,296.1563 Q3284.9219,296.1563 3284.7188,295.9531 Q3284.5156,295.7656 3284.4063,295.25 Q3284.3594,294.8906 3284.1719,294.7031 Q3283.8438,294.3281 3283.2344,294.1094 Q3282.625,293.8906 3282,293.8906 Q3281.2344,293.8906 3280.6016,294.2188 Q3279.9688,294.5469 3279.4766,295.2969 Q3278.9844,296.0469 3278.9844,297.0781 L3278.9844,298.1719 Q3278.9844,299.4063 3279.875,300.2266 Q3280.7656,301.0469 3282.3594,301.0469 Q3283.2969,301.0469 3283.9531,300.7969 Q3284.3438,300.6406 3284.7656,300.2031 Q3285.0313,299.9375 3285.1797,299.8594 Q3285.3281,299.7813 3285.5313,299.7813 Q3285.8594,299.7813 3286.1172,300.0391 Q3286.375,300.2969 3286.375,300.6406 Q3286.375,300.9844 3286.0313,301.3906 Q3285.5313,301.9688 3284.7344,302.2969 Q3283.6563,302.75 3282.3594,302.75 Q3280.8438,302.75 3279.6406,302.125 Q3278.6563,301.625 3277.9688,300.5547 Q3277.2813,299.4844 3277.2813,298.2031 L3277.2813,297.0469 Q3277.2813,295.7188 3277.8984,294.5703 Q3278.5156,293.4219 3279.6094,292.8047 Q3280.7031,292.1875 3281.9375,292.1875 Q3282.6719,292.1875 3283.3203,292.3516 Q3283.9688,292.5156 3284.5156,292.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="3302.25" y="302.7285">ClientsService</text><line style="stroke:#181818;stroke-width:0.5;" x1="3149.5" x2="3512.5" y1="313" y2="313"/><line style="stroke:#181818;stroke-width:1.0;" x1="3149.5" x2="3312" y1="329.8047" y2="329.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="3149.5" x2="3312" y1="331.8047" y2="331.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="3312" y="335.0332">Public</text><line style="stroke:#181818;stroke-width:1.0;" x1="3350" x2="3512.5" y1="329.8047" y2="329.8047"/><line style="stroke:#181818;stroke-width:1.0;" x1="3350" x2="3512.5" y1="331.8047" y2="331.8047"/><ellipse cx="3159.5" cy="375.3281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="3168.5" y="379.5566">ClientsService(Database^)</text><line style="stroke:#181818;stroke-width:1.0;" x1="3149.5" x2="3286.5" y1="356.2188" y2="356.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="3286.5" y="361.4473">Constructeurs</text><line style="stroke:#181818;stroke-width:1.0;" x1="3375.5" x2="3512.5" y1="356.2188" y2="356.2188"/><ellipse cx="3159.5" cy="414.5469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="3168.5" y="418.7754">createClient(Client) : Client^</text><ellipse cx="3159.5" cy="432.1563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="339" x="3168.5" y="436.3848">createClient(System::String^, System::String^) : Client^</text><ellipse cx="3159.5" cy="449.7656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="3168.5" y="453.9941">updateClient(Client) : Client^</text><ellipse cx="3159.5" cy="467.375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="3168.5" y="471.6035">deleteClient(Client) : Client^</text><ellipse cx="3159.5" cy="484.9844" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="3168.5" y="489.2129">getClient(Client) : Client^</text><ellipse cx="3159.5" cy="502.5938" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="3168.5" y="506.8223">getClient(int) : Client^</text><ellipse cx="3159.5" cy="520.2031" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="195" x="3168.5" y="524.4316">getAllClients() : array&lt;Client^&gt;^</text><line style="stroke:#181818;stroke-width:1.0;" x1="3149.5" x2="3300" y1="395.4375" y2="395.4375"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="3300" y="400.666">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="3362" x2="3512.5" y1="395.4375" y2="395.4375"/><line style="stroke:#181818;stroke-width:1.0;" x1="3149.5" x2="3315" y1="540.3125" y2="540.3125"/><line style="stroke:#181818;stroke-width:1.0;" x1="3149.5" x2="3315" y1="542.3125" y2="542.3125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="3315" y="545.541">Privé</text><line style="stroke:#181818;stroke-width:1.0;" x1="3347" x2="3512.5" y1="540.3125" y2="540.3125"/><line style="stroke:#181818;stroke-width:1.0;" x1="3347" x2="3512.5" y1="542.3125" y2="542.3125"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3156.5" y="582.8359"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="3168.5" y="590.0645">__database : Database^</text><line style="stroke:#181818;stroke-width:1.0;" x1="3149.5" x2="3305" y1="566.7266" y2="566.7266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="3305" y="571.9551">Attributs</text><line style="stroke:#181818;stroke-width:1.0;" x1="3357" x2="3512.5" y1="566.7266" y2="566.7266"/></g><!--MD5=[e25fad05177261abf1ba79ea181524a3]
+class ClientManager::Services::StocksService--><g id="elem_ClientManager::Services::StocksService"><rect codeLine="385" fill="#F1F1F1" height="298.5313" id="ClientManager::Services::StocksService" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="476" x="1928" y="289.5"/><ellipse cx="2117.25" cy="305.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2120.0156,301.375 Q2120.1719,301.1563 2120.3594,301.0469 Q2120.5469,300.9375 2120.7656,300.9375 Q2121.1406,300.9375 2121.375,301.1953 Q2121.6094,301.4531 2121.6094,302.0625 L2121.6094,303.5156 Q2121.6094,304.125 2121.375,304.3906 Q2121.1406,304.6563 2120.7656,304.6563 Q2120.4219,304.6563 2120.2188,304.4531 Q2120.0156,304.2656 2119.9063,303.75 Q2119.8594,303.3906 2119.6719,303.2031 Q2119.3438,302.8281 2118.7344,302.6094 Q2118.125,302.3906 2117.5,302.3906 Q2116.7344,302.3906 2116.1016,302.7188 Q2115.4688,303.0469 2114.9766,303.7969 Q2114.4844,304.5469 2114.4844,305.5781 L2114.4844,306.6719 Q2114.4844,307.9063 2115.375,308.7266 Q2116.2656,309.5469 2117.8594,309.5469 Q2118.7969,309.5469 2119.4531,309.2969 Q2119.8438,309.1406 2120.2656,308.7031 Q2120.5313,308.4375 2120.6797,308.3594 Q2120.8281,308.2813 2121.0313,308.2813 Q2121.3594,308.2813 2121.6172,308.5391 Q2121.875,308.7969 2121.875,309.1406 Q2121.875,309.4844 2121.5313,309.8906 Q2121.0313,310.4688 2120.2344,310.7969 Q2119.1563,311.25 2117.8594,311.25 Q2116.3438,311.25 2115.1406,310.625 Q2114.1563,310.125 2113.4688,309.0547 Q2112.7813,307.9844 2112.7813,306.7031 L2112.7813,305.5469 Q2112.7813,304.2188 2113.3984,303.0703 Q2114.0156,301.9219 2115.1094,301.3047 Q2116.2031,300.6875 2117.4375,300.6875 Q2118.1719,300.6875 2118.8203,300.8516 Q2119.4688,301.0156 2120.0156,301.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="2137.75" y="311.2285">StocksService</text><line style="stroke:#181818;stroke-width:0.5;" x1="1929" x2="2403" y1="321.5" y2="321.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="1929" x2="2147" y1="338.3047" y2="338.3047"/><line style="stroke:#181818;stroke-width:1.0;" x1="1929" x2="2147" y1="340.3047" y2="340.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="2147" y="343.5332">Public</text><line style="stroke:#181818;stroke-width:1.0;" x1="2185" x2="2403" y1="338.3047" y2="338.3047"/><line style="stroke:#181818;stroke-width:1.0;" x1="2185" x2="2403" y1="340.3047" y2="340.3047"/><ellipse cx="1939" cy="383.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="1948" y="388.0566">StockServices(Database^)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1929" x2="2121.5" y1="364.7188" y2="364.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="2121.5" y="369.9473">Constructeurs</text><line style="stroke:#181818;stroke-width:1.0;" x1="2210.5" x2="2403" y1="364.7188" y2="364.7188"/><ellipse cx="1939" cy="423.0469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="203" x="1948" y="427.2754">addProduct(Product^) : Product^</text><ellipse cx="1939" cy="440.6563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="407" x="1948" y="444.8848">addProduct(System::String^, System::String^, float, int) : Product^</text><ellipse cx="1939" cy="458.2656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="223" x="1948" y="462.4941">updateProduct(Product^) : Product^</text><ellipse cx="1939" cy="475.875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="450" x="1948" y="480.1035">updateProduct(int, System::String^, System::String^, float, int) : Product^</text><ellipse cx="1939" cy="493.4844" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="1948" y="497.7129">removeProduct(Product^) : Product^</text><ellipse cx="1939" cy="511.0938" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="1948" y="515.3223">removeProduct(int) : Product^</text><line style="stroke:#181818;stroke-width:1.0;" x1="1929" x2="2135" y1="403.9375" y2="403.9375"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="2135" y="409.166">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="2197" x2="2403" y1="403.9375" y2="403.9375"/><line style="stroke:#181818;stroke-width:1.0;" x1="1929" x2="2150" y1="531.2031" y2="531.2031"/><line style="stroke:#181818;stroke-width:1.0;" x1="1929" x2="2150" y1="533.2031" y2="533.2031"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="2150" y="536.4316">Privé</text><line style="stroke:#181818;stroke-width:1.0;" x1="2182" x2="2403" y1="531.2031" y2="531.2031"/><line style="stroke:#181818;stroke-width:1.0;" x1="2182" x2="2403" y1="533.2031" y2="533.2031"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1936" y="573.7266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="1948" y="580.9551">__database : Database^</text><line style="stroke:#181818;stroke-width:1.0;" x1="1929" x2="2140" y1="557.6172" y2="557.6172"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="2140" y="562.8457">Attributs</text><line style="stroke:#181818;stroke-width:1.0;" x1="2192" x2="2403" y1="557.6172" y2="557.6172"/></g><!--MD5=[2e16636c3491bcc4c9383ffccc86e691]
+class ClientManager::Services::OrdersService--><g id="elem_ClientManager::Services::OrdersService"><rect codeLine="400" fill="#F1F1F1" height="298.5313" id="ClientManager::Services::OrdersService" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="674" x="2439" y="289.5"/><ellipse cx="2726.25" cy="305.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2729.0156,301.375 Q2729.1719,301.1563 2729.3594,301.0469 Q2729.5469,300.9375 2729.7656,300.9375 Q2730.1406,300.9375 2730.375,301.1953 Q2730.6094,301.4531 2730.6094,302.0625 L2730.6094,303.5156 Q2730.6094,304.125 2730.375,304.3906 Q2730.1406,304.6563 2729.7656,304.6563 Q2729.4219,304.6563 2729.2188,304.4531 Q2729.0156,304.2656 2728.9063,303.75 Q2728.8594,303.3906 2728.6719,303.2031 Q2728.3438,302.8281 2727.7344,302.6094 Q2727.125,302.3906 2726.5,302.3906 Q2725.7344,302.3906 2725.1016,302.7188 Q2724.4688,303.0469 2723.9766,303.7969 Q2723.4844,304.5469 2723.4844,305.5781 L2723.4844,306.6719 Q2723.4844,307.9063 2724.375,308.7266 Q2725.2656,309.5469 2726.8594,309.5469 Q2727.7969,309.5469 2728.4531,309.2969 Q2728.8438,309.1406 2729.2656,308.7031 Q2729.5313,308.4375 2729.6797,308.3594 Q2729.8281,308.2813 2730.0313,308.2813 Q2730.3594,308.2813 2730.6172,308.5391 Q2730.875,308.7969 2730.875,309.1406 Q2730.875,309.4844 2730.5313,309.8906 Q2730.0313,310.4688 2729.2344,310.7969 Q2728.1563,311.25 2726.8594,311.25 Q2725.3438,311.25 2724.1406,310.625 Q2723.1563,310.125 2722.4688,309.0547 Q2721.7813,307.9844 2721.7813,306.7031 L2721.7813,305.5469 Q2721.7813,304.2188 2722.3984,303.0703 Q2723.0156,301.9219 2724.1094,301.3047 Q2725.2031,300.6875 2726.4375,300.6875 Q2727.1719,300.6875 2727.8203,300.8516 Q2728.4688,301.0156 2729.0156,301.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="2746.75" y="311.2285">OrdersService</text><line style="stroke:#181818;stroke-width:0.5;" x1="2440" x2="3112" y1="321.5" y2="321.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="2440" x2="2757" y1="338.3047" y2="338.3047"/><line style="stroke:#181818;stroke-width:1.0;" x1="2440" x2="2757" y1="340.3047" y2="340.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="2757" y="343.5332">Public</text><line style="stroke:#181818;stroke-width:1.0;" x1="2795" x2="3112" y1="338.3047" y2="338.3047"/><line style="stroke:#181818;stroke-width:1.0;" x1="2795" x2="3112" y1="340.3047" y2="340.3047"/><ellipse cx="2450" cy="383.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="2459" y="388.0566">OrdersService(Database^)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2440" x2="2731.5" y1="364.7188" y2="364.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="2731.5" y="369.9473">Constructeurs</text><line style="stroke:#181818;stroke-width:1.0;" x1="2820.5" x2="3112" y1="364.7188" y2="364.7188"/><ellipse cx="2450" cy="423.0469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="2459" y="427.2754">addOrder(Order^) : Order^</text><ellipse cx="2450" cy="440.6563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="605" x="2459" y="444.8848">addOrder(System::DateTime^, System::DateTime^, System::DateTime^, System::String^) : Order^</text><ellipse cx="2450" cy="458.2656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="2459" y="462.4941">updateOrder(Order^) : Order^</text><ellipse cx="2450" cy="475.875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="648" x="2459" y="480.1035">updateOrder(int, System::DateTime^, System::DateTime^, System::DateTime^, System::String^) : Order^</text><ellipse cx="2450" cy="493.4844" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="2459" y="497.7129">removeOrder(Order^) : Order^</text><ellipse cx="2450" cy="511.0938" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="2459" y="515.3223">removeOrder(int) : Order^</text><line style="stroke:#181818;stroke-width:1.0;" x1="2440" x2="2745" y1="403.9375" y2="403.9375"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="2745" y="409.166">Méthodes</text><line style="stroke:#181818;stroke-width:1.0;" x1="2807" x2="3112" y1="403.9375" y2="403.9375"/><line style="stroke:#181818;stroke-width:1.0;" x1="2440" x2="2760" y1="531.2031" y2="531.2031"/><line style="stroke:#181818;stroke-width:1.0;" x1="2440" x2="2760" y1="533.2031" y2="533.2031"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="2760" y="536.4316">Privé</text><line style="stroke:#181818;stroke-width:1.0;" x1="2792" x2="3112" y1="531.2031" y2="531.2031"/><line style="stroke:#181818;stroke-width:1.0;" x1="2792" x2="3112" y1="533.2031" y2="533.2031"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2447" y="573.7266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="2459" y="580.9551">__database : Database^</text><line style="stroke:#181818;stroke-width:1.0;" x1="2440" x2="2750" y1="557.6172" y2="557.6172"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="2750" y="562.8457">Attributs</text><line style="stroke:#181818;stroke-width:1.0;" x1="2802" x2="3112" y1="557.6172" y2="557.6172"/></g><!--MD5=[0a1779aac3892576365d939cc1ea1f5b]
+reverse link ClientManager::App to ClientManager::MyForm--><g id="link_ClientManager::App_ClientManager::MyForm"><path codeLine="418" d="M377.57,229.47 C358.27,256.38 337.19,285.77 317.11,313.77 " fill="none" id="ClientManager::App-backto-ClientManager::MyForm" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="371.99,225.24,389.34,213.07,383.37,233.4,371.99,225.24" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[0c5f79696bae3507db4adfe67006e72e]
+link ClientManager::App to ClientManager::Services--><g id="link_ClientManager::App_ClientManager::Services"><path codeLine="420" d="M588.78,132.39 C940.92,142.93 1844.5,174.42 1889,221 C1891.0494,223.1456 1892.8617,225.8486 1894.4584,229.0322 C1895.2568,230.624 1896.0013,232.336 1896.6945,234.1585 C1897.0411,235.0698 1897.3749,236.0087 1897.6962,236.9741 " fill="none" id="ClientManager::App-to-ClientManager::Services" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="1897.6962,236.9741,1899.5965,230.0179,1893.9063,225.5883,1892.006,232.5445,1897.6962,236.9741" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[684e23706af1e6330da8cfebd29d477d]
+link ClientManager::App to ClientManager::Components::Database--><g id="link_ClientManager::App_ClientManager::Components::Database"><path codeLine="422" d="M445.19,213.26 C437.41,347.18 422.12,596.71 414,637 C384.86,781.63 326.09,941.64 284.95,1043.87 " fill="none" id="ClientManager::App-to-ClientManager::Components::Database" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="280.03,1056.05,285.9881,1051.9878,284.5299,1044.9257,278.5718,1048.9879,280.03,1056.05" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[23359a8ab536b88c781c9e18fb9cf48a]
+link ClientManager::App to ClientManager::Components::DataType--><g id="link_ClientManager::App_ClientManager::Components::DataType"><path codeLine="428" d="M453,213.03 C456.51,315.31 462.19,492.75 465,645 C465.2569,658.9163 465.4973,673.0485 465.7222,687.3165 C465.7785,690.8835 465.8337,694.459 465.8881,698.0417 C465.9152,699.833 465.9422,701.6262 465.9689,703.421 " fill="none" id="ClientManager::App-to-ClientManager::Components::DataType" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="465.9689,703.421,469.8792,697.3622,465.7904,691.4223,461.8801,697.4811,465.9689,703.421" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[7e363a2348a289e45f06aa989ddec927]
+link ClientManager::Services to ClientManager::Components::DataType--><g id="link_ClientManager::Services_ClientManager::Components::DataType"><path d="M1897.5941,621.4175 C1897.4491,621.8634 1897.3012,622.3034 1897.1503,622.7373 C1896.8487,623.605 1896.5355,624.4484 1896.2103,625.2663 C1895.5599,626.9021 1894.8618,628.4361 1894.1134,629.8593 C1892.6166,632.7057 1890.9188,635.1094 1889,637 C1875.14,650.66 501.98,631.46 488,645 C485.4988,647.4225 483.3256,657.0119 481.4377,671.9531 C480.4938,679.4238 479.6211,688.2324 478.8144,698.1521 C478.7136,699.3921 478.6137,700.6494 478.515,701.9236 C478.4656,702.5607 478.4164,703.2021 478.3675,703.8476 " fill="none" id="ClientManager::Services-to-ClientManager::Components::DataType" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="478.3675,703.8476,482.8092,698.1668,479.2737,691.8819,474.832,697.5627,478.3675,703.8476" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[068fc75dac0cd75d741a39a1c2d96304]
+link ClientManager::Services::ClientsService to ClientManager::Components::RequestMapping::ClientRequestMapping--><g id="link_ClientManager::Services::ClientsService_ClientManager::Components::RequestMapping::ClientRequestMapping"><path codeLine="448" d="M3487.66,597.02 C3501.71,612.87 3515.38,629.02 3528,645 C3633.29,778.26 3736.17,946.4 3797.08,1051.07 " fill="none" id="ClientManager::Services::ClientsService-to-ClientManager::Components::RequestMapping::ClientRequestMapping" style="stroke:#0000FF;stroke-width:1.0;"/><polygon fill="none" points="3803.75,1062.57,3804.2001,1055.373,3797.7298,1052.1894,3797.2797,1059.3864,3803.75,1062.57" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[17a652babfcc49ee12e8c73636aa9d5d]
+link ClientManager::Services::ClientsService to ClientManager::Components::RequestMapping::AddressRequestMapping--><g id="link_ClientManager::Services::ClientsService_ClientManager::Components::RequestMapping::AddressRequestMapping"><path codeLine="449" d="M3320.38,597.13 C3311.27,731.78 3298.4,922.22 3290.38,1040.8 " fill="none" id="ClientManager::Services::ClientsService-to-ClientManager::Components::RequestMapping::AddressRequestMapping" style="stroke:#0000FF;stroke-width:1.0;"/><polygon fill="none" points="3289.5,1053.82,3293.8932,1048.1016,3290.3044,1041.847,3285.9112,1047.5654,3289.5,1053.82" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[662bcbbaa340835c327c42d31881ac78]
+link ClientManager::Services::StocksService to ClientManager::Components::RequestMapping::ProductRequestMapping--><g id="link_ClientManager::Services::StocksService_ClientManager::Components::RequestMapping::ProductRequestMapping"><path codeLine="451" d="M2175.43,588.84 C2184.2,727.19 2197.02,929.48 2204.64,1049.63 " fill="none" id="ClientManager::Services::StocksService-to-ClientManager::Components::RequestMapping::ProductRequestMapping" style="stroke:#0000FF;stroke-width:1.0;"/><polygon fill="none" points="2205.47,1062.79,2209.0862,1056.5512,2204.7182,1050.8136,2201.1019,1057.0524,2205.47,1062.79" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[15e1aed2c5a85fa7f7227e13207dcd79]
+link ClientManager::Services::OrdersService to ClientManager::Components::RequestMapping::ClientRequestMapping--><g id="link_ClientManager::Services::OrdersService_ClientManager::Components::RequestMapping::ClientRequestMapping"><path codeLine="454" d="M3006.41,588.57 C3046.57,608.34 3088.98,625.67 3131,637 C3152.3,642.74 3508.74,634.24 3528,645 C3684.36,732.37 3777.22,929.9 3821.4,1050.39 " fill="none" id="ClientManager::Services::OrdersService-to-ClientManager::Components::RequestMapping::ClientRequestMapping" style="stroke:#0000FF;stroke-width:1.0;"/><polygon fill="none" points="3825.9,1062.89,3827.6252,1055.8883,3821.8256,1051.6029,3820.1004,1058.6046,3825.9,1062.89" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[66cf834a799de8a36432b639fb1ad1bf]
+link ClientManager::Services::OrdersService to ClientManager::Components::RequestMapping::AddressRequestMapping--><g id="link_ClientManager::Services::OrdersService_ClientManager::Components::RequestMapping::AddressRequestMapping"><path codeLine="455" d="M2984.92,588.54 C3004.03,606.41 3022.13,625.34 3038,645 C3136,766.37 3207.24,933.41 3246.86,1041.55 " fill="none" id="ClientManager::Services::OrdersService-to-ClientManager::Components::RequestMapping::AddressRequestMapping" style="stroke:#0000FF;stroke-width:1.0;"/><polygon fill="none" points="3251.3,1053.79,3253.0179,1046.7865,3247.2139,1042.5071,3245.496,1049.5106,3251.3,1053.79" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[bc636e0487671be22f9b11c274e31e2e]
+link ClientManager::Services::OrdersService to ClientManager::Components::RequestMapping::ProductRequestMapping--><g id="link_ClientManager::Services::OrdersService_ClientManager::Components::RequestMapping::ProductRequestMapping"><path codeLine="456" d="M2485.73,588.75 C2464.09,606.03 2443.8,624.78 2426,645 C2321.69,763.52 2262.34,940.17 2233.45,1050.05 " fill="none" id="ClientManager::Services::OrdersService-to-ClientManager::Components::RequestMapping::ProductRequestMapping" style="stroke:#0000FF;stroke-width:1.0;"/><polygon fill="none" points="2230.16,1062.78,2235.5357,1057.9735,2233.1665,1051.1627,2227.7908,1055.9692,2230.16,1062.78" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[d4b5402ab3f5e68769556af4ab1361d3]
+link ClientManager::Services::OrdersService to ClientManager::Components::RequestMapping::OrderRequestMapping--><g id="link_ClientManager::Services::OrdersService_ClientManager::Components::RequestMapping::OrderRequestMapping"><path codeLine="457" d="M2766.78,588.84 C2758.41,723.76 2746.29,919.49 2738.78,1040.55 " fill="none" id="ClientManager::Services::OrdersService-to-ClientManager::Components::RequestMapping::OrderRequestMapping" style="stroke:#0000FF;stroke-width:1.0;"/><polygon fill="none" points="2737.96,1053.84,2742.3218,1048.0976,2738.6987,1041.8628,2734.3369,1047.6052,2737.96,1053.84" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[d0159f026c770efd0ec8b829480fbd92]
+link ClientManager::Services to ClientManager::Components::Request--><g id="link_ClientManager::Services_ClientManager::Components::Request"><path codeLine="464" d="M1902.2357,621.0516 C1902.3218,621.2751 1902.4085,621.4971 1902.4957,621.7176 C1902.6701,622.1586 1902.8469,622.5935 1903.026,623.0223 C1903.3842,623.8797 1903.7518,624.7124 1904.1289,625.5191 C1904.8833,627.1325 1905.6759,628.6422 1906.5087,630.0393 C1908.1742,632.8336 1910,635.1775 1912,637 C1935.25,658.19 4154.79,622.72 4177,645 C4248.21,716.47 4233.14,1469.17 4177,1553 C3946.5,1897.17 3401.69,1979.82 3177.26,1999.46 " fill="none" id="ClientManager::Services-to-ClientManager::Components::Request" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="3164.24,2000.56,3170.553,2004.045,3176.1981,1999.558,3169.885,1996.073,3164.24,2000.56" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[f3c5bb36e9e02a0e17f118947368193d]
+link ClientManager::Components::RequestMapping to ClientManager::Components::Request--><g id="link_ClientManager::Components::RequestMapping_ClientManager::Components::Request"><path codeLine="466" d="M1970.7787,1181.1269 C1970.69,1181.4733 1970.6009,1181.8224 1970.5114,1182.1742 C1970.1534,1183.5813 1969.789,1185.0314 1969.419,1186.5231 C1968.679,1189.5064 1967.9171,1192.6562 1967.1413,1195.9616 C1960.9344,1222.4044 1953.835,1258.8038 1949.9475,1299.6125 C1942.1725,1381.23 1947.245,1480.485 1998,1553 C2231.05,1885.96 2758.74,1974.84 2978.76,1997.8 " fill="none" id="ClientManager::Components::RequestMapping-to-ClientManager::Components::Request" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="2991.86,1999.13,2986.2948,1994.5443,2979.9214,1997.9177,2985.4866,2002.5034,2991.86,1999.13" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[84accf68968e61992bd2955a3057df64]
+@startuml Diagramme de classe
+
+set namespaceSeparator ::
+' skinparam Linetype ortho
+
+namespace ClientManager {
+
+    class App {
+        == Public ==
+        - - Constructeurs - -
+        # App()
+        == Protégé ==
+        .. Handlers ..
+        # submit_Click(Object^, EventArgs^) : void
+    }
+    class MyForm {
+        == Public ==
+        - - Constructeurs - -
+        # MyForm()
+        == Protégé ==
+        - - Méthodes - -
+        # InitializeComponent() : void
+        .. Handlers ..
+        # {abstract} submit_Click(Object^, EventArgs^) : void
+        - - Attributs - -
+        # button_Submit : System::Windows::Forms::Button
+    }
+
+    namespace Components {
+
+        namespace DataType {
+
+            class Client {
+                == Public ==
+                - - Constructeur - -
+                + Client()
+                + Client(System::Data::DataRow^)
+                + Client(System::Windows::Forms::DataGridViewRow^)
+                - - Méthodes - -
+                + id() : int
+                + firstname(System::String^) : void
+                + firstname() : System::String^
+                + lastname(System::String^) : void
+                + lastname() : System::String^
+                + phone(System::String^) : void
+                + phone() : System::String^
+                + email(System::String^) : void
+                + email() : System::String^
+                + birthdate(System::DateTime^) : void
+                + birthdate(int, int, int) : void
+                + birthdate() : System::DateTime^
+                + logo(System::String^) : void
+                + logo() : System::String^
+                + company(System::String^) : void
+                + company() : System::String^
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                - - Attributs - -
+                - __id : int
+                - __firstname : System::String^
+                - __lastname : System::String^
+                - __phone : System::String^
+                - __email : System::String^
+                - __birthdate : System::DateTime^
+                - __logo : System::String^
+                - __company : System::String^
+                == Statique ==
+                - - Méthodes - -
+                + toArray(System::Data::DataTable^) : array<Client^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Client^>^
+                + toDataTable(array<Client^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Client^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
+            class Address {
+                == Public ==
+                - - Constructeur - -
+                + Address()
+                + Address(System::Data::DataRow^)
+                + Address(System::Windows::Forms::DataGridViewRow^)
+                - - Méthodes - -
+                + id() : int
+                + number(System::String^) : void
+                + number() : System::String^
+                + street(System::String^) : void
+                + street() : System::String^
+                + city(int) : void
+                + city() : int
+                + zipCode(int) : void
+                + zipCode() : int
+                + country(int) : void
+                + country() : int
+                + clientId(int) : void
+                + clientId() : int
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                - - Attributs - -
+                - __id : int
+                - __number : System::String^
+                - __street : System::String^
+                - __city : int
+                - __zipCode : int
+                - __country : int
+                - __clientId : int
+                == Statique ==
+                - - Méthodes - -
+                + toArray(System::Data::DataTable^) : array<Address^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Address^>^
+                + toDataTable(array<Address^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Address^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
+            class Product {
+                == Public ==
+                - - Constructeur - -
+                + Product()
+                + Product(System::Data::DataRow^)
+                + Product(System::Windows::Forms::DataGridViewRow^)
+                - - Méthodes - -
+                + id() : int
+                + name(System::String^) : void
+                + name() : System::String^
+                + description(System::String^) : void
+                + description() : System::String^
+                + cost(float) : void
+                + cost() : float
+                + quantity(int) : void
+                + quantity() : int
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                - - Attributs - -
+                - __id : int
+                - __name : System::String^
+                - __description : System::String^
+                - __cost : float
+                - __quantity : int
+                == Statique ==
+                - - Méthodes - -
+                + toArray(System::Data::DataTable^) : array<Product^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Product^>^
+                + toDataTable(array<Product^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Product^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
+            ' class Stock {
+            '     == Public ==
+            '     - - Constructeur - -
+            '     + Stock()
+            '     + Stock(System::Data::DataRow^)
+            '     + Stock(System::Windows::Forms::DataGridViewRow^)
+            '     - - Méthodes - -
+            '     + id() : int
+            '     + ProductId(int) : void
+            '     + ProductId() : int
+            '     + quantity(int) : void
+            '     + quantity() : int
+
+            '     + toDataRow() : System::Data::DataRow^
+            '     + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+            '     == Privé ==
+            '     - - Attributs - -
+            '     - __id : int
+            '     - __ProductId : int
+            '     - __quantity : int
+            '     == Statique ==
+            '     - - Méthodes - -
+            '     + toArray(System::Data::DataTable^) : array<Stock^>^
+            '     + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Stock^>^
+            '     + toDataTable(array<Stock^>^) : System::Data::DataTable^
+            '     + toDataGridViewRowCollection(array<Stock^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            ' }
+            class Order {
+                == Public ==
+                - - Constructeur - -
+                + Order()
+                + Order(System::Data::DataRow^)
+                + Order(System::Windows::Forms::DataGridViewRow^)
+                - - Méthodes - -
+                + id() : int
+                + paymentDate(System::DateTime^) : void
+                + paymentDate(int) : void
+                + paymentDate() : System::DateTime^
+                + creationDate(System::DateTime^) : void
+                + creationDate(int) : void
+                + creationDate() : System::DateTime^
+                + deliveryDate(System::DateTime^) : void
+                + deliveryDate(int) : void
+                + deliveryDate() : System::DateTime^
+                + cost(float) : void
+                + cost() : float
+                + paymentMode(System::String^) : void
+                + paymentMode() : System::String^
+                + client(int) : void
+                + client() : int
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                - - Attributs - -
+                - __id : int
+                - __paymentDate : System::DateTime^
+                - __creationDate : System::DateTime^
+                - __deliveryDate : System::DateTime^
+                - __cost : float
+                - __paymentMode : System::String^
+                - __client : int
+                == Statique ==
+                - - Méthodes - -
+                + toArray(System::Data::DataTable^) : array<Order^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Order^>^
+                + toDataTable(array<Order^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Order^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
+
+        }
+
+        class Database {
+            == Public ==
+            - - Méthodes - -
+            + runQuery(Request^) : System::Data::DataSet^
+            + runScalar(Request^) : System::Object^
+            == Privé ==
+            - - Attributs - -
+            - __connection : System::Data::MySQL::MySQLConnection
+        }
+
+        namespace RequestMapping {
+
+            ' skinparam ClassBorderColor<<RequestMapping>> blue
+
+            class ClientRequestMapping {
+                == Statique ==
+                - - Méthodes - -
+                + {static} getClients() : RequestGet^
+                + {static} getClient(int) : RequestGet^
+                + {static} addClient(String^, String^, String^, String^, DateTime^, String^, String^) : RequestInsert^
+                + {static} updateClient(int, String^, String^, String^, String^, DateTime, String^, String^) : RequestUpdate^
+                + {static} deleteClient(int) : RequestDelete^
+            }
+            class AddressRequestMapping {
+                == Statique ==
+                - - Méthodes - -
+                + {static} getAddresses() : RequestGet^
+                + {static} getAddresses(int) : RequestGet^
+                + {static} getAddress(int) : RequestGet^
+                + {static} addAddress(String^, String^, int, int, int, int) : RequestInsert^
+                + {static} updateAddress(int, String^, String^, int, int, int, int) : RequestUpdate^
+                + {static} deleteAddress(int) : RequestDelete^
+            }
+            class ProductRequestMapping {
+                == Statique ==
+                - - Méthodes - -
+                + {static} getProducts() : RequestGet^
+                + {static} getProduct(int) : RequestGet^
+                + {static} addProduct(String^, String^, float) : RequestInsert^
+                + {static} updateProduct(int, String^, String^, float) : RequestUpdate^
+                + {static} deleteProduct(int) : RequestDelete^
+            }
+            ' class StockRequestMapping <<RequestMapping>> {
+            '     == Statique ==
+            '     - - Méthodes - -
+            '     + {static} getStocks() : RequestGet^
+            '     + {static} getStock(int) : RequestGet^
+            '     + {static} addStock(int, int) : RequestInsert^
+            '     + {static} updateStock(int, int, int) : RequestUpdate^
+            '     + {static} deleteStock(int) : RequestDelete^
+            ' }
+            class OrderRequestMapping {
+                == Statique ==
+                - - Méthodes - -
+                + {static} getOrders() : RequestGet^
+                + {static} getOrders(int) : RequestGet^
+                + {static} getOrder(int) : RequestGet^
+                + {static} addOrder(DateTime^, DateTime^, DateTime^, String^, float, int) : RequestInsert^
+                + {static} updateOrder(int, DateTime^, DateTime^, DateTime^, String^, float, int) : RequestUpdate^
+                + {static} deleteOrder(int) : RequestDelete^
+            }
+        }
+
+        class Request {
+            == Public ==
+            - - Méthodes - -
+            + 
+            + SQL() : System::String^
+            == Privé ==
+            - - Attributs - -
+            - __sql : System::String^
+        }
+
+        ' namespace Request {
+
+        '     class Request {
+        '         == Public ==
+        '         - - Méthodes - -
+        '         + {abstract} toString() : System::String^
+        '     }
+        '     class RequestGet<extends Request> {
+        '         == Public ==
+        '         - - Méthodes - -
+        '         + select(System::String^) : RequestGet^
+        '         + where(System::String^) : RequestGet^
+        '         + orderBy(System::String^) : RequestGet^
+        '         + limit(int) : RequestGet^
+
+        '         + toString() : System::String^
+        '         == Privé ==
+        '         - - Attributs - -
+        '         - __selects : array<array<System::String^>^>^
+        '         - __conditions : array<System::String^>^
+        '         - __order : System::String^
+        '         - __limit : int
+        '     }
+        '     class RequestDelete<extends Request> {
+        '         == Public ==
+        '         - - Méthodes - -
+        '         + from(System::String^) : RequestDelete^
+        '         + where(System::String^) : RequestDelete^
+        '         + limit(int) : RequestDelete^
+
+        '         + toString() : System::String^
+        '         == Privé ==
+        '         - - Attributs - -
+        '         - __table : System::String^
+        '         - __conditions : array<System::String^>^
+        '         - __limit : int
+        '     }
+        '     class RequestInsert<extends Request> {
+        '         == Public ==
+        '         - - Méthodes - -
+        '         + into(System::String^) : RequestInsert^
+        '         + value(System::String^, System::String^) : RequestInsert^
+
+        '         + toString() : System::String^
+        '         == Privé ==
+        '         - - Attributs - -
+        '         - __column : System::String^
+        '         - __values : System::String^
+        '     }
+        '     class RequestUpdate<extends Request> {
+        '         == Public ==
+        '         - - Méthodes - -
+        '         + into(System::String^) : RequestUpdate
+        '         + set(System::String^, System::String^) : RequestUpdate
+        '         + where(System::String^) : RequestUpdate
+        '         + limit(int) : RequestUpdate
+
+        '         + toString() : System::String^
+        '         == Privé ==
+        '         - - Attributs - -
+        '         - __table : System::String^
+        '         - __sets : array<System::String^>^
+        '         - __conditions : array<System::String^>^
+        '         - __limit : int
+        '     }
+
+        '     RequestGet <|- - Request
+        '     RequestDelete <|- - Request
+        '     RequestInsert <|- - Request
+        '     RequestUpdate <|- - Request
+
+        ' }
+
+    }
+
+    namespace Services {
+
+        class ClientsService {
+            == Public ==
+            - - Constructeurs - -
+            + ClientsService(Database^)
+            - - Méthodes - -
+            + createClient(Client) : Client^
+            + createClient(System::String^, System::String^) : Client^
+            + updateClient(Client) : Client^
+            + deleteClient(Client) : Client^
+            + getClient(Client) : Client^
+            + getClient(int) : Client^
+            + getAllClients() : array<Client^>^
+            == Privé ==
+            - - Attributs - -
+            - __database : Database^
+        }
+        class StocksService {
+            == Public ==
+            - - Constructeurs - -
+            + StockServices(Database^)
+            - - Méthodes - -
+            + addProduct(Product^) : Product^
+            + addProduct(System::String^, System::String^, float, int) : Product^
+            + updateProduct(Product^) : Product^
+            + updateProduct(int, System::String^, System::String^, float, int) : Product^
+            + removeProduct(Product^) : Product^
+            + removeProduct(int) : Product^
+            == Privé ==
+            - - Attributs - -
+            - __database : Database^
+        }
+        class OrdersService {
+            == Public ==
+            - - Constructeurs - -
+            + OrdersService(Database^)
+            - - Méthodes - -
+            + addOrder(Order^) : Order^
+            + addOrder(System::DateTime^, System::DateTime^, System::DateTime^, System::String^) : Order^
+            + updateOrder(Order^) : Order^
+            + updateOrder(int, System::DateTime^, System::DateTime^, System::DateTime^, System::String^) : Order^
+            + removeOrder(Order^) : Order^
+            + removeOrder(int) : Order^
+            == Privé ==
+            - - Attributs - -
+            - __database : Database^
+        }
+
+    }
+
+    App <|- - MyForm
+
+    App - -o ClientManager::Services
+
+    App - -o ClientManager::Components::Database
+
+    ' ========================================
+    '                DataType
+    ' ========================================
+
+    App - -o ClientManager::Components::DataType
+
+    ClientManager::Services - -o ClientManager::Components::DataType
+
+    ' ClientManager::Services::ClientsService -[#Red]-o ClientManager::Components::DataType::Client
+    ' ClientManager::Services::ClientsService -[#Red]-o ClientManager::Components::DataType::Address
+
+    ' ClientManager::Services::StocksService -[#Red]-o ClientManager::Components::DataType::Product
+    ' ClientManager::Services::StocksService -[#Red]-o ClientManager::Components::DataType::Stock
+
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Client
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Address
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Product
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Order
+    ' ClientManager::Services::OrdersService -[#Red]-o ClientManager::Components::DataType::Stock
+
+    ' ========================================
+    '              RequestMapping
+    ' ========================================
+
+    ClientManager::Services::ClientsService -[#blue]-o ClientManager::Components::RequestMapping::ClientRequestMapping
+    ClientManager::Services::ClientsService -[#blue]-o ClientManager::Components::RequestMapping::AddressRequestMapping
+
+    ClientManager::Services::StocksService -[#blue]-o ClientManager::Components::RequestMapping::ProductRequestMapping
+    ' ClientManager::Services::StocksService -[#blue]-o ClientManager::Components::RequestMapping::StockRequestMapping
+
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::ClientRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::AddressRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::ProductRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::OrderRequestMapping
+    ' ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::StockRequestMapping
+
+    ' ========================================
+    '                 Request
+    ' ========================================
+
+    ClientManager::Services - -o ClientManager::Components::Request
+
+    ClientManager::Components::RequestMapping - -o ClientManager::Components::Request
+}
+
+@enduml
+
+@startuml Diagramme de classe
+
+set namespaceSeparator ::
+
+namespace ClientManager {
+
+    class App {
+        == Public ==
+        - - Constructeurs - -
+        # App()
+        == Protégé ==
+        .. Handlers ..
+        # submit_Click(Object^, EventArgs^) : void
+    }
+    class MyForm {
+        == Public ==
+        - - Constructeurs - -
+        # MyForm()
+        == Protégé ==
+        - - Méthodes - -
+        # InitializeComponent() : void
+        .. Handlers ..
+        # {abstract} submit_Click(Object^, EventArgs^) : void
+        - - Attributs - -
+        # button_Submit : System::Windows::Forms::Button
+    }
+
+    namespace Components {
+
+        namespace DataType {
+
+            class Client {
+                == Public ==
+                - - Constructeur - -
+                + Client()
+                + Client(System::Data::DataRow^)
+                + Client(System::Windows::Forms::DataGridViewRow^)
+                - - Méthodes - -
+                + id() : int
+                + firstname(System::String^) : void
+                + firstname() : System::String^
+                + lastname(System::String^) : void
+                + lastname() : System::String^
+                + phone(System::String^) : void
+                + phone() : System::String^
+                + email(System::String^) : void
+                + email() : System::String^
+                + birthdate(System::DateTime^) : void
+                + birthdate(int, int, int) : void
+                + birthdate() : System::DateTime^
+                + logo(System::String^) : void
+                + logo() : System::String^
+                + company(System::String^) : void
+                + company() : System::String^
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                - - Attributs - -
+                - __id : int
+                - __firstname : System::String^
+                - __lastname : System::String^
+                - __phone : System::String^
+                - __email : System::String^
+                - __birthdate : System::DateTime^
+                - __logo : System::String^
+                - __company : System::String^
+                == Statique ==
+                - - Méthodes - -
+                + toArray(System::Data::DataTable^) : array<Client^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Client^>^
+                + toDataTable(array<Client^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Client^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
+            class Address {
+                == Public ==
+                - - Constructeur - -
+                + Address()
+                + Address(System::Data::DataRow^)
+                + Address(System::Windows::Forms::DataGridViewRow^)
+                - - Méthodes - -
+                + id() : int
+                + number(System::String^) : void
+                + number() : System::String^
+                + street(System::String^) : void
+                + street() : System::String^
+                + city(int) : void
+                + city() : int
+                + zipCode(int) : void
+                + zipCode() : int
+                + country(int) : void
+                + country() : int
+                + clientId(int) : void
+                + clientId() : int
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                - - Attributs - -
+                - __id : int
+                - __number : System::String^
+                - __street : System::String^
+                - __city : int
+                - __zipCode : int
+                - __country : int
+                - __clientId : int
+                == Statique ==
+                - - Méthodes - -
+                + toArray(System::Data::DataTable^) : array<Address^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Address^>^
+                + toDataTable(array<Address^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Address^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
+            class Product {
+                == Public ==
+                - - Constructeur - -
+                + Product()
+                + Product(System::Data::DataRow^)
+                + Product(System::Windows::Forms::DataGridViewRow^)
+                - - Méthodes - -
+                + id() : int
+                + name(System::String^) : void
+                + name() : System::String^
+                + description(System::String^) : void
+                + description() : System::String^
+                + cost(float) : void
+                + cost() : float
+                + quantity(int) : void
+                + quantity() : int
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                - - Attributs - -
+                - __id : int
+                - __name : System::String^
+                - __description : System::String^
+                - __cost : float
+                - __quantity : int
+                == Statique ==
+                - - Méthodes - -
+                + toArray(System::Data::DataTable^) : array<Product^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Product^>^
+                + toDataTable(array<Product^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Product^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
+
+            class Order {
+                == Public ==
+                - - Constructeur - -
+                + Order()
+                + Order(System::Data::DataRow^)
+                + Order(System::Windows::Forms::DataGridViewRow^)
+                - - Méthodes - -
+                + id() : int
+                + paymentDate(System::DateTime^) : void
+                + paymentDate(int) : void
+                + paymentDate() : System::DateTime^
+                + creationDate(System::DateTime^) : void
+                + creationDate(int) : void
+                + creationDate() : System::DateTime^
+                + deliveryDate(System::DateTime^) : void
+                + deliveryDate(int) : void
+                + deliveryDate() : System::DateTime^
+                + cost(float) : void
+                + cost() : float
+                + paymentMode(System::String^) : void
+                + paymentMode() : System::String^
+                + client(int) : void
+                + client() : int
+
+                + toDataRow() : System::Data::DataRow^
+                + toDataGridViewRow() : System::Windows::Forms::DataGridViewRow^
+                == Privé ==
+                - - Attributs - -
+                - __id : int
+                - __paymentDate : System::DateTime^
+                - __creationDate : System::DateTime^
+                - __deliveryDate : System::DateTime^
+                - __cost : float
+                - __paymentMode : System::String^
+                - __client : int
+                == Statique ==
+                - - Méthodes - -
+                + toArray(System::Data::DataTable^) : array<Order^>^
+                + toArray(System::Windows::Forms::DataGridViewRowCollection^) : array<Order^>^
+                + toDataTable(array<Order^>^) : System::Data::DataTable^
+                + toDataGridViewRowCollection(array<Order^>^) : System::Windows::Forms::DataGridViewRowCollection^
+            }
+
+        }
+
+        class Database {
+            == Public ==
+            - - Méthodes - -
+            + runQuery(Request^) : System::Data::DataSet^
+            + runScalar(Request^) : System::Object^
+            == Privé ==
+            - - Attributs - -
+            - __connection : System::Data::MySQL::MySQLConnection
+        }
+
+        namespace RequestMapping {
+
+
+            class ClientRequestMapping {
+                == Statique ==
+                - - Méthodes - -
+                + {static} getClients() : RequestGet^
+                + {static} getClient(int) : RequestGet^
+                + {static} addClient(String^, String^, String^, String^, DateTime^, String^, String^) : RequestInsert^
+                + {static} updateClient(int, String^, String^, String^, String^, DateTime, String^, String^) : RequestUpdate^
+                + {static} deleteClient(int) : RequestDelete^
+            }
+            class AddressRequestMapping {
+                == Statique ==
+                - - Méthodes - -
+                + {static} getAddresses() : RequestGet^
+                + {static} getAddresses(int) : RequestGet^
+                + {static} getAddress(int) : RequestGet^
+                + {static} addAddress(String^, String^, int, int, int, int) : RequestInsert^
+                + {static} updateAddress(int, String^, String^, int, int, int, int) : RequestUpdate^
+                + {static} deleteAddress(int) : RequestDelete^
+            }
+            class ProductRequestMapping {
+                == Statique ==
+                - - Méthodes - -
+                + {static} getProducts() : RequestGet^
+                + {static} getProduct(int) : RequestGet^
+                + {static} addProduct(String^, String^, float) : RequestInsert^
+                + {static} updateProduct(int, String^, String^, float) : RequestUpdate^
+                + {static} deleteProduct(int) : RequestDelete^
+            }
+            class OrderRequestMapping {
+                == Statique ==
+                - - Méthodes - -
+                + {static} getOrders() : RequestGet^
+                + {static} getOrders(int) : RequestGet^
+                + {static} getOrder(int) : RequestGet^
+                + {static} addOrder(DateTime^, DateTime^, DateTime^, String^, float, int) : RequestInsert^
+                + {static} updateOrder(int, DateTime^, DateTime^, DateTime^, String^, float, int) : RequestUpdate^
+                + {static} deleteOrder(int) : RequestDelete^
+            }
+        }
+
+        class Request {
+            == Public ==
+            - - Méthodes - -
+            + 
+            + SQL() : System::String^
+            == Privé ==
+            - - Attributs - -
+            - __sql : System::String^
+        }
+
+
+
+
+
+
+
+
+
+    }
+
+    namespace Services {
+
+        class ClientsService {
+            == Public ==
+            - - Constructeurs - -
+            + ClientsService(Database^)
+            - - Méthodes - -
+            + createClient(Client) : Client^
+            + createClient(System::String^, System::String^) : Client^
+            + updateClient(Client) : Client^
+            + deleteClient(Client) : Client^
+            + getClient(Client) : Client^
+            + getClient(int) : Client^
+            + getAllClients() : array<Client^>^
+            == Privé ==
+            - - Attributs - -
+            - __database : Database^
+        }
+        class StocksService {
+            == Public ==
+            - - Constructeurs - -
+            + StockServices(Database^)
+            - - Méthodes - -
+            + addProduct(Product^) : Product^
+            + addProduct(System::String^, System::String^, float, int) : Product^
+            + updateProduct(Product^) : Product^
+            + updateProduct(int, System::String^, System::String^, float, int) : Product^
+            + removeProduct(Product^) : Product^
+            + removeProduct(int) : Product^
+            == Privé ==
+            - - Attributs - -
+            - __database : Database^
+        }
+        class OrdersService {
+            == Public ==
+            - - Constructeurs - -
+            + OrdersService(Database^)
+            - - Méthodes - -
+            + addOrder(Order^) : Order^
+            + addOrder(System::DateTime^, System::DateTime^, System::DateTime^, System::String^) : Order^
+            + updateOrder(Order^) : Order^
+            + updateOrder(int, System::DateTime^, System::DateTime^, System::DateTime^, System::String^) : Order^
+            + removeOrder(Order^) : Order^
+            + removeOrder(int) : Order^
+            == Privé ==
+            - - Attributs - -
+            - __database : Database^
+        }
+
+    }
+
+    App <|- - MyForm
+
+    App - -o ClientManager::Services
+
+    App - -o ClientManager::Components::Database
+
+
+    App - -o ClientManager::Components::DataType
+
+    ClientManager::Services - -o ClientManager::Components::DataType
+
+
+
+
+
+    ClientManager::Services::ClientsService -[#blue]-o ClientManager::Components::RequestMapping::ClientRequestMapping
+    ClientManager::Services::ClientsService -[#blue]-o ClientManager::Components::RequestMapping::AddressRequestMapping
+
+    ClientManager::Services::StocksService -[#blue]-o ClientManager::Components::RequestMapping::ProductRequestMapping
+
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::ClientRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::AddressRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::ProductRequestMapping
+    ClientManager::Services::OrdersService -[#blue]-o ClientManager::Components::RequestMapping::OrderRequestMapping
+
+
+    ClientManager::Services - -o ClientManager::Components::Request
+
+    ClientManager::Components::RequestMapping - -o ClientManager::Components::Request
+}
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: fr
+Country: FR
+--></g></svg>

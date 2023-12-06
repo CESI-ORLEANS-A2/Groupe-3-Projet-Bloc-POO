@@ -1,0 +1,73 @@
+@startuml Client
+
+participant "Formulaire" as Form
+participant "ClientService" as Service
+participant "ClientMapping" as Mapping
+participant "Database" as DB
+
+activate Form
+activate Service
+activate DB
+
+' Créer un client
+group Créer un client
+
+Form -> Service : createClient(name, email...)
+Service -> Mapping : insertClient(name, email...)
+activate Mapping
+Service <- Mapping : Request^ client
+deactivate Mapping
+Service -> DB : insertRequest(Request^ client)
+DB -> Service : int response
+Service -> Form : int response
+Form -> Form : updateInterface()
+
+end
+
+
+' Modifier un client
+group Modifier un client
+
+Form -> Service : updateClient(Datatype::Client^ client)
+Service -> Mapping : updateClient(name, email...)
+activate Mapping
+Service <- Mapping : Request^ client
+deactivate Mapping
+Service -> DB : updateRequest(Request^ client)
+DB -> Service : int response
+Service -> Form : int response
+Form -> Form : updateInterface()
+
+end
+
+' Supprimer un client
+group Supprimer un client
+
+Form -> Service : deleteClient(Datatype::Client^ client)
+Service -> Mapping : deleteClient(id)
+activate Mapping
+Service <- Mapping : Request^ client
+deactivate Mapping
+Service -> DB : deleteRequest(Request^ client)
+DB -> Service : int response
+Service -> Form : int response
+Form -> Form : updateInterface()
+
+end
+
+' Afficher un client
+group Afficher un client
+
+Form -> Service : getClient(id)
+Service -> Mapping : getClient(id)
+activate Mapping
+Service <- Mapping : Request^ client
+deactivate Mapping
+Service -> DB : getRequest(Request^ client)
+DB -> Service : DataTable client
+Service -> Form : Datatype::Client^ client
+Form -> Form : updateInterface()
+
+end
+
+@enduml

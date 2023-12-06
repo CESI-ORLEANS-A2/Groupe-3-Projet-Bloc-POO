@@ -8,7 +8,6 @@ using namespace System::Data;
 using namespace System::Drawing;
 
 namespace Groupe3ProjetBlocPOO {
-
 	/// <summary>
 	/// Summary for SettingsForm
 	/// </summary>
