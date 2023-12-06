@@ -4,12 +4,18 @@ Product::Product() {}
 
 Product::Product(Data::DataRow^row) {
 	this->__id = Convert::ToInt32(row->ItemArray[0]);
-	//à continuer
+	this->__name = row->ItemArray[1]->ToString();
+	this->__description = row->ItemArray[2]->ToString();
+	this->__cost = Convert::ToInt32(row->ItemArray[3]);
+	this->__quantity = Convert::ToInt32(row->ItemArray[4]);
 }
 
 Product::Product(Windows::Forms::DataGridViewRow^row) {
 	this->__id = Convert::ToInt32(row->Cells[0]->Value->ToString());
-	//à continuer
+	this->__name = row->Cells[0]->Value->ToString();
+	this->__description = row->Cells[0]->Value->ToString();
+	this->__cost = Convert::ToInt32(row->Cells[0]->Value->ToString());
+	this->__quantity = Convert::ToInt32(row->Cells[0]->Value->ToString());
 }
 
 int Product::id(void) {
@@ -48,9 +54,12 @@ int Product::quantity(void) {
 	return __quantity;
 }
 
-Data::DataRow^ Product::toDataRow() {}
+Data::DataRow^ Product::toDataRow() {
 
-Windows::Forms::DataGridViewRow^ Product::toDataGridViewRow() {}
+}
+
+Windows::Forms::DataGridViewRow^ Product::toDataGridViewRow() {
+}
 
 array<Product^>^ Product::toArray(Data::DataTable^) {}
 

@@ -10,7 +10,8 @@ Request^ ProductRequestMapping::getProducts(int rows) {
     cmd->Prepare();
     cmd->Parameters->AddWithValue("@row", rows);
     cmd->ExecuteNonQuery();
-   
+    return gcnew Request(cmd->ToString());
+    
 }
 
 Request^ ProductRequestMapping::getProduct(int id) {
@@ -19,7 +20,7 @@ Request^ ProductRequestMapping::getProduct(int id) {
     cmd->Prepare();
     cmd->Parameters->AddWithValue("@id", id);
     cmd->ExecuteNonQuery();
-
+    return gcnew Request(cmd->ToString());
 }
 
 Request^ ProductRequestMapping::addProduct(String^name, String^description, float cost) {
@@ -31,6 +32,7 @@ Request^ ProductRequestMapping::addProduct(String^name, String^description, floa
         cmd->Parameters->AddWithValue("@description", description);
         cmd->Parameters->AddWithValue("@cost", cost);
         cmd->ExecuteNonQuery();
+        return gcnew Request(cmd->ToString());
     }
     catch (MySqlException^ ex)
     {
@@ -48,6 +50,7 @@ Request^ ProductRequestMapping::updateProduct(int id,String^ name, String^ descr
         cmd->Parameters->AddWithValue("@cost", cost);
         cmd->Parameters->AddWithValue("@id", id);
         cmd->ExecuteNonQuery();
+        return gcnew Request(cmd->ToString());
     }
     catch (MySqlException^ ex)
     {
@@ -63,6 +66,7 @@ Request^ ProductRequestMapping::deleteProduct(int id) {
         cmd->Prepare();
         cmd->Parameters->AddWithValue("@id",id);
         cmd->ExecuteNonQuery();
+        return gcnew Request(cmd->ToString());
     }
     catch (MySqlException^ ex)
     {
