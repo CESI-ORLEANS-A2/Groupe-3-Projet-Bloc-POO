@@ -1,1 +1,9 @@
 #pragma once
+
+enum UserTypes {
+	ADMIN,
+	STOCK_EMPLOYEE,
+	CLIENT_EMPLOYEE,
+	ORDER_EMPLOYEE,
+	UNDEFINED
+};
