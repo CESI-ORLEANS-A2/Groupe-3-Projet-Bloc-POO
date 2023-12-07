@@ -1,6 +1,7 @@
 #pragma once
 
 using namespace System;
+using namespace System::Data;
 using namespace System::Drawing;
 using namespace System::Windows;
 using namespace System::Windows::Forms;
@@ -47,9 +48,23 @@ namespace Groupe3ProjetBlocPOO {
 
 				static String^ __searchRegex = "(?<=\\s+|^)(?:(?<property>[a-z0-9_]+=(?:(?<!\\\\)'(?:[^']|\\\\')+(?<!\\\\)'|(?:\\\\\\s|[^\\s])+))|(?<keywords>(?<!\\\\)'(?:[^']|\\\\')+(?<!\\\\)')|(?<keyword>(?:\\\\\\s|[^\\s])+))(?=\\s+|$)";
 				static String^ __searchPropertyRegex = "^(?<name>[a-z0-9_]+)=(?<value>(?:(?<!\\\\)'(?:[^']|\\\\'|[\\s\\t])+(?<!\\\\)'|(?:\\\\\\s|[^\\s])+))$";
-				static String^ __searchRemoveQuotesRegex = "(?<!\\\\)'";
-				static List<String^>^ __searchRegexMatchGroups = gcnew List<String^>(3);
+				static String^ __searchRemoveCharsRegex = "(?<!\\\\)'|\\\\";
+				static String^ __searchPrefixRegex = "[()[\\]?*.+|{}^$]";
+				static String^ __searchPrefixReplace = "\\$&";
 				static int __searchCompare(array<int>^ a, array<int>^ b);
+			};
+
+			private ref class SearchComparer : System::Collections::IComparer {
+			public:
+				SearchComparer(array<array<int>^>^ scores) {
+					this->__scores = scores;
+				}
+
+				virtual int Compare(Object^ a, Object^ b) {
+					return 0;
+				}
+			private: 
+				array<array<int>^>^ __scores;
 			};
 		}
 	}

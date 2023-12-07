@@ -67,22 +67,12 @@ void Groupe3ProjetBlocPOO::Utils::ElementsCustomization::CustomizeTextBox::__onT
 // =                      SearchBox                       =
 // ========================================================
 
-Groupe3ProjetBlocPOO::Utils::ElementsCustomization::SearchInputBox::SearchInputBox() {
-	if (!SearchInputBox::__searchRegexMatchGroups->Count) {
-		SearchInputBox::__searchRegexMatchGroups->Add("property");
-		SearchInputBox::__searchRegexMatchGroups->Add("keyword");
-		SearchInputBox::__searchRegexMatchGroups->Add("keywords");
-	}
-}
+Groupe3ProjetBlocPOO::Utils::ElementsCustomization::SearchInputBox::SearchInputBox() { }
 Groupe3ProjetBlocPOO::Utils::ElementsCustomization::SearchInputBox::SearchInputBox(TextBox^ textBox, String^ placeholder) : CustomizeTextBox(textBox, placeholder) {
-	SearchInputBox::SearchInputBox();
-
 	textBox->KeyDown += gcnew KeyEventHandler(this, &SearchInputBox::__onKeyDown);
 }
 Groupe3ProjetBlocPOO::Utils::ElementsCustomization::SearchInputBox::SearchInputBox(TextBox^ textBox, String^ placeholder, DataGridView^ dataGridView) :
 	CustomizeTextBox(textBox, placeholder), __dataGridView(dataGridView) {
-	SearchInputBox::SearchInputBox();
-
 	this->__textBox->KeyDown += gcnew KeyEventHandler(this, &SearchInputBox::__onKeyDown);
 
 	this->__textBox->TextChanged += gcnew EventHandler(this, &SearchInputBox::__onTextChanged);
@@ -106,70 +96,79 @@ void Groupe3ProjetBlocPOO::Utils::ElementsCustomization::SearchInputBox::__onTex
 	}
 	if (this->__textBox->Text == this->__placeholder) return;
 
-	array<array<int>^>^ scores = gcnew array<array<int>^>(this->__dataGridView->RowCount-1);
-	for (int i = 0; i < this->__dataGridView->RowCount-1; i++) {
+	MatchCollection^ matches = Regex::Matches(this->__textBox->Text, SearchInputBox::__searchRegex, RegexOptions::IgnoreCase);
+
+	array<array<int>^>^ scores = gcnew array<array<int>^>(this->__dataGridView->RowCount - 1);
+	for (int i = 0; i < this->__dataGridView->RowCount - 1; i++) {
 		scores[i] = gcnew array<int>(2) { i, 0 };
 	}
 
-	MatchCollection^ matches = Regex::Matches(this->__textBox->Text, SearchInputBox::__searchRegex, RegexOptions::IgnoreCase);
 	for each (Match ^ match in matches) {
-		for (int i = 0; i < this->__dataGridView->RowCount; i++) {
+		for (int i = 0; i < this->__dataGridView->RowCount - 1; i++) {
 			DataGridViewRow^ row = this->__dataGridView->Rows[i];
 			if (row->IsNewRow) continue;
 
 			String^ keyword = "";
 
-			for (int j = 1; j < match->Groups->Count; j++) {
-				if (SearchInputBox::__searchRegexMatchGroups->Contains(match->Groups[j]->Name)) {
-					keyword = match->Groups[j]->Value;
-					break;
-				}
-			}
+			if (match->Groups["property"]->Value->Length) {
+				keyword = match->Groups["property"]->Value->Trim();
+				Match^ propertyMatch = Regex::Match(keyword, SearchInputBox::__searchPropertyRegex, RegexOptions::IgnoreCase);
 
-			Match^ propertyMatch = Regex::Match(keyword, SearchInputBox::__searchPropertyRegex, RegexOptions::IgnoreCase);
+				String^ propertyName = propertyMatch->Groups[1]->Value->Trim();
+				String^ propertyValue = propertyMatch->Groups[2]->Value->Trim();
 
-			if (propertyMatch->Success) {
-				String^ propertyName = propertyMatch->Groups[1]->Value;
-				String^ propertyValue = propertyMatch->Groups[2]->Value;
-
-				propertyValue = Regex::Replace(propertyValue, SearchInputBox::__searchRemoveQuotesRegex, "");
+				propertyValue = Regex::Replace(propertyValue, SearchInputBox::__searchRemoveCharsRegex, "");
+				propertyValue = Regex::Replace(propertyValue, SearchInputBox::__searchPrefixRegex, SearchInputBox::__searchPrefixReplace);
 
 				for (int j = 0; j < row->Cells->Count; j++) {
 					DataGridViewCell^ cell = row->Cells[j];
 					if (cell->Value == nullptr) continue;
 
-					String^ columnName = this->__dataGridView->Columns[i]->Name;
+					String^ columnName = this->__dataGridView->Columns[j]->DataPropertyName;
 
 					if (columnName->Equals(propertyName, StringComparison::OrdinalIgnoreCase)) {
-						if (Regex::IsMatch(cell->Value->ToString(), propertyValue, RegexOptions::IgnoreCase)) {
+						if (Regex::IsMatch(cell->Value->ToString()->Trim(), propertyValue, RegexOptions::IgnoreCase)) {
 							scores[i][1]++;
 						}
 					}
 				}
 			}
-			else {
+			else if (match->Groups["keywords"]->Value->Length || match->Groups["keyword"]->Value->Length) {
+
+				if (match->Groups["keyword"]->Value->Length) {
+					keyword = match->Groups["keyword"]->Value->Trim();
+				}
+				else {
+					keyword = match->Groups["keywords"]->Value->Trim();
+				}
+				keyword = Regex::Replace(keyword, SearchInputBox::__searchRemoveCharsRegex, "");
+				keyword = Regex::Replace(keyword, SearchInputBox::__searchPrefixRegex, SearchInputBox::__searchPrefixReplace);
+
 				for (int j = 0; j < row->Cells->Count; j++) {
 					DataGridViewCell^ cell = row->Cells[j];
 					if (cell->Value == nullptr) continue;
 
-					keyword = Regex::Replace(keyword, SearchInputBox::__searchRemoveQuotesRegex, "");
-
-					if (Regex::IsMatch(cell->Value->ToString(), keyword, RegexOptions::IgnoreCase)) {
+					//scores[i][1] += (double)Math::Abs(String::Compare(cell->Value->ToString()->Trim(), keyword, StringComparison::OrdinalIgnoreCase)) / 2147483648;
+					if (Regex::IsMatch(cell->Value->ToString()->Trim(), keyword, RegexOptions::IgnoreCase)) {
 						scores[i][1]++;
 					}
 				}
 			}
-
 		}
 	}
 
 	Array::Sort(scores, gcnew Comparison<array<int>^>(SearchInputBox::__searchCompare));
 
+	DataSet^ newDataSet = ((DataSet^)this->__dataGridView->DataSource)->Clone();
+
 	for (int i = 0; i < scores->Length; i++) {
-		this->__dataGridView->Rows[scores[i][0]]->Visible = !!scores[i][1];
+		newDataSet->Tables[0]->ImportRow(((DataSet^)this->__dataGridView->DataSource)->Tables[0]->Rows[(int)scores[i][0]]);
 	}
+
+	this->__dataGridView->DataSource = newDataSet;
+
 }
 
 int Groupe3ProjetBlocPOO::Utils::ElementsCustomization::SearchInputBox::__searchCompare(array<int>^ a, array<int>^ b) {
-	return b[1] - a[1];
+	return (b[1] - a[1]);
 }

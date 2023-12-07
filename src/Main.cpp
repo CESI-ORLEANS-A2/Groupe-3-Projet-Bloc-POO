@@ -54,7 +54,7 @@ void App::tabControl_Tabs_SelectedIndexChanged(System::Object^ sender, System::E
 
 			this->textBox_ClientsSearch->Enabled = true;
 			this->button_ClientsUpdate->Enabled = true;
-			this->button_ClientsDelete->Enabled = true;
+			//this->button_ClientsDelete->Enabled = true;
 			this->button_ClientsAdd->Enabled = true;
 			this->dataGridView_Clients->Enabled = true;
 		}
@@ -95,5 +95,20 @@ void App::button_ClientsUpdate_Click(System::Object^ sender, System::EventArgs^ 
 	this->dataGridView_Clients->DataSource = Client::toDataSet(this->__clientService->getClients(), "clients");
 	if (!this->dataGridView_Clients->DataMember) {
 		this->dataGridView_Clients->DataMember = "clients";
+	}
+}
+void App::dataGridView_Clients_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) {
+	if (this->dataGridView_Clients->SelectedRows->Count > 0) {
+		this->button_ClientsDelete->Enabled = true;
+
+		this->__selectedClients = Client::toArray(this->dataGridView_Clients->SelectedRows);
+
+		int clientId = this->__selectedClients[e->RowIndex]->id();
+		array<Address^>^ addresses = this->__clientService->getAddresses(clientId);
+
+		this->dataGridView_ClientsAddresses->DataSource = Address::toDataSet(addresses, "addresses");
+		if (!this->dataGridView_ClientsAddresses->DataMember) {
+			this->dataGridView_ClientsAddresses->DataMember = "addresses";
+		}
 	}
 }

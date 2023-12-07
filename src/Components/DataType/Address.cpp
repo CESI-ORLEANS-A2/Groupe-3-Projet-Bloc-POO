@@ -1,37 +1,42 @@
 #include "./Address.h"
 
 array<Groupe3ProjetBlocPOO::Components::DataType::Address^>^ Groupe3ProjetBlocPOO::Components::DataType::Address::toArray(DataRowCollection^ collection) {
-	array<Address^>^ Addresss = gcnew array<Address^>(collection->Count);
+	array<Address^>^ clients = gcnew array<Address^>(collection->Count);
 	for (int i = 0; i < collection->Count; i++) {
-		Addresss[i] = gcnew Address(collection[i]);
+		clients[i] = gcnew Address(collection[i]);
 	}
-	return Addresss;
+	return clients;
 }
 array<Groupe3ProjetBlocPOO::Components::DataType::Address^>^ Groupe3ProjetBlocPOO::Components::DataType::Address::toArray(DataGridViewRowCollection^ collection) {
-	array<Address^>^ Addresss = gcnew array<Address^>(collection->Count);
+	array<Address^>^ clients = gcnew array<Address^>(collection->Count);
 	for (int i = 0; i < collection->Count; i++) {
-		Addresss[i] = gcnew Address(collection[i]);
+		clients[i] = gcnew Address(collection[i]);
 	}
-	return Addresss;
+	return clients;
 }
-DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataTable(array<Address^>^ Addresss) {
-	DataTable^ dataTable = gcnew DataTable();
-
-	dataTable->Columns->Add("id", int::typeid);
-	dataTable->Columns->Add("firstname", String::typeid);
-	dataTable->Columns->Add("lastname", String::typeid);
-	dataTable->Columns->Add("email", String::typeid);
-	dataTable->Columns->Add("phone", String::typeid);
-	dataTable->Columns->Add("birthdate", Int64::typeid);
-	dataTable->Columns->Add("logo", String::typeid);
-	dataTable->Columns->Add("company", String::typeid);
-
-	for (int i = 0; i < Addresss->Length; i++) {
-		dataTable->Rows->Add(Addresss[i]->toDataRow());
+array<Groupe3ProjetBlocPOO::Components::DataType::Address^>^ Groupe3ProjetBlocPOO::Components::DataType::Address::toArray(DataGridViewSelectedRowCollection^ collection) {
+	array<Address^>^ clients = gcnew array<Address^>(collection->Count);
+	for (int i = 0; i < collection->Count; i++) {
+		clients[i] = gcnew Address(collection[i]);
 	}
-	return dataTable;
+	return clients;
 }
-DataGridView^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataGridView(array<Address^>^ Addresss) {
+DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataTable(array<Address^>^ clients) {
+	DataTable^ dataTable = Address::dataTableSchema();
+	dataTable->Clear();
+
+	for (int i = 0; i < clients->Length; i++) {
+		dataTable->Rows->Add(clients[i]->toDataRow());
+	}
+	return dataTable->Copy();
+}
+DataSet^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataSet(array<Address^>^ clients, String^ tableName) {
+	DataSet^ dataSet = gcnew DataSet();
+	dataSet->Tables->Add(Address::toDataTable(clients));
+	dataSet->Tables[0]->TableName = tableName;
+	return dataSet;
+}
+DataGridView^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataGridView(array<Address^>^ clients) {
 	DataGridView^ dataGridView = gcnew DataGridView();
 
 	dataGridView->Columns->Add("id", "id");
@@ -43,10 +48,28 @@ DataGridView^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataGridVie
 	dataGridView->Columns->Add("logo", "logo");
 	dataGridView->Columns->Add("company", "company");
 
-	for (int i = 0; i < Addresss->Length; i++) {
-		dataGridView->Rows->Add(Addresss[i]->toDataGridViewRow());
+	for (int i = 0; i < clients->Length; i++) {
+		dataGridView->Rows->Add(clients[i]->toDataGridViewRow());
 	}
 	return dataGridView;
+}
+
+DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Address::dataTableSchema() {
+	if (Address::__dataTableSchema->Columns->Count == 0) {
+		Address::__dataTableSchema->Columns->Add("id", int::typeid);
+		Address::__dataTableSchema->Columns->Add("firstname", String::typeid);
+		Address::__dataTableSchema->Columns->Add("lastname", String::typeid);
+		Address::__dataTableSchema->Columns->Add("email", String::typeid);
+		Address::__dataTableSchema->Columns->Add("phone", String::typeid);
+		Address::__dataTableSchema->Columns->Add("birthdate", String::typeid);
+		Address::__dataTableSchema->Columns->Add("logo", String::typeid);
+		Address::__dataTableSchema->Columns->Add("company", String::typeid);
+	}
+
+	return Address::__dataTableSchema;
+}
+DataRow^ Groupe3ProjetBlocPOO::Components::DataType::Address::newDataRow() {
+	return Address::dataTableSchema()->NewRow();
 }
 
 Groupe3ProjetBlocPOO::Components::DataType::Address::Address() {

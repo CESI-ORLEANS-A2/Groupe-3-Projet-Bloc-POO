@@ -138,14 +138,30 @@ namespace Groupe3ProjetBlocPOO {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersDeliveryDate;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersPaymentDate;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersPaymentMethod;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsId;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsFirstname;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsLastname;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsPhone;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsEmail;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsBirthday;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsLogo;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsCompany;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsFirstname;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsLastname;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsEmail;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsPhone;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsBirthday;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsLogo;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsCompany;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	protected:
 		/// <summary>
@@ -173,14 +189,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->tabPage_Clients = (gcnew System::Windows::Forms::TabPage());
 			this->splitContainer_Clients = (gcnew System::Windows::Forms::SplitContainer());
 			this->dataGridView_Clients = (gcnew System::Windows::Forms::DataGridView());
-			this->dataGridViewTextBoxColumn_ClientsId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_ClientsFirstname = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_ClientsLastname = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_ClientsPhone = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_ClientsEmail = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_ClientsBirthday = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_ClientsLogo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_ClientsCompany = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->panel_Client = (gcnew System::Windows::Forms::Panel());
 			this->button_ClientsSubmit = (gcnew System::Windows::Forms::Button());
 			this->button_ClientsDelete = (gcnew System::Windows::Forms::Button());
@@ -271,6 +279,14 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->panel_OrdersSearch = (gcnew System::Windows::Forms::Panel());
 			this->button_OrdersUpdate = (gcnew System::Windows::Forms::Button());
 			this->textBox_OrdersSearch = (gcnew System::Windows::Forms::TextBox());
+			this->dataGridViewTextBoxColumn_ClientsId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_ClientsFirstname = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_ClientsLastname = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_ClientsEmail = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_ClientsPhone = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_ClientsBirthday = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_ClientsLogo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_ClientsCompany = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabControl_Tabs->SuspendLayout();
 			this->tabPage_Home->SuspendLayout();
 			this->tabPage_Clients->SuspendLayout();
@@ -488,84 +504,18 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridView_Clients->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView_Clients->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
 				this->dataGridViewTextBoxColumn_ClientsId,
-					this->dataGridViewTextBoxColumn_ClientsFirstname, this->dataGridViewTextBoxColumn_ClientsLastname, this->dataGridViewTextBoxColumn_ClientsPhone,
-					this->dataGridViewTextBoxColumn_ClientsEmail, this->dataGridViewTextBoxColumn_ClientsBirthday, this->dataGridViewTextBoxColumn_ClientsLogo,
+					this->dataGridViewTextBoxColumn_ClientsFirstname, this->dataGridViewTextBoxColumn_ClientsLastname, this->dataGridViewTextBoxColumn_ClientsEmail,
+					this->dataGridViewTextBoxColumn_ClientsPhone, this->dataGridViewTextBoxColumn_ClientsBirthday, this->dataGridViewTextBoxColumn_ClientsLogo,
 					this->dataGridViewTextBoxColumn_ClientsCompany
 			});
 			this->dataGridView_Clients->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->dataGridView_Clients->Enabled = false;
 			this->dataGridView_Clients->Location = System::Drawing::Point(0, 0);
 			this->dataGridView_Clients->Name = L"dataGridView_Clients";
+			this->dataGridView_Clients->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::False;
 			this->dataGridView_Clients->Size = System::Drawing::Size(1126, 311);
 			this->dataGridView_Clients->TabIndex = 0;
-			// 
-			// dataGridViewTextBoxColumn_ClientsId
-			// 
-			this->dataGridViewTextBoxColumn_ClientsId->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
-			this->dataGridViewTextBoxColumn_ClientsId->DataPropertyName = L"id";
-			this->dataGridViewTextBoxColumn_ClientsId->FillWeight = 10;
-			this->dataGridViewTextBoxColumn_ClientsId->HeaderText = L"ID";
-			this->dataGridViewTextBoxColumn_ClientsId->Name = L"dataGridViewTextBoxColumn_ClientsId";
-			this->dataGridViewTextBoxColumn_ClientsId->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_ClientsId->Width = 43;
-			// 
-			// dataGridViewTextBoxColumn_ClientsFirstname
-			// 
-			this->dataGridViewTextBoxColumn_ClientsFirstname->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->dataGridViewTextBoxColumn_ClientsFirstname->DataPropertyName = L"firstname";
-			this->dataGridViewTextBoxColumn_ClientsFirstname->HeaderText = L"Firstname";
-			this->dataGridViewTextBoxColumn_ClientsFirstname->MinimumWidth = 80;
-			this->dataGridViewTextBoxColumn_ClientsFirstname->Name = L"dataGridViewTextBoxColumn_ClientsFirstname";
-			// 
-			// dataGridViewTextBoxColumn_ClientsLastname
-			// 
-			this->dataGridViewTextBoxColumn_ClientsLastname->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->dataGridViewTextBoxColumn_ClientsLastname->DataPropertyName = L"lastname";
-			this->dataGridViewTextBoxColumn_ClientsLastname->HeaderText = L"Lastname";
-			this->dataGridViewTextBoxColumn_ClientsLastname->MinimumWidth = 80;
-			this->dataGridViewTextBoxColumn_ClientsLastname->Name = L"dataGridViewTextBoxColumn_ClientsLastname";
-			// 
-			// dataGridViewTextBoxColumn_ClientsPhone
-			// 
-			this->dataGridViewTextBoxColumn_ClientsPhone->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
-			this->dataGridViewTextBoxColumn_ClientsPhone->DataPropertyName = L"phone";
-			this->dataGridViewTextBoxColumn_ClientsPhone->HeaderText = L"Phone Number";
-			this->dataGridViewTextBoxColumn_ClientsPhone->MinimumWidth = 150;
-			this->dataGridViewTextBoxColumn_ClientsPhone->Name = L"dataGridViewTextBoxColumn_ClientsPhone";
-			this->dataGridViewTextBoxColumn_ClientsPhone->Width = 150;
-			// 
-			// dataGridViewTextBoxColumn_ClientsEmail
-			// 
-			this->dataGridViewTextBoxColumn_ClientsEmail->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
-			this->dataGridViewTextBoxColumn_ClientsEmail->DataPropertyName = L"email";
-			this->dataGridViewTextBoxColumn_ClientsEmail->HeaderText = L"Email";
-			this->dataGridViewTextBoxColumn_ClientsEmail->Name = L"dataGridViewTextBoxColumn_ClientsEmail";
-			this->dataGridViewTextBoxColumn_ClientsEmail->Width = 59;
-			// 
-			// dataGridViewTextBoxColumn_ClientsBirthday
-			// 
-			this->dataGridViewTextBoxColumn_ClientsBirthday->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
-			this->dataGridViewTextBoxColumn_ClientsBirthday->DataPropertyName = L"birthdate";
-			this->dataGridViewTextBoxColumn_ClientsBirthday->FillWeight = 50;
-			this->dataGridViewTextBoxColumn_ClientsBirthday->HeaderText = L"Birthdate";
-			this->dataGridViewTextBoxColumn_ClientsBirthday->Name = L"dataGridViewTextBoxColumn_ClientsBirthday";
-			this->dataGridViewTextBoxColumn_ClientsBirthday->Width = 79;
-			// 
-			// dataGridViewTextBoxColumn_ClientsLogo
-			// 
-			this->dataGridViewTextBoxColumn_ClientsLogo->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
-			this->dataGridViewTextBoxColumn_ClientsLogo->DataPropertyName = L"logo";
-			this->dataGridViewTextBoxColumn_ClientsLogo->HeaderText = L"Logo";
-			this->dataGridViewTextBoxColumn_ClientsLogo->Name = L"dataGridViewTextBoxColumn_ClientsLogo";
-			this->dataGridViewTextBoxColumn_ClientsLogo->Width = 58;
-			// 
-			// dataGridViewTextBoxColumn_ClientsCompany
-			// 
-			this->dataGridViewTextBoxColumn_ClientsCompany->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
-			this->dataGridViewTextBoxColumn_ClientsCompany->DataPropertyName = L"company";
-			this->dataGridViewTextBoxColumn_ClientsCompany->HeaderText = L"Company";
-			this->dataGridViewTextBoxColumn_ClientsCompany->Name = L"dataGridViewTextBoxColumn_ClientsCompany";
-			this->dataGridViewTextBoxColumn_ClientsCompany->Width = 80;
+			this->dataGridView_Clients->RowHeaderMouseClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &MainForm::dataGridView_Clients_RowHeaderMouseClick);
 			// 
 			// panel_Client
 			// 
@@ -638,7 +588,8 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridView_ClientsAddresses->Enabled = false;
 			this->dataGridView_ClientsAddresses->Location = System::Drawing::Point(155, 0);
 			this->dataGridView_ClientsAddresses->Name = L"dataGridView_ClientsAddresses";
-			this->dataGridView_ClientsAddresses->Size = System::Drawing::Size(971, 200);
+			this->dataGridView_ClientsAddresses->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView_ClientsAddresses->Size = System::Drawing::Size(971, 194);
 			this->dataGridView_ClientsAddresses->TabIndex = 0;
 			// 
 			// dataGridViewTextBoxColumn_ClientsAddressId
@@ -801,6 +752,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridView_Stock->Enabled = false;
 			this->dataGridView_Stock->Location = System::Drawing::Point(0, 34);
 			this->dataGridView_Stock->Name = L"dataGridView_Stock";
+			this->dataGridView_Stock->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::False;
 			this->dataGridView_Stock->Size = System::Drawing::Size(1126, 548);
 			this->dataGridView_Stock->TabIndex = 2;
 			// 
@@ -913,6 +865,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridView_Orders->Enabled = false;
 			this->dataGridView_Orders->Location = System::Drawing::Point(0, 0);
 			this->dataGridView_Orders->Name = L"dataGridView_Orders";
+			this->dataGridView_Orders->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::False;
 			this->dataGridView_Orders->Size = System::Drawing::Size(1126, 240);
 			this->dataGridView_Orders->TabIndex = 0;
 			// 
@@ -1000,6 +953,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridView_OrdersClients->Location = System::Drawing::Point(0, 34);
 			this->dataGridView_OrdersClients->Name = L"dataGridView_OrdersClients";
 			this->dataGridView_OrdersClients->ReadOnly = true;
+			this->dataGridView_OrdersClients->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::False;
 			this->dataGridView_OrdersClients->Size = System::Drawing::Size(427, 321);
 			this->dataGridView_OrdersClients->TabIndex = 3;
 			// 
@@ -1085,6 +1039,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridView_OrdersStock->Location = System::Drawing::Point(0, 34);
 			this->dataGridView_OrdersStock->Name = L"dataGridView_OrdersStock";
 			this->dataGridView_OrdersStock->ReadOnly = true;
+			this->dataGridView_OrdersStock->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::False;
 			this->dataGridView_OrdersStock->Size = System::Drawing::Size(445, 321);
 			this->dataGridView_OrdersStock->TabIndex = 4;
 			// 
@@ -1507,6 +1462,74 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->textBox_OrdersSearch->Size = System::Drawing::Size(1008, 22);
 			this->textBox_OrdersSearch->TabIndex = 0;
 			// 
+			// dataGridViewTextBoxColumn_ClientsId
+			// 
+			this->dataGridViewTextBoxColumn_ClientsId->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_ClientsId->DataPropertyName = L"id";
+			this->dataGridViewTextBoxColumn_ClientsId->FillWeight = 10;
+			this->dataGridViewTextBoxColumn_ClientsId->HeaderText = L"ID";
+			this->dataGridViewTextBoxColumn_ClientsId->Name = L"dataGridViewTextBoxColumn_ClientsId";
+			this->dataGridViewTextBoxColumn_ClientsId->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_ClientsId->Width = 43;
+			// 
+			// dataGridViewTextBoxColumn_ClientsFirstname
+			// 
+			this->dataGridViewTextBoxColumn_ClientsFirstname->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->dataGridViewTextBoxColumn_ClientsFirstname->DataPropertyName = L"firstname";
+			this->dataGridViewTextBoxColumn_ClientsFirstname->HeaderText = L"Firstname";
+			this->dataGridViewTextBoxColumn_ClientsFirstname->MinimumWidth = 80;
+			this->dataGridViewTextBoxColumn_ClientsFirstname->Name = L"dataGridViewTextBoxColumn_ClientsFirstname";
+			// 
+			// dataGridViewTextBoxColumn_ClientsLastname
+			// 
+			this->dataGridViewTextBoxColumn_ClientsLastname->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->dataGridViewTextBoxColumn_ClientsLastname->DataPropertyName = L"lastname";
+			this->dataGridViewTextBoxColumn_ClientsLastname->HeaderText = L"Lastname";
+			this->dataGridViewTextBoxColumn_ClientsLastname->MinimumWidth = 80;
+			this->dataGridViewTextBoxColumn_ClientsLastname->Name = L"dataGridViewTextBoxColumn_ClientsLastname";
+			// 
+			// dataGridViewTextBoxColumn_ClientsEmail
+			// 
+			this->dataGridViewTextBoxColumn_ClientsEmail->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_ClientsEmail->DataPropertyName = L"email";
+			this->dataGridViewTextBoxColumn_ClientsEmail->HeaderText = L"Email";
+			this->dataGridViewTextBoxColumn_ClientsEmail->Name = L"dataGridViewTextBoxColumn_ClientsEmail";
+			this->dataGridViewTextBoxColumn_ClientsEmail->Width = 59;
+			// 
+			// dataGridViewTextBoxColumn_ClientsPhone
+			// 
+			this->dataGridViewTextBoxColumn_ClientsPhone->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_ClientsPhone->DataPropertyName = L"phone";
+			this->dataGridViewTextBoxColumn_ClientsPhone->HeaderText = L"Phone Number";
+			this->dataGridViewTextBoxColumn_ClientsPhone->MinimumWidth = 150;
+			this->dataGridViewTextBoxColumn_ClientsPhone->Name = L"dataGridViewTextBoxColumn_ClientsPhone";
+			this->dataGridViewTextBoxColumn_ClientsPhone->Width = 150;
+			// 
+			// dataGridViewTextBoxColumn_ClientsBirthday
+			// 
+			this->dataGridViewTextBoxColumn_ClientsBirthday->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_ClientsBirthday->DataPropertyName = L"birthdate";
+			this->dataGridViewTextBoxColumn_ClientsBirthday->FillWeight = 50;
+			this->dataGridViewTextBoxColumn_ClientsBirthday->HeaderText = L"Birthdate";
+			this->dataGridViewTextBoxColumn_ClientsBirthday->Name = L"dataGridViewTextBoxColumn_ClientsBirthday";
+			this->dataGridViewTextBoxColumn_ClientsBirthday->Width = 79;
+			// 
+			// dataGridViewTextBoxColumn_ClientsLogo
+			// 
+			this->dataGridViewTextBoxColumn_ClientsLogo->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_ClientsLogo->DataPropertyName = L"logo";
+			this->dataGridViewTextBoxColumn_ClientsLogo->HeaderText = L"Logo";
+			this->dataGridViewTextBoxColumn_ClientsLogo->Name = L"dataGridViewTextBoxColumn_ClientsLogo";
+			this->dataGridViewTextBoxColumn_ClientsLogo->Width = 58;
+			// 
+			// dataGridViewTextBoxColumn_ClientsCompany
+			// 
+			this->dataGridViewTextBoxColumn_ClientsCompany->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_ClientsCompany->DataPropertyName = L"company";
+			this->dataGridViewTextBoxColumn_ClientsCompany->HeaderText = L"Company";
+			this->dataGridViewTextBoxColumn_ClientsCompany->Name = L"dataGridViewTextBoxColumn_ClientsCompany";
+			this->dataGridViewTextBoxColumn_ClientsCompany->Width = 80;
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1575,5 +1598,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 	protected: virtual System::Void linkLabel_Author0xybo_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) { }
 	protected: virtual System::Void tabControl_Tabs_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) { }
 	protected: virtual System::Void button_ClientsUpdate_Click(System::Object^ sender, System::EventArgs^ e) { }
-};
+	protected: virtual System::Void dataGridView_Clients_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) { }
+	};
 }

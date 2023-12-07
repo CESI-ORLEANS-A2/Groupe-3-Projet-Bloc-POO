@@ -16,9 +16,9 @@ namespace Groupe3ProjetBlocPOO {
 			ClientService(Database^ database);
 
 			Client^ createClient(Client^ client);
-			Client^ createClient(String^ firstname, String^ lastname, String^ phone, String^ email, DateTime^ birthdate, String^ logo, String^ company);
+			Client^ createClient(String^ firstname, String^ lastname, String^ phone, String^ email, String^ birthdate, String^ logo, String^ company);
 			Client^ updateClient(Client^ client);
-			Client^ updateClient(int id, String^ firstname, String^ lastname, String^ phone, String^ email, DateTime^ birthdate, String^ logo, String^ company);
+			Client^ updateClient(int id, String^ firstname, String^ lastname, String^ phone, String^ email, String^ birthdate, String^ logo, String^ company);
 			Client^ deleteClient(Client^ client);
 			Client^ deleteClient(int id);
 			Client^ getClient(int id);
@@ -26,6 +26,9 @@ namespace Groupe3ProjetBlocPOO {
 			array<Client^>^ getClients();
 			array<Client^>^ getClients(int limit);
 			array<Client^>^ getClients(int limit, int offset);
+
+			array<Address^>^ getAddresses(Client^ client);
+			array<Address^>^ getAddresses(int clientId);
 
 		private:
 			Database^ __database;

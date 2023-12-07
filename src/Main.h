@@ -32,12 +32,15 @@ namespace Groupe3ProjetBlocPOO {
 		void linkLabel_AuthorBeboudu32_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) override;
 		void linkLabel_Author0xybo_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) override;
 		void button_ClientsUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void dataGridView_Clients_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) override;
 	private:
 		Database^ __database;
 
 		ClientService^ __clientService;
 		//ProductService^ __productService;
 		//OrderService^ __orderService;
+
+		array<Client^>^ __selectedClients;
 	};
 
 }

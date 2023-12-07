@@ -17,12 +17,14 @@ namespace Groupe3ProjetBlocPOO {
 				static Request^ getClients(int limit, int offset);
 				static Request^ getClient(int id);
 				static Request^ addClient(DataType::Client^ client);
-				static Request^ addClient(String^ firstname, String^ lastname, String^ phone, String^ email, DateTime^ birthdate, String^ logo, String^ company);
+				static Request^ addClient(String^ firstname, String^ lastname, String^ phone, String^ email, String^ birthdate, String^ logo, String^ company);
 				static Request^ updateClient(DataType::Client^ client);
-				static Request^ updateClient(int id, String^ firstname, String^ lastname, String^ phone, String^ email, DateTime^ birthdate, String^ logo, String^ company);
+				static Request^ updateClient(int id, String^ firstname, String^ lastname, String^ phone, String^ email, String^ birthdate, String^ logo, String^ company);
 				static Request^ deleteClient(int id);
 				static Request^ emptyClient();
 				static Request^ deleteClients(array<int>^ ids);
+
+				static Request^ getAddresses(int clientId);
 			};
 		}
 	}
