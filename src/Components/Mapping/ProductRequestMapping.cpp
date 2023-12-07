@@ -1,6 +1,14 @@
 #include "./ProductRequestMapping.h"
 
 
+Request^ ProductRequestMapping::getProducts()
+{
+    MySqlCommand^ cmd = gcnew MySqlCommand();
+    cmd->CommandText = "SELECT id,name,quantity FROM Product";
+    cmd->Prepare();
+    return gcnew Request(cmd->ToString());
+}
+
 Request^ ProductRequestMapping::getProducts(int rows) {
     MySqlCommand^ cmd = gcnew MySqlCommand();
     cmd->CommandText = "SELECT id,name,quantity FROM Product LIMIT @row";
@@ -9,6 +17,8 @@ Request^ ProductRequestMapping::getProducts(int rows) {
     return gcnew Request(cmd->ToString());
     
 }
+
+
 
 Request^ ProductRequestMapping::getProduct(int id) {
     MySqlCommand^ cmd = gcnew MySqlCommand();

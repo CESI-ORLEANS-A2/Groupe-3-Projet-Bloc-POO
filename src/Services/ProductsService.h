@@ -3,6 +3,7 @@
 #include "../Components/Database.h"
 #include "../Components/DataType/Product.h"
 #include "../Components/Mapping/ProductRequestMapping.h"
+#include "../Components/Request.h"
 
 using namespace System;
 
@@ -13,7 +14,8 @@ public :
 	ProductService(Database^);
 	Product^ viewProduct(int);
 	Product^ viewProduct(Product^);
-	array<Product^>^ viewProducts(int);
+	array<Product^>^ viewProducts();
+	array<Product^>^ viewProducts(int);;
 	Product^ addProduct(Product^);
 	Product^ addProduct(String^, String^, float);
 	Product^ addProduct(String^, String^,float,int);
