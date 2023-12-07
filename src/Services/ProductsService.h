@@ -11,6 +11,7 @@ private :
 		Database^ __database;
 public :
 	ProductService(Database^);
+	Product^ viewProduct(int);
 	Product^ addProduct(Product^);
 	Product^ addProduct(String^, String^, float);
 	Product^ addProduct(String^, String^,float,int);

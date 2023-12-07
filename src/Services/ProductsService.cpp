@@ -3,6 +3,19 @@
 
 ProductService::ProductService(Database^database) {
 	this->__database = database;
+
+	Dictionary<String^, String^>^ productSchema = gcnew Dictionary<String^, String^>();
+	productSchema->Add("id", "INT PRIMARY KEY AUTO_INCREMENT");
+	productSchema->Add("name", "VARCHAR(100)");
+	productSchema->Add("description", "VARCHAR(100)");
+	productSchema->Add("cost", "FLOAT");
+	productSchema->Add("quantity", "INT");
+	this->__database->createTable("products", productSchema);
+}
+
+Product^ ProductService::viewProduct(int id)
+{
+	return gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(id))->Rows[0]);
 }
 
 Product^ ProductService::addProduct(Product^product) {

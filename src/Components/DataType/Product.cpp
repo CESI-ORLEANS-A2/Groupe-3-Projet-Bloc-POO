@@ -1,5 +1,5 @@
 #include "./Product.h"
-using namespace Product;
+
 
 Product::Product() {}
 
