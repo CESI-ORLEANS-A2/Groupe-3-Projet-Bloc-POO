@@ -9,6 +9,7 @@ private :
 	int __quantity;
 public :
 	Product();
+	Product(int);
 	Product(Data::DataRow^);
 	Product(Windows::Forms::DataGridViewRow^);
 	int id(void);
@@ -20,10 +21,15 @@ public :
 	float cost();
 	void quantity(int);
 	int quantity(void);
-	Data::DataRow^ toDataRow();
-	Windows::Forms::DataGridViewRow^ toDataGridViewRow();
-	static array<Product^>^ toArray(Data::DataTable^);
+	
+	static Data::DataTable^ dataTableSchema();
+	static Data::DataRow^ newDataRow();
+	static array<Product^>^ toArray(Data::DataRowCollection^);
 	static array<Product^>^ toArray(Windows::Forms::DataGridViewRowCollection^);
 	static Data::DataTable^ toDataTable(array<Product^>^);
-	static Windows::Forms::DataGridViewRowCollection^ toDataGridViewRowCollection(array<Product^>^);
+	static Data::DataSet^ toDataSet(array<Product^>^,String^table);
+	static Windows::Forms::DataGridView^ toDataGridView(array<Product^>^);
+	static Data::DataTable^ __dataTableSchema = gcnew Data::DataTable();
+	Data::DataRow^ toDataRow();
+	Windows::Forms::DataGridViewRow^ toDataGridViewRow();
 };
