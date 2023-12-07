@@ -33,13 +33,13 @@ Order^ Groupe3ProjetBlocPOO::Services::OrderService::addOrder(Order^ order) {
 	Request^ request = OrderRequestMapping::addOrder(
 		order->paymentDate(), order->creationDate(), order->deliveryDate(),
 		order->amount(), order->paymentMethod());
-	int result = __database->runScalar(request);
+	Object^ result = __database->runScalar(request);
 	return this->getOrder(Convert::ToInt32(result));
 }
 
 Order^ Groupe3ProjetBlocPOO::Services::OrderService::addOrder(DateTime^ paymentDay, DateTime^ emissionDate, DateTime^ deliveryDate, float cost, paymentType type) {
 	Request^ request = OrderRequestMapping::addOrder(paymentDay, emissionDate, deliveryDate, cost, type);
-	int result = __database->runScalar(request);
+	Object^ result = __database->runScalar(request);
 	return this->getOrder(Convert::ToInt32(result));
 }
 

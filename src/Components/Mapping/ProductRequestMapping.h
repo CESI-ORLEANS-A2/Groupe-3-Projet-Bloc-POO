@@ -1,10 +1,11 @@
-#include "../Request.h"
-#include <string>
 #pragma once
+
+#include "../Request.h"
+
 using namespace System;
 using namespace System::Windows::Forms;
-using namespace std;
 using namespace MySql::Data::MySqlClient;
+using namespace Groupe3ProjetBlocPOO::Components;
 ref class ProductRequestMapping {
 
 public :

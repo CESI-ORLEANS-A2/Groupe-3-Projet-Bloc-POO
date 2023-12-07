@@ -4,6 +4,7 @@
 
 using namespace System;
 using namespace MySql::Data::MySqlClient;
+using namespace Groupe3ProjetBlocPOO::Components;
 
 namespace Groupe3ProjetBlocPOO {
 	namespace Components {
