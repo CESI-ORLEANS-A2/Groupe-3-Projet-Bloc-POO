@@ -10,6 +10,7 @@ private :
 public :
 	Product();
 	Product(int);
+	Product(int, Product^);
 	Product(Data::DataRow^);
 	Product(Windows::Forms::DataGridViewRow^);
 	int id(void);

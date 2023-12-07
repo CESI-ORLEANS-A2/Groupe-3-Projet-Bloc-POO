@@ -4,7 +4,7 @@
 #include "../Components/DataType/Product.h"
 #include "../Components/Mapping/ProductRequestMapping.h"
 
-
+using namespace System;
 
 ref class ProductService {
 private :
@@ -12,6 +12,8 @@ private :
 public :
 	ProductService(Database^);
 	Product^ viewProduct(int);
+	Product^ viewProduct(Product^);
+	array<Product^>^ viewProducts(int);
 	Product^ addProduct(Product^);
 	Product^ addProduct(String^, String^, float);
 	Product^ addProduct(String^, String^,float,int);

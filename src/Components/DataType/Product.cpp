@@ -7,6 +7,15 @@ Product::Product(int id) {
 	this->__id = id;
 }
 
+Product::Product(int id, Product^product)
+{
+	this->__id = id;
+	this->__name = product->name();
+	this->__description = product->description();
+	this->__cost = product->cost();
+	this->__quantity = product->quantity();
+}
+
 Product::Product(Data::DataRow^row) {
 	this->__id = Convert::ToInt32(row->ItemArray[0]);
 	this->__name = row->ItemArray[1]->ToString();

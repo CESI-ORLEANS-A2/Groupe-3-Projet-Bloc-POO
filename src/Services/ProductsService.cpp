@@ -18,14 +18,24 @@ Product^ ProductService::viewProduct(int id)
 	return gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(id))->Rows[0]);
 }
 
+Product^ ProductService::viewProduct(Product^product)
+{
+	return gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(product->id()))->Rows[0]);
+}
+
+array<Product^>^ ProductService::viewProducts(int rows)
+{
+	Data::DataTable^product = this->__database->runQuery(ProductRequestMapping::getProducts(rows)).
+		array<Product^>^ productArray = gcnew array<Product^>(product->Rows->Count);
+	for (int i = 0; i < product->Rows->Count; i++) {
+		productArray[i] = gcnew Product(product->Rows[i]);
+	}
+	return productArray;
+}
+
 Product^ ProductService::addProduct(Product^product) {
-	int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::addProduct(product->name(), product->description(), product->cost(),product->quantity())));
-	Product^ product = gcnew Product(id);
-	product->name();
-	product->quantity();
-	product->cost();
-	product->description();
-	return product;
+	int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::addProduct(product->name(), product->description(), product->cost(),product->quantity())));;
+	return gcnew Product(id,product);
 
 }
 
