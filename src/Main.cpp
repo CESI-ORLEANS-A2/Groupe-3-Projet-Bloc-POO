@@ -3,10 +3,20 @@
 int WinMain() {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	Application::Run(gcnew App());
+	App^ app = gcnew App();
+	if (app->IsDisposed) {
+		return 0;
+	}
+	Application::Run(app);
 }
 
 App::App() {
+	StartForm^ form = gcnew StartForm();
+	Application::Run(form);
+	if (form->types == UserTypes::UNDEFINED) {
+		this->Close();
+		return;
+	}
 	this->InitializeComponent();
 }
 
@@ -16,7 +26,6 @@ App::App() {
 
 void App::InitializeComponent() {
 	// TODO ajoutez la fenêtre de connexion
-	// 
 
 	// On rappelle le constructeur de la classe mère
 	__super::InitializeComponent();
