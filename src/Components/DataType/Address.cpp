@@ -1,55 +1,53 @@
 #include "./Address.h"
 
 array<Groupe3ProjetBlocPOO::Components::DataType::Address^>^ Groupe3ProjetBlocPOO::Components::DataType::Address::toArray(DataRowCollection^ collection) {
-	array<Address^>^ clients = gcnew array<Address^>(collection->Count);
+	array<Address^>^ addresses = gcnew array<Address^>(collection->Count);
 	for (int i = 0; i < collection->Count; i++) {
-		clients[i] = gcnew Address(collection[i]);
+		addresses[i] = gcnew Address(collection[i]);
 	}
-	return clients;
+	return addresses;
 }
 array<Groupe3ProjetBlocPOO::Components::DataType::Address^>^ Groupe3ProjetBlocPOO::Components::DataType::Address::toArray(DataGridViewRowCollection^ collection) {
-	array<Address^>^ clients = gcnew array<Address^>(collection->Count);
+	array<Address^>^ addresses = gcnew array<Address^>(collection->Count);
 	for (int i = 0; i < collection->Count; i++) {
-		clients[i] = gcnew Address(collection[i]);
+		addresses[i] = gcnew Address(collection[i]);
 	}
-	return clients;
+	return addresses;
 }
 array<Groupe3ProjetBlocPOO::Components::DataType::Address^>^ Groupe3ProjetBlocPOO::Components::DataType::Address::toArray(DataGridViewSelectedRowCollection^ collection) {
-	array<Address^>^ clients = gcnew array<Address^>(collection->Count);
+	array<Address^>^ addresses = gcnew array<Address^>(collection->Count);
 	for (int i = 0; i < collection->Count; i++) {
-		clients[i] = gcnew Address(collection[i]);
+		addresses[i] = gcnew Address(collection[i]);
 	}
-	return clients;
+	return addresses;
 }
-DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataTable(array<Address^>^ clients) {
+DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataTable(array<Address^>^ addresses) {
 	DataTable^ dataTable = Address::dataTableSchema();
 	dataTable->Clear();
 
-	for (int i = 0; i < clients->Length; i++) {
-		dataTable->Rows->Add(clients[i]->toDataRow());
+	for (int i = 0; i < addresses->Length; i++) {
+		dataTable->Rows->Add(addresses[i]->toDataRow());
 	}
 	return dataTable->Copy();
 }
-DataSet^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataSet(array<Address^>^ clients, String^ tableName) {
+DataSet^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataSet(array<Address^>^ addresses, String^ tableName) {
 	DataSet^ dataSet = gcnew DataSet();
-	dataSet->Tables->Add(Address::toDataTable(clients));
+	dataSet->Tables->Add(Address::toDataTable(addresses));
 	dataSet->Tables[0]->TableName = tableName;
 	return dataSet;
 }
-DataGridView^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataGridView(array<Address^>^ clients) {
+DataGridView^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataGridView(array<Address^>^ addresses) {
 	DataGridView^ dataGridView = gcnew DataGridView();
 
 	dataGridView->Columns->Add("id", "id");
-	dataGridView->Columns->Add("firstname", "firstname");
-	dataGridView->Columns->Add("lastname", "lastname");
-	dataGridView->Columns->Add("email", "email");
-	dataGridView->Columns->Add("phone", "phone");
-	dataGridView->Columns->Add("birthdate", "birthdate");
-	dataGridView->Columns->Add("logo", "logo");
-	dataGridView->Columns->Add("company", "company");
+	dataGridView->Columns->Add("number", "number");
+	dataGridView->Columns->Add("street", "street");
+	dataGridView->Columns->Add("city", "city");
+	dataGridView->Columns->Add("zip", "zip");
+	dataGridView->Columns->Add("country", "country");
 
-	for (int i = 0; i < clients->Length; i++) {
-		dataGridView->Rows->Add(clients[i]->toDataGridViewRow());
+	for (int i = 0; i < addresses->Length; i++) {
+		dataGridView->Rows->Add(addresses[i]->toDataGridViewRow());
 	}
 	return dataGridView;
 }
@@ -57,13 +55,11 @@ DataGridView^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataGridVie
 DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Address::dataTableSchema() {
 	if (Address::__dataTableSchema->Columns->Count == 0) {
 		Address::__dataTableSchema->Columns->Add("id", int::typeid);
-		Address::__dataTableSchema->Columns->Add("firstname", String::typeid);
-		Address::__dataTableSchema->Columns->Add("lastname", String::typeid);
-		Address::__dataTableSchema->Columns->Add("email", String::typeid);
-		Address::__dataTableSchema->Columns->Add("phone", String::typeid);
-		Address::__dataTableSchema->Columns->Add("birthdate", String::typeid);
-		Address::__dataTableSchema->Columns->Add("logo", String::typeid);
-		Address::__dataTableSchema->Columns->Add("company", String::typeid);
+		Address::__dataTableSchema->Columns->Add("number", String::typeid);
+		Address::__dataTableSchema->Columns->Add("street", String::typeid);
+		Address::__dataTableSchema->Columns->Add("city", String::typeid);
+		Address::__dataTableSchema->Columns->Add("zip", int::typeid);
+		Address::__dataTableSchema->Columns->Add("country", String::typeid);
 	}
 
 	return Address::__dataTableSchema;
@@ -80,8 +76,8 @@ Groupe3ProjetBlocPOO::Components::DataType::Address::Address(DataRow^ row) {
 	this->__number = Convert::ToString(row->ItemArray[1]);
 	this->__street = Convert::ToString(row->ItemArray[2]);
 	this->__city = Convert::ToString(row->ItemArray[3]);
-	this->__zip = Convert::ToInt32(row->ItemArray[5]);
-	this->__country = Convert::ToString(row->ItemArray[4]);
+	this->__zip = Convert::ToInt32(row->ItemArray[4]);
+	this->__country = Convert::ToString(row->ItemArray[5]);
 }
 Groupe3ProjetBlocPOO::Components::DataType::Address::Address(DataGridViewRow^ row) {
 	this->__id = Convert::ToInt32(row->Cells[0]->Value);
@@ -127,22 +123,14 @@ void Groupe3ProjetBlocPOO::Components::DataType::Address::country(String^ countr
 }
 
 DataRow^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataRow() {
-	DataTable^ dataTable = gcnew DataTable();
-	dataTable->Columns->Add("id", int::typeid);
-	dataTable->Columns->Add("number", String::typeid);
-	dataTable->Columns->Add("street", String::typeid);
-	dataTable->Columns->Add("city", String::typeid);
-	dataTable->Columns->Add("zip", int::typeid);
-	dataTable->Columns->Add("country", String::typeid);
+	DataRow^ dataRow = Address::newDataRow();
 
-	DataRow^ dataRow = dataTable->NewRow();
-
-	dataRow->ItemArray[0] = this->__id;
-	dataRow->ItemArray[1] = this->__number;
-	dataRow->ItemArray[2] = this->__street;
-	dataRow->ItemArray[3] = this->__city;
-	dataRow->ItemArray[4] = this->__zip;
-	dataRow->ItemArray[5] = this->__country;
+	dataRow[0] = this->__id;
+	dataRow[1] = this->__number;
+	dataRow[2] = this->__street;
+	dataRow[3] = this->__city;
+	dataRow[4] = this->__zip;
+	dataRow[5] = this->__country;
 
 	return dataRow;
 }

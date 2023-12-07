@@ -59,8 +59,8 @@ DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Client::dataTableSchema()
 		Client::__dataTableSchema->Columns->Add("id", int::typeid);
 		Client::__dataTableSchema->Columns->Add("firstname", String::typeid);
 		Client::__dataTableSchema->Columns->Add("lastname", String::typeid);
-		Client::__dataTableSchema->Columns->Add("email", String::typeid);
 		Client::__dataTableSchema->Columns->Add("phone", String::typeid);
+		Client::__dataTableSchema->Columns->Add("email", String::typeid);
 		Client::__dataTableSchema->Columns->Add("birthdate", String::typeid);
 		Client::__dataTableSchema->Columns->Add("logo", String::typeid);
 		Client::__dataTableSchema->Columns->Add("company", String::typeid);

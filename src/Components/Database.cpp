@@ -30,6 +30,7 @@ DataTable^ Groupe3ProjetBlocPOO::Components::Database::runQuery(Request^ query) 
 }
 Object^ Groupe3ProjetBlocPOO::Components::Database::runScalar(String^ query) {
 	MySqlCommand^ cmd = gcnew MySqlCommand(query, this->__connection);
+	cmd->CommandText += "; SELECT LAST_INSERT_ID();";
 	Object^ result = cmd->ExecuteScalar();
 	return result;
 }
@@ -39,10 +40,10 @@ Object^ Groupe3ProjetBlocPOO::Components::Database::runScalar(Request^ query) {
 }
 
 void Groupe3ProjetBlocPOO::Components::Database::createTable(String^ table, Dictionary<String^, String^>^ schema) {
-	String^ query = "CREATE TABLE IF NOT EXISTS " + table + "( ";
+	String^ query = "CREATE TABLE IF NOT EXISTS " + table + " ( ";
 	for each (KeyValuePair<String^, String^> ^ kvp in schema) {
 		query += kvp->Key + " " + kvp->Value;
-		query += ",";
+		query += ", ";
 	}
-	this->runScalar(query->Substring(0, query->Length - 1) + ")");
+	this->runScalar(query->Substring(0, query->Length - 2) + ")");
 }

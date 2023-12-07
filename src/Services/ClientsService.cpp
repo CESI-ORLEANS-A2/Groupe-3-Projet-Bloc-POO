@@ -14,14 +14,24 @@ Groupe3ProjetBlocPOO::Services::ClientService::ClientService(Database^ database)
 	clientsSchema->Add("company", "VARCHAR(100)");
 	this->__database->createTable("clients", clientsSchema);
 
+	Dictionary<String^, String^>^ countriesSchema = gcnew Dictionary<String^, String^>();
+	countriesSchema->Add("id", "INT PRIMARY KEY AUTO_INCREMENT");
+	countriesSchema->Add("name", "VARCHAR(100)");
+	this->__database->createTable("countries", countriesSchema);
+
+	Dictionary<String^, String^>^ citiesSchema = gcnew Dictionary<String^, String^>();
+	citiesSchema->Add("id", "INT PRIMARY KEY AUTO_INCREMENT");
+	citiesSchema->Add("name", "VARCHAR(100)");
+	citiesSchema->Add("country_id", "INT NOT NULL, FOREIGN KEY (country_id) REFERENCES countries(id)");
+	this->__database->createTable("cities", citiesSchema);
+
 	Dictionary<String^, String^>^ addressesSchema = gcnew Dictionary<String^, String^>();
 	addressesSchema->Add("id", "INT PRIMARY KEY AUTO_INCREMENT");
-	addressesSchema->Add("client_id", "INT");
+	addressesSchema->Add("client_id", "INT NOT NULL, FOREIGN KEY (client_id) REFERENCES clients(id)");
 	addressesSchema->Add("number", "VARCHAR(10)");
 	addressesSchema->Add("street", "VARCHAR(100)");
-	addressesSchema->Add("city", "INT NOT NULL");
+	addressesSchema->Add("city_id", "INT NOT NULL, FOREIGN KEY (city_id) REFERENCES cities(id)");
 	addressesSchema->Add("zip", "INT NOT NULL");
-	addressesSchema->Add("country", "INT NOT NULL");
 	this->__database->createTable("addresses", addressesSchema);
 }
 
@@ -86,12 +96,14 @@ Client^ Groupe3ProjetBlocPOO::Services::ClientService::deleteClient(Client^ clie
 }
 Client^ Groupe3ProjetBlocPOO::Services::ClientService::deleteClient(int id) {
 	Client^ client = gcnew Client(this->__database->runQuery(ClientRequestMapping::getClient(id))->Rows[0]);
+
+	this->__database->runQuery(AddressRequestMapping::deleteAddresses(id));
 	this->__database->runQuery(ClientRequestMapping::deleteClient(id));
 	return client;
 }
 
 array<Address^>^ Groupe3ProjetBlocPOO::Services::ClientService::getAddresses(Client^ client) {
-	DataTable^ addresses = this->__database->runQuery(ClientRequestMapping::getAddresses(client->id()));
+	DataTable^ addresses = this->__database->runQuery(AddressRequestMapping::getAddresses(client->id()));
 	array<Address^>^ addressesArray = gcnew array<Address^>(addresses->Rows->Count);
 	for (int i = 0; i < addresses->Rows->Count; i++) {
 		addressesArray[i] = gcnew Address(addresses->Rows[i]);
@@ -99,7 +111,7 @@ array<Address^>^ Groupe3ProjetBlocPOO::Services::ClientService::getAddresses(Cli
 	return addressesArray;
 }
 array<Address^>^ Groupe3ProjetBlocPOO::Services::ClientService::getAddresses(int id) {
-	DataTable^ addresses = this->__database->runQuery(ClientRequestMapping::getAddresses(id));
+	DataTable^ addresses = this->__database->runQuery(AddressRequestMapping::getAddresses(id));
 	array<Address^>^ addressesArray = gcnew array<Address^>(addresses->Rows->Count);
 	for (int i = 0; i < addresses->Rows->Count; i++) {
 		addressesArray[i] = gcnew Address(addresses->Rows[i]);

@@ -150,13 +150,3 @@ Groupe3ProjetBlocPOO::Components::Request^ Groupe3ProjetBlocPOO::Components::Map
 
 	return gcnew Request(cmd);
 }
-
-Groupe3ProjetBlocPOO::Components::Request^ Groupe3ProjetBlocPOO::Components::Mapping::ClientRequestMapping::getAddresses(int clientId) {
-	MySqlCommand^ cmd = gcnew MySqlCommand();
-	cmd->CommandText =
-		"SELECT * FROM addresses "
-		"WHERE client_id = @clientId;";
-	cmd->Parameters->AddWithValue("@clientId", clientId);
-
-	return gcnew Request(cmd);
-}

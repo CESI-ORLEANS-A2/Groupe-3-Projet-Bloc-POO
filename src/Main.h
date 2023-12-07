@@ -33,6 +33,12 @@ namespace Groupe3ProjetBlocPOO {
 		void linkLabel_Author0xybo_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) override;
 		void button_ClientsUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
 		void dataGridView_Clients_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) override;
+		void button_ClientsAdd_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void button_ClientsDelete_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void dataGridView_Clients_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) override;
+		void dataGridView_ClientsAddresses_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) override;
+		void button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ e) override;
+
 	private:
 		Database^ __database;
 
@@ -41,6 +47,16 @@ namespace Groupe3ProjetBlocPOO {
 		//OrderService^ __orderService;
 
 		array<Client^>^ __selectedClients;
+
+		void __startClientEdition();
+		void __cancelClientEdition();
+		void __updateClients();
+		void __updateClientsAddresses();
+
+		bool __isClientEditing;
+
+		static Dictionary<String^, String^>^ __clientsPropertiesRegex = gcnew Dictionary<String^, String^>();
+		static Dictionary<String^, String^>^ __addressesPropertiesRegex = gcnew Dictionary<String^, String^>();
 	};
 
 }

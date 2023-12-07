@@ -23,8 +23,6 @@ namespace Groupe3ProjetBlocPOO {
 				static Request^ deleteClient(int id);
 				static Request^ emptyClient();
 				static Request^ deleteClients(array<int>^ ids);
-
-				static Request^ getAddresses(int clientId);
 			};
 		}
 	}

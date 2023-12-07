@@ -2,6 +2,7 @@
 
 #include "../Components/Database.h"
 #include "../Components/Mapping/ClientRequestMapping.h"
+#include "../Components/Mapping/AddressRequestMapping.h"
 #include "../Components/DataType/Client.h"
 #include "../Components/DataType/Address.h"
 
