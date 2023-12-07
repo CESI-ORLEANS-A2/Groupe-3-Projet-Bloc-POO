@@ -102,6 +102,70 @@ Client^ Groupe3ProjetBlocPOO::Services::ClientService::deleteClient(int id) {
 	return client;
 }
 
+Address^ Groupe3ProjetBlocPOO::Services::ClientService::createAddress(Address^ address) {
+	int id = Convert::ToInt32(this->__database->runScalar(AddressRequestMapping::addAddress(
+		address->clientId(),
+		address->number(),
+		address->street(),
+		address->city(),
+		address->zip(),
+		address->country()
+	)));
+	return gcnew Address(id, address);
+}
+Address^ Groupe3ProjetBlocPOO::Services::ClientService::createAddress(Client^ client, String^ number, String^ street, String^ city, int zipCode, String^ country) {
+	int id = Convert::ToInt32(this->__database->runScalar(AddressRequestMapping::addAddress(
+		client->id(),
+		number,
+		street,
+		city,
+		zipCode,
+		country
+	)));
+	return gcnew Address(id, client->id(), number, street, city, zipCode, country);
+}
+Address^ Groupe3ProjetBlocPOO::Services::ClientService::createAddress(int clientId, String^ number, String^ street, String^ city, int zipCode, String^ country) {
+	int id = Convert::ToInt32(this->__database->runScalar(AddressRequestMapping::addAddress(
+		clientId,
+		number,
+		street,
+		city,
+		zipCode,
+		country
+	)));
+	return gcnew Address(id, clientId, number, street, city, zipCode, country);
+}
+Address^ Groupe3ProjetBlocPOO::Services::ClientService::updateAddress(Address^ address) {
+	this->__database->runQuery(AddressRequestMapping::updateAddress(
+		address->id(),
+		address->number(),
+		address->street(),
+		address->city(),
+		address->zip(),
+		address->country()
+	));
+	return gcnew Address(this->__database->runQuery(AddressRequestMapping::getAddress(address->id()))->Rows[0]);
+}
+Address^ Groupe3ProjetBlocPOO::Services::ClientService::updateAddress(int id, String^ number, String^ street, String^ city, int zipCode, String^ country) {
+	this->__database->runQuery(AddressRequestMapping::updateAddress(
+		id,
+		number,
+		street,
+		city,
+		zipCode,
+		country
+	));
+	return gcnew Address(this->__database->runQuery(AddressRequestMapping::getAddress(id))->Rows[0]);
+}
+Address^ Groupe3ProjetBlocPOO::Services::ClientService::deleteAddress(Address^ address) {
+	this->__database->runQuery(AddressRequestMapping::deleteAddress(address->id()));
+	return address;
+}
+Address^ Groupe3ProjetBlocPOO::Services::ClientService::deleteAddress(int id) {
+	Address^ address = gcnew Address(this->__database->runQuery(AddressRequestMapping::getAddress(id))->Rows[0]);
+	this->__database->runQuery(AddressRequestMapping::deleteAddress(id));
+	return address;
+}
 array<Address^>^ Groupe3ProjetBlocPOO::Services::ClientService::getAddresses(Client^ client) {
 	DataTable^ addresses = this->__database->runQuery(AddressRequestMapping::getAddresses(client->id()));
 	array<Address^>^ addressesArray = gcnew array<Address^>(addresses->Rows->Count);
@@ -117,4 +181,43 @@ array<Address^>^ Groupe3ProjetBlocPOO::Services::ClientService::getAddresses(int
 		addressesArray[i] = gcnew Address(addresses->Rows[i]);
 	}
 	return addressesArray;
+}
+array<Address^>^ Groupe3ProjetBlocPOO::Services::ClientService::updateAddresses(array<Address^>^ addresses) {
+	array<Address^>^ updatedAddresses = gcnew array<Address^>(addresses->Length);
+	for (int i = 0; i < addresses->Length; i++) {
+		updatedAddresses[i] = this->updateAddress(addresses[i]);
+	}
+	return updatedAddresses;
+}
+array<Address^>^ Groupe3ProjetBlocPOO::Services::ClientService::deleteAddresses(Client^ client) {
+	DataTable^ addresses = this->__database->runQuery(AddressRequestMapping::getAddresses(client->id()));
+	array<Address^>^ addressesArray = gcnew array<Address^>(addresses->Rows->Count);
+	for (int i = 0; i < addresses->Rows->Count; i++) {
+		addressesArray[i] = gcnew Address(addresses->Rows[i]);
+	}
+	this->__database->runQuery(AddressRequestMapping::deleteAddresses(client->id()));
+	return addressesArray;
+}
+array<Address^>^ Groupe3ProjetBlocPOO::Services::ClientService::deleteAddresses(int id) {
+	DataTable^ addresses = this->__database->runQuery(AddressRequestMapping::getAddresses(id));
+	array<Address^>^ addressesArray = gcnew array<Address^>(addresses->Rows->Count);
+	for (int i = 0; i < addresses->Rows->Count; i++) {
+		addressesArray[i] = gcnew Address(addresses->Rows[i]);
+	}
+	this->__database->runQuery(AddressRequestMapping::deleteAddresses(id));
+	return addressesArray;
+}
+array<Address^>^ Groupe3ProjetBlocPOO::Services::ClientService::deleteAddresses(array<Address^>^ addresses) {
+	array<Address^>^ deletedAddresses = gcnew array<Address^>(addresses->Length);
+	for (int i = 0; i < addresses->Length; i++) {
+		deletedAddresses[i] = this->deleteAddress(addresses[i]);
+	}
+	return deletedAddresses;
+}
+
+int Groupe3ProjetBlocPOO::Services::ClientService::getCityId(String^ city) {
+	return Convert::ToInt32(this->__database->runScalar(AddressRequestMapping::getCityId(city)));
+}
+int Groupe3ProjetBlocPOO::Services::ClientService::getCountryId(String^ country) {
+	return Convert::ToInt32(this->__database->runScalar(AddressRequestMapping::getCountryId(country)));
 }

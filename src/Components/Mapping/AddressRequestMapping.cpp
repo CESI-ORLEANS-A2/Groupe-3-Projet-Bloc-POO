@@ -11,7 +11,7 @@ Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getAd
 Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getAddresses(int client) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText =
-		"SELECT addresses.id,addresses.number,addresses.street,cities.name AS 'city',addresses.zip,countries.name AS 'country' "
+		"SELECT addresses.id,addresses.client_id,addresses.number,addresses.street,cities.name AS 'city',addresses.zip,countries.name AS 'country' "
 		"FROM addresses JOIN(cities JOIN countries ON countries.id = cities.country_id) ON cities.id = addresses.city_id "
 		"WHERE addresses.client_id = @client";
 	cmd->Parameters->AddWithValue("@client", client);
@@ -36,21 +36,22 @@ Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getAd
 	return gcnew Request(cmd);
 }
 
-Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::addAddress(int number, String^ street, int zipCode, String^ city, String^ country) {
+Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::addAddress(int client_id, String^ number, String^ street, String^ city, int zipCode, String^ country) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText =
-		"INSERT INTO addresses (number, street, zip, city_id)"
-		"VALUES (@number, @street, @zipCode, (SELECT cities.id FROM cities WHERE cities.name = @city"
+		"INSERT INTO addresses (client_id, number, street, zip, city_id)"
+		"VALUES (@client_id, @number, @street, @zipCode, (SELECT cities.id FROM cities WHERE cities.name = @city"
 		"AND countries.id = (SELECT countries.id FROM countries WHERE countries.name = @country)))";
+	cmd->Parameters->AddWithValue("@client_id", client_id);
 	cmd->Parameters->AddWithValue("@number", number);
 	cmd->Parameters->AddWithValue("@street", street);
-	cmd->Parameters->AddWithValue("@zipCode", zipCode);
 	cmd->Parameters->AddWithValue("@city", city);
+	cmd->Parameters->AddWithValue("@zipCode", zipCode);
 	cmd->Parameters->AddWithValue("@country", country);
 	return gcnew Request(cmd);
 }
 
-Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::updateAddress(int id, int number, String^ street, int zipCode, String^ city, String^ country) {
+Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::updateAddress(int id, String^ number, String^ street, String^ city, int zipCode, String^ country) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText =
 		"UPDATE addresses SET number = @number, street = @street, zip = @zipCode, city_id = (SELECT cities.id FROM cities WHERE cities.name = @city"
@@ -58,8 +59,8 @@ Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::updat
 	cmd->Parameters->AddWithValue("@id", id);
 	cmd->Parameters->AddWithValue("@number", number);
 	cmd->Parameters->AddWithValue("@street", street);
-	cmd->Parameters->AddWithValue("@zipCode", zipCode);
 	cmd->Parameters->AddWithValue("@city", city);
+	cmd->Parameters->AddWithValue("@zipCode", zipCode);
 	cmd->Parameters->AddWithValue("@country", country);
 	return gcnew Request(cmd);
 }
@@ -79,5 +80,18 @@ Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::delet
 Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::deleteAddresses() {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText = "DELETE FROM addresses";
+	return gcnew Request(cmd);
+}
+
+Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getCityId(String^ city) {
+	MySqlCommand^ cmd = gcnew MySqlCommand();
+	cmd->CommandText = "SELECT cities.id FROM cities WHERE cities.name = @city";
+	cmd->Parameters->AddWithValue("@city", city);
+	return gcnew Request(cmd);
+}
+Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getCountryId(String^ country) {
+	MySqlCommand^ cmd = gcnew MySqlCommand();
+	cmd->CommandText = "SELECT countries.id FROM countries WHERE countries.name = @country";
+	cmd->Parameters->AddWithValue("@country", country);
 	return gcnew Request(cmd);
 }

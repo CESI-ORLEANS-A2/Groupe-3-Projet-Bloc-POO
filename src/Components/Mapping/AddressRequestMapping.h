@@ -15,11 +15,13 @@ namespace Groupe3ProjetBlocPOO {
 				static Request^ getAddresses(int client);
 				static Request^ getAddressesWithLimit(int limit);
 				static Request^ getAddress(int id);
-				static Request^ addAddress(int number, String^ street, int zipCode, String^ city, String^ country);
-				static Request^ updateAddress(int id, int number, String^ street, int zipCode, String^ city, String^ country);
+				static Request^ addAddress(int client_id, String^ number, String^ street, String^ city, int zipCode, String^ country);
+				static Request^ updateAddress(int id, String^ number, String^ street, String^ city, int zipCode, String^ country);
 				static Request^ deleteAddress(int id);
 				static Request^ deleteAddresses(int client);
 				static Request^ deleteAddresses();
+				static Request^ getCityId(String^ city);
+				static Request^ getCountryId(String^ country);
 			};
 		}
 	}

@@ -28,8 +28,22 @@ namespace Groupe3ProjetBlocPOO {
 			array<Client^>^ getClients(int limit);
 			array<Client^>^ getClients(int limit, int offset);
 
+			Address^ createAddress(Address^ address);
+			Address^ createAddress(Client^ client, String^ number, String^ street, String^ city, int zipCode, String^ country);
+			Address^ createAddress(int clientId, String^ number, String^ street, String^ city, int zipCode, String^ country);
+			Address^ updateAddress(Address^ address);
+			Address^ updateAddress(int id, String^ number, String^ street, String^ city, int zipCode, String^ country);
+			Address^ deleteAddress(Address^ address);
+			Address^ deleteAddress(int id);
 			array<Address^>^ getAddresses(Client^ client);
 			array<Address^>^ getAddresses(int clientId);
+			array<Address^>^ updateAddresses(array<Address^>^ addresses);
+			array<Address^>^ deleteAddresses(Client^ client);
+			array<Address^>^ deleteAddresses(int clientId);
+			array<Address^>^ deleteAddresses(array<Address^>^ addresses);
+
+			int getCityId(String^ city);
+			int getCountryId(String^ country);
 
 		private:
 			Database^ __database;

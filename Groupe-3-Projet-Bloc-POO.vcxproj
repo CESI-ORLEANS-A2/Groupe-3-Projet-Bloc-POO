@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -130,6 +130,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Components\DataType\DataType.cpp" />
     <ClCompile Include="src\Components\Database.cpp" />
     <ClCompile Include="src\Components\DataType\Address.cpp" />
     <ClCompile Include="src\Components\DataType\Client.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="src\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Components\DataType\DataType.h" />
     <ClInclude Include="src\Components\Database.h" />
     <ClInclude Include="src\Components\DataType\Address.h" />
     <ClInclude Include="src\Components\DataType\Client.h" />

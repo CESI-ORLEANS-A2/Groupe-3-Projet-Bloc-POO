@@ -26,8 +26,12 @@ namespace Groupe3ProjetBlocPOO {
 				Address();
 				Address(DataRow^);
 				Address(DataGridViewRow^);
+				Address(int id, Address^ address);
+				Address(int id, int client_id, String^ number, String^ street, String^ city, int zipCode, String^ country);
 
 				int id();
+				void clientId(int);
+				int clientId();
 				void number(String^);
 				String^ number();
 				void street(String^);
@@ -44,6 +48,7 @@ namespace Groupe3ProjetBlocPOO {
 
 			private:
 				int __id;
+				int __clientId;
 				String^ __number;
 				String^ __street;
 				String^ __city;

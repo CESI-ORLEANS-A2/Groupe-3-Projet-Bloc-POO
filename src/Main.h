@@ -38,6 +38,7 @@ namespace Groupe3ProjetBlocPOO {
 		void dataGridView_Clients_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) override;
 		void dataGridView_ClientsAddresses_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) override;
 		void button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void dataGridView_Clients_SelectionChanged(System::Object^ sender, System::EventArgs^ e) override;
 
 	private:
 		Database^ __database;
@@ -47,6 +48,7 @@ namespace Groupe3ProjetBlocPOO {
 		//OrderService^ __orderService;
 
 		array<Client^>^ __selectedClients;
+		DataGridViewRow^ __selectedClientRow;
 
 		void __startClientEdition();
 		void __cancelClientEdition();

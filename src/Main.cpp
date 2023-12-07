@@ -7,21 +7,19 @@ int WinMain() {
 }
 
 App::App() {
-	App::__clientsPropertiesRegex->Add("id", "^[0-9]+$");
 	App::__clientsPropertiesRegex->Add("firstname", "^[a-z0-9\\s\\-'`]+$");
 	App::__clientsPropertiesRegex->Add("lastname", "^[a-z0-9\\s\\-'`]+$");
 	App::__clientsPropertiesRegex->Add("phone", "^[0-9\s]+$");
 	App::__clientsPropertiesRegex->Add("email", "^[a-z0-9\\.-_]+@[a-z0-9\\.]+\\.[a-z0-9]{2,3}$");
 	App::__clientsPropertiesRegex->Add("birthdate", "^(?:(?:(?:(?<dayoftheweek>lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche) )?(?:(?<day>0[1-9]|[1-2][0-9]|3[0-1]) (?<month>janvier|mars|mai|juillet|ao[uû]t|octobre|d[ée]cembre)|(?<day>0[1-9]|[1-2][0-9]) (?<month>f[ée]vrier)|(?<day>0[1-9]|[1-2][0-9]|30) (?<month>avril|juin|septembre|novembre))(?: (?<year>[0-9]{4}))?)|(?:(?:(?<day>0?[1-9]|[1-2][0-9]|3[0-1])/(?<month>0?[13578]|1[02])|(?<day>0?[1-9]|[1-2][0-9])/(?<month>0?2)|(?<day>0?[1-9]|[1-2][0-9]|30)/(?<month>0?[469]|11))/(?<year>(?:19|20)?[0-9]{2})))$");
-	App::__clientsPropertiesRegex->Add("logo", "^.+$");
-	App::__clientsPropertiesRegex->Add("company", "^.+$");
+	App::__clientsPropertiesRegex->Add("logo", "^[^']*$");
+	App::__clientsPropertiesRegex->Add("company", "^[^']*$");
 
-	App::__addressesPropertiesRegex->Add("id", "^[0-9]+$");
 	App::__addressesPropertiesRegex->Add("number", "^[0-9a-z\\s]+$");
-	App::__addressesPropertiesRegex->Add("street", "^.+$");
-	App::__addressesPropertiesRegex->Add("city", "^[0-9]+$");
+	App::__addressesPropertiesRegex->Add("street", "^[^']+$");
+	App::__addressesPropertiesRegex->Add("city", "^[^']+$");
 	App::__addressesPropertiesRegex->Add("zip", "^[0-9]{5}$");
-	App::__addressesPropertiesRegex->Add("country", "^[0-9]+$");
+	App::__addressesPropertiesRegex->Add("country", "^[^']+$");
 
 	// Initialisation de la connexion à la base de données
 	this->__database = gcnew Database(ConfigurationManager::AppSettings["connection_string"]);
@@ -119,28 +117,7 @@ void App::button_ClientsUpdate_Click(System::Object^ sender, System::EventArgs^ 
 	this->__updateClients();
 }
 void App::dataGridView_Clients_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) {
-	if (this->__isClientEditing) {
-		if (MessageBox::Show("Editing a current customer, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
-			this->__cancelClientEdition();
-		}
-		else {
-			return;
-		}
 
-	}
-
-	if (this->dataGridView_Clients->SelectedRows->Count > 0) {
-		if (this->dataGridView_Clients->SelectedRows[0]->IsNewRow) return;
-
-		this->button_ClientsDelete->Enabled = true;
-
-		this->__selectedClients = Client::toArray(this->dataGridView_Clients->SelectedRows);
-
-		this->__updateClientsAddresses();
-
-		this->button_ClientsDelete->Enabled = true;
-		this->dataGridView_ClientsAddresses->Enabled = true;
-	}
 }
 void App::button_ClientsAdd_Click(System::Object^ sender, System::EventArgs^ e) {
 	// TODO Vérification de l'édition
@@ -160,13 +137,16 @@ void App::button_ClientsDelete_Click(System::Object^ sender, System::EventArgs^ 
 
 	if (this->dataGridView_Clients->SelectedRows->Count > 0) {
 		if (MessageBox::Show("Do you REALLY want to remove these customers?", "Deleting", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
-			for (int i = 0; i < this->dataGridView_Clients->SelectedRows->Count; i++) {
-				if (this->dataGridView_Clients->SelectedRows[0]->IsNewRow) continue;
+			array<DataGridViewRow^>^ rows = gcnew array<DataGridViewRow^>(this->dataGridView_Clients->SelectedRows->Count);
+			this->dataGridView_Clients->SelectedRows->CopyTo(rows, 0);
 
-				int clientId = this->__selectedClients[i]->id();
+			for (int i = 0; i < rows->Length; i++) {
+				if (rows[i]->IsNewRow) continue;
+
+				int clientId = (gcnew  Client(rows[i]))->id();
 				this->__clientService->deleteClient(clientId);
 
-				this->dataGridView_Clients->Rows->Remove(this->dataGridView_Clients->SelectedRows[0]);
+				this->dataGridView_Clients->Rows->Remove(rows[i]);
 			}
 		}
 	}
@@ -221,10 +201,110 @@ void App::__updateClientsAddresses() {
 	}
 }
 void App::button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ e) {
+	DataGridViewRow^ row;
+	if (this->dataGridView_Clients->SelectedRows->Count == 0) {
+		if (this->dataGridView_Clients->SelectedCells->Count != 1) return;
+		row = this->dataGridView_Clients->Rows[this->dataGridView_Clients->SelectedCells[0]->RowIndex];
+	}
+	else {
+		row = this->dataGridView_Clients->SelectedRows[0];
+	}
+
+
+	if (!this->__isClientEditing) return;
+
+	// ========= Vérification des adresses =========
+	for (int i = 0; i < this->dataGridView_ClientsAddresses->Rows->Count; i++) {
+		if (this->dataGridView_ClientsAddresses->Rows[i]->IsNewRow) continue;
+
+		for (int j = 0; j < this->dataGridView_ClientsAddresses->Columns->Count; j++) {
+			if (j == 0) continue; // On ne vérifie pas l'id (auto-incrémenté)
+			if (j == 1) continue; // On ne vérifie pas l'id du client (Ajouté aprèsà
+
+			// Récupération de la valeur de la cellule (en string)
+			String^ value = this->dataGridView_ClientsAddresses->Rows[i]->Cells[j]->Value->ToString()->Trim();
+			String^ regex = App::__addressesPropertiesRegex[this->dataGridView_ClientsAddresses->Columns[j]->DataPropertyName];
+
+			if (!Regex::IsMatch(value,
+				regex,
+				RegexOptions::IgnoreCase)) {
+				MessageBox::Show(
+					"The value \"" + value + "\" is not valid for the property \"" + this->dataGridView_ClientsAddresses->Columns[j]->HeaderText + "\" of Address " + (i + 1) + ".",
+					"Error",
+					MessageBoxButtons::OK,
+					MessageBoxIcon::Error
+				);
+				return;
+			}
+		}
+	}
+
+	// ========= Vérification du client =========
+	for (int j = 0; j < this->dataGridView_Clients->Columns->Count; j++) {
+		if (j == 0) continue; // On ne vérifie pas l'id (auto-incrémenté)
+
+		// Récupération de la valeur de la cellule (en string)
+		String^ value = row->Cells[j]->Value->ToString()->Trim();
+		String^ regex = App::__clientsPropertiesRegex[this->dataGridView_Clients->Columns[j]->DataPropertyName];
+
+		if (!Regex::IsMatch(value,
+			regex,
+			RegexOptions::IgnoreCase)) {
+			MessageBox::Show(
+				"The value \"" + value + "\" is not valid for the property \"" + this->dataGridView_Clients->Columns[j]->HeaderText + "\" of Client.",
+				"Error",
+				MessageBoxButtons::OK,
+				MessageBoxIcon::Error
+			);
+			return;
+		}
+	}
+
+	array<Address^>^ addresses = Address::toArray(this->dataGridView_ClientsAddresses->Rows);
+	Client^ client = gcnew Client(row);
+
+	this->__clientService->updateClient(client);
+	this->__clientService->updateAddresses(addresses);
+}
+
+
+void App::dataGridView_Clients_SelectionChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (this->__isClientEditing && ((
+		this->dataGridView_Clients->SelectedRows->Count != 0 &&
+		!this->dataGridView_Clients->SelectedRows[0]->Equals(this->__selectedClientRow)
+		) || (
+			this->dataGridView_Clients->SelectedCells->Count == 1 &&
+			!this->dataGridView_Clients->Rows[this->dataGridView_Clients->SelectedCells[0]->RowIndex]->Equals(this->__selectedClientRow)
+			))) {
+		if (MessageBox::Show("Editing a current customer, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->__cancelClientEdition();
+		}
+		else {
+			if (this->dataGridView_Clients->SelectedRows->Count > 0) {
+				this->dataGridView_Clients->Rows[this->dataGridView_Clients->SelectedRows[0]->Index]->Selected = true;
+			}
+			else {
+				this->dataGridView_Clients->Rows[this->dataGridView_Clients->SelectedCells[0]->RowIndex]->Selected = true;
+			}
+			return;
+		}
+	}
+
 	if (this->dataGridView_Clients->SelectedRows->Count > 0) {
-		if (!this->__isClientEditing) return;
 		if (this->dataGridView_Clients->SelectedRows[0]->IsNewRow) return;
 
+		if (this->dataGridView_Clients->SelectedRows->Count > 0) {
+			if (this->dataGridView_Clients->SelectedRows[0]->IsNewRow) return;
 
+			this->button_ClientsDelete->Enabled = true;
+
+			this->__selectedClients = Client::toArray(this->dataGridView_Clients->SelectedRows);
+			this->__selectedClientRow = this->dataGridView_Clients->SelectedRows[0];
+
+			this->__updateClientsAddresses();
+
+			this->button_ClientsDelete->Enabled = true;
+			this->dataGridView_ClientsAddresses->Enabled = true;
+		}
 	}
 }
