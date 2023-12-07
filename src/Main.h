@@ -1,6 +1,8 @@
 #pragma once
 
 #include "./Components/Forms/MainForm.h"
+#include "./Components/Forms/SettingsForm.h"
+#include "./Components/Forms/StartForm.h"
 #include "./Utils.h"
 
 using namespace System::Data;
@@ -30,5 +32,3 @@ namespace Groupe3ProjetBlocPOO {
 	};
 
 }
-
-

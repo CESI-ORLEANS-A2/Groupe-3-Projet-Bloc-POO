@@ -59,9 +59,9 @@ namespace Groupe3ProjetBlocPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-
 			int winHeight = 460;
-			int winWidth = 460;
+			int winWidth = 430;
+
 			float textBoxFactor = 0.6;
 			float buttonFactor = 0.3;
 			float buttonCenter = (winWidth / 2) - ((winWidth * buttonFactor) / 2);
@@ -162,9 +162,12 @@ namespace Groupe3ProjetBlocPOO {
 			// SettingsForm
 			// 
 			this->getConfig();
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			// this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(winWidth, winHeight);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
+			this->Resize += gcnew System::EventHandler(this, &SettingsForm::onResize);
 			this->Controls->Add(this->button_validate);
 			this->Controls->Add(this->button_test);
 			this->Controls->Add(this->textBox_password);
@@ -259,6 +262,13 @@ namespace Groupe3ProjetBlocPOO {
 			textBox_username->Text = match_->Groups["username"]->Value;
 			textBox_password->Text = match_->Groups["password"]->Value;
 			dbName = match_->Groups["database"]->Value;
+		}
+		void onResize(System::Object^ sender, System::EventArgs^ e) {
+			if (this->WindowState == FormWindowState::Minimized) {
+				return;
+			}
+			this->WindowState = FormWindowState::Normal;
+			this->ClientSize = System::Drawing::Size(430, 460);
 		}
 	};
 }

@@ -11,6 +11,14 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
+enum class UserTypes {
+	ADMIN = 0,
+	STOCK_EMPLOYEE = 1,
+	CLIENT_EMPLOYEE = 2,
+	ORDER_EMPLOYEE = 3,
+	UNDEFINED = 4,
+};
+
 namespace Groupe3ProjetBlocPOO {
 	/// <summary>
 	/// Summary for StartForm
@@ -21,11 +29,6 @@ namespace Groupe3ProjetBlocPOO {
 		StartForm(void)
 		{
 			InitializeComponent();
-		}
-		StartForm(UserTypes* t_types)
-		{
-			InitializeComponent();
-			types = t_types;
 		}
 
 	protected:
@@ -40,7 +43,7 @@ namespace Groupe3ProjetBlocPOO {
 			}
 		}
 
-	protected: UserTypes* types;
+	public: UserTypes types = UserTypes::UNDEFINED;
 	protected: System::Windows::Forms::Button^ button_connect;
 	protected: System::Windows::Forms::ComboBox^ comboBox_userBox;
 	protected: System::Windows::Forms::Label^ label_login;
@@ -59,7 +62,7 @@ namespace Groupe3ProjetBlocPOO {
 		/// </summary>
 		void InitializeComponent(void) {
 			int winHeight = 460;
-			int winWidth = 460;
+			int winWidth = 430;
 
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(StartForm::typeid));
 			this->button_connect = (gcnew System::Windows::Forms::Button());
@@ -124,9 +127,12 @@ namespace Groupe3ProjetBlocPOO {
 			// 
 			// StartForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			//this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(winWidth, winHeight);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
+			this->Resize += gcnew System::EventHandler(this, &StartForm::onResize);
 			this->Controls->Add(this->panel_settingsButton);
 			this->Controls->Add(this->comboBox_userBox);
 			this->Controls->Add(this->button_connect);
@@ -138,7 +144,7 @@ namespace Groupe3ProjetBlocPOO {
 		}
 #pragma endregion
 		void button_connect_Click(System::Object^ sender, System::EventArgs^ e) {
-			*types = (UserTypes)this->comboBox_userBox->SelectedIndex;
+			this->types = (UserTypes)comboBox_userBox->SelectedIndex;
 			this->Close();
 		}
 		void panel_settingsButton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -153,6 +159,14 @@ namespace Groupe3ProjetBlocPOO {
 			e->DrawFocusRectangle();
 		}
 		void comboBox_userBox_MeasureItem(System::Object^ sender, System::Windows::Forms::MeasureItemEventArgs^ e) {
+		}
+
+		void onResize(System::Object^ sender, System::EventArgs^ e) {
+			if (this->WindowState == FormWindowState::Minimized){
+				return;
+			}
+			this->WindowState = FormWindowState::Normal;
+			this->ClientSize = System::Drawing::Size(430, 460);
 		}
 		
 	};

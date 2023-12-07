@@ -10,6 +10,7 @@ namespace Groupe3ProjetBlocPOO {
 	namespace Components {
 		namespace DataType {
 			public ref class Order {
+			public:
 				static array<Order^>^ toArray(DataRowCollection^);
 				static array<Order^>^ toArray(DataGridViewRowCollection^);
 				static DataTable^ toDataTable(array<Order^>^);
