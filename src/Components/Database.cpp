@@ -28,9 +28,8 @@ Object^ Database::runScalar(String^ query) {
     Object^ result = cmd->ExecuteScalar();
     return result;
 }
-Object^ Database::runScalar(Request^query){
-    return this->runScalar(query->ToString());
-    
+Object^ Database::runScalar(Request^ query){
+    return this->runScalar(query->ToString()); 
 }
 
 void Database::createTable(String^table, Dictionary<String^, String^>^ schema) {

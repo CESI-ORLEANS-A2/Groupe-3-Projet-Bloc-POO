@@ -1,10 +1,13 @@
 #pragma once
+
 #include "./Request.h"
-using namespace std;
 using namespace MySql::Data::MySqlClient;
 using namespace System;
 using namespace System::Windows::Forms;
 using namespace System::Collections::Generic;
+using namespace System::Data;
+using namespace Groupe3ProjetBlocPOO::Components;
+
 ref class Database {
 private :
 	MySqlConnection^ __connection;

@@ -117,7 +117,7 @@ namespace Groupe3ProjetBlocPOO {
 			// 
 			// panel_settingsButton
 			// 
-			//this->panel_settingsButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Apagnan")));
+			this->panel_settingsButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SettingsIcon_48x48")));
 			this->panel_settingsButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->panel_settingsButton->Location = System::Drawing::Point(13, 12);
 			this->panel_settingsButton->Name = L"panel_settingsButton";
