@@ -20,7 +20,16 @@ namespace Groupe3ProjetBlocPOO {
 	public:
 		SettingsForm(void)
 		{
+			array<String^>^ imageNames = gcnew array<String^>(3) {
+				"CheckIconOutLined_36x36",
+				"CancelIconOutLined_36x36",
+				"DotsHIcon_36x36"
+			};
+			for (int i = 0; i < 3; i++) {
+				images[i] = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(imageNames[i])));
+			}
 			InitializeComponent();
+			
 		}
 
 	protected:
@@ -45,6 +54,9 @@ namespace Groupe3ProjetBlocPOO {
 	protected: System::Windows::Forms::TextBox^ textBox_password;
 	protected: System::Windows::Forms::Button^ button_test;
 	protected: System::Windows::Forms::Button^ button_validate;
+	protected: System::Windows::Forms::Panel^ panel_testIcon;
+	protected: System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(SettingsForm::typeid));
+	protected: array<System::Drawing::Image^>^ images = gcnew array<System::Drawing::Image^>(3);
 
 	private:
 		/// <summary>
@@ -71,6 +83,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->textBox_username = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_password = (gcnew System::Windows::Forms::TextBox());
 			this->button_test = (gcnew System::Windows::Forms::Button());
+			this->panel_testIcon = (gcnew System::Windows::Forms::Panel());
 			this->button_validate = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -141,6 +154,21 @@ namespace Groupe3ProjetBlocPOO {
 			this->button_test->Enabled = false;
 			this->button_test->Click += gcnew System::EventHandler(this, &SettingsForm::button_test_Click);
 			this->button_test->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &SettingsForm::OnKeyDown);
+			//
+			// panel_testIcon
+			//
+			this->panel_testIcon->BackgroundImage = images[2];
+			this->panel_testIcon->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->panel_testIcon->Location = System::Drawing::Point(
+				buttonCenter + (36 * 1.3),
+				(winHeight * 0.8) + ((winHeight * 0.1) / 2) - (24 /2)
+			);
+			this->panel_testIcon->Name = L"panel_testIcon";
+			this->panel_testIcon->Size = System::Drawing::Size(
+				24,
+				24
+			);
+			this->panel_testIcon->TabIndex = 3;
 			// 
 			// button_validate
 			// 
@@ -170,6 +198,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->Resize += gcnew System::EventHandler(this, &SettingsForm::onResize);
 			this->Controls->Add(this->button_validate);
 			this->Controls->Add(this->button_test);
+			this->Controls->Add(this->panel_testIcon);
 			this->Controls->Add(this->textBox_password);
 			this->Controls->Add(this->textBox_username);
 			this->Controls->Add(this->textBox_hostname);
@@ -222,17 +251,17 @@ namespace Groupe3ProjetBlocPOO {
 			int code = 0;
 
 			if (code) {
-				button_test->BackColor = Color::Red;
-				return;
+				this->panel_testIcon->BackgroundImage = images[1];
 			}
 
-			this->button_test->BackColor = Color::Green;
+			this->panel_testIcon->BackgroundImage = images[0];
 			this->button_validate->Enabled = true;
 
 		}
 		bool checkAllFields() {
 			this->button_validate->Enabled = false;
 			this->button_test->Enabled = false;
+			this->panel_testIcon->BackgroundImage = images[2];
 			if (!Regex::IsMatch(textBox_hostname->Text->Trim(), regexHostname, RegexOptions::IgnoreCase)) {
 				textBox_hostname->ForeColor = Color::Red;
 				return false;
@@ -263,6 +292,7 @@ namespace Groupe3ProjetBlocPOO {
 			textBox_password->Text = match_->Groups["password"]->Value;
 			dbName = match_->Groups["database"]->Value;
 		}
+
 		void onResize(System::Object^ sender, System::EventArgs^ e) {
 			if (this->WindowState == FormWindowState::Minimized) {
 				return;
