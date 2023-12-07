@@ -14,10 +14,16 @@ namespace Groupe3ProjetBlocPOO {
 				static array<Order^>^ toArray(DataRowCollection^);
 				static array<Order^>^ toArray(DataGridViewRowCollection^);
 				static DataTable^ toDataTable(array<Order^>^);
+				static DataSet^ toDataSet(array<Order^>^, String^ tableName);
 				static DataGridView^ toDataGridView(array<Order^>^);
+
+				static DataTable^ dataTableSchema();
+				static DataRow^ newDataRow();
 
 			public:
 				Order();
+				Order(int id);
+				Order(int id, Order^ order);
 				Order(DataRow^);
 				Order(DataGridViewRow^);
 
@@ -38,8 +44,8 @@ namespace Groupe3ProjetBlocPOO {
 				void amount(double);
 				String^ paymentMethod();
 				void paymentMethod(String^);
-				int facturationAddress();
-				void facturationAddress(int);
+				int billingAddress();
+				void billingAddress(int);
 				int deliveryAddress();
 				void deliveryAddress(int);
 				int customer();
@@ -55,9 +61,11 @@ namespace Groupe3ProjetBlocPOO {
 				DateTime^ __deliveryDate;
 				double __amount;
 				String^ __paymentMethod;
-				int __facturationAddress;
+				int __billingAddress;
 				int __deliveryAddress;
 				int __customer;
+
+				static DataTable^ __dataTableSchema = gcnew DataTable();
 			};
 		}
 	}
