@@ -2,6 +2,17 @@
 
 Groupe3ProjetBlocPOO::Services::ClientService::ClientService(Database^ database) {
 	this->__database = database;
+
+	Dictionary<String^, String^>^ clientsSchema = gcnew Dictionary<String^, String^>();
+	clientsSchema->Add("id", "INT PRIMARY KEY AUTO_INCREMENT");
+	clientsSchema->Add("firstname", "VARCHAR(30)");
+	clientsSchema->Add("lastname", "VARCHAR(30)");
+	clientsSchema->Add("phone", "VARCHAR(30)");
+	clientsSchema->Add("email", "VARCHAR(30)");
+	clientsSchema->Add("birthdate", "DATE");
+	clientsSchema->Add("logo", "VARCHAR(255)");
+	clientsSchema->Add("company", "VARCHAR(30)");
+	this->__database->createTable("clients", clientsSchema);
 }
 
 Client^ Groupe3ProjetBlocPOO::Services::ClientService::getClient(int id) {
@@ -36,16 +47,8 @@ array<Client^>^ Groupe3ProjetBlocPOO::Services::ClientService::getClients(int li
 }
 Client^ Groupe3ProjetBlocPOO::Services::ClientService::createClient(Client^ client) {
 	int id = Convert::ToInt32(this->__database->runScalar(ClientRequestMapping::addClient(client->firstname(), client->lastname(), client->phone(), client->email(), client->birthdate(), client->logo(), client->company())));
-	Client^ client = gcnew Client(id);
-	client->firstname(client->firstname());
-	client->lastname(client->lastname());
-	client->phone(client->phone());
-	client->email(client->email());
-	client->birthdate(client->birthdate());
-	client->logo(client->logo());
-	client->company(client->company());
 
-	return client;
+	return gcnew Client(id, client);
 }
 Client^ Groupe3ProjetBlocPOO::Services::ClientService::createClient(String^ firstname, String^ lastname, String^ phone, String^ email, DateTime^ birthdate, String^ logo, String^ company) {
 	int id = Convert::ToInt32(this->__database->runScalar(ClientRequestMapping::addClient(firstname, lastname, phone, email, birthdate, logo, company)));

@@ -10,16 +10,21 @@ namespace Groupe3ProjetBlocPOO {
 	namespace Components {
 		namespace DataType {
 			public ref class Client {
+			public:
 				static array<Client^>^ toArray(DataRowCollection^);
 				static array<Client^>^ toArray(DataGridViewRowCollection^);
 				static DataTable^ toDataTable(array<Client^>^);
+				static DataSet^ toDataSet(array<Client^>^, String^ tableName);
 				static DataGridView^ toDataGridView(array<Client^>^);
 
-			public:
+				static DataTable^ dataTableSchema();
+				static DataRow^ newDataRow();
+
 				Client();
 				Client(int id);
 				Client(DataRow^);
 				Client(DataGridViewRow^);
+				Client(int id, Client^ client);
 
 				int id();
 				String^ firstname();
@@ -52,6 +57,7 @@ namespace Groupe3ProjetBlocPOO {
 				String^ __logo;
 				String^ __company;
 
+				static DataTable^ __dataTableSchema = gcnew DataTable();
 			};
 		}
 	}

@@ -15,24 +15,22 @@ array<Groupe3ProjetBlocPOO::Components::DataType::Client^>^ Groupe3ProjetBlocPOO
 	return clients;
 }
 DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Client::toDataTable(array<Client^>^ clients) {
-	DataTable^ dataTable = gcnew DataTable();
-
-	dataTable->Columns->Add("id", int::typeid);
-	dataTable->Columns->Add("firstname", String::typeid);
-	dataTable->Columns->Add("lastname", String::typeid);
-	dataTable->Columns->Add("email", String::typeid);
-	dataTable->Columns->Add("phone", String::typeid);
-	dataTable->Columns->Add("birthdate", Int64::typeid);
-	dataTable->Columns->Add("logo", String::typeid);
-	dataTable->Columns->Add("company", String::typeid);
+	DataTable^ dataTable = Client::dataTableSchema();
+	dataTable->Clear();
 
 	for (int i = 0; i < clients->Length; i++) {
 		dataTable->Rows->Add(clients[i]->toDataRow());
 	}
-	return dataTable;
+	return dataTable->Copy();
+}
+DataSet^ Groupe3ProjetBlocPOO::Components::DataType::Client::toDataSet(array<Client^>^ clients, String^ tableName) {
+	DataSet^ dataSet = gcnew DataSet();
+	dataSet->Tables->Add(Client::toDataTable(clients));
+	dataSet->Tables[0]->TableName = tableName;
+	return dataSet;
 }
 DataGridView^ Groupe3ProjetBlocPOO::Components::DataType::Client::toDataGridView(array<Client^>^ clients) {
-DataGridView^ dataGridView = gcnew DataGridView();
+	DataGridView^ dataGridView = gcnew DataGridView();
 
 	dataGridView->Columns->Add("id", "id");
 	dataGridView->Columns->Add("firstname", "firstname");
@@ -47,6 +45,24 @@ DataGridView^ dataGridView = gcnew DataGridView();
 		dataGridView->Rows->Add(clients[i]->toDataGridViewRow());
 	}
 	return dataGridView;
+}
+
+DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Client::dataTableSchema() {
+	if (Client::__dataTableSchema->Columns->Count == 0) {
+		Client::__dataTableSchema->Columns->Add("id", int::typeid);
+		Client::__dataTableSchema->Columns->Add("firstname", String::typeid);
+		Client::__dataTableSchema->Columns->Add("lastname", String::typeid);
+		Client::__dataTableSchema->Columns->Add("email", String::typeid);
+		Client::__dataTableSchema->Columns->Add("phone", String::typeid);
+		Client::__dataTableSchema->Columns->Add("birthdate", Int64::typeid);
+		Client::__dataTableSchema->Columns->Add("logo", String::typeid);
+		Client::__dataTableSchema->Columns->Add("company", String::typeid);
+	}
+
+	return Client::__dataTableSchema;
+}
+DataRow^ Groupe3ProjetBlocPOO::Components::DataType::Client::newDataRow() {
+	return Client::dataTableSchema()->NewRow();
 }
 
 Groupe3ProjetBlocPOO::Components::DataType::Client::Client() {
@@ -74,6 +90,16 @@ Groupe3ProjetBlocPOO::Components::DataType::Client::Client(DataGridViewRow^ row)
 	this->__birthdate = Convert::ToDateTime(row->Cells[5]->Value);
 	this->__logo = Convert::ToString(row->Cells[6]->Value);
 	this->__company = Convert::ToString(row->Cells[7]->Value);
+}
+Groupe3ProjetBlocPOO::Components::DataType::Client::Client(int id, Client^ client) {
+	this->__id = id;
+	this->__firstname = client->__firstname;
+	this->__lastname = client->__lastname;
+	this->__phone = client->__phone;
+	this->__email = client->__email;
+	this->__birthdate = client->__birthdate;
+	this->__logo = client->__logo;
+	this->__company = client->__company;
 }
 
 int Groupe3ProjetBlocPOO::Components::DataType::Client::id() {
@@ -129,26 +155,17 @@ void Groupe3ProjetBlocPOO::Components::DataType::Client::company(String^ company
 }
 
 DataRow^ Groupe3ProjetBlocPOO::Components::DataType::Client::toDataRow() {
-	DataTable^ dataTable = gcnew DataTable();
-	dataTable->Columns->Add("id", int::typeid);
-	dataTable->Columns->Add("firstname", String::typeid);
-	dataTable->Columns->Add("lastname", String::typeid);
-	dataTable->Columns->Add("email", String::typeid);
-	dataTable->Columns->Add("phone", String::typeid);
-	dataTable->Columns->Add("birthdate", Int64::typeid);
-	dataTable->Columns->Add("logo", String::typeid);
-	dataTable->Columns->Add("company", String::typeid);
+	DataRow^ dataRow = Client::newDataRow();
 
-	DataRow^ dataRow = dataTable->NewRow();
+	dataRow[0] = this->__id;
+	dataRow[1] = this->__firstname;
+	dataRow[2] = this->__lastname;
+	dataRow[3] = this->__email;
+	dataRow[4] = this->__phone;
+	dataRow[5] = Utils::toTimestamp(this->__birthdate);
+	dataRow[6] = this->__logo;
+	dataRow[7] = this->__company;
 
-	dataRow->ItemArray[0] = this->__id;
-	dataRow->ItemArray[1] = this->__firstname;
-	dataRow->ItemArray[2] = this->__lastname;
-	dataRow->ItemArray[3] = this->__email;
-	dataRow->ItemArray[4] = this->__phone;
-	dataRow->ItemArray[5] = Utils::toTimestamp(this->__birthdate);
-	dataRow->ItemArray[6] = this->__logo;
-	dataRow->ItemArray[7] = this->__company;
 	return dataRow;
 }
 DataGridViewRow^ Groupe3ProjetBlocPOO::Components::DataType::Client::toDataGridViewRow() {

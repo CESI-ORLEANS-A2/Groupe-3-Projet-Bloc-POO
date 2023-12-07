@@ -10,9 +10,11 @@ namespace Groupe3ProjetBlocPOO {
 			Request(String^ sql);
 			Request(MySqlCommand^ cmd);
 			String^ sql();
+			MySqlCommand^ mySqlCmd();
 
 		private:
 			String^ __sql;
+			MySqlCommand^ __mySqlCmd;
 		};
 	}
 }

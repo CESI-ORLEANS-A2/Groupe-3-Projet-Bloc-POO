@@ -2,7 +2,10 @@
 
 #include "./Request.h"
 
+using namespace System;
+using namespace System::Data;
 using namespace System::Collections::Generic;
+using namespace System::Windows::Forms;
 
 namespace Groupe3ProjetBlocPOO {
 	namespace Components {
@@ -10,7 +13,7 @@ namespace Groupe3ProjetBlocPOO {
 		private:
 			MySqlConnection^ __connection;
 		public:
-			Database();
+			Database(String^ connectionString);
 			void createTable(String^, Dictionary<String^, String^>^ schema);
 			Data::DataTable^ runQuery(Request^);
 			Data::DataTable^ runQuery(String^ query);
