@@ -186,11 +186,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Icons\action\check_circle\materialicons\36dp\1x\baseline_check_circle_black_36dp.png" />
     <Image Include="..\Icons\action\check_circle_outline\materialicons\36dp\1x\baseline_check_circle_outline_black_36dp.png" />
-    <Image Include="..\Icons\navigation\cancel\materialiconsoutlined\36dp\1x\outline_cancel_black_36dp.png" />
     <Image Include="..\Icons\navigation\more_horiz\materialicons\36dp\1x\baseline_more_horiz_black_36dp.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
