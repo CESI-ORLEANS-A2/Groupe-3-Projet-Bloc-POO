@@ -24,9 +24,6 @@
     <ClCompile Include="src\Components\DataType\Order.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\DataType\Product.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Components\Database.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -66,6 +63,9 @@
     <ClCompile Include="src\Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Components\Mapping\AdressRequestMapping.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Components\DataType\Address.h">
@@ -75,9 +75,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Components\DataType\Order.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Components\DataType\Product.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Components\Database.h">
@@ -119,8 +116,33 @@
     <ClInclude Include="src\Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Components\Mapping\AdressRequestMapping.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StartForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Icons\action\check_circle\materialicons\36dp\1x\baseline_check_circle_black_36dp.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Icons\navigation\cancel\materialiconsoutlined\36dp\1x\outline_cancel_black_36dp.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Icons\action\check_circle_outline\materialicons\36dp\1x\baseline_check_circle_outline_black_36dp.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Icons\navigation\more_horiz\materialicons\36dp\1x\baseline_more_horiz_black_36dp.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

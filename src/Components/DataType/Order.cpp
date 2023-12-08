@@ -7,6 +7,7 @@ array<Groupe3ProjetBlocPOO::Components::DataType::Order^>^ Groupe3ProjetBlocPOO:
 	}
 	return Orders;
 }
+
 array<Groupe3ProjetBlocPOO::Components::DataType::Order^>^ Groupe3ProjetBlocPOO::Components::DataType::Order::toArray(DataGridViewRowCollection^ collection) {
 	array<Order^>^ Orders = gcnew array<Order^>(collection->Count);
 	for (int i = 0; i < collection->Count; i++) {
@@ -14,44 +15,91 @@ array<Groupe3ProjetBlocPOO::Components::DataType::Order^>^ Groupe3ProjetBlocPOO:
 	}
 	return Orders;
 }
+
 DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Order::toDataTable(array<Order^>^ Orders) {
 	DataTable^ dataTable = gcnew DataTable();
 
-	dataTable->Columns->Add("id", int::typeid);
-	dataTable->Columns->Add("firstname", String::typeid);
-	dataTable->Columns->Add("lastname", String::typeid);
-	dataTable->Columns->Add("email", String::typeid);
-	dataTable->Columns->Add("phone", String::typeid);
-	dataTable->Columns->Add("birthdate", Int64::typeid);
-	dataTable->Columns->Add("logo", String::typeid);
-	dataTable->Columns->Add("company", String::typeid);
+	dataTable->Columns->Add("idOrder", int::typeid);
+	dataTable->Columns->Add("paymentDate", DateTime::typeid);
+	dataTable->Columns->Add("creationDate", DateTime::typeid);
+	dataTable->Columns->Add("deliveryDate", DateTime::typeid);
+	dataTable->Columns->Add("amount", double::typeid);
+	dataTable->Columns->Add("paymentMethod", String::typeid);
+	dataTable->Columns->Add("billingAddress", int::typeid);
+	dataTable->Columns->Add("deliveryAddress", int::typeid);
+	dataTable->Columns->Add("customerId", int::typeid);
 
 	for (int i = 0; i < Orders->Length; i++) {
 		dataTable->Rows->Add(Orders[i]->toDataRow());
 	}
 	return dataTable;
 }
+
+DataSet^ Groupe3ProjetBlocPOO::Components::DataType::Order::toDataSet(array<Order^>^ orders, String^ tableName){
+	DataSet^ dataSet = gcnew DataSet();
+	dataSet->Tables->Add(Order::toDataTable(orders));
+	dataSet->Tables[0]->TableName = tableName;
+	return dataSet;
+}
+
 DataGridView^ Groupe3ProjetBlocPOO::Components::DataType::Order::toDataGridView(array<Order^>^ Orders) {
 	DataGridView^ dataGridView = gcnew DataGridView();
 
-	dataGridView->Columns->Add("id", "id");
-	dataGridView->Columns->Add("firstname", "firstname");
-	dataGridView->Columns->Add("lastname", "lastname");
-	dataGridView->Columns->Add("email", "email");
-	dataGridView->Columns->Add("phone", "phone");
-	dataGridView->Columns->Add("birthdate", "birthdate");
-	dataGridView->Columns->Add("logo", "logo");
-	dataGridView->Columns->Add("company", "company");
+	dataGridView->Columns->Add("idOrder", "idOrder");
+	dataGridView->Columns->Add("paymentDate", "paymentDate");
+	dataGridView->Columns->Add("creationDate", "creationDate");
+	dataGridView->Columns->Add("deliveryDate", "deliveryDate");
+	dataGridView->Columns->Add("amount", "amount");
+	dataGridView->Columns->Add("paymentMethod", "paymentMethod");
+	dataGridView->Columns->Add("billingAddress", "billingAddress");
+	dataGridView->Columns->Add("deliveryAddress", "deliveryAddress");
+	dataGridView->Columns->Add("customerId", "customerId");
 
 	for (int i = 0; i < Orders->Length; i++) {
 		dataGridView->Rows->Add(Orders[i]->toDataGridViewRow());
 	}
 	return dataGridView;
 }
+DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Order::dataTableSchema(){
+	if (Order::__dataTableSchema->Columns->Count == 0) {
+		Order::__dataTableSchema->Columns->Add("idOrder", int::typeid);
+		Order::__dataTableSchema->Columns->Add("paymentDate", DateTime::typeid);
+		Order::__dataTableSchema->Columns->Add("creationDate", DateTime::typeid);
+		Order::__dataTableSchema->Columns->Add("deliveryDate", DateTime::typeid);
+		Order::__dataTableSchema->Columns->Add("amount", double::typeid);
+		Order::__dataTableSchema->Columns->Add("paymentMethod", String::typeid);
+		Order::__dataTableSchema->Columns->Add("billingAddress", int::typeid);
+		Order::__dataTableSchema->Columns->Add("deliveryAddress", int::typeid);
+		Order::__dataTableSchema->Columns->Add("customerId", int::typeid);
+	}
+
+	return Order::__dataTableSchema;
+}
+
+DataRow^ Groupe3ProjetBlocPOO::Components::DataType::Order::newDataRow(){
+	return Order::dataTableSchema()->NewRow();
+}
 
 Groupe3ProjetBlocPOO::Components::DataType::Order::Order() {
 	this->__id = -1;
 }
+
+Groupe3ProjetBlocPOO::Components::DataType::Order::Order(int id){
+	this->__id = id;
+}
+
+Groupe3ProjetBlocPOO::Components::DataType::Order::Order(int id, Order^ order){
+	this->__id = id;
+	this->__paymentDate = order->__paymentDate;
+	this->__creationDate = order->__creationDate;
+	this->__deliveryDate = order->__deliveryDate;
+	this->__amount = order->__amount;
+	this->__paymentMethod = order->__paymentMethod;
+	this->__billingAddress = order->__billingAddress;
+	this->__deliveryAddress = order->__deliveryAddress;
+	this->__customer = order->__customer;
+}
+
 Groupe3ProjetBlocPOO::Components::DataType::Order::Order(DataRow^ row) {
 	this->__id = Convert::ToInt32(row->ItemArray[0]);
 	this->__paymentDate = Utils::fromTimestamp(Convert::ToInt64(row->ItemArray[1]));
@@ -59,7 +107,7 @@ Groupe3ProjetBlocPOO::Components::DataType::Order::Order(DataRow^ row) {
 	this->__deliveryDate = Utils::fromTimestamp(Convert::ToInt64(row->ItemArray[3]));
 	this->__amount = Convert::ToDouble(row->ItemArray[4]);
 	this->__paymentMethod = Convert::ToString(row->ItemArray[5]);
-	this->__facturationAddress = Convert::ToInt32(row->ItemArray[6]);
+	this->__billingAddress = Convert::ToInt32(row->ItemArray[6]);
 	this->__deliveryAddress = Convert::ToInt32(row->ItemArray[7]);
 	this->__customer = Convert::ToInt32(row->ItemArray[8]);
 
@@ -71,7 +119,7 @@ Groupe3ProjetBlocPOO::Components::DataType::Order::Order(DataGridViewRow^ row) {
 	this->__deliveryDate = Utils::fromTimestamp(Convert::ToInt64(row->Cells[3]->Value));
 	this->__amount = Convert::ToDouble(row->Cells[4]->Value);
 	this->__paymentMethod = Convert::ToString(row->Cells[5]->Value);
-	this->__facturationAddress = Convert::ToInt32(row->Cells[6]->Value);
+	this->__billingAddress = Convert::ToInt32(row->Cells[6]->Value);
 	this->__deliveryAddress = Convert::ToInt32(row->Cells[7]->Value);
 	this->__customer = Convert::ToInt32(row->Cells[8]->Value);
 }
@@ -121,11 +169,11 @@ String^ Groupe3ProjetBlocPOO::Components::DataType::Order::paymentMethod() {
 void Groupe3ProjetBlocPOO::Components::DataType::Order::paymentMethod(String^ paymentMethod) {
 	this->__paymentMethod = paymentMethod;
 }
-int Groupe3ProjetBlocPOO::Components::DataType::Order::facturationAddress() {
-	return this->__facturationAddress;
+int Groupe3ProjetBlocPOO::Components::DataType::Order::billingAddress() {
+	return this->__billingAddress;
 }
-void Groupe3ProjetBlocPOO::Components::DataType::Order::facturationAddress(int facturationAddress) {
-	this->__facturationAddress = facturationAddress;
+void Groupe3ProjetBlocPOO::Components::DataType::Order::billingAddress(int billingAddress) {
+	this->__billingAddress = billingAddress;
 }
 int Groupe3ProjetBlocPOO::Components::DataType::Order::deliveryAddress() {
 	return this->__deliveryAddress;
@@ -148,7 +196,7 @@ DataRow^ Groupe3ProjetBlocPOO::Components::DataType::Order::toDataRow() {
 	dataTable->Columns->Add("deliveryDate", Int64::typeid);
 	dataTable->Columns->Add("amount", double::typeid);
 	dataTable->Columns->Add("paymentMethod", String::typeid);
-	dataTable->Columns->Add("facturationAddress", int::typeid);
+	dataTable->Columns->Add("billingAddress", int::typeid);
 	dataTable->Columns->Add("deliveryAddress", int::typeid);
 	dataTable->Columns->Add("customer", int::typeid);
 
@@ -160,7 +208,7 @@ DataRow^ Groupe3ProjetBlocPOO::Components::DataType::Order::toDataRow() {
 	dataRow->ItemArray[3] = Utils::toTimestamp(this->__deliveryDate);
 	dataRow->ItemArray[4] = this->__amount;
 	dataRow->ItemArray[5] = this->__paymentMethod;
-	dataRow->ItemArray[6] = this->__facturationAddress;
+	dataRow->ItemArray[6] = this->__billingAddress;
 	dataRow->ItemArray[7] = this->__deliveryAddress;
 	dataRow->ItemArray[8] = this->__customer;
 
@@ -174,7 +222,7 @@ DataGridViewRow^ Groupe3ProjetBlocPOO::Components::DataType::Order::toDataGridVi
 	dataGridView->Columns->Add("deliveryDate", "deliveryDate");
 	dataGridView->Columns->Add("amount", "amount");
 	dataGridView->Columns->Add("paymentMethod", "paymentMethod");
-	dataGridView->Columns->Add("facturationAddress", "facturationAddress");
+	dataGridView->Columns->Add("billingAddress", "billingAddress");
 	dataGridView->Columns->Add("deliveryAddress", "deliveryAddress");
 	dataGridView->Columns->Add("customer", "customer");
 
@@ -186,7 +234,7 @@ DataGridViewRow^ Groupe3ProjetBlocPOO::Components::DataType::Order::toDataGridVi
 	dataGridViewRow->Cells[3]->Value = Utils::toTimestamp(this->__deliveryDate);
 	dataGridViewRow->Cells[4]->Value = this->__amount;
 	dataGridViewRow->Cells[5]->Value = this->__paymentMethod;
-	dataGridViewRow->Cells[6]->Value = this->__facturationAddress;
+	dataGridViewRow->Cells[6]->Value = this->__billingAddress;
 	dataGridViewRow->Cells[7]->Value = this->__deliveryAddress;
 	dataGridViewRow->Cells[8]->Value = this->__customer;
 

@@ -11,7 +11,7 @@ App::App() {
 	App::__clientsPropertiesRegex->Add("lastname", "^[a-z0-9\\s\\-'`]+$");
 	App::__clientsPropertiesRegex->Add("phone", "^[0-9\s]+$");
 	App::__clientsPropertiesRegex->Add("email", "^[a-z0-9\\.-_]+@[a-z0-9\\.]+\\.[a-z0-9]{2,3}$");
-	App::__clientsPropertiesRegex->Add("birthdate", "^(?:(?:(?:(?<dayoftheweek>lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche) )?(?:(?<day>0[1-9]|[1-2][0-9]|3[0-1]) (?<month>janvier|mars|mai|juillet|ao[uû]t|octobre|d[ée]cembre)|(?<day>0[1-9]|[1-2][0-9]) (?<month>f[ée]vrier)|(?<day>0[1-9]|[1-2][0-9]|30) (?<month>avril|juin|septembre|novembre))(?: (?<year>[0-9]{4}))?)|(?:(?:(?<day>0?[1-9]|[1-2][0-9]|3[0-1])/(?<month>0?[13578]|1[02])|(?<day>0?[1-9]|[1-2][0-9])/(?<month>0?2)|(?<day>0?[1-9]|[1-2][0-9]|30)/(?<month>0?[469]|11))/(?<year>(?:19|20)?[0-9]{2})))$");
+	App::__clientsPropertiesRegex->Add("birthdate", "^(?:(?:(?:(?<dayoftheweek>lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche) )?(?:(?<day>0[1-9]|[1-2][0-9]|3[0-1]) (?<month>janvier|mars|mai|juillet|ao[uÃ»]t|octobre|d[Ã©e]cembre)|(?<day>0[1-9]|[1-2][0-9]) (?<month>f[Ã©e]vrier)|(?<day>0[1-9]|[1-2][0-9]|30) (?<month>avril|juin|septembre|novembre))(?: (?<year>[0-9]{4}))?)|(?:(?:(?<day>0?[1-9]|[1-2][0-9]|3[0-1])/(?<month>0?[13578]|1[02])|(?<day>0?[1-9]|[1-2][0-9])/(?<month>0?2)|(?<day>0?[1-9]|[1-2][0-9]|30)/(?<month>0?[469]|11))/(?<year>(?:19|20)?[0-9]{2})))$");
 	App::__clientsPropertiesRegex->Add("logo", "^[^']*$");
 	App::__clientsPropertiesRegex->Add("company", "^[^']*$");
 
@@ -21,13 +21,13 @@ App::App() {
 	App::__addressesPropertiesRegex->Add("zip", "^[0-9]{5}$");
 	App::__addressesPropertiesRegex->Add("country", "^[^']+$");
 
-	// Initialisation de la connexion à la base de données
+	// Initialisation de la connexion Ã  la base de donnÃ©es
 	this->__database = gcnew Database(ConfigurationManager::AppSettings["connection_string"]);
 
 	// Initialisation des services
 	this->__clientService = gcnew ClientService(this->__database);
 
-	// Initialisation des composants de la fenêtre
+	// Initialisation des composants de la fenÃªtre
 	this->InitializeComponent();
 }
 
@@ -36,15 +36,15 @@ App::App() {
 // ========================================================
 
 void App::InitializeComponent() {
-	// On rappelle le constructeur de la classe mère
+	// On rappelle le constructeur de la classe mÃ¨re
 	__super::InitializeComponent();
 
-	// Modification du titre de la fenêtre pour correspondre à l'onget sélectionné
+	// Modification du titre de la fenÃªtre pour correspondre Ã  l'onget sÃ©lectionnÃ©
 	this->Text = "Client - " + ConfigurationManager::AppSettings["app_name"];
 	// Modification du titre de l'application
 	this->label_Logo->Text = ConfigurationManager::AppSettings["app_name"];
 
-	// Modification des textBox pour ajouter un placeholder et une sortie de focus lors de l'appui sur la touche entrée
+	// Modification des textBox pour ajouter un placeholder et une sortie de focus lors de l'appui sur la touche entrÃ©e
 	gcnew ElementsCustomization::SearchInputBox(this->textBox_ClientsSearch, "Search", this->dataGridView_Clients);
 	gcnew ElementsCustomization::SearchInputBox(this->textBox_StockSearch, "Search");
 	gcnew ElementsCustomization::SearchInputBox(this->textBox_OrdersSearch, "Search");
@@ -56,7 +56,7 @@ void App::InitializeComponent() {
 	}
 }
 
-// Permet de changer le nom de la fenêtre en fonction de l'onglet sélectionné
+// Permet de changer le nom de la fenÃªtre en fonction de l'onglet sÃ©lectionnÃ©
 void App::tabControl_Tabs_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	this->Text = this->tabControl_Tabs->SelectedTab->Text + " - " + "FirmManager";
 
@@ -103,7 +103,7 @@ void App::linkLabel_Author0xybo_LinkClicked(System::Object^ sender, System::Wind
 // =                      CLIENTS TAB                     =
 // ========================================================
 
-// Mise à jour de la liste des clients
+// Mise Ã  jour de la liste des clients
 void App::button_ClientsUpdate_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (this->__isClientEditing) {
 		if (MessageBox::Show("Editing a current customer, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
@@ -242,11 +242,11 @@ void App::button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ 
 
 	if (!this->__isClientEditing) return;
 
-	// ========= Vérification du client =========
+	// ========= VÃ©rification du client =========
 	for (int j = 0; j < this->dataGridView_Clients->Columns->Count; j++) {
-		if (j == 0) continue; // On ne vérifie pas l'id (auto-incrémenté)
+		if (j == 0) continue; // On ne vÃ©rifie pas l'id (auto-incrÃ©mentÃ©)
 
-		// Récupération de la valeur de la cellule (en string)
+		// RÃ©cupÃ©ration de la valeur de la cellule (en string)
 		String^ value = row->Cells[j]->Value->ToString()->Trim();
 		String^ regex = App::__clientsPropertiesRegex[this->dataGridView_Clients->Columns[j]->DataPropertyName];
 
@@ -263,15 +263,15 @@ void App::button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ 
 		}
 	}
 
-	// ========= Vérification des adresses =========
+	// ========= VÃ©rification des adresses =========
 	for (int i = 0; i < this->dataGridView_ClientsAddresses->Rows->Count; i++) {
 		if (this->dataGridView_ClientsAddresses->Rows[i]->IsNewRow) continue;
 
 		for (int j = 0; j < this->dataGridView_ClientsAddresses->Columns->Count; j++) {
-			if (j == 0) continue; // On ne vérifie pas l'id (auto-incrémenté)
-			if (j == 1) continue; // On ne vérifie pas l'id du client (Ajouté aprèsà
+			if (j == 0) continue; // On ne vÃ©rifie pas l'id (auto-incrÃ©mentÃ©)
+			if (j == 1) continue; // On ne vÃ©rifie pas l'id du client (AjoutÃ© aprÃ¨sÃ 
 
-			// Récupération de la valeur de la cellule (en string)
+			// RÃ©cupÃ©ration de la valeur de la cellule (en string)
 			String^ value = this->dataGridView_ClientsAddresses->Rows[i]->Cells[j]->Value->ToString()->Trim();
 			String^ regex = App::__addressesPropertiesRegex[this->dataGridView_ClientsAddresses->Columns[j]->DataPropertyName];
 

@@ -1,7 +1,5 @@
 #pragma once
 
-#pragma once
-
 #include "../../Utils.h"
 
 using namespace System;

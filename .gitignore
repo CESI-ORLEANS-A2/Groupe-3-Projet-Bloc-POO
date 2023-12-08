@@ -453,3 +453,4 @@ FodyWeavers.xsd
 enc_temp_folder/
 src/Components/DataType/DataType.cpp
 src/Components/DataType/DataType.h
+Icons/
