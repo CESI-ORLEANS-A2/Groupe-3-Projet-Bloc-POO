@@ -1,6 +1,6 @@
 #pragma once
 #include "./Request.h"
-using namespace std;
+
 using namespace MySql::Data::MySqlClient;
 using namespace System;
 using namespace System::Windows::Forms;

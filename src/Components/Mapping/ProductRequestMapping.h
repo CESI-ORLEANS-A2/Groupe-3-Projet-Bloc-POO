@@ -3,7 +3,7 @@
 #pragma once
 using namespace System;
 using namespace System::Windows::Forms;
-using namespace std;
+
 using namespace MySql::Data::MySqlClient;
 ref class ProductRequestMapping {
 
