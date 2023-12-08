@@ -21,6 +21,8 @@ App::App() {
 	App::__addressesPropertiesRegex->Add("zip", "^[0-9]{5}$");
 	App::__addressesPropertiesRegex->Add("country", "^[^']+$");
 
+
+
 	// Initialisation de la connexion à la base de données
 	this->__database = gcnew Database(ConfigurationManager::AppSettings["connection_string"]);
 
@@ -47,9 +49,9 @@ void App::InitializeComponent() {
 	// Modification des textBox pour ajouter un placeholder et une sortie de focus lors de l'appui sur la touche entrée
 	gcnew ElementsCustomization::SearchInputBox(this->textBox_ClientsSearch, "Search", this->dataGridView_Clients);
 	gcnew ElementsCustomization::SearchInputBox(this->textBox_StockSearch, "Search");
-	gcnew ElementsCustomization::SearchInputBox(this->textBox_OrdersSearch, "Search");
-	gcnew ElementsCustomization::SearchInputBox(this->textBox_OrdersClientsSearch, "Search");
-	gcnew ElementsCustomization::SearchInputBox(this->textBox_OrdersStockSearch, "Search");
+	gcnew ElementsCustomization::SearchInputBox(this->textBox_OrdersSearch, "Search", this->dataGridView_Orders);
+	gcnew ElementsCustomization::SearchInputBox(this->textBox_OrdersClientsSearch, "Search", this->dataGridView_OrdersClients);
+	gcnew ElementsCustomization::SearchInputBox(this->textBox_OrdersStockSearch, "Search", this->dataGridView_OrdersStock);
 
 	if (ConfigurationManager::AppSettings["start_maximized"] == "true") {
 		this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
@@ -76,7 +78,13 @@ void App::tabControl_Tabs_SelectedIndexChanged(System::Object^ sender, System::E
 
 		break;
 	case 3:
+		if (!this->dataGridView_Orders->DataSource) {
+			this->__updateOrders();
 
+			this->textBox_OrdersSearch->Enabled = true;
+			this->button_OrdersUpdate->Enabled = true;
+			this->dataGridView_Orders->Enabled = true;
+		}
 		break;
 	}
 }
@@ -269,7 +277,7 @@ void App::button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ 
 
 		for (int j = 0; j < this->dataGridView_ClientsAddresses->Columns->Count; j++) {
 			if (j == 0) continue; // On ne vérifie pas l'id (auto-incrémenté)
-			if (j == 1) continue; // On ne vérifie pas l'id du client (Ajouté aprèsà
+			if (j == 1) continue; // On ne vérifie pas l'id du client (Ajouté après)
 
 			// Récupération de la valeur de la cellule (en string)
 			String^ value = this->dataGridView_ClientsAddresses->Rows[i]->Cells[j]->Value->ToString()->Trim();
@@ -335,5 +343,133 @@ void App::dataGridView_Clients_SelectionChanged(System::Object^ sender, System::
 		}
 		this->__selectedClients = Client::toArray(this->dataGridView_Clients->SelectedRows);
 		this->__selectedClientRow = this->dataGridView_Clients->SelectedRows[0];
+	}
+}
+
+// ========================================================
+// =                      ORDER TAB                       =
+// ========================================================
+
+void App::__startOrderEdition(){
+}
+
+void App::__cancelOrderEdition(){
+}
+
+void App::__finishOrderEdition(){
+}
+
+void App::__updateOrders() {
+	if (this->__isOrderEditing) {
+		if (MessageBox::Show("Editing a current order, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->__cancelOrderEdition();
+		}
+		else {
+			return;
+		}
+	}
+
+	this->dataGridView_Orders->DataSource = Order::toDataSet(this->__orderService->getOrders(), "orders");
+	if (!this->dataGridView_Orders->DataMember->Length) {
+		this->dataGridView_Orders->DataMember = "orders";
+	}
+	this->dataGridView_Orders->Refresh();
+
+	if (this->dataGridView_OrdersStock->DataSource) {
+		((DataSet^)this->dataGridView_OrdersStock->DataSource)->Clear();
+	}
+
+	this->dataGridView_OrdersClients->Enabled = false;
+	this->dataGridView_OrdersStock->Enabled = false;
+	this->button_OrdersSubmit->Enabled = false;
+}
+
+void App::__updateOrdersClients() {
+	array<Client^>^ clients = this->__clientService->getClients();
+
+	this->dataGridView_OrdersClients->DataSource = Client::toDataSet(clients, "clients");
+	if (!this->dataGridView_OrdersClients->DataMember->Length) {
+		this->dataGridView_OrdersClients->DataMember = "clients";
+	}
+}
+
+void App::__updateOrdersProducts() {
+	// A changer pour récupérer les produits de la commande
+	if (this->dataGridView_Orders->SelectedRows->Count > 0) {
+		if (this->dataGridView_Orders->SelectedRows[0]->IsNewRow) return;
+
+		int clientId = this->__selectedOrder[0]->id();
+		array<Product^>^ products = this->__productService->getProducts(clientId);
+
+		this->dataGridView_OrdersStock->DataSource = Product::toDataSet(products, "products");
+		if (!this->dataGridView_OrdersStock->DataMember->Length) {
+			this->dataGridView_OrdersStock->DataMember = "products";
+		}
+	}
+}
+
+void App::button_OrdersUpdate_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->__isOrderEditing) {
+		if (MessageBox::Show("Editing a current order, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->__cancelOrderEdition();
+		}
+		else {
+			return;
+		}
+	}
+
+	this->__updateOrders();
+	this->__updateOrdersProducts();
+}
+
+void App::button_OrdersClientsUpdate_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->__updateOrdersClients();
+}
+
+void App::button_OrdersProductsUpdate_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->__isOrderEditing) {
+		if (MessageBox::Show("Editing a current order, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->__cancelOrderEdition();
+		}
+		else {
+			return;
+		}
+	}
+
+	this->__updateOrdersProducts();
+}
+
+void App::dataGridView_Orders_SelectionChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (this->__isOrderEditing && ((
+		this->dataGridView_Orders->SelectedRows->Count != 0 &&
+		!this->dataGridView_Orders->SelectedRows[0]->Equals(this->__selectedOrderRow)
+		) || (
+			this->dataGridView_Orders->SelectedCells->Count == 1 &&
+			!this->dataGridView_Orders->Rows[this->dataGridView_Orders->SelectedCells[0]->RowIndex]->Equals(this->__selectedOrderRow)
+			))) {
+		if (MessageBox::Show("Editing a current order, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->__cancelOrderEdition();
+		}
+		else {
+			if (this->dataGridView_Orders->SelectedRows->Count > 0) {
+				this->dataGridView_Orders->Rows[this->dataGridView_Orders->SelectedRows[0]->Index]->Selected = true;
+			}
+			else {
+				this->dataGridView_Orders->Rows[this->dataGridView_Orders->SelectedCells[0]->RowIndex]->Selected = true;
+			}
+			return;
+		}
+	}
+	if (this->dataGridView_Orders->SelectedRows->Count > 0) {
+		if (!this->dataGridView_Orders->SelectedRows[0]->IsNewRow) {
+			this->button_OrdersDelete->Enabled = true;
+			this->dataGridView_OrdersClients->Enabled = true;
+			this->dataGridView_OrdersStock->Enabled = true;
+
+			this->__updateOrdersClients();
+			this->__updateOrdersProducts();
+		}
+		this->__selectedOrder = Order::toArray(this->dataGridView_Orders->SelectedRows);
+		this->__selectedOrderRow = this->dataGridView_Orders->SelectedRows[0];
 	}
 }

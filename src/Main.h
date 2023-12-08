@@ -40,15 +40,23 @@ namespace Groupe3ProjetBlocPOO {
 		void button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ e) override;
 		void dataGridView_Clients_SelectionChanged(System::Object^ sender, System::EventArgs^ e) override;
 
+		void button_OrdersUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void button_OrdersClientsUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void button_OrdersProductsUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void dataGridView_Orders_SelectionChanged(System::Object^ sender, System::EventArgs^ e) override;
+
 	private:
 		Database^ __database;
 
 		ClientService^ __clientService;
 		//ProductService^ __productService;
-		//OrderService^ __orderService;
+		OrderService^ __orderService;
 
 		array<Client^>^ __selectedClients;
 		DataGridViewRow^ __selectedClientRow;
+
+		array<Order^>^ __selectedOrders;
+		DataGridViewRow^ __selectedOrderRow;
 
 		void __startClientEdition();
 		void __cancelClientEdition();
@@ -56,7 +64,19 @@ namespace Groupe3ProjetBlocPOO {
 		void __updateClients();
 		void __updateClientsAddresses();
 
+		void __startOrderEdition();
+		void __cancelOrderEdition();
+		void __finishOrderEdition();
+		void __updateOrders();
+		void __updateOrdersClients();
+		void __updateOrdersProducts();
+
+
 		bool __isClientEditing;
+
+		bool __isOrderEditing;
+		bool __isOrderProductsEditing;
+
 
 		static Dictionary<String^, String^>^ __clientsPropertiesRegex = gcnew Dictionary<String^, String^>();
 		static Dictionary<String^, String^>^ __addressesPropertiesRegex = gcnew Dictionary<String^, String^>();
