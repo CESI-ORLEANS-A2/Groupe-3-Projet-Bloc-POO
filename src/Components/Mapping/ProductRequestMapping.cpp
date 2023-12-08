@@ -1,43 +1,79 @@
 #include "./ProductRequestMapping.h"
 
 
-Request^ ProductRequestMapping::getProducts()
+Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::getProducts()
 {
     MySqlCommand^ cmd = gcnew MySqlCommand();
-    cmd->CommandText = "SELECT id,name,quantity FROM Product";
+    cmd->CommandText = "SELECT * FROM Product  JOIN ProductType ON Product.id = ProductType.productType";
     cmd->Prepare();
-    return gcnew Request(cmd->ToString());
+    return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd->ToString());
 }
 
-Request^ ProductRequestMapping::getProducts(int rows) {
+Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::getProducts(int rows) {
     MySqlCommand^ cmd = gcnew MySqlCommand();
-    cmd->CommandText = "SELECT id,name,quantity FROM Product LIMIT @row";
+    cmd->CommandText = "SELECT * FROM Product  JOIN ProductType ON Product.id = ProductType.productType LIMIT @row";
     cmd->Prepare();
     cmd->Parameters->AddWithValue("@row", rows);
-    return gcnew Request(cmd->ToString());
+    return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd->ToString());
     
 }
 
-
-
-Request^ ProductRequestMapping::getProduct(int id) {
+Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::getOrderProducts(int limit,int id)
+{
     MySqlCommand^ cmd = gcnew MySqlCommand();
-    cmd->CommandText = "SELECT id,name,quantity FROM Product WHERE id=@id";
+    cmd->CommandText = "SELECT (id,name,cost,productInOrder.quantity,product.quantity AS stock) FROM Product LEFT JOIN (SELECT* FROM productsInOrder WHERE orderId = @orderId) ON productInOrder.id = Product.id LIMIT @limit";
+    cmd->Prepare();
+    cmd->Parameters->AddWithValue("@limit", limit);
+    cmd->Parameters->AddWithValue("@orderId", id);
+    return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd->ToString());
+}
+
+Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::getOrderProducts(int id)
+{
+    MySqlCommand^ cmd = gcnew MySqlCommand();
+    cmd->CommandText = "SELECT (id,name,cost,productInOrder.quantity,product.quantity AS stock) FROM Product LEFT JOIN (SELECT* FROM productsInOrder WHERE orderId = @orderId) ON productInOrder.id = Product.id";
+    cmd->Prepare();
+    cmd->Parameters->AddWithValue("@orderId", id);
+    return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd->ToString());
+}
+
+
+
+
+Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::getProduct(int id) {
+    MySqlCommand^ cmd = gcnew MySqlCommand();
+    cmd->CommandText = "SELECT * FROM Product  JOIN ProductType ON Product.id = ProductType.productType WHERE id=@id";
     cmd->Prepare();
     cmd->Parameters->AddWithValue("@id", id);
-    return gcnew Request(cmd->ToString());
+    return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd->ToString());
 }
 
-Request^ ProductRequestMapping::addProduct(String^name, String^description, float cost,int quantity) {
+Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::addOrderProduct(int productId, int orderId)
+{
+        try {
+        MySqlCommand^ cmd = gcnew MySqlCommand();
+        cmd->CommandText = "INSERT INTO productsInOrder(orderId, productId, quantity) VALUE (@orderId, @productId)";
+        cmd->Prepare();
+        cmd->Parameters->AddWithValue("@orderId", orderId);
+        cmd->Parameters->AddWithValue("@productId", productId);
+        return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd->ToString());
+    }
+    catch (MySqlException^ ex)
+    {
+        MessageBox::Show("Error" + ex->Number + " has occurred: " + ex->Message,
+            "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+    }
+}
+
+Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::addProduct(String^name, float cost,int quantity) {
     try {
         MySqlCommand^ cmd = gcnew MySqlCommand();
         cmd->CommandText = "INSERT INTO Product VALUES(name,description,cost,quantity)";
         cmd->Prepare();
         cmd->Parameters->AddWithValue("@name", name);
-        cmd->Parameters->AddWithValue("@description", description);
         cmd->Parameters->AddWithValue("@cost", cost);
         cmd->Parameters->AddWithValue("@quantity", quantity);
-        return gcnew Request(cmd->ToString());
+        return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd->ToString());
     }
     catch (MySqlException^ ex)
     {
@@ -45,15 +81,14 @@ Request^ ProductRequestMapping::addProduct(String^name, String^description, floa
             "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
     }
 }
-Request^ ProductRequestMapping::addProduct(String^ name, String^ description, float cost) {
+Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::addProduct(String^ name,  float cost) {
     try {
         MySqlCommand^ cmd = gcnew MySqlCommand();
         cmd->CommandText = "INSERT INTO Product VALUES(name,description,cost,quantity)";
         cmd->Prepare();
         cmd->Parameters->AddWithValue("@name", name);
-        cmd->Parameters->AddWithValue("@description", description);
         cmd->Parameters->AddWithValue("@cost", cost);
-        return gcnew Request(cmd->ToString());
+        return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd->ToString());
     }
     catch (MySqlException^ ex)
     {
@@ -61,17 +96,16 @@ Request^ ProductRequestMapping::addProduct(String^ name, String^ description, fl
             "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
     }
 }
-Request^ ProductRequestMapping::updateProduct(int id,String^ name, String^ description, float cost,int quantity) {
+Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::updateProduct(int id,String^ name,  float cost,int quantity) {
     try {
         MySqlCommand^ cmd = gcnew MySqlCommand();
         cmd->CommandText = "UPDATE table SET name = @name, description = @description, cost = @cost, quantity = @quantity WHERE id = @id;";
         cmd->Prepare();
         cmd->Parameters->AddWithValue("@name", name);
-        cmd->Parameters->AddWithValue("@description", description);
         cmd->Parameters->AddWithValue("@cost", cost);
         cmd->Parameters->AddWithValue("@id", id);
         cmd->Parameters->AddWithValue("@quantity", quantity);
-        return gcnew Request(cmd->ToString());
+        return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd->ToString());
     }
     catch (MySqlException^ ex)
     {
@@ -80,13 +114,29 @@ Request^ ProductRequestMapping::updateProduct(int id,String^ name, String^ descr
     }
 }
 
-Request^ ProductRequestMapping::deleteProduct(int id) {
+Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::deleteProduct(int id) {
     try {
         MySqlCommand^ cmd = gcnew MySqlCommand();
         cmd->CommandText = "DELETE FROM Product WHERE id =@id ";
         cmd->Prepare();
         cmd->Parameters->AddWithValue("@id",id);
-        return gcnew Request(cmd->ToString());
+        return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd->ToString());
+    }
+    catch (MySqlException^ ex)
+    {
+        MessageBox::Show("Error" + ex->Number + " has occurred: " + ex->Message,
+            "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+    }
+}
+
+Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::deleteOrderProduct(int id)
+{
+    try {
+        MySqlCommand^ cmd = gcnew MySqlCommand();
+        cmd->CommandText = "DELETE FROM productsInOrder WHERE orderId = @orderId";
+        cmd->Prepare();
+        cmd->Parameters->AddWithValue("@orderId", id);
+        return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd->ToString());
     }
     catch (MySqlException^ ex)
     {

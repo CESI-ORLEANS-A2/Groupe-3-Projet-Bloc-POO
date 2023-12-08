@@ -8,12 +8,15 @@ using namespace MySql::Data::MySqlClient;
 ref class ProductRequestMapping {
 
 public :
-	static Request^ getProducts();
-	static Request^ getProducts(int);
-	static Request^ getProducts(int,int);
-	static Request^ getProduct(int);
-	static Request^ addProduct(String^, String^, float);
-	static Request^ addProduct(String^, String^,float,int);
-	static Request^ updateProduct(int,String^, String^, float,int);
-	static Request^ deleteProduct(int);
+	static Groupe3ProjetBlocPOO::Components::Request^ getProducts();
+	static Groupe3ProjetBlocPOO::Components::Request^ getProducts(int);
+	static Groupe3ProjetBlocPOO::Components::Request^ getOrderProducts(int);
+	static Groupe3ProjetBlocPOO::Components::Request^ getOrderProducts(int,int);
+	static Groupe3ProjetBlocPOO::Components::Request^ getProduct(int);
+	static Groupe3ProjetBlocPOO::Components::Request^ addOrderProduct(int,int);
+	static Groupe3ProjetBlocPOO::Components::Request^ addProduct(String^, float);
+	static Groupe3ProjetBlocPOO::Components::Request^ addProduct(String^,float,int);
+	static Groupe3ProjetBlocPOO::Components::Request^ updateProduct(int, String^, float,int);
+	static Groupe3ProjetBlocPOO::Components::Request^ deleteProduct(int);
+	static Groupe3ProjetBlocPOO::Components::Request^ deleteOrderProduct(int);
 };

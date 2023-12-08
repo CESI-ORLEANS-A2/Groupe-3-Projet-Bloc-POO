@@ -11,16 +11,19 @@ ref class ProductService {
 private :
 		Database^ __database;
 public :
-	ProductService(Database^);
-	Product^ viewProduct(int);
-	Product^ viewProduct(Product^);
-	array<Product^>^ viewProducts();
-	array<Product^>^ viewProducts(int);;
-	Product^ addProduct(Product^);
-	Product^ addProduct(String^, String^, float);
-	Product^ addProduct(String^, String^,float,int);
+	ProductService(Database^);  
+	Product^ getProduct(int);   
+	Product^ getProduct(Product^); 
+	array<Product^>^ getProducts(); 
+	array<Product^>^ getProducts(int); 
+	array<Product^>^ getOrderProducts(int,int); // a voir
+	Product^ addProduct(Product^); 
+	Product^ addProduct(String^, float);
+	Product^ addProduct(String^,float,int);
+	Product^ addOrderProduct(int, int);
 	Product^ updateProduct(Product^);
 	Product^ updateProduct(int,String^, String^, float, int);
 	Product^ removeProduct(Product^);
 	Product^ removeProduct(int);
+	Product^ removeOrderProduct(int);
 };
