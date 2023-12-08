@@ -5,19 +5,20 @@ ProductService::ProductService(Groupe3ProjetBlocPOO::Components::Database^databa
 
 	this->__database = database;
 
+	Dictionary<String^, String^>^ productTypeSchema = gcnew Dictionary<String^, String^>();
+	productTypeSchema->Add("productType", "INT PRIMARY KEY");
+	productTypeSchema->Add("rateTVA", "INT NOT NULL");
+	this->__database->createTable("ProductType", productTypeSchema);
+
 	Dictionary<String^, String^>^ productSchema = gcnew Dictionary<String^, String^>();
 	productSchema->Add("id", "INT PRIMARY KEY AUTO_INCREMENT");
 	productSchema->Add("name", "VARCHAR(100)");
-	productSchema->Add("description", "VARCHAR(100)");
 	productSchema->Add("cost", "FLOAT NOT NULL");
 	productSchema->Add("quantity", "INT NOT NULL");
-	productSchema->Add("productType ","FOREIGN KEY(productType) REFERENCES ProductType(productType) ");
+	productSchema->Add("productType ","INT FOREIGN KEY(productType) REFERENCES ProductType(productType) ");
 	this->__database->createTable("Product", productSchema);
 
-	Dictionary<String^, String^>^ productTypeSchema = gcnew Dictionary<String^, String^>();
-	productTypeSchema->Add("productType", "VARCHAR(100) PRIMARY KEY");
-	productTypeSchema->Add("rateTVA", "INT NOT NULL");
-	this->__database->createTable("ProductType", productTypeSchema);
+
 }
 
 Product^ ProductService::getProduct(int id)
@@ -69,9 +70,11 @@ Product^ ProductService::addOrderProduct(int productId, int orderId)
 	Windows::Forms::DataGridViewRow^ dataGridViewRow = gcnew Windows::Forms::DataGridViewRow();
 	for (int i = 0; i < dataGridView->ColumnCount; i++) {
 		if (dataGridView->Columns[i]->Name == "quantity") {
-			for (int j = 0 ; ;j++)
-			if (Convert::ToInt32(dataGridViewRow->Cells[i]->Value) > 0) {
-				int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::addOrderProduct(productId, orderId)));
+			for (int j = 0 ;dataGridViewRowCollection->Count ;j++)
+				if (Convert::ToInt32(dataGridViewRow->Cells[j]->Value) > 0) {
+					int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::addOrderProduct(productId, orderId)));
+					Product^ product = gcnew Product(id);
+					return product;
 			}
 		}
 	}
@@ -92,25 +95,25 @@ Product^ ProductService::updateProduct(Product^product) {
 }
 
 Product^ ProductService::updateProduct(int id, String^ name, String^ description, float cost, int stock) {
-	this->__database->runQuery(ProductRequestMapping::updateProduct(id, name, cost, stock))->Rows[0];
+	this->__database->runScalar(ProductRequestMapping::updateProduct(id, name, cost, stock));
 	return gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(id))->Rows[0]);
 }
 
 
 Product^ ProductService::removeProduct(Product^product) {
-	Product^ newProduct = gcnew Product(this->__database->runQuery(ProductRequestMapping::deleteProduct(product->id()))->Rows[0]);
+	Product^ newProduct = gcnew Product(this->__database->runScalar(ProductRequestMapping::deleteProduct(product->id())));
 	return newProduct;
 }
 
 Product^ ProductService::removeProduct(int id) {
 	Product^product = gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(id))->Rows[0]);
-	this->__database->runQuery(ProductRequestMapping::deleteProduct(id));
+	this->__database->runScalar(ProductRequestMapping::deleteProduct(id));
 	return product;
 }
 
 Product^ ProductService::removeOrderProduct(int id)
 {
 	Product^ product = gcnew Product(this->__database->runQuery(ProductRequestMapping::getOrderProducts(id))->Rows[0]);
-	this->__database->runQuery(ProductRequestMapping::deleteOrderProduct(id));
+	this->__database->runScalar(ProductRequestMapping::deleteOrderProduct(id));
 	return product;
 }

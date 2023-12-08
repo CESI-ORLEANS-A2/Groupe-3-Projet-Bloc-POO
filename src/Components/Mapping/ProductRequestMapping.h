@@ -14,6 +14,7 @@ public :
 	static Groupe3ProjetBlocPOO::Components::Request^ getOrderProducts(int,int);
 	static Groupe3ProjetBlocPOO::Components::Request^ getProduct(int);
 	static Groupe3ProjetBlocPOO::Components::Request^ addOrderProduct(int,int);
+	static Groupe3ProjetBlocPOO::Components::Request^ addTypeProduct(float);
 	static Groupe3ProjetBlocPOO::Components::Request^ addProduct(String^, float);
 	static Groupe3ProjetBlocPOO::Components::Request^ addProduct(String^,float,int);
 	static Groupe3ProjetBlocPOO::Components::Request^ updateProduct(int, String^, float,int);
