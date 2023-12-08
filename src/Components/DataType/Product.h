@@ -4,7 +4,6 @@ ref class Product {
 private :
 	int __id;
 	String^ __name;
-	String^ __description;
 	float __cost;
 	int __quantity;
 public :
@@ -16,8 +15,6 @@ public :
 	int id(void);
 	void name(String^);
 	String^ name();
-	void description(String^);
-	String^ description();
 	void cost(float);
 	float cost();
 	void quantity(int);
