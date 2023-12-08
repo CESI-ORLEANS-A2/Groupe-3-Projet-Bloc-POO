@@ -1,13 +1,13 @@
 #pragma once
 
-namespace Groupe3ProjetBlocPOO {
+using namespace System;
+using namespace System::ComponentModel;
+using namespace System::Collections;
+using namespace System::Windows::Forms;
+using namespace System::Data;
+using namespace System::Drawing;
 
-	using namespace System;
-	using namespace System::ComponentModel;
-	using namespace System::Collections;
-	using namespace System::Windows::Forms;
-	using namespace System::Data;
-	using namespace System::Drawing;
+namespace Groupe3ProjetBlocPOO {
 
 	/// <summary>
 	/// Summary for SettingsForm
@@ -39,7 +39,7 @@ namespace Groupe3ProjetBlocPOO {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -49,7 +49,7 @@ namespace Groupe3ProjetBlocPOO {
 		void InitializeComponent(void)
 		{
 			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
+			this->Size = System::Drawing::Size(300, 300);
 			this->Text = L"SettingsForm";
 			this->Padding = System::Windows::Forms::Padding(0);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
