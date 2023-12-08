@@ -52,6 +52,7 @@ namespace Groupe3ProjetBlocPOO {
 
 		void __startClientEdition();
 		void __cancelClientEdition();
+		void __finishClientEdition();
 		void __updateClients();
 		void __updateClientsAddresses();
 

@@ -11,8 +11,8 @@ array<Groupe3ProjetBlocPOO::Components::DataType::Address^>^ Groupe3ProjetBlocPO
 	array<Address^>^ addresses = gcnew array<Address^>(collection->Count);
 	for (int i = 0; i < collection->Count; i++) {
 		if (collection[i]->IsNewRow) {
-			continue;
 			addresses->Resize(addresses, addresses->Length - 1);
+			continue;
 		}
 		addresses[i] = gcnew Address(collection[i]);
 	}
@@ -91,8 +91,12 @@ Groupe3ProjetBlocPOO::Components::DataType::Address::Address(DataRow^ row) {
 	this->__country = Convert::ToString(row->ItemArray[6]);
 }
 Groupe3ProjetBlocPOO::Components::DataType::Address::Address(DataGridViewRow^ row) {
-	this->__id = Convert::ToInt32(row->Cells[0]->Value);
-	this->__clientId = Convert::ToInt32(row->Cells[1]->Value);
+	if (row->Cells[0]->Value->ToString() != "") {
+		this->__id = Convert::ToInt32(row->Cells[0]->Value);
+	}
+	if (row->Cells[1]->Value->ToString() != "") {
+		this->__clientId = Convert::ToInt32(row->Cells[1]->Value);
+	}
 	this->__number = Convert::ToString(row->Cells[2]->Value);
 	this->__street = Convert::ToString(row->Cells[3]->Value);
 	this->__city = Convert::ToString(row->Cells[4]->Value);

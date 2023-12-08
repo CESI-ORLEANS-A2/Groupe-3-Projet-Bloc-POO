@@ -35,8 +35,9 @@ Object^ Groupe3ProjetBlocPOO::Components::Database::runScalar(String^ query) {
 	return result;
 }
 Object^ Groupe3ProjetBlocPOO::Components::Database::runScalar(Request^ query) {
-	return query->mySqlCmd()->ExecuteScalar();
-
+	MySqlCommand^ cmd = query->mySqlCmd();
+	cmd->Connection = this->__connection;
+	return cmd->ExecuteScalar();
 }
 
 void Groupe3ProjetBlocPOO::Components::Database::createTable(String^ table, Dictionary<String^, String^>^ schema) {

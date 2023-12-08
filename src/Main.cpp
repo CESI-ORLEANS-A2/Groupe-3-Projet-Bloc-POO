@@ -173,6 +173,15 @@ void App::__cancelClientEdition() {
 
 	this->__isClientEditing = false;
 }
+void App::__finishClientEdition() {
+	if (!this->__isClientEditing) return;
+
+	this->button_ClientsDelete->Enabled = false;
+	this->button_ClientsDelete->Text = "Delete";
+	this->button_ClientsSubmit->Enabled = false;
+
+	this->__isClientEditing = false;
+}
 
 void App::dataGridView_Clients_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) {
 	this->__startClientEdition();
@@ -181,11 +190,26 @@ void App::dataGridView_ClientsAddresses_CellBeginEdit(System::Object^ sender, Sy
 	this->__startClientEdition();
 }
 void App::__updateClients() {
+	if (this->__isClientEditing) {
+		if (MessageBox::Show("Editing a current customer, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->__cancelClientEdition();
+		}
+		else {
+			return;
+		}
+	}
+
 	this->dataGridView_Clients->DataSource = Client::toDataSet(this->__clientService->getClients(), "clients");
 	if (!this->dataGridView_Clients->DataMember->Length) {
 		this->dataGridView_Clients->DataMember = "clients";
 	}
 	this->dataGridView_Clients->Refresh();
+
+	if (this->dataGridView_ClientsAddresses->DataSource) {
+		((DataSet^)this->dataGridView_ClientsAddresses->DataSource)->Clear();
+	}
+	this->dataGridView_ClientsAddresses->Enabled = false;
+	this->button_ClientsSubmit->Enabled = false;
 }
 void App::__updateClientsAddresses() {
 	if (this->dataGridView_Clients->SelectedRows->Count > 0) {
@@ -213,6 +237,27 @@ void App::button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ 
 
 	if (!this->__isClientEditing) return;
 
+	// ========= Vérification du client =========
+	for (int j = 0; j < this->dataGridView_Clients->Columns->Count; j++) {
+		if (j == 0) continue; // On ne vérifie pas l'id (auto-incrémenté)
+
+		// Récupération de la valeur de la cellule (en string)
+		String^ value = row->Cells[j]->Value->ToString()->Trim();
+		String^ regex = App::__clientsPropertiesRegex[this->dataGridView_Clients->Columns[j]->DataPropertyName];
+
+		if (!Regex::IsMatch(value,
+			regex,
+			RegexOptions::IgnoreCase)) {
+			MessageBox::Show(
+				"The value \"" + value + "\" is not valid for the property \"" + this->dataGridView_Clients->Columns[j]->HeaderText + "\" of Client.",
+				"Error",
+				MessageBoxButtons::OK,
+				MessageBoxIcon::Error
+			);
+			return;
+		}
+	}
+
 	// ========= Vérification des adresses =========
 	for (int i = 0; i < this->dataGridView_ClientsAddresses->Rows->Count; i++) {
 		if (this->dataGridView_ClientsAddresses->Rows[i]->IsNewRow) continue;
@@ -239,32 +284,19 @@ void App::button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ 
 		}
 	}
 
-	// ========= Vérification du client =========
-	for (int j = 0; j < this->dataGridView_Clients->Columns->Count; j++) {
-		if (j == 0) continue; // On ne vérifie pas l'id (auto-incrémenté)
+	Client^ client = gcnew Client(row);
 
-		// Récupération de la valeur de la cellule (en string)
-		String^ value = row->Cells[j]->Value->ToString()->Trim();
-		String^ regex = App::__clientsPropertiesRegex[this->dataGridView_Clients->Columns[j]->DataPropertyName];
-
-		if (!Regex::IsMatch(value,
-			regex,
-			RegexOptions::IgnoreCase)) {
-			MessageBox::Show(
-				"The value \"" + value + "\" is not valid for the property \"" + this->dataGridView_Clients->Columns[j]->HeaderText + "\" of Client.",
-				"Error",
-				MessageBoxButtons::OK,
-				MessageBoxIcon::Error
-			);
-			return;
-		}
+	for (int i = 0; i < this->dataGridView_ClientsAddresses->Rows->Count; i++) {
+		if (this->dataGridView_ClientsAddresses->Rows[i]->IsNewRow) continue;
+		this->dataGridView_ClientsAddresses->Rows[i]->Cells[1]->Value = client->id();
 	}
 
 	array<Address^>^ addresses = Address::toArray(this->dataGridView_ClientsAddresses->Rows);
-	Client^ client = gcnew Client(row);
 
-	this->__clientService->updateClient(client);
 	this->__clientService->updateAddresses(addresses);
+	this->__clientService->updateClient(client);
+
+	this->__finishClientEdition();
 }
 
 

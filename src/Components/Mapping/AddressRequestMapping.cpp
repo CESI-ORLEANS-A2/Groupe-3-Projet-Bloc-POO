@@ -3,7 +3,7 @@
 Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getAddresses() {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText =
-		"SELECT * FROM addresses NATURAL JOIN"
+		"SELECT * FROM addresses NATURAL JOIN "
 		"(cities NATURAL JOIN countries)";
 	return gcnew Request(cmd);
 }
@@ -21,7 +21,7 @@ Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getAd
 Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getAddressesWithLimit(int limit) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText =
-		"SELECT * FROM addresses NATURAL JOIN"
+		"SELECT * FROM addresses NATURAL JOIN "
 		"(cities NATURAL JOIN countries) LIMIT @limit";
 	cmd->Parameters->AddWithValue("@limit", limit);
 	return gcnew Request(cmd);
@@ -30,7 +30,7 @@ Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getAd
 Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getAddress(int id) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText =
-		"SELECT * FROM addresses NATURAL JOIN"
+		"SELECT * FROM addresses NATURAL JOIN "
 		"(cities NATURAL JOIN countries) WHERE addresses.id = @id";
 	cmd->Parameters->AddWithValue("@id", id);
 	return gcnew Request(cmd);
@@ -39,9 +39,9 @@ Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getAd
 Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::addAddress(int client_id, String^ number, String^ street, String^ city, int zipCode, String^ country) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText =
-		"INSERT INTO addresses (client_id, number, street, zip, city_id)"
-		"VALUES (@client_id, @number, @street, @zipCode, (SELECT cities.id FROM cities WHERE cities.name = @city"
-		"AND countries.id = (SELECT countries.id FROM countries WHERE countries.name = @country)))";
+		"INSERT INTO addresses (client_id, number, street, zip, city_id) "
+		"VALUES (@client_id, @number, @street, @zipCode, (SELECT cities.id FROM cities WHERE cities.name = @city "
+		"AND cities.country_id = (SELECT countries.id FROM countries WHERE countries.name = @country)))";
 	cmd->Parameters->AddWithValue("@client_id", client_id);
 	cmd->Parameters->AddWithValue("@number", number);
 	cmd->Parameters->AddWithValue("@street", street);
@@ -54,8 +54,8 @@ Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::addAd
 Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::updateAddress(int id, String^ number, String^ street, String^ city, int zipCode, String^ country) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText =
-		"UPDATE addresses SET number = @number, street = @street, zip = @zipCode, city_id = (SELECT cities.id FROM cities WHERE cities.name = @city"
-		"AND countries.id = (SELECT countries.id FROM countries WHERE countries.name = @country)) WHERE addresses.id = @id";
+		"UPDATE addresses SET number = @number, street = @street, zip = @zipCode, city_id = (SELECT cities.id FROM cities WHERE cities.name = @city "
+		"AND cities.country_id = (SELECT countries.id FROM countries WHERE countries.name = @country)) WHERE addresses.id = @id";
 	cmd->Parameters->AddWithValue("@id", id);
 	cmd->Parameters->AddWithValue("@number", number);
 	cmd->Parameters->AddWithValue("@street", street);

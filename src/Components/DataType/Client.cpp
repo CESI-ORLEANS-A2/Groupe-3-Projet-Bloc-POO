@@ -92,8 +92,8 @@ Groupe3ProjetBlocPOO::Components::DataType::Client::Client(DataGridViewRow^ row)
 	this->__id = Convert::ToInt32(row->Cells[0]->Value);
 	this->__firstname = Convert::ToString(row->Cells[1]->Value);
 	this->__lastname = Convert::ToString(row->Cells[2]->Value);
-	this->__phone = Convert::ToString(row->Cells[4]->Value);
-	this->__email = Convert::ToString(row->Cells[3]->Value);
+	this->__phone = Convert::ToString(row->Cells[3]->Value);
+	this->__email = Convert::ToString(row->Cells[4]->Value);
 	this->__birthdate = Convert::ToString(row->Cells[5]->Value);
 	this->__logo = Convert::ToString(row->Cells[6]->Value);
 	this->__company = Convert::ToString(row->Cells[7]->Value);

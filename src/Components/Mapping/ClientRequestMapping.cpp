@@ -101,16 +101,17 @@ Groupe3ProjetBlocPOO::Components::Request^ Groupe3ProjetBlocPOO::Components::Map
 		"SET firstname = @firstname, "
 		"	lastname = @lastname, "
 		"	phone = @phone, "
-		"	email = @email "
-		"	birthdate = @birthdate"
-		"	logo = @logo"
-		"	company = @company"
+		"	email = @email, "
+		"	birthdate = @birthdate, "
+		"	logo = @logo, "
+		"	company = @company "
 		"WHERE id = @id;";
 
 	cmd->Parameters->AddWithValue("@id", id);
 	cmd->Parameters->AddWithValue("@firstname", firstname);
 	cmd->Parameters->AddWithValue("@lastname", lastname);
 	cmd->Parameters->AddWithValue("@phone", phone);
+	cmd->Parameters->AddWithValue("@email", email);
 	cmd->Parameters->AddWithValue("@birthdate", birthdate);
 	cmd->Parameters->AddWithValue("@logo", logo);
 	cmd->Parameters->AddWithValue("@company", company);
