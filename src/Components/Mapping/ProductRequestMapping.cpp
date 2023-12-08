@@ -85,9 +85,10 @@ Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::addProduct(Str
 Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::addProduct(String^ name,  float cost) {
    
         MySqlCommand^ cmd = gcnew MySqlCommand();
-        cmd->CommandText = "INSERT INTO Product VALUES(name,description,cost,quantity)";
+        cmd->CommandText = "INSERT INTO Product (name,cost,quantity) VALUES(@name,@cost,@quantity)";
         cmd->Prepare();
         cmd->Parameters->AddWithValue("@name", name);
+        cmd->Parameters->AddWithValue("@cost", cost);
         cmd->Parameters->AddWithValue("@cost", cost);
         return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd->ToString());
     
@@ -96,7 +97,7 @@ Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::addProduct(Str
 Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::updateProduct(int id,String^ name,  float cost,int quantity) {
     
         MySqlCommand^ cmd = gcnew MySqlCommand();
-        cmd->CommandText = "UPDATE table SET name = @name, description = @description, cost = @cost, quantity = @quantity WHERE id = @id;";
+        cmd->CommandText = "UPDATE table SET name = @name, cost = @cost, quantity = @quantity WHERE id = @id;";
         cmd->Prepare();
         cmd->Parameters->AddWithValue("@name", name);
         cmd->Parameters->AddWithValue("@cost", cost);

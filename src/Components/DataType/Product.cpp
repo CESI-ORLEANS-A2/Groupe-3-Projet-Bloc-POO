@@ -94,7 +94,7 @@ array<Product^>^ Product::toArray(Windows::Forms::DataGridViewRowCollection^rows
 Data::DataTable^ Product::toDataTable(array<Product^>^product) {
 	Data::DataTable^ table = Product::dataTableSchema();
 	table->Clear();
-	for (int i ; product->Length; i++) {
+	for (int i = 0 ; i < product->Length; i++) {
 		table->Rows->Add(product[i]->toDataRow());
 	}
 	return table->Copy();

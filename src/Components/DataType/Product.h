@@ -6,6 +6,7 @@ private :
 	String^ __name;
 	float __cost;
 	int __quantity;
+	
 public :
 	Product();
 	Product(int);
