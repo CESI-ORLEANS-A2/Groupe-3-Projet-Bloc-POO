@@ -83,8 +83,15 @@ Client^ Groupe3ProjetBlocPOO::Services::ClientService::createClient(String^ firs
 	return client;
 }
 Client^ Groupe3ProjetBlocPOO::Services::ClientService::updateClient(Client^ client) {
-	this->__database->runScalar(ClientRequestMapping::updateClient(client));
-	return gcnew Client(this->__database->runQuery(ClientRequestMapping::getClient(client->id()))->Rows[0]);
+	int id;
+	if (client->id()) {
+		id = Convert::ToInt32(this->__database->runScalar(ClientRequestMapping::updateClient(client)));
+	}
+	else {
+		this->__database->runScalar(ClientRequestMapping::addClient(client));
+		id = client->id();
+	}
+	return gcnew Client(this->__database->runQuery(ClientRequestMapping::getClient(id))->Rows[0]);
 }
 Client^ Groupe3ProjetBlocPOO::Services::ClientService::updateClient(int id, String^ firstname, String^ lastname, String^ phone, String^ email, String^ birthdate, String^ logo, String^ company) {
 	this->__database->runScalar(ClientRequestMapping::updateClient(id, firstname, lastname, phone, email, birthdate, logo, company));

@@ -60,7 +60,7 @@ Groupe3ProjetBlocPOO::Components::Request^ Groupe3ProjetBlocPOO::Components::Map
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText =
 		"INSERT INTO clients "
-		"(firstname, lastname, phone, email, birthdat, logo, company) "
+		"(firstname, lastname, phone, email, birthdate, logo, company) "
 		"VALUES (@firstname, @lastname, @phone, @email, @birthdate, @logo, @company);";
 
 	cmd->Parameters->AddWithValue("@firstname", firstname);

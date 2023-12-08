@@ -36,8 +36,10 @@ Object^ Groupe3ProjetBlocPOO::Components::Database::runScalar(String^ query) {
 }
 Object^ Groupe3ProjetBlocPOO::Components::Database::runScalar(Request^ query) {
 	MySqlCommand^ cmd = query->mySqlCmd();
+	//cmd->CommandText += "SELECT LAST_INSERT_ID();";
 	cmd->Connection = this->__connection;
-	return cmd->ExecuteScalar();
+	cmd->ExecuteScalar();
+	return  cmd->LastInsertedId;
 }
 
 void Groupe3ProjetBlocPOO::Components::Database::createTable(String^ table, Dictionary<String^, String^>^ schema) {

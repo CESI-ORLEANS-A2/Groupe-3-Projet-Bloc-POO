@@ -120,14 +120,19 @@ void App::dataGridView_Clients_RowHeaderMouseClick(System::Object^ sender, Syste
 
 }
 void App::button_ClientsAdd_Click(System::Object^ sender, System::EventArgs^ e) {
-	// TODO Vérification de l'édition
+	if (this->__isClientEditing) {
+		if (MessageBox::Show("Editing a current customer, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->__cancelClientEdition();
+		}
+		else {
+			return;
+		}
+	}
 
 	this->dataGridView_Clients->ClearSelection();
-
 	this->dataGridView_Clients->Rows[this->dataGridView_Clients->Rows->Count - 1]->Selected = true;
 }
 void App::button_ClientsDelete_Click(System::Object^ sender, System::EventArgs^ e) {
-	// TODO Vérification de l'édition
 	if (this->__isClientEditing) {
 		if (MessageBox::Show("Editing a current customer, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
 			this->__cancelClientEdition();
@@ -321,22 +326,14 @@ void App::dataGridView_Clients_SelectionChanged(System::Object^ sender, System::
 			return;
 		}
 	}
-
 	if (this->dataGridView_Clients->SelectedRows->Count > 0) {
-		if (this->dataGridView_Clients->SelectedRows[0]->IsNewRow) return;
-
-		if (this->dataGridView_Clients->SelectedRows->Count > 0) {
-			if (this->dataGridView_Clients->SelectedRows[0]->IsNewRow) return;
-
-			this->button_ClientsDelete->Enabled = true;
-
-			this->__selectedClients = Client::toArray(this->dataGridView_Clients->SelectedRows);
-			this->__selectedClientRow = this->dataGridView_Clients->SelectedRows[0];
-
-			this->__updateClientsAddresses();
-
+		if (!this->dataGridView_Clients->SelectedRows[0]->IsNewRow) {
 			this->button_ClientsDelete->Enabled = true;
 			this->dataGridView_ClientsAddresses->Enabled = true;
+
+			this->__updateClientsAddresses();
 		}
+		this->__selectedClients = Client::toArray(this->dataGridView_Clients->SelectedRows);
+		this->__selectedClientRow = this->dataGridView_Clients->SelectedRows[0];
 	}
 }
