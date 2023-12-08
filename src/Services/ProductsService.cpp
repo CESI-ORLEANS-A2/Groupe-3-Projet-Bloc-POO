@@ -1,7 +1,7 @@
 #include "./ProductsService.h"
 
 
-ProductService::ProductService(Database^database) {
+ProductService::ProductService(Groupe3ProjetBlocPOO::Components::Database^database) {
 
 	this->__database = database;
 
@@ -11,13 +11,13 @@ ProductService::ProductService(Database^database) {
 	productSchema->Add("description", "VARCHAR(100)");
 	productSchema->Add("cost", "FLOAT NOT NULL");
 	productSchema->Add("quantity", "INT NOT NULL");
-	productSchema->Add("productType", "VARCHAR(100) FOREIGN KEY REFERENCE ");
-	this->__database->createTable("product", productSchema);
+	productSchema->Add("productType ","FOREIGN KEY(productType) REFERENCES ProductType(productType) ");
+	this->__database->createTable("Product", productSchema);
 
 	Dictionary<String^, String^>^ productTypeSchema = gcnew Dictionary<String^, String^>();
 	productTypeSchema->Add("productType", "VARCHAR(100) PRIMARY KEY");
 	productTypeSchema->Add("rateTVA", "INT NOT NULL");
-	this->__database->createTable("productType", productTypeSchema);
+	this->__database->createTable("ProductType", productTypeSchema);
 }
 
 Product^ ProductService::getProduct(int id)

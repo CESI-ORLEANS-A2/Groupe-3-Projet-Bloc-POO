@@ -9,9 +9,9 @@ using namespace System;
 
 ref class ProductService {
 private :
-		Database^ __database;
+	Groupe3ProjetBlocPOO::Components::Database^ __database;
 public :
-	ProductService(Database^);  
+	ProductService(Groupe3ProjetBlocPOO::Components::Database^);
 	Product^ getProduct(int);   
 	Product^ getProduct(Product^); 
 	array<Product^>^ getProducts(); 
