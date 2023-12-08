@@ -419,7 +419,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->linkLabel_AuthorAbepan->Size = System::Drawing::Size(1085, 25);
 			this->linkLabel_AuthorAbepan->TabIndex = 16;
 			this->linkLabel_AuthorAbepan->TabStop = true;
-			this->linkLabel_AuthorAbepan->Text = L"Mattéo V. <@ultrasonicytb>";
+			this->linkLabel_AuthorAbepan->Text = L"Matteo V. <@ultrasonicytb>";
 			this->linkLabel_AuthorAbepan->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->linkLabel_AuthorAbepan->UseCompatibleTextRendering = true;
 			this->linkLabel_AuthorAbepan->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &MainForm::linkLabel_AuthorAbepan_LinkClicked);
@@ -1182,7 +1182,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->label_OrdersTotalUnit->Name = L"label_OrdersTotalUnit";
 			this->label_OrdersTotalUnit->Size = System::Drawing::Size(22, 22);
 			this->label_OrdersTotalUnit->TabIndex = 3;
-			this->label_OrdersTotalUnit->Text = L"€";
+			this->label_OrdersTotalUnit->Text = L"ï¿½";
 			this->label_OrdersTotalUnit->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label_OrdersTotal
@@ -1231,7 +1231,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->label_OrdersTaxUnit->Name = L"label_OrdersTaxUnit";
 			this->label_OrdersTaxUnit->Size = System::Drawing::Size(22, 22);
 			this->label_OrdersTaxUnit->TabIndex = 3;
-			this->label_OrdersTaxUnit->Text = L"€";
+			this->label_OrdersTaxUnit->Text = L"ï¿½";
 			this->label_OrdersTaxUnit->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label_OrdersTax
@@ -1302,7 +1302,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->label_OrdersDiscountUnit2->Name = L"label_OrdersDiscountUnit2";
 			this->label_OrdersDiscountUnit2->Size = System::Drawing::Size(22, 22);
 			this->label_OrdersDiscountUnit2->TabIndex = 3;
-			this->label_OrdersDiscountUnit2->Text = L"€";
+			this->label_OrdersDiscountUnit2->Text = L"ï¿½";
 			this->label_OrdersDiscountUnit2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label_OrdersDiscout
@@ -1351,7 +1351,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->label_OrdersPriceUnit->Name = L"label_OrdersPriceUnit";
 			this->label_OrdersPriceUnit->Size = System::Drawing::Size(22, 22);
 			this->label_OrdersPriceUnit->TabIndex = 3;
-			this->label_OrdersPriceUnit->Text = L"€";
+			this->label_OrdersPriceUnit->Text = L"ï¿½";
 			this->label_OrdersPriceUnit->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label_OrdersPrice
