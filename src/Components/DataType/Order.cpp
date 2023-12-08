@@ -60,7 +60,6 @@ DataGridView^ Groupe3ProjetBlocPOO::Components::DataType::Order::toDataGridView(
 	}
 	return dataGridView;
 }
-
 DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Order::dataTableSchema(){
 	if (Order::__dataTableSchema->Columns->Count == 0) {
 		Order::__dataTableSchema->Columns->Add("idOrder", int::typeid);

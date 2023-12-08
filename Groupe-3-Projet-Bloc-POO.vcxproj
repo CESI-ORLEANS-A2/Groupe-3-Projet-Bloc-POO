@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -131,6 +131,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Components\DataType\DataType.cpp" />
     <ClCompile Include="src\Components\Mapping\AdressRequestMapping.cpp" />
     <ClCompile Include="src\Components\Database.cpp" />
     <ClCompile Include="src\Components\DataType\Address.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="src\Components\Forms\MainForm.cpp" />
     <ClCompile Include="src\Components\Forms\SettingsForm.cpp" />
     <ClCompile Include="src\Components\Forms\StartForm.cpp" />
+    <ClCompile Include="src\Components\Mapping\AddressRequestMapping.cpp" />
     <ClCompile Include="src\Components\Mapping\ClientRequestMapping.cpp" />
     <ClCompile Include="src\Components\Mapping\OrderRequestMapping.cpp" />
     <ClCompile Include="src\Components\Mapping\ProductRequestMapping.cpp" />
@@ -150,6 +152,7 @@
     <ClCompile Include="src\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Components\DataType\DataType.h" />
     <ClInclude Include="src\Components\Mapping\AdressRequestMapping.h" />
     <ClInclude Include="src\Components\Database.h" />
     <ClInclude Include="src\Components\DataType\Address.h" />
@@ -164,6 +167,7 @@
     <ClInclude Include="src\Components\Forms\StartForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="src\Components\Mapping\AddressRequestMapping.h" />
     <ClInclude Include="src\Components\Mapping\ClientRequestMapping.h" />
     <ClInclude Include="src\Components\Mapping\OrderRequestMapping.h" />
     <ClInclude Include="src\Components\Mapping\ProductRequestMapping.h" />

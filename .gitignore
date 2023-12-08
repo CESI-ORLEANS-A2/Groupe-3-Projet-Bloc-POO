@@ -450,4 +450,7 @@ FodyWeavers.xsd
 # End of https://www.toptal.com/developers/gitignore/api/c++,visualstudio,visualstudiocode
 *.bkp
 
+enc_temp_folder/
+src/Components/DataType/DataType.cpp
+src/Components/DataType/DataType.h
 Icons/
