@@ -119,6 +119,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
+      <HintPath>./MySql.Data.8.2.0/lib/net8.0/MySql.Data.dll</HintPath>
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.2.0\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
