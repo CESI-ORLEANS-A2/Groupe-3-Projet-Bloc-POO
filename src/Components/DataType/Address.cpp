@@ -1,6 +1,6 @@
 #include "./Address.h"
 
-array<Groupe3ProjetBlocPOO::Components::DataType::Address^>^ Groupe3ProjetBlocPOO::Components::DataType::Address::toArray(DataRowCollection^ collection) {
+array<Groupe3ProjetBlocPOO::Components::DataType::Address^> ^ Groupe3ProjetBlocPOO::Components::DataType::Address::toArray(DataRowCollection ^ collection) {
 	array<Address^>^ addresses = gcnew array<Address^>(collection->Count);
 	for (int i = 0; i < collection->Count; i++) {
 		addresses[i] = gcnew Address(collection[i]);
@@ -56,51 +56,7 @@ DataGridView^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataGridVie
 	dataGridView->Columns->Add("country", "country");
 
 	for (int i = 0; i < addresses->Length; i++) {
-		dataGridView->Rows->Add(addresses[i]->toDataGridViewRow());=======
-	array<Address^>^ Addresss = gcnew array<Address^>(collection->Count);
-	for (int i = 0; i < collection->Count; i++) {
-		Addresss[i] = gcnew Address(collection[i]);
-	}
-	return Addresss;
-}
-array<Groupe3ProjetBlocPOO::Components::DataType::Address^>^ Groupe3ProjetBlocPOO::Components::DataType::Address::toArray(DataGridViewRowCollection^ collection) {
-	array<Address^>^ Addresss = gcnew array<Address^>(collection->Count);
-	for (int i = 0; i < collection->Count; i++) {
-		Addresss[i] = gcnew Address(collection[i]);
-	}
-	return Addresss;
-}
-DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataTable(array<Address^>^ Addresss) {
-	DataTable^ dataTable = gcnew DataTable();
-
-	dataTable->Columns->Add("id", int::typeid);
-	dataTable->Columns->Add("firstname", String::typeid);
-	dataTable->Columns->Add("lastname", String::typeid);
-	dataTable->Columns->Add("email", String::typeid);
-	dataTable->Columns->Add("phone", String::typeid);
-	dataTable->Columns->Add("birthdate", Int64::typeid);
-	dataTable->Columns->Add("logo", String::typeid);
-	dataTable->Columns->Add("company", String::typeid);
-
-	for (int i = 0; i < Addresss->Length; i++) {
-		dataTable->Rows->Add(Addresss[i]->toDataRow());
-	}
-	return dataTable;
-}
-DataGridView^ Groupe3ProjetBlocPOO::Components::DataType::Address::toDataGridView(array<Address^>^ Addresss) {
-	DataGridView^ dataGridView = gcnew DataGridView();
-
-	dataGridView->Columns->Add("id", "id");
-	dataGridView->Columns->Add("firstname", "firstname");
-	dataGridView->Columns->Add("lastname", "lastname");
-	dataGridView->Columns->Add("email", "email");
-	dataGridView->Columns->Add("phone", "phone");
-	dataGridView->Columns->Add("birthdate", "birthdate");
-	dataGridView->Columns->Add("logo", "logo");
-	dataGridView->Columns->Add("company", "company");
-
-	for (int i = 0; i < Addresss->Length; i++) {
-		dataGridView->Rows->Add(Addresss[i]->toDataGridViewRow());
+		dataGridView->Rows->Add(addresses[i]->toDataGridViewRow());
 	}
 	return dataGridView;
 }
@@ -121,6 +77,7 @@ DataTable^ Groupe3ProjetBlocPOO::Components::DataType::Address::dataTableSchema(
 DataRow^ Groupe3ProjetBlocPOO::Components::DataType::Address::newDataRow() {
 	return Address::dataTableSchema()->NewRow();
 }
+
 Groupe3ProjetBlocPOO::Components::DataType::Address::Address() {
 	this->__id = -1;
 }

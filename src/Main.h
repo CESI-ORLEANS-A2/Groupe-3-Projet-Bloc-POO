@@ -40,15 +40,25 @@ namespace Groupe3ProjetBlocPOO {
 		void button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ e) override;
 		void dataGridView_Clients_SelectionChanged(System::Object^ sender, System::EventArgs^ e) override;
 
+		void button_StockUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void button_StockAdd_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void button_StockDelete_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void button_StockSubmit_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void dataGridView_Stock_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) override;
+		void dataGridView_Stock_SelectionChanged(System::Object^ sender, System::EventArgs^ e) override;
+
 	private:
 		Database^ __database;
 
 		ClientService^ __clientService;
-		//ProductService^ __productService;
+		ProductService^ __productService;
 		//OrderService^ __orderService;
 
 		array<Client^>^ __selectedClients;
 		DataGridViewRow^ __selectedClientRow;
+
+		Product^ __selectedProduct;
+		DataGridViewRow^ __selectedProductRow;
 
 		void __startClientEdition();
 		void __cancelClientEdition();
@@ -58,8 +68,17 @@ namespace Groupe3ProjetBlocPOO {
 
 		bool __isClientEditing;
 
+		void __startProductEdition();
+		void __cancelProductEdition();
+		void __finishProductEdition();
+		void __updateProducts();
+
+		bool __isProductEditing;
+
 		static Dictionary<String^, String^>^ __clientsPropertiesRegex = gcnew Dictionary<String^, String^>();
 		static Dictionary<String^, String^>^ __addressesPropertiesRegex = gcnew Dictionary<String^, String^>();
+
+		static Dictionary<String^, String^>^ __productsPropertiesRegex = gcnew Dictionary<String^, String^>();
 	};
 
 }

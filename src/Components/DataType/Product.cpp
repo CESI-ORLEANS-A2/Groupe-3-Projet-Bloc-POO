@@ -7,26 +7,33 @@ Product::Product(int id) {
 	this->__id = id;
 }
 
-Product::Product(int id, Product^product)
+Product::Product(int id, Product^ product)
 {
 	this->__id = id;
 	this->__name = product->name();
 	this->__cost = product->cost();
 	this->__quantity = product->quantity();
+	this->__productType = product->productType();
 }
 
-Product::Product(Data::DataRow^row) {
+Product::Product(Data::DataRow^ row) {
 	this->__id = Convert::ToInt32(row->ItemArray[0]);
 	this->__name = row->ItemArray[1]->ToString();
 	this->__cost = Convert::ToInt32(row->ItemArray[3]);
 	this->__quantity = Convert::ToInt32(row->ItemArray[4]);
+	this->__productType = Convert::ToInt32(row->ItemArray[5]);
 }
 
-Product::Product(Windows::Forms::DataGridViewRow^row) {
-	this->__id = Convert::ToInt32(row->Cells[0]->Value->ToString());
-	this->__name = row->Cells[0]->Value->ToString();
-	this->__cost = Convert::ToInt32(row->Cells[0]->Value->ToString());
-	this->__quantity = Convert::ToInt32(row->Cells[0]->Value->ToString());
+Product::Product(Windows::Forms::DataGridViewRow^ row) {
+	this->__id = -1;
+	if (row->Cells[0]->Value->ToString()->Length != 0) {
+		this->__id = Convert::ToInt32(row->Cells[0]->Value->ToString());
+	}
+
+	this->__name = row->Cells[1]->Value->ToString();
+	this->__cost = Convert::ToInt32(row->Cells[2]->Value->ToString());
+	this->__quantity = Convert::ToInt32(row->Cells[3]->Value->ToString());
+	this->__productType = Convert::ToInt32(row->Cells[4]->Value->ToString());
 }
 
 int Product::id(void) {
@@ -40,8 +47,6 @@ void Product::name(String^name) {
 String^ Product::name() {
 	return __name;
 }
-
-
 
 void Product::cost(float cost) {
 	__cost = cost;
@@ -59,6 +64,14 @@ int Product::quantity(void) {
 	return __quantity;
 }
 
+void Product::productType(int productType) {
+	__productType = productType;
+}
+
+int Product::productType(void) {
+	return __productType;
+}
+
 Data::DataRow^ Product::newDataRow(){
 	return Product::dataTableSchema()->NewRow();
 }
@@ -70,7 +83,8 @@ Data::DataTable^ Product::dataTableSchema() {
 		Product::__dataTableSchema->Columns->Add("id", int::typeid);
 		Product::__dataTableSchema->Columns->Add("name", String::typeid);
 		Product::__dataTableSchema->Columns->Add("cost", int::typeid);
-		Product::__dataTableSchema->Columns->Add("stock", int::typeid);
+		Product::__dataTableSchema->Columns->Add("quantity", int::typeid);
+		Product::__dataTableSchema->Columns->Add("productType", int::typeid);
 	}
 	return Product::__dataTableSchema;
 }
@@ -94,7 +108,7 @@ array<Product^>^ Product::toArray(Windows::Forms::DataGridViewRowCollection^rows
 Data::DataTable^ Product::toDataTable(array<Product^>^product) {
 	Data::DataTable^ table = Product::dataTableSchema();
 	table->Clear();
-	for (int i ; product->Length; i++) {
+	for (int i = 0; i < product->Length; i++) {
 		table->Rows->Add(product[i]->toDataRow());
 	}
 	return table->Copy();
@@ -116,6 +130,7 @@ Windows::Forms::DataGridView^ Product::toDataGridView(array<Product^>^product) {
 	table->Columns->Add("name", "name");
 	table->Columns->Add("cost", "cost");
 	table->Columns->Add("quantity", "quantity");
+	table->Columns->Add("productType", "productType");
 
 	for (int i = 0; i < product->Length; i++) {
 		table->Rows->Add(product[i]->toDataGridViewRow());
@@ -128,8 +143,9 @@ Data::DataRow^ Product::toDataRow(){
 
 	dataRow[0] = this->__id;
 	dataRow[1] = this->__name;
-	dataRow[3] = this->__cost;
-	dataRow[4] = this->__quantity;
+	dataRow[2] = this->__cost;
+	dataRow[3] = this->__quantity;
+	dataRow[4] = this->__productType;
 
 	return dataRow;
 }
@@ -140,6 +156,7 @@ Windows::Forms::DataGridViewRow^ Product::toDataGridViewRow(){
 	dataGridView->Columns->Add("name", "name");
 	dataGridView->Columns->Add("cost", "cost");
 	dataGridView->Columns->Add("quantity", "quantity");
+	dataGridView->Columns->Add("productType", "productType");
 
 	Windows::Forms::DataGridViewRow^ dataGridViewRow = dataGridView->Rows[0];
 
@@ -147,6 +164,7 @@ Windows::Forms::DataGridViewRow^ Product::toDataGridViewRow(){
 	dataGridViewRow->Cells[1]->Value = this->__name;
 	dataGridViewRow->Cells[3]->Value = this->__cost;
 	dataGridViewRow->Cells[4]->Value = this->__quantity;
+	dataGridViewRow->Cells[5]->Value = this->__productType;
 
 	return dataGridViewRow;
 }

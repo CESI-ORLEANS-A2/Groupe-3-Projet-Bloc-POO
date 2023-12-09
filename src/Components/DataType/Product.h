@@ -6,6 +6,7 @@ private :
 	String^ __name;
 	float __cost;
 	int __quantity;
+	int __productType;
 public :
 	Product();
 	Product(int);
@@ -19,6 +20,8 @@ public :
 	float cost();
 	void quantity(int);
 	int quantity(void);
+	void productType(int);
+	int productType(void);
 	
 	static Data::DataTable^ dataTableSchema();
 	static Data::DataRow^ newDataRow();

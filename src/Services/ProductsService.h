@@ -8,21 +8,21 @@
 using namespace System;
 
 ref class ProductService {
-private :
+private:
 	Groupe3ProjetBlocPOO::Components::Database^ __database;
-public :
+public:
 	ProductService(Groupe3ProjetBlocPOO::Components::Database^);
-	Product^ getProduct(int);   
-	Product^ getProduct(Product^); 
-	array<Product^>^ getProducts(); 
-	array<Product^>^ getProducts(int); 
-	array<Product^>^ getOrderProducts(int,int); // a voir
-	Product^ addProduct(Product^); 
+	Product^ getProduct(int);
+	Product^ getProduct(Product^);
+	array<Product^>^ getProducts();
+	array<Product^>^ getProducts(int);
+	array<Product^>^ getOrderProducts(int, int); // a voir
+	Product^ addProduct(Product^);
 	Product^ addProduct(String^, float);
-	Product^ addProduct(String^,float,int);
+	Product^ addProduct(String^, float, int, int);
 	Product^ addOrderProduct(int, int);
 	Product^ updateProduct(Product^);
-	Product^ updateProduct(int,String^, String^, float, int);
+	Product^ updateProduct(int, String^, String^, float, int, int);
 	Product^ removeProduct(Product^);
 	Product^ removeProduct(int);
 	Product^ removeOrderProduct(int);

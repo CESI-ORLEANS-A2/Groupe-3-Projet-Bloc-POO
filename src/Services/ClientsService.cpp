@@ -228,6 +228,7 @@ array<Address^>^ Groupe3ProjetBlocPOO::Services::ClientService::deleteAddresses(
 int Groupe3ProjetBlocPOO::Services::ClientService::getCityId(String^ city) {
 	return Convert::ToInt32(this->__database->runScalar(AddressRequestMapping::getCityId(city)));
 }
+
 int Groupe3ProjetBlocPOO::Services::ClientService::getCountryId(String^ country) {
 	return Convert::ToInt32(this->__database->runScalar(AddressRequestMapping::getCountryId(country)));
 }

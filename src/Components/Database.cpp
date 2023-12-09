@@ -39,7 +39,7 @@ Object^ Groupe3ProjetBlocPOO::Components::Database::runScalar(Request^ query) {
 	//cmd->CommandText += "SELECT LAST_INSERT_ID();";
 	cmd->Connection = this->__connection;
 	cmd->ExecuteScalar();
-	return  cmd->LastInsertedId;
+	return cmd->LastInsertedId;
 }
 
 void Groupe3ProjetBlocPOO::Components::Database::createTable(String^ table, Dictionary<String^, String^>^ schema) {

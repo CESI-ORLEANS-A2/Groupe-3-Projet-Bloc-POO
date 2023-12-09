@@ -21,11 +21,17 @@ App::App() {
 	App::__addressesPropertiesRegex->Add("zip", "^[0-9]{5}$");
 	App::__addressesPropertiesRegex->Add("country", "^[^']+$");
 
+	App::__productsPropertiesRegex->Add("name", "^[^']+$");
+	App::__productsPropertiesRegex->Add("cost", "^[0-9]+$");
+	App::__productsPropertiesRegex->Add("quantity", "^[0-9]+$");
+	App::__productsPropertiesRegex->Add("producttype", "^[1-4]{1}$");
+
 	// Initialisation de la connexion à la base de données
 	this->__database = gcnew Database(ConfigurationManager::AppSettings["connection_string"]);
 
 	// Initialisation des services
 	this->__clientService = gcnew ClientService(this->__database);
+	this->__productService = gcnew ProductService(this->__database);
 
 	// Initialisation des composants de la fenêtre
 	this->InitializeComponent();
@@ -46,7 +52,7 @@ void App::InitializeComponent() {
 
 	// Modification des textBox pour ajouter un placeholder et une sortie de focus lors de l'appui sur la touche entrée
 	gcnew ElementsCustomization::SearchInputBox(this->textBox_ClientsSearch, "Search", this->dataGridView_Clients);
-	gcnew ElementsCustomization::SearchInputBox(this->textBox_StockSearch, "Search");
+	gcnew ElementsCustomization::SearchInputBox(this->textBox_StockSearch, "Search", this->dataGridView_Stock);
 	gcnew ElementsCustomization::SearchInputBox(this->textBox_OrdersSearch, "Search");
 	gcnew ElementsCustomization::SearchInputBox(this->textBox_OrdersClientsSearch, "Search");
 	gcnew ElementsCustomization::SearchInputBox(this->textBox_OrdersStockSearch, "Search");
@@ -67,16 +73,22 @@ void App::tabControl_Tabs_SelectedIndexChanged(System::Object^ sender, System::E
 
 			this->textBox_ClientsSearch->Enabled = true;
 			this->button_ClientsUpdate->Enabled = true;
-			//this->button_ClientsDelete->Enabled = true;
 			this->button_ClientsAdd->Enabled = true;
 			this->dataGridView_Clients->Enabled = true;
 		}
 		break;
 	case 2:
+		if (!this->dataGridView_Stock->DataSource) {
+			this->__updateProducts();
 
+			this->textBox_StockSearch->Enabled = true;
+			this->button_StockUpdate->Enabled = true;
+			this->button_StockAdd->Enabled = true;
+			this->dataGridView_Stock->Enabled = true;
+		}
 		break;
 	case 3:
-
+		
 		break;
 	}
 }
@@ -117,7 +129,22 @@ void App::button_ClientsUpdate_Click(System::Object^ sender, System::EventArgs^ 
 	this->__updateClients();
 }
 void App::dataGridView_Clients_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) {
+	if (this->__isClientEditing) {
+		if (MessageBox::Show("Editing a current customer, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->__cancelClientEdition();
+		}
+		else {
+			return;
+		}
+	}
 
+	if (this->dataGridView_Clients->SelectedRows->Count > 0) {
+		if (!this->dataGridView_Clients->SelectedRows[0]->IsNewRow) {
+			this->button_ClientsDelete->Enabled = true;
+		}
+		this->__selectedClients = Client::toArray(this->dataGridView_Clients->SelectedRows);
+		this->__selectedClientRow = this->dataGridView_Clients->SelectedRows[0];
+	}
 }
 void App::button_ClientsAdd_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (this->__isClientEditing) {
@@ -173,10 +200,10 @@ void App::__cancelClientEdition() {
 	this->button_ClientsDelete->Text = "Delete";
 	this->button_ClientsSubmit->Enabled = false;
 
+	this->__isClientEditing = false;
+
 	this->__updateClients();
 	this->__updateClientsAddresses();
-
-	this->__isClientEditing = false;
 }
 void App::__finishClientEdition() {
 	if (!this->__isClientEditing) return;
@@ -229,6 +256,7 @@ void App::__updateClientsAddresses() {
 		}
 	}
 }
+
 void App::button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ e) {
 	DataGridViewRow^ row;
 	if (this->dataGridView_Clients->SelectedRows->Count == 0) {
@@ -327,13 +355,183 @@ void App::dataGridView_Clients_SelectionChanged(System::Object^ sender, System::
 		}
 	}
 	if (this->dataGridView_Clients->SelectedRows->Count > 0) {
+		this->__selectedClients = Client::toArray(this->dataGridView_Clients->SelectedRows);
+		this->__selectedClientRow = this->dataGridView_Clients->SelectedRows[0];
+
 		if (!this->dataGridView_Clients->SelectedRows[0]->IsNewRow) {
 			this->button_ClientsDelete->Enabled = true;
 			this->dataGridView_ClientsAddresses->Enabled = true;
 
 			this->__updateClientsAddresses();
 		}
-		this->__selectedClients = Client::toArray(this->dataGridView_Clients->SelectedRows);
-		this->__selectedClientRow = this->dataGridView_Clients->SelectedRows[0];
 	}
+}
+
+// ========================================================
+// =                      STOCK TAB                       =
+// ========================================================
+
+void App::dataGridView_Stock_SelectionChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (this->__isProductEditing && ((
+		this->dataGridView_Stock->SelectedRows->Count != 0 &&
+		!this->dataGridView_Stock->SelectedRows[0]->Equals(this->__selectedProductRow)
+		) || (
+			this->dataGridView_Stock->SelectedCells->Count == 1 &&
+			!this->dataGridView_Stock->Rows[this->dataGridView_Stock->SelectedCells[0]->RowIndex]->Equals(this->__selectedProductRow)
+			))) {
+		if (MessageBox::Show("Editing a current product, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->__cancelProductEdition();
+		}
+		else {
+			if (this->dataGridView_Stock->SelectedRows->Count > 0) {
+				this->dataGridView_Stock->Rows[this->dataGridView_Stock->SelectedRows[0]->Index]->Selected = false;
+			}
+			else {
+				this->dataGridView_Stock->Rows[this->dataGridView_Stock->SelectedCells[0]->RowIndex]->Selected = false;
+			}
+			return;
+		}
+	}
+	if (this->dataGridView_Stock->SelectedRows->Count > 0) {
+		if (!this->dataGridView_Stock->SelectedRows[0]->IsNewRow) {
+			this->button_StockDelete->Enabled = true;
+		}
+		this->__selectedProduct = gcnew Product();
+		this->__selectedProductRow = this->dataGridView_Stock->SelectedRows[0];
+	}
+}
+
+void App::dataGridView_Stock_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) {
+	this->__selectedProductRow = this->dataGridView_Stock->Rows[e->RowIndex];
+
+	this->__startProductEdition();
+}
+
+void App::__startProductEdition() {
+	if (this->__isProductEditing) return;
+
+	this->button_StockDelete->Enabled = true;
+	this->button_StockDelete->Text = "Cancel";
+	this->button_StockSubmit->Enabled = true;
+
+	this->__isProductEditing = true;
+}
+
+void App::__cancelProductEdition() {
+	if (!this->__isProductEditing) return;
+
+	this->button_StockDelete->Enabled = false;
+	this->button_StockDelete->Text = "Delete";
+	this->button_StockSubmit->Enabled = false;
+
+	this->__isProductEditing = false;
+
+	this->__updateProducts();
+}
+
+void App::__finishProductEdition() {
+	if (!this->__isProductEditing) return;
+
+	this->button_StockDelete->Enabled = false;
+	this->button_StockDelete->Text = "Delete";
+	this->button_StockSubmit->Enabled = false;
+
+	this->__isProductEditing = false;
+}
+
+void App::__updateProducts() {
+	if (this->__isProductEditing) {
+		if (MessageBox::Show("Editing a current product, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->__cancelProductEdition();
+		}
+		else {
+			return;
+		}
+	}
+
+	if (this->dataGridView_Stock->DataSource) {
+		((DataSet^)this->dataGridView_Stock->DataSource)->Clear();
+	}
+	this->dataGridView_Stock->DataSource = Product::toDataSet(this->__productService->getProducts(), "products");
+	if (!this->dataGridView_Stock->DataMember->Length) {
+		this->dataGridView_Stock->DataMember = "products";
+	}
+	this->dataGridView_Stock->Refresh();
+}
+
+void App::button_StockUpdate_Click(System::Object^ sender, System::EventArgs^ e){
+	this->__updateProducts();
+}
+
+void App::button_StockAdd_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->__isProductEditing) {
+		if (MessageBox::Show("Editing a current product, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->__cancelProductEdition();
+		}
+		else {
+			return;
+		}
+	}
+
+	this->dataGridView_Stock->ClearSelection();
+	this->dataGridView_Stock->Rows[this->dataGridView_Stock->Rows->Count - 1]->Selected = true;
+}
+
+void App::button_StockDelete_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->__isProductEditing) {
+		if (MessageBox::Show("Editing a current product, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			this->__cancelProductEdition();
+		}
+		return;
+	}
+
+	if (this->dataGridView_Stock->SelectedRows->Count > 0) {
+		if (MessageBox::Show("Do you REALLY want to remove this product?", "Deleting", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			int clientId = (gcnew Product(this->__selectedProductRow))->id();
+			this->__clientService->deleteClient(clientId);
+
+			this->dataGridView_Stock->Rows->Remove(this->__selectedProductRow);
+		}
+	}
+}
+
+void Groupe3ProjetBlocPOO::App::button_StockSubmit_Click(System::Object^ sender, System::EventArgs^ e){
+	DataGridViewRow^ row;
+	if (this->dataGridView_Stock->SelectedRows->Count == 0) {
+		if (this->dataGridView_Stock->SelectedCells->Count != 1) return;
+		row = this->dataGridView_Stock->Rows[this->dataGridView_Stock->SelectedCells[0]->RowIndex];
+	}
+	else {
+		row = this->dataGridView_Stock->SelectedRows[0];
+	}
+
+	if (!this->__isProductEditing) return;
+
+	// ========= Vérification du produit =========
+	for (int j = 0; j < this->dataGridView_Stock->Columns->Count; j++) {
+		if (j == 0) continue; // On ne vérifie pas l'id (auto-incrémenté)
+
+		// Récupération de la valeur de la cellule (en string)
+		String^ value = row->Cells[j]->Value->ToString()->Trim();
+		String^ regex = App::__productsPropertiesRegex[this->dataGridView_Stock->Columns[j]->DataPropertyName];
+
+		if (!Regex::IsMatch(value,
+			regex,
+			RegexOptions::IgnoreCase)) {
+			MessageBox::Show(
+				"The value \"" + value + "\" is not valid for the property \"" + this->dataGridView_Stock->Columns[j]->HeaderText + "\" of Product.",
+				"Error",
+				MessageBoxButtons::OK,
+				MessageBoxIcon::Error
+			);
+			return;
+		}
+	}
+
+	Product^ product = gcnew Product(row);
+
+	this->__productService->addProduct(product);
+
+	this->__finishProductEdition();
 }
