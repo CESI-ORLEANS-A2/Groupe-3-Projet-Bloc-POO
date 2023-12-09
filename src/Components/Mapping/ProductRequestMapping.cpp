@@ -2,13 +2,13 @@
 
 Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::getProducts(){
 	MySqlCommand^ cmd = gcnew MySqlCommand();
-	cmd->CommandText = "SELECT * FROM Product JOIN ProductType ON Product.id = ProductType.productType";
+	cmd->CommandText = "SELECT * FROM Product JOIN ProductType ON Product.productType= ProductType.productType";
 	return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd);
 }
 
 Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::getProducts(int rows) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
-	cmd->CommandText = "SELECT * FROM Product JOIN ProductType ON Product.id = ProductType.productType LIMIT @row";
+	cmd->CommandText = "SELECT * FROM Product JOIN ProductType ON Product.productType= ProductType.productType LIMIT @row";
 	cmd->Parameters->AddWithValue("@row", rows);
 	return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd);
 
@@ -31,7 +31,7 @@ Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::getOrderProduc
 
 Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::getProduct(int id) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
-	cmd->CommandText = "SELECT * FROM Product JOIN ProductType ON Product.id = ProductType.productType WHERE id = @id";
+	cmd->CommandText = "SELECT * FROM Product JOIN ProductType ON Product.productType= ProductType.productType WHERE id = @id";
 	cmd->Parameters->AddWithValue("@id", id);
 	return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd);
 }
@@ -64,7 +64,7 @@ Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::addProduct(Str
 }
 Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::updateProduct(int id, String^ name, float cost, int quantity, int productType) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
-	cmd->CommandText = "UPDATE table SET name = @name, description = @description, cost = @cost, quantity = @quantity, productType = @productType WHERE id = @id;";
+	cmd->CommandText = "UPDATE product SET name = @name, cost = @cost, quantity = @quantity, productType = @productType WHERE id = @id;";
 	cmd->Parameters->AddWithValue("@name", name);
 	cmd->Parameters->AddWithValue("@cost", cost);
 	cmd->Parameters->AddWithValue("@id", id);

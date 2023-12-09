@@ -47,7 +47,7 @@ array<Product^>^ ProductService::getOrderProducts(int limit, int id)
 }
 
 Product^ ProductService::addProduct(Product^ product) {
-	if (product->id() != 0) {
+	if (product->id() > 0) {
 		return this->updateProduct(product);
 	}
 	int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::addProduct(product->name(), product->cost(), product->quantity(), product->productType())));;
@@ -89,7 +89,7 @@ Product^ ProductService::addProduct(String^ name, float cost) {
 
 
 Product^ ProductService::updateProduct(Product^ product) {
-	this->__database->runQuery(ProductRequestMapping::updateProduct(product->id(), product->name(), product->cost(), product->quantity(), product->productType()))->Rows[0];
+	int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::updateProduct(product->id(), product->name(), product->cost(), product->quantity(), product->productType())));
 	return gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(product->id()))->Rows[0]);
 }
 

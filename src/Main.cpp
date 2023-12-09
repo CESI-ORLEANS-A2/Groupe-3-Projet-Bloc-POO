@@ -216,6 +216,7 @@ void App::__finishClientEdition() {
 }
 
 void App::dataGridView_Clients_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) {
+	this->__selectedClientRow = this->dataGridView_Clients->Rows[e->RowIndex];
 	this->__startClientEdition();
 }
 void App::dataGridView_ClientsAddresses_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) {
@@ -488,8 +489,8 @@ void App::button_StockDelete_Click(System::Object^ sender, System::EventArgs^ e)
 
 	if (this->dataGridView_Stock->SelectedRows->Count > 0) {
 		if (MessageBox::Show("Do you REALLY want to remove this product?", "Deleting", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
-			int clientId = (gcnew Product(this->__selectedProductRow))->id();
-			this->__clientService->deleteClient(clientId);
+			int productId = (gcnew Product(this->__selectedProductRow))->id();
+			this->__productService->removeProduct(productId);
 
 			this->dataGridView_Stock->Rows->Remove(this->__selectedProductRow);
 		}
@@ -534,4 +535,6 @@ void Groupe3ProjetBlocPOO::App::button_StockSubmit_Click(System::Object^ sender,
 	this->__productService->addProduct(product);
 
 	this->__finishProductEdition();
+
+	this->__updateProducts();
 }
