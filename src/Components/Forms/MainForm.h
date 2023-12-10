@@ -52,85 +52,18 @@ namespace Groupe3ProjetBlocPOO {
 	protected: System::Windows::Forms::TextBox^ textBox_OrdersSearch;
 	protected: System::Windows::Forms::SplitContainer^ splitContainer_Clients;
 	protected: System::Windows::Forms::DataGridView^ dataGridView_Clients;
-
-
-
-
-
-
 	protected: System::Windows::Forms::Panel^ panel_Stock;
 	protected: System::Windows::Forms::Button^ button_StockAdd;
 	protected: System::Windows::Forms::DataGridView^ dataGridView_Stock;
 	protected: System::Windows::Forms::Button^ button_StockDelete;
 	protected: System::Windows::Forms::Panel^ panel_StockGap;
 	protected: System::Windows::Forms::Button^ button_StockSubmit;
-
-
-
-
-
-
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_StockId;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_StockName;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_StockCost;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_StockQuantity;
 	protected: System::Windows::Forms::SplitContainer^ splitContainer_Orders;
 	protected: System::Windows::Forms::DataGridView^ dataGridView_Orders;
-	protected: System::Windows::Forms::SplitContainer^ splitContainer_OrdersEdit;
-	protected: System::Windows::Forms::Panel^ panel_OrdersInfos;
-	protected: System::Windows::Forms::DataGridView^ dataGridView_OrdersClients;
-	protected: System::Windows::Forms::Panel^ panel_OrdersClientsSearch;
-	protected: System::Windows::Forms::Button^ button_OrdersClientsUpdate;
-	protected: System::Windows::Forms::TextBox^ textBox_OrdersClientsSearch;
-	protected: System::Windows::Forms::DataGridView^ dataGridView_OrdersStock;
-	protected: System::Windows::Forms::Panel^ panel_OrdersStockSearch;
-	protected: System::Windows::Forms::Button^ button_OrdersStockUpdate;
-	protected: System::Windows::Forms::TextBox^ textBox_OrdersStockSearch;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsID;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsFirstname;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsLastname;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsBirthdate;
-	protected: System::Windows::Forms::Panel^ panel_OrdersInfoButtons;
-	protected: System::Windows::Forms::Button^ button_OrdersSubmit;
-	protected: System::Windows::Forms::Button^ button_OrdersQuote;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersStockID;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersStockName;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersStockCost;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersQuantity;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersStock;
-	protected: System::Windows::Forms::Panel^ panel_OrdersGap4;
-	protected: System::Windows::Forms::Panel^ panel_OrdersTax;
-	protected: System::Windows::Forms::TextBox^ textBox_OrdersTax;
-	protected: System::Windows::Forms::Label^ label_OrdersTaxUnit;
-	protected: System::Windows::Forms::Label^ label_OrdersTax;
-	protected: System::Windows::Forms::Panel^ panel_OrdersGap3;
-	protected: System::Windows::Forms::Panel^ panel_OrdersDiscount;
-	protected: System::Windows::Forms::TextBox^ textBox_OrdersPercentageDiscount;
-	protected: System::Windows::Forms::Label^ label_OrderDiscountUnit1;
-	protected: System::Windows::Forms::TextBox^ textBox_OrdersEuroDiscount;
-	protected: System::Windows::Forms::Label^ label_OrdersDiscountUnit2;
-	protected: System::Windows::Forms::Label^ label_OrdersDiscout;
-	protected: System::Windows::Forms::Panel^ panel_OrdersGap2;
-	protected: System::Windows::Forms::Panel^ panel_OrdersPrice;
-	protected: System::Windows::Forms::TextBox^ textBox_OrdersPrice;
-	protected: System::Windows::Forms::Label^ label_OrdersPriceUnit;
-	protected: System::Windows::Forms::Label^ label_OrdersPrice;
-	protected: System::Windows::Forms::Panel^ panel_OrdersGap1;
-	protected: System::Windows::Forms::Panel^ panel_OrdersNumberOfProducts;
-	protected: System::Windows::Forms::TextBox^ textBox_OrdersNumberOfProducts;
-	protected: System::Windows::Forms::Label^ label_OrdersNumberOfProductsUnit;
-	protected: System::Windows::Forms::Label^ label_OrdersNumberOfProducts;
-	protected: System::Windows::Forms::Panel^ panel_OrdersGap5;
-	protected: System::Windows::Forms::Panel^ panel_OrdersTotal;
-	protected: System::Windows::Forms::TextBox^ textBox_OrdersTotal;
-	protected: System::Windows::Forms::Label^ label_OrdersTotalUnit;
-	protected: System::Windows::Forms::Label^ label_OrdersTotal;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersID;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersCreationDate;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersCost;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersDeliveryDate;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersPaymentDate;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersPaymentMethod;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsId;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsFirstname;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsLastname;
@@ -146,13 +79,110 @@ namespace Groupe3ProjetBlocPOO {
 	protected: System::Windows::Forms::Panel^ panel_ClientsGap;
 	protected: System::Windows::Forms::Button^ button_ClientsAdd;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressId;
-	protected:
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressClientId;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressNumber;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressStreet;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressCity;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressZip;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressCountry;
+	private: System::Windows::Forms::SplitContainer^ splitContainer_OrdersEditMain;
+
+	protected: System::Windows::Forms::SplitContainer^ splitContainer_OrdersEdit;
+	protected: System::Windows::Forms::DataGridView^ dataGridView_OrdersClients;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsID;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsLastname;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsFirstname;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsPhone;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsEmail;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsBirthdate;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsLogo;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsCompany;
+	protected: System::Windows::Forms::Panel^ panel_OrdersClientsSearch;
+	protected: System::Windows::Forms::Button^ button_OrdersClientsUpdate;
+	protected: System::Windows::Forms::TextBox^ textBox_OrdersClientsSearch;
+	protected: System::Windows::Forms::DataGridView^ dataGridView_OrdersStock;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersStockID;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersStockName;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersStockCost;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersStockDescription;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersStockType;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersStockTax;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersStockStock;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersQuantity;
+	protected: System::Windows::Forms::Panel^ panel_OrdersStockSearch;
+	protected: System::Windows::Forms::Button^ button_OrdersStockUpdate;
+	protected: System::Windows::Forms::TextBox^ textBox_OrdersStockSearch;
+	protected: System::Windows::Forms::Panel^ panel_OrdersInfos;
+	protected: System::Windows::Forms::Panel^ panel_ordersDelete;
+	protected: System::Windows::Forms::Button^ button_OrdersDelete;
+	protected: System::Windows::Forms::Button^ button_OrdersAdd;
+	protected: System::Windows::Forms::Panel^ panel_OrdersTotal;
+	protected: System::Windows::Forms::TextBox^ textBox_OrdersTotal;
+	protected: System::Windows::Forms::Label^ label_OrdersTotalUnit;
+	protected: System::Windows::Forms::Label^ label_OrdersTotal;
+	protected: System::Windows::Forms::Panel^ panel_OrdersGap4;
+	protected: System::Windows::Forms::Panel^ panel_OrdersTax;
+	protected: System::Windows::Forms::TextBox^ textBox_OrdersTax;
+	protected: System::Windows::Forms::Label^ label_OrdersTaxUnit;
+	protected: System::Windows::Forms::Label^ label_OrdersTax;
+	protected: System::Windows::Forms::Panel^ panel_OrdersGap3;
+	protected: System::Windows::Forms::Panel^ panel_OrdersDiscount;
+	protected: System::Windows::Forms::TextBox^ textBox_OrdersPercentageDiscount;
+	protected: System::Windows::Forms::Label^ label_OrdersDiscountUnit1;
+	protected: System::Windows::Forms::TextBox^ textBox_OrdersEuroDiscount;
+	protected: System::Windows::Forms::Label^ label_OrdersDiscountUnit2;
+	protected: System::Windows::Forms::Label^ label_OrdersDiscout;
+	protected: System::Windows::Forms::Panel^ panel_OrdersGap2;
+	protected: System::Windows::Forms::Panel^ panel_OrdersPrice;
+	protected: System::Windows::Forms::TextBox^ textBox_OrdersPrice;
+	protected: System::Windows::Forms::Label^ label_OrdersPriceUnit;
+	protected: System::Windows::Forms::Label^ label_OrdersPrice;
+	protected: System::Windows::Forms::Panel^ panel_OrdersGap1;
+	protected: System::Windows::Forms::Panel^ panel_OrdersNumberOfProducts;
+	protected: System::Windows::Forms::TextBox^ textBox_OrdersNumberOfProducts;
+	protected: System::Windows::Forms::Label^ label_OrdersNumberOfProductsUnit;
+	protected: System::Windows::Forms::Label^ label_OrdersNumberOfProducts;
+	protected: System::Windows::Forms::Panel^ panel_OrdersGap5;
+	protected: System::Windows::Forms::Panel^ panel_OrdersInfoButtons;
+	protected: System::Windows::Forms::Button^ button_OrdersQuote;
+	protected: System::Windows::Forms::Button^ button_OrdersSubmit;
+	protected: System::Windows::Forms::DataGridView^ dataGridView_OrdersAddresses;
+
+
+
+
+
+
+
+
+
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesName;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesClientId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesNumber;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesStreet;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesCity;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesZip;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesCountry;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersID;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersPaymentDate;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersCreationDate;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersDeliveryDate;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAmount;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersPaymentMethod;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersBillingAddress;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersDeliveryAddress;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersCustomer;
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -227,18 +257,26 @@ namespace Groupe3ProjetBlocPOO {
 			this->tabPage_Orders = (gcnew System::Windows::Forms::TabPage());
 			this->splitContainer_Orders = (gcnew System::Windows::Forms::SplitContainer());
 			this->dataGridView_Orders = (gcnew System::Windows::Forms::DataGridView());
-			this->dataGridViewTextBoxColumn_OrdersID = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_OrdersCreationDate = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_OrdersCost = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_OrdersDeliveryDate = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_OrdersPaymentDate = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_OrdersPaymentMethod = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->splitContainer_OrdersEditMain = (gcnew System::Windows::Forms::SplitContainer());
+			this->dataGridView_OrdersAddresses = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewTextBoxColumn_OrdersAddressesName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersAddressesId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersAddressesClientId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersAddressesNumber = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersAddressesStreet = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersAddressesCity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersAddressesZip = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersAddressesCountry = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->splitContainer_OrdersEdit = (gcnew System::Windows::Forms::SplitContainer());
 			this->dataGridView_OrdersClients = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridViewTextBoxColumn_OrdersClientsID = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_OrdersClientsFirstname = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn_OrdersClientsLastname = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersClientsFirstname = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersClientsPhone = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersClientsEmail = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersClientsLogo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersClientsCompany = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->panel_OrdersClientsSearch = (gcnew System::Windows::Forms::Panel());
 			this->button_OrdersClientsUpdate = (gcnew System::Windows::Forms::Button());
 			this->textBox_OrdersClientsSearch = (gcnew System::Windows::Forms::TextBox());
@@ -246,12 +284,18 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_OrdersStockID = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn_OrdersStockName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn_OrdersStockCost = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersStockDescription = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersStockType = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersStockTax = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersStockStock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn_OrdersQuantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_OrdersStock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->panel_OrdersStockSearch = (gcnew System::Windows::Forms::Panel());
 			this->button_OrdersStockUpdate = (gcnew System::Windows::Forms::Button());
 			this->textBox_OrdersStockSearch = (gcnew System::Windows::Forms::TextBox());
 			this->panel_OrdersInfos = (gcnew System::Windows::Forms::Panel());
+			this->panel_ordersDelete = (gcnew System::Windows::Forms::Panel());
+			this->button_OrdersDelete = (gcnew System::Windows::Forms::Button());
+			this->button_OrdersAdd = (gcnew System::Windows::Forms::Button());
 			this->panel_OrdersTotal = (gcnew System::Windows::Forms::Panel());
 			this->textBox_OrdersTotal = (gcnew System::Windows::Forms::TextBox());
 			this->label_OrdersTotalUnit = (gcnew System::Windows::Forms::Label());
@@ -264,7 +308,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->panel_OrdersGap3 = (gcnew System::Windows::Forms::Panel());
 			this->panel_OrdersDiscount = (gcnew System::Windows::Forms::Panel());
 			this->textBox_OrdersPercentageDiscount = (gcnew System::Windows::Forms::TextBox());
-			this->label_OrderDiscountUnit1 = (gcnew System::Windows::Forms::Label());
+			this->label_OrdersDiscountUnit1 = (gcnew System::Windows::Forms::Label());
 			this->textBox_OrdersEuroDiscount = (gcnew System::Windows::Forms::TextBox());
 			this->label_OrdersDiscountUnit2 = (gcnew System::Windows::Forms::Label());
 			this->label_OrdersDiscout = (gcnew System::Windows::Forms::Label());
@@ -285,6 +329,15 @@ namespace Groupe3ProjetBlocPOO {
 			this->panel_OrdersSearch = (gcnew System::Windows::Forms::Panel());
 			this->button_OrdersUpdate = (gcnew System::Windows::Forms::Button());
 			this->textBox_OrdersSearch = (gcnew System::Windows::Forms::TextBox());
+			this->dataGridViewTextBoxColumn_OrdersID = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersPaymentDate = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersCreationDate = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersDeliveryDate = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersAmount = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersPaymentMethod = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersBillingAddress = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersDeliveryAddress = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_OrdersCustomer = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabControl_Tabs->SuspendLayout();
 			this->tabPage_Home->SuspendLayout();
 			this->tabPage_Clients->SuspendLayout();
@@ -306,6 +359,11 @@ namespace Groupe3ProjetBlocPOO {
 			this->splitContainer_Orders->Panel2->SuspendLayout();
 			this->splitContainer_Orders->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_Orders))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer_OrdersEditMain))->BeginInit();
+			this->splitContainer_OrdersEditMain->Panel1->SuspendLayout();
+			this->splitContainer_OrdersEditMain->Panel2->SuspendLayout();
+			this->splitContainer_OrdersEditMain->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_OrdersAddresses))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer_OrdersEdit))->BeginInit();
 			this->splitContainer_OrdersEdit->Panel1->SuspendLayout();
 			this->splitContainer_OrdersEdit->Panel2->SuspendLayout();
@@ -315,6 +373,7 @@ namespace Groupe3ProjetBlocPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_OrdersStock))->BeginInit();
 			this->panel_OrdersStockSearch->SuspendLayout();
 			this->panel_OrdersInfos->SuspendLayout();
+			this->panel_ordersDelete->SuspendLayout();
 			this->panel_OrdersTotal->SuspendLayout();
 			this->panel_OrdersTax->SuspendLayout();
 			this->panel_OrdersDiscount->SuspendLayout();
@@ -338,7 +397,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->tabControl_Tabs->Location = System::Drawing::Point(0, 0);
 			this->tabControl_Tabs->Name = L"tabControl_Tabs";
 			this->tabControl_Tabs->SelectedIndex = 0;
-			this->tabControl_Tabs->Size = System::Drawing::Size(1093, 496);
+			this->tabControl_Tabs->Size = System::Drawing::Size(1144, 620);
 			this->tabControl_Tabs->SizeMode = System::Windows::Forms::TabSizeMode::FillToRight;
 			this->tabControl_Tabs->TabIndex = 0;
 			this->tabControl_Tabs->SelectedIndexChanged += gcnew System::EventHandler(this, &MainForm::tabControl_Tabs_SelectedIndexChanged);
@@ -353,9 +412,9 @@ namespace Groupe3ProjetBlocPOO {
 			this->tabPage_Home->Controls->Add(this->linkLabel_AuthorBeboudu32);
 			this->tabPage_Home->Controls->Add(this->linkLabel_Author0xybo);
 			this->tabPage_Home->Controls->Add(this->linkLabel_HomeGap);
-			this->tabPage_Home->Location = System::Drawing::Point(4, 28);
+			this->tabPage_Home->Location = System::Drawing::Point(4, 22);
 			this->tabPage_Home->Name = L"tabPage_Home";
-			this->tabPage_Home->Size = System::Drawing::Size(1085, 464);
+			this->tabPage_Home->Size = System::Drawing::Size(1136, 594);
 			this->tabPage_Home->TabIndex = 0;
 			this->tabPage_Home->Text = L"Home";
 			this->tabPage_Home->UseVisualStyleBackColor = true;
@@ -366,7 +425,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->linkLabel_Help->LinkArea = System::Windows::Forms::LinkArea(30, 3);
 			this->linkLabel_Help->Location = System::Drawing::Point(0, 169);
 			this->linkLabel_Help->Name = L"linkLabel_Help";
-			this->linkLabel_Help->Size = System::Drawing::Size(1085, 20);
+			this->linkLabel_Help->Size = System::Drawing::Size(1136, 20);
 			this->linkLabel_Help->TabIndex = 22;
 			this->linkLabel_Help->TabStop = true;
 			this->linkLabel_Help->Text = L"Pour une page d\'aide, cliquez ici";
@@ -382,7 +441,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->label_Welcome->Location = System::Drawing::Point(0, 123);
 			this->label_Welcome->Margin = System::Windows::Forms::Padding(0);
 			this->label_Welcome->Name = L"label_Welcome";
-			this->label_Welcome->Size = System::Drawing::Size(1085, 46);
+			this->label_Welcome->Size = System::Drawing::Size(1136, 46);
 			this->label_Welcome->TabIndex = 21;
 			this->label_Welcome->Text = L"Welcome";
 			this->label_Welcome->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -396,16 +455,16 @@ namespace Groupe3ProjetBlocPOO {
 			this->label_Logo->Location = System::Drawing::Point(0, 0);
 			this->label_Logo->Margin = System::Windows::Forms::Padding(0);
 			this->label_Logo->Name = L"label_Logo";
-			this->label_Logo->Size = System::Drawing::Size(1085, 123);
+			this->label_Logo->Size = System::Drawing::Size(1136, 123);
 			this->label_Logo->TabIndex = 20;
 			this->label_Logo->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label_AuthorText
 			// 
 			this->label_AuthorText->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->label_AuthorText->Location = System::Drawing::Point(0, 339);
+			this->label_AuthorText->Location = System::Drawing::Point(0, 469);
 			this->label_AuthorText->Name = L"label_AuthorText";
-			this->label_AuthorText->Size = System::Drawing::Size(1085, 25);
+			this->label_AuthorText->Size = System::Drawing::Size(1136, 25);
 			this->label_AuthorText->TabIndex = 17;
 			this->label_AuthorText->Text = L"Fait par :";
 			this->label_AuthorText->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -414,9 +473,9 @@ namespace Groupe3ProjetBlocPOO {
 			// 
 			this->linkLabel_AuthorAbepan->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->linkLabel_AuthorAbepan->LinkArea = System::Windows::Forms::LinkArea(11, 14);
-			this->linkLabel_AuthorAbepan->Location = System::Drawing::Point(0, 364);
+			this->linkLabel_AuthorAbepan->Location = System::Drawing::Point(0, 494);
 			this->linkLabel_AuthorAbepan->Name = L"linkLabel_AuthorAbepan";
-			this->linkLabel_AuthorAbepan->Size = System::Drawing::Size(1085, 25);
+			this->linkLabel_AuthorAbepan->Size = System::Drawing::Size(1136, 25);
 			this->linkLabel_AuthorAbepan->TabIndex = 16;
 			this->linkLabel_AuthorAbepan->TabStop = true;
 			this->linkLabel_AuthorAbepan->Text = L"Matteo V. <@ultrasonicytb>";
@@ -428,9 +487,9 @@ namespace Groupe3ProjetBlocPOO {
 			// 
 			this->linkLabel_AuthorBeboudu32->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->linkLabel_AuthorBeboudu32->LinkArea = System::Windows::Forms::LinkArea(9, 10);
-			this->linkLabel_AuthorBeboudu32->Location = System::Drawing::Point(0, 389);
+			this->linkLabel_AuthorBeboudu32->Location = System::Drawing::Point(0, 519);
 			this->linkLabel_AuthorBeboudu32->Name = L"linkLabel_AuthorBeboudu32";
-			this->linkLabel_AuthorBeboudu32->Size = System::Drawing::Size(1085, 25);
+			this->linkLabel_AuthorBeboudu32->Size = System::Drawing::Size(1136, 25);
 			this->linkLabel_AuthorBeboudu32->TabIndex = 14;
 			this->linkLabel_AuthorBeboudu32->TabStop = true;
 			this->linkLabel_AuthorBeboudu32->Text = L"Noah V. <@Beboudu32>";
@@ -442,9 +501,9 @@ namespace Groupe3ProjetBlocPOO {
 			// 
 			this->linkLabel_Author0xybo->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->linkLabel_Author0xybo->LinkArea = System::Windows::Forms::LinkArea(10, 6);
-			this->linkLabel_Author0xybo->Location = System::Drawing::Point(0, 414);
+			this->linkLabel_Author0xybo->Location = System::Drawing::Point(0, 544);
 			this->linkLabel_Author0xybo->Name = L"linkLabel_Author0xybo";
-			this->linkLabel_Author0xybo->Size = System::Drawing::Size(1085, 25);
+			this->linkLabel_Author0xybo->Size = System::Drawing::Size(1136, 25);
 			this->linkLabel_Author0xybo->TabIndex = 10;
 			this->linkLabel_Author0xybo->TabStop = true;
 			this->linkLabel_Author0xybo->Text = L"Alban G. <@0xybo>";
@@ -455,9 +514,9 @@ namespace Groupe3ProjetBlocPOO {
 			// linkLabel_HomeGap
 			// 
 			this->linkLabel_HomeGap->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->linkLabel_HomeGap->Location = System::Drawing::Point(0, 439);
+			this->linkLabel_HomeGap->Location = System::Drawing::Point(0, 569);
 			this->linkLabel_HomeGap->Name = L"linkLabel_HomeGap";
-			this->linkLabel_HomeGap->Size = System::Drawing::Size(1085, 25);
+			this->linkLabel_HomeGap->Size = System::Drawing::Size(1136, 25);
 			this->linkLabel_HomeGap->TabIndex = 7;
 			this->linkLabel_HomeGap->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
@@ -465,9 +524,9 @@ namespace Groupe3ProjetBlocPOO {
 			// 
 			this->tabPage_Clients->Controls->Add(this->splitContainer_Clients);
 			this->tabPage_Clients->Controls->Add(this->panel_ClientSearch);
-			this->tabPage_Clients->Location = System::Drawing::Point(4, 28);
+			this->tabPage_Clients->Location = System::Drawing::Point(4, 22);
 			this->tabPage_Clients->Name = L"tabPage_Clients";
-			this->tabPage_Clients->Size = System::Drawing::Size(1085, 464);
+			this->tabPage_Clients->Size = System::Drawing::Size(1136, 594);
 			this->tabPage_Clients->TabIndex = 1;
 			this->tabPage_Clients->Text = L"Clients";
 			this->tabPage_Clients->UseVisualStyleBackColor = true;
@@ -490,8 +549,8 @@ namespace Groupe3ProjetBlocPOO {
 			this->splitContainer_Clients->Panel2->Controls->Add(this->dataGridView_ClientsAddresses);
 			this->splitContainer_Clients->Panel2->Controls->Add(this->panel_Client);
 			this->splitContainer_Clients->Panel2MinSize = 150;
-			this->splitContainer_Clients->Size = System::Drawing::Size(1085, 430);
-			this->splitContainer_Clients->SplitterDistance = 223;
+			this->splitContainer_Clients->Size = System::Drawing::Size(1136, 560);
+			this->splitContainer_Clients->SplitterDistance = 288;
 			this->splitContainer_Clients->SplitterWidth = 10;
 			this->splitContainer_Clients->TabIndex = 1;
 			// 
@@ -512,7 +571,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridView_Clients->Name = L"dataGridView_Clients";
 			this->dataGridView_Clients->RowHeadersWidth = 51;
 			this->dataGridView_Clients->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView_Clients->Size = System::Drawing::Size(1085, 223);
+			this->dataGridView_Clients->Size = System::Drawing::Size(1136, 288);
 			this->dataGridView_Clients->TabIndex = 0;
 			this->dataGridView_Clients->CellBeginEdit += gcnew System::Windows::Forms::DataGridViewCellCancelEventHandler(this, &MainForm::dataGridView_Clients_CellBeginEdit);
 			this->dataGridView_Clients->RowHeaderMouseClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &MainForm::dataGridView_Clients_RowHeaderMouseClick);
@@ -527,7 +586,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_ClientsId->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsId->Name = L"dataGridViewTextBoxColumn_ClientsId";
 			this->dataGridViewTextBoxColumn_ClientsId->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_ClientsId->Width = 52;
+			this->dataGridViewTextBoxColumn_ClientsId->Width = 43;
 			// 
 			// dataGridViewTextBoxColumn_ClientsFirstname
 			// 
@@ -561,7 +620,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_ClientsEmail->HeaderText = L"Email";
 			this->dataGridViewTextBoxColumn_ClientsEmail->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsEmail->Name = L"dataGridViewTextBoxColumn_ClientsEmail";
-			this->dataGridViewTextBoxColumn_ClientsEmail->Width = 70;
+			this->dataGridViewTextBoxColumn_ClientsEmail->Width = 59;
 			// 
 			// dataGridViewTextBoxColumn_ClientsBirthday
 			// 
@@ -571,7 +630,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_ClientsBirthday->HeaderText = L"Birthdate";
 			this->dataGridViewTextBoxColumn_ClientsBirthday->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsBirthday->Name = L"dataGridViewTextBoxColumn_ClientsBirthday";
-			this->dataGridViewTextBoxColumn_ClientsBirthday->Width = 94;
+			this->dataGridViewTextBoxColumn_ClientsBirthday->Width = 79;
 			// 
 			// dataGridViewTextBoxColumn_ClientsLogo
 			// 
@@ -580,7 +639,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_ClientsLogo->HeaderText = L"Logo";
 			this->dataGridViewTextBoxColumn_ClientsLogo->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsLogo->Name = L"dataGridViewTextBoxColumn_ClientsLogo";
-			this->dataGridViewTextBoxColumn_ClientsLogo->Width = 69;
+			this->dataGridViewTextBoxColumn_ClientsLogo->Width = 58;
 			// 
 			// dataGridViewTextBoxColumn_ClientsCompany
 			// 
@@ -589,7 +648,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_ClientsCompany->HeaderText = L"Company";
 			this->dataGridViewTextBoxColumn_ClientsCompany->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsCompany->Name = L"dataGridViewTextBoxColumn_ClientsCompany";
-			this->dataGridViewTextBoxColumn_ClientsCompany->Width = 97;
+			this->dataGridViewTextBoxColumn_ClientsCompany->Width = 80;
 			// 
 			// dataGridView_ClientsAddresses
 			// 
@@ -608,7 +667,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridView_ClientsAddresses->Name = L"dataGridView_ClientsAddresses";
 			this->dataGridView_ClientsAddresses->RowHeadersWidth = 51;
 			this->dataGridView_ClientsAddresses->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView_ClientsAddresses->Size = System::Drawing::Size(936, 197);
+			this->dataGridView_ClientsAddresses->Size = System::Drawing::Size(987, 262);
 			this->dataGridView_ClientsAddresses->TabIndex = 3;
 			this->dataGridView_ClientsAddresses->CellBeginEdit += gcnew System::Windows::Forms::DataGridViewCellCancelEventHandler(this, &MainForm::dataGridView_ClientsAddresses_CellBeginEdit);
 			// 
@@ -621,7 +680,6 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_ClientsAddressId->Name = L"dataGridViewTextBoxColumn_ClientsAddressId";
 			this->dataGridViewTextBoxColumn_ClientsAddressId->ReadOnly = true;
 			this->dataGridViewTextBoxColumn_ClientsAddressId->Visible = false;
-			this->dataGridViewTextBoxColumn_ClientsAddressId->Width = 125;
 			// 
 			// dataGridViewTextBoxColumn_ClientsAddressClientId
 			// 
@@ -641,7 +699,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_ClientsAddressNumber->HeaderText = L"Number";
 			this->dataGridViewTextBoxColumn_ClientsAddressNumber->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsAddressNumber->Name = L"dataGridViewTextBoxColumn_ClientsAddressNumber";
-			this->dataGridViewTextBoxColumn_ClientsAddressNumber->Width = 88;
+			this->dataGridViewTextBoxColumn_ClientsAddressNumber->Width = 73;
 			// 
 			// dataGridViewTextBoxColumn_ClientsAddressStreet
 			// 
@@ -659,7 +717,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_ClientsAddressCity->HeaderText = L"City";
 			this->dataGridViewTextBoxColumn_ClientsAddressCity->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsAddressCity->Name = L"dataGridViewTextBoxColumn_ClientsAddressCity";
-			this->dataGridViewTextBoxColumn_ClientsAddressCity->Width = 62;
+			this->dataGridViewTextBoxColumn_ClientsAddressCity->Width = 51;
 			// 
 			// dataGridViewTextBoxColumn_ClientsAddressZip
 			// 
@@ -669,7 +727,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_ClientsAddressZip->HeaderText = L"ZIP Code";
 			this->dataGridViewTextBoxColumn_ClientsAddressZip->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsAddressZip->Name = L"dataGridViewTextBoxColumn_ClientsAddressZip";
-			this->dataGridViewTextBoxColumn_ClientsAddressZip->Width = 94;
+			this->dataGridViewTextBoxColumn_ClientsAddressZip->Width = 77;
 			// 
 			// dataGridViewTextBoxColumn_ClientsAddressCountry
 			// 
@@ -679,7 +737,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_ClientsAddressCountry->HeaderText = L"Country";
 			this->dataGridViewTextBoxColumn_ClientsAddressCountry->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsAddressCountry->Name = L"dataGridViewTextBoxColumn_ClientsAddressCountry";
-			this->dataGridViewTextBoxColumn_ClientsAddressCountry->Width = 88;
+			this->dataGridViewTextBoxColumn_ClientsAddressCountry->Width = 73;
 			// 
 			// panel_Client
 			// 
@@ -691,14 +749,14 @@ namespace Groupe3ProjetBlocPOO {
 			this->panel_Client->Location = System::Drawing::Point(0, 0);
 			this->panel_Client->Name = L"panel_Client";
 			this->panel_Client->Padding = System::Windows::Forms::Padding(20);
-			this->panel_Client->Size = System::Drawing::Size(149, 197);
+			this->panel_Client->Size = System::Drawing::Size(149, 262);
 			this->panel_Client->TabIndex = 2;
 			// 
 			// button_ClientsSubmit
 			// 
 			this->button_ClientsSubmit->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->button_ClientsSubmit->Enabled = false;
-			this->button_ClientsSubmit->Location = System::Drawing::Point(20, 154);
+			this->button_ClientsSubmit->Location = System::Drawing::Point(20, 219);
 			this->button_ClientsSubmit->Name = L"button_ClientsSubmit";
 			this->button_ClientsSubmit->Size = System::Drawing::Size(109, 23);
 			this->button_ClientsSubmit->TabIndex = 4;
@@ -745,14 +803,14 @@ namespace Groupe3ProjetBlocPOO {
 			this->panel_ClientSearch->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel_ClientSearch->Location = System::Drawing::Point(0, 0);
 			this->panel_ClientSearch->Name = L"panel_ClientSearch";
-			this->panel_ClientSearch->Size = System::Drawing::Size(1085, 34);
+			this->panel_ClientSearch->Size = System::Drawing::Size(1136, 34);
 			this->panel_ClientSearch->TabIndex = 0;
 			// 
 			// button_ClientsUpdate
 			// 
 			this->button_ClientsUpdate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->button_ClientsUpdate->Enabled = false;
-			this->button_ClientsUpdate->Location = System::Drawing::Point(983, 6);
+			this->button_ClientsUpdate->Location = System::Drawing::Point(1034, 6);
 			this->button_ClientsUpdate->Name = L"button_ClientsUpdate";
 			this->button_ClientsUpdate->Size = System::Drawing::Size(99, 23);
 			this->button_ClientsUpdate->TabIndex = 1;
@@ -768,7 +826,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->textBox_ClientsSearch->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->textBox_ClientsSearch->Location = System::Drawing::Point(6, 6);
 			this->textBox_ClientsSearch->Name = L"textBox_ClientsSearch";
-			this->textBox_ClientsSearch->Size = System::Drawing::Size(967, 26);
+			this->textBox_ClientsSearch->Size = System::Drawing::Size(1018, 22);
 			this->textBox_ClientsSearch->TabIndex = 0;
 			// 
 			// tabPage_Stock
@@ -776,9 +834,9 @@ namespace Groupe3ProjetBlocPOO {
 			this->tabPage_Stock->Controls->Add(this->panel_Stock);
 			this->tabPage_Stock->Controls->Add(this->dataGridView_Stock);
 			this->tabPage_Stock->Controls->Add(this->panel_StockSearch);
-			this->tabPage_Stock->Location = System::Drawing::Point(4, 28);
+			this->tabPage_Stock->Location = System::Drawing::Point(4, 22);
 			this->tabPage_Stock->Name = L"tabPage_Stock";
-			this->tabPage_Stock->Size = System::Drawing::Size(1085, 464);
+			this->tabPage_Stock->Size = System::Drawing::Size(1136, 594);
 			this->tabPage_Stock->TabIndex = 2;
 			this->tabPage_Stock->Text = L"Stock";
 			this->tabPage_Stock->UseVisualStyleBackColor = true;
@@ -790,17 +848,17 @@ namespace Groupe3ProjetBlocPOO {
 			this->panel_Stock->Controls->Add(this->panel_StockGap);
 			this->panel_Stock->Controls->Add(this->button_StockAdd);
 			this->panel_Stock->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->panel_Stock->Location = System::Drawing::Point(0, 419);
+			this->panel_Stock->Location = System::Drawing::Point(0, 549);
 			this->panel_Stock->Name = L"panel_Stock";
 			this->panel_Stock->Padding = System::Windows::Forms::Padding(10);
-			this->panel_Stock->Size = System::Drawing::Size(1085, 45);
+			this->panel_Stock->Size = System::Drawing::Size(1136, 45);
 			this->panel_Stock->TabIndex = 3;
 			// 
 			// button_StockSubmit
 			// 
 			this->button_StockSubmit->Dock = System::Windows::Forms::DockStyle::Right;
 			this->button_StockSubmit->Enabled = false;
-			this->button_StockSubmit->Location = System::Drawing::Point(965, 10);
+			this->button_StockSubmit->Location = System::Drawing::Point(1016, 10);
 			this->button_StockSubmit->Name = L"button_StockSubmit";
 			this->button_StockSubmit->Size = System::Drawing::Size(110, 25);
 			this->button_StockSubmit->TabIndex = 4;
@@ -864,7 +922,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_StockId->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_StockId->Name = L"dataGridViewTextBoxColumn_StockId";
 			this->dataGridViewTextBoxColumn_StockId->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_StockId->Width = 52;
+			this->dataGridViewTextBoxColumn_StockId->Width = 43;
 			// 
 			// dataGridViewTextBoxColumn_StockName
 			// 
@@ -880,7 +938,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_StockCost->HeaderText = L"Cost";
 			this->dataGridViewTextBoxColumn_StockCost->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_StockCost->Name = L"dataGridViewTextBoxColumn_StockCost";
-			this->dataGridViewTextBoxColumn_StockCost->Width = 66;
+			this->dataGridViewTextBoxColumn_StockCost->Width = 55;
 			// 
 			// dataGridViewTextBoxColumn_StockQuantity
 			// 
@@ -889,7 +947,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridViewTextBoxColumn_StockQuantity->HeaderText = L"Quantity";
 			this->dataGridViewTextBoxColumn_StockQuantity->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_StockQuantity->Name = L"dataGridViewTextBoxColumn_StockQuantity";
-			this->dataGridViewTextBoxColumn_StockQuantity->Width = 92;
+			this->dataGridViewTextBoxColumn_StockQuantity->Width = 76;
 			// 
 			// panel_StockSearch
 			// 
@@ -898,14 +956,14 @@ namespace Groupe3ProjetBlocPOO {
 			this->panel_StockSearch->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel_StockSearch->Location = System::Drawing::Point(0, 0);
 			this->panel_StockSearch->Name = L"panel_StockSearch";
-			this->panel_StockSearch->Size = System::Drawing::Size(1085, 34);
+			this->panel_StockSearch->Size = System::Drawing::Size(1136, 34);
 			this->panel_StockSearch->TabIndex = 1;
 			// 
 			// button_StockUpdate
 			// 
 			this->button_StockUpdate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->button_StockUpdate->Enabled = false;
-			this->button_StockUpdate->Location = System::Drawing::Point(983, 6);
+			this->button_StockUpdate->Location = System::Drawing::Point(1034, 6);
 			this->button_StockUpdate->Name = L"button_StockUpdate";
 			this->button_StockUpdate->Size = System::Drawing::Size(99, 23);
 			this->button_StockUpdate->TabIndex = 1;
@@ -920,16 +978,16 @@ namespace Groupe3ProjetBlocPOO {
 			this->textBox_StockSearch->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->textBox_StockSearch->Location = System::Drawing::Point(6, 6);
 			this->textBox_StockSearch->Name = L"textBox_StockSearch";
-			this->textBox_StockSearch->Size = System::Drawing::Size(967, 26);
+			this->textBox_StockSearch->Size = System::Drawing::Size(1018, 22);
 			this->textBox_StockSearch->TabIndex = 0;
 			// 
 			// tabPage_Orders
 			// 
 			this->tabPage_Orders->Controls->Add(this->splitContainer_Orders);
 			this->tabPage_Orders->Controls->Add(this->panel_OrdersSearch);
-			this->tabPage_Orders->Location = System::Drawing::Point(4, 28);
+			this->tabPage_Orders->Location = System::Drawing::Point(4, 22);
 			this->tabPage_Orders->Name = L"tabPage_Orders";
-			this->tabPage_Orders->Size = System::Drawing::Size(1085, 464);
+			this->tabPage_Orders->Size = System::Drawing::Size(1136, 594);
 			this->tabPage_Orders->TabIndex = 3;
 			this->tabPage_Orders->Text = L"Orders";
 			this->tabPage_Orders->UseVisualStyleBackColor = true;
@@ -948,10 +1006,10 @@ namespace Groupe3ProjetBlocPOO {
 			// 
 			// splitContainer_Orders.Panel2
 			// 
-			this->splitContainer_Orders->Panel2->Controls->Add(this->splitContainer_OrdersEdit);
+			this->splitContainer_Orders->Panel2->Controls->Add(this->splitContainer_OrdersEditMain);
 			this->splitContainer_Orders->Panel2->Controls->Add(this->panel_OrdersInfos);
-			this->splitContainer_Orders->Size = System::Drawing::Size(1085, 430);
-			this->splitContainer_Orders->SplitterDistance = 146;
+			this->splitContainer_Orders->Size = System::Drawing::Size(1136, 560);
+			this->splitContainer_Orders->SplitterDistance = 207;
 			this->splitContainer_Orders->TabIndex = 2;
 			// 
 			// dataGridView_Orders
@@ -959,10 +1017,11 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridView_Orders->AllowUserToDeleteRows = false;
 			this->dataGridView_Orders->BackgroundColor = System::Drawing::SystemColors::Menu;
 			this->dataGridView_Orders->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView_Orders->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
+			this->dataGridView_Orders->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(9) {
 				this->dataGridViewTextBoxColumn_OrdersID,
-					this->dataGridViewTextBoxColumn_OrdersCreationDate, this->dataGridViewTextBoxColumn_OrdersCost, this->dataGridViewTextBoxColumn_OrdersDeliveryDate,
-					this->dataGridViewTextBoxColumn_OrdersPaymentDate, this->dataGridViewTextBoxColumn_OrdersPaymentMethod
+					this->dataGridViewTextBoxColumn_OrdersPaymentDate, this->dataGridViewTextBoxColumn_OrdersCreationDate, this->dataGridViewTextBoxColumn_OrdersDeliveryDate,
+					this->dataGridViewTextBoxColumn_OrdersAmount, this->dataGridViewTextBoxColumn_OrdersPaymentMethod, this->dataGridViewTextBoxColumn_OrdersBillingAddress,
+					this->dataGridViewTextBoxColumn_OrdersDeliveryAddress, this->dataGridViewTextBoxColumn_OrdersCustomer
 			});
 			this->dataGridView_Orders->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->dataGridView_Orders->Enabled = false;
@@ -970,61 +1029,113 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridView_Orders->Name = L"dataGridView_Orders";
 			this->dataGridView_Orders->RowHeadersWidth = 51;
 			this->dataGridView_Orders->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView_Orders->Size = System::Drawing::Size(1085, 146);
+			this->dataGridView_Orders->Size = System::Drawing::Size(1136, 207);
 			this->dataGridView_Orders->TabIndex = 0;
-			this->dataGridView_Orders->SelectionChanged += gcnew System::EventHandler(this, &MainForm::dataGridView_Orders_SelectionChanged);
+			this->dataGridView_Orders->CellBeginEdit += gcnew System::Windows::Forms::DataGridViewCellCancelEventHandler(this, &MainForm::dataGridView_Orders_CellBeginEdit);
+			this->dataGridView_Orders->RowHeaderMouseClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &MainForm::dataGridView_Orders_RowHeaderMouseClick);
 			// 
-			// dataGridViewTextBoxColumn_OrdersID
+			// splitContainer_OrdersEditMain
 			// 
-			this->dataGridViewTextBoxColumn_OrdersID->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
-			this->dataGridViewTextBoxColumn_OrdersID->HeaderText = L"ID";
-			this->dataGridViewTextBoxColumn_OrdersID->MinimumWidth = 6;
-			this->dataGridViewTextBoxColumn_OrdersID->Name = L"dataGridViewTextBoxColumn_OrdersID";
-			this->dataGridViewTextBoxColumn_OrdersID->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersID->Width = 52;
+			this->splitContainer_OrdersEditMain->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->splitContainer_OrdersEditMain->Location = System::Drawing::Point(0, 0);
+			this->splitContainer_OrdersEditMain->Name = L"splitContainer_OrdersEditMain";
+			this->splitContainer_OrdersEditMain->Orientation = System::Windows::Forms::Orientation::Horizontal;
 			// 
-			// dataGridViewTextBoxColumn_OrdersCreationDate
+			// splitContainer_OrdersEditMain.Panel1
 			// 
-			this->dataGridViewTextBoxColumn_OrdersCreationDate->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->dataGridViewTextBoxColumn_OrdersCreationDate->HeaderText = L"Creation Date";
-			this->dataGridViewTextBoxColumn_OrdersCreationDate->MinimumWidth = 150;
-			this->dataGridViewTextBoxColumn_OrdersCreationDate->Name = L"dataGridViewTextBoxColumn_OrdersCreationDate";
-			this->dataGridViewTextBoxColumn_OrdersCreationDate->ReadOnly = true;
+			this->splitContainer_OrdersEditMain->Panel1->Controls->Add(this->dataGridView_OrdersAddresses);
 			// 
-			// dataGridViewTextBoxColumn_OrdersCost
+			// splitContainer_OrdersEditMain.Panel2
 			// 
-			this->dataGridViewTextBoxColumn_OrdersCost->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
-			this->dataGridViewTextBoxColumn_OrdersCost->HeaderText = L"Cost";
-			this->dataGridViewTextBoxColumn_OrdersCost->MinimumWidth = 6;
-			this->dataGridViewTextBoxColumn_OrdersCost->Name = L"dataGridViewTextBoxColumn_OrdersCost";
-			this->dataGridViewTextBoxColumn_OrdersCost->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersCost->Width = 66;
+			this->splitContainer_OrdersEditMain->Panel2->Controls->Add(this->splitContainer_OrdersEdit);
+			this->splitContainer_OrdersEditMain->Size = System::Drawing::Size(886, 349);
+			this->splitContainer_OrdersEditMain->SplitterDistance = 64;
+			this->splitContainer_OrdersEditMain->TabIndex = 3;
 			// 
-			// dataGridViewTextBoxColumn_OrdersDeliveryDate
+			// dataGridView_OrdersAddresses
 			// 
-			this->dataGridViewTextBoxColumn_OrdersDeliveryDate->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
-			this->dataGridViewTextBoxColumn_OrdersDeliveryDate->HeaderText = L"Delivery Date";
-			this->dataGridViewTextBoxColumn_OrdersDeliveryDate->MinimumWidth = 150;
-			this->dataGridViewTextBoxColumn_OrdersDeliveryDate->Name = L"dataGridViewTextBoxColumn_OrdersDeliveryDate";
-			this->dataGridViewTextBoxColumn_OrdersDeliveryDate->Width = 150;
+			this->dataGridView_OrdersAddresses->AllowUserToAddRows = false;
+			this->dataGridView_OrdersAddresses->AllowUserToDeleteRows = false;
+			this->dataGridView_OrdersAddresses->BackgroundColor = System::Drawing::SystemColors::Menu;
+			this->dataGridView_OrdersAddresses->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView_OrdersAddresses->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
+				this->dataGridViewTextBoxColumn_OrdersAddressesName,
+					this->dataGridViewTextBoxColumn_OrdersAddressesId, this->dataGridViewTextBoxColumn_OrdersAddressesClientId, this->dataGridViewTextBoxColumn_OrdersAddressesNumber,
+					this->dataGridViewTextBoxColumn_OrdersAddressesStreet, this->dataGridViewTextBoxColumn_OrdersAddressesCity, this->dataGridViewTextBoxColumn_OrdersAddressesZip,
+					this->dataGridViewTextBoxColumn_OrdersAddressesCountry
+			});
+			this->dataGridView_OrdersAddresses->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->dataGridView_OrdersAddresses->Enabled = false;
+			this->dataGridView_OrdersAddresses->Location = System::Drawing::Point(0, 0);
+			this->dataGridView_OrdersAddresses->Name = L"dataGridView_OrdersAddresses";
+			this->dataGridView_OrdersAddresses->ScrollBars = System::Windows::Forms::ScrollBars::Horizontal;
+			this->dataGridView_OrdersAddresses->Size = System::Drawing::Size(886, 64);
+			this->dataGridView_OrdersAddresses->TabIndex = 0;
+			this->dataGridView_OrdersAddresses->CellBeginEdit += gcnew System::Windows::Forms::DataGridViewCellCancelEventHandler(this, &MainForm::dataGridView_OrdersAddresses_CellBeginEdit);
+			this->dataGridView_OrdersAddresses->CellValueChanged += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MainForm::dataGridView_OrdersAddresses_CellValueChanged);
 			// 
-			// dataGridViewTextBoxColumn_OrdersPaymentDate
+			// dataGridViewTextBoxColumn_OrdersAddressesName
 			// 
-			this->dataGridViewTextBoxColumn_OrdersPaymentDate->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
-			this->dataGridViewTextBoxColumn_OrdersPaymentDate->HeaderText = L"Payment Date";
-			this->dataGridViewTextBoxColumn_OrdersPaymentDate->MinimumWidth = 150;
-			this->dataGridViewTextBoxColumn_OrdersPaymentDate->Name = L"dataGridViewTextBoxColumn_OrdersPaymentDate";
-			this->dataGridViewTextBoxColumn_OrdersPaymentDate->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersPaymentDate->Width = 150;
+			this->dataGridViewTextBoxColumn_OrdersAddressesName->DataPropertyName = L"name";
+			this->dataGridViewTextBoxColumn_OrdersAddressesName->HeaderText = L"Name";
+			this->dataGridViewTextBoxColumn_OrdersAddressesName->Name = L"dataGridViewTextBoxColumn_OrdersAddressesName";
+			this->dataGridViewTextBoxColumn_OrdersAddressesName->ReadOnly = true;
 			// 
-			// dataGridViewTextBoxColumn_OrdersPaymentMethod
+			// dataGridViewTextBoxColumn_OrdersAddressesId
 			// 
-			this->dataGridViewTextBoxColumn_OrdersPaymentMethod->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
-			this->dataGridViewTextBoxColumn_OrdersPaymentMethod->HeaderText = L"Payment Method";
-			this->dataGridViewTextBoxColumn_OrdersPaymentMethod->MinimumWidth = 150;
-			this->dataGridViewTextBoxColumn_OrdersPaymentMethod->Name = L"dataGridViewTextBoxColumn_OrdersPaymentMethod";
-			this->dataGridViewTextBoxColumn_OrdersPaymentMethod->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersPaymentMethod->Width = 150;
+			this->dataGridViewTextBoxColumn_OrdersAddressesId->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersAddressesId->DataPropertyName = L"id";
+			this->dataGridViewTextBoxColumn_OrdersAddressesId->HeaderText = L"ID";
+			this->dataGridViewTextBoxColumn_OrdersAddressesId->Name = L"dataGridViewTextBoxColumn_OrdersAddressesId";
+			this->dataGridViewTextBoxColumn_OrdersAddressesId->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_OrdersAddressesId->Visible = false;
+			// 
+			// dataGridViewTextBoxColumn_OrdersAddressesClientId
+			// 
+			this->dataGridViewTextBoxColumn_OrdersAddressesClientId->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersAddressesClientId->DataPropertyName = L"clientid";
+			this->dataGridViewTextBoxColumn_OrdersAddressesClientId->HeaderText = L"Client ID";
+			this->dataGridViewTextBoxColumn_OrdersAddressesClientId->Name = L"dataGridViewTextBoxColumn_OrdersAddressesClientId";
+			this->dataGridViewTextBoxColumn_OrdersAddressesClientId->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_OrdersAddressesClientId->Visible = false;
+			// 
+			// dataGridViewTextBoxColumn_OrdersAddressesNumber
+			// 
+			this->dataGridViewTextBoxColumn_OrdersAddressesNumber->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersAddressesNumber->DataPropertyName = L"number";
+			this->dataGridViewTextBoxColumn_OrdersAddressesNumber->HeaderText = L"Number";
+			this->dataGridViewTextBoxColumn_OrdersAddressesNumber->Name = L"dataGridViewTextBoxColumn_OrdersAddressesNumber";
+			this->dataGridViewTextBoxColumn_OrdersAddressesNumber->Width = 73;
+			// 
+			// dataGridViewTextBoxColumn_OrdersAddressesStreet
+			// 
+			this->dataGridViewTextBoxColumn_OrdersAddressesStreet->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->dataGridViewTextBoxColumn_OrdersAddressesStreet->DataPropertyName = L"street";
+			this->dataGridViewTextBoxColumn_OrdersAddressesStreet->HeaderText = L"Street";
+			this->dataGridViewTextBoxColumn_OrdersAddressesStreet->Name = L"dataGridViewTextBoxColumn_OrdersAddressesStreet";
+			// 
+			// dataGridViewTextBoxColumn_OrdersAddressesCity
+			// 
+			this->dataGridViewTextBoxColumn_OrdersAddressesCity->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersAddressesCity->DataPropertyName = L"city";
+			this->dataGridViewTextBoxColumn_OrdersAddressesCity->HeaderText = L"City";
+			this->dataGridViewTextBoxColumn_OrdersAddressesCity->MinimumWidth = 150;
+			this->dataGridViewTextBoxColumn_OrdersAddressesCity->Name = L"dataGridViewTextBoxColumn_OrdersAddressesCity";
+			this->dataGridViewTextBoxColumn_OrdersAddressesCity->Width = 150;
+			// 
+			// dataGridViewTextBoxColumn_OrdersAddressesZip
+			// 
+			this->dataGridViewTextBoxColumn_OrdersAddressesZip->DataPropertyName = L"zip";
+			this->dataGridViewTextBoxColumn_OrdersAddressesZip->HeaderText = L"Zip";
+			this->dataGridViewTextBoxColumn_OrdersAddressesZip->Name = L"dataGridViewTextBoxColumn_OrdersAddressesZip";
+			// 
+			// dataGridViewTextBoxColumn_OrdersAddressesCountry
+			// 
+			this->dataGridViewTextBoxColumn_OrdersAddressesCountry->DataPropertyName = L"country";
+			this->dataGridViewTextBoxColumn_OrdersAddressesCountry->HeaderText = L"Country";
+			this->dataGridViewTextBoxColumn_OrdersAddressesCountry->Name = L"dataGridViewTextBoxColumn_OrdersAddressesCountry";
+			this->dataGridViewTextBoxColumn_OrdersAddressesCountry->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_OrdersAddressesCountry->Visible = false;
 			// 
 			// splitContainer_OrdersEdit
 			// 
@@ -1041,9 +1152,9 @@ namespace Groupe3ProjetBlocPOO {
 			// 
 			this->splitContainer_OrdersEdit->Panel2->Controls->Add(this->dataGridView_OrdersStock);
 			this->splitContainer_OrdersEdit->Panel2->Controls->Add(this->panel_OrdersStockSearch);
-			this->splitContainer_OrdersEdit->Size = System::Drawing::Size(835, 280);
-			this->splitContainer_OrdersEdit->SplitterDistance = 365;
-			this->splitContainer_OrdersEdit->TabIndex = 3;
+			this->splitContainer_OrdersEdit->Size = System::Drawing::Size(886, 281);
+			this->splitContainer_OrdersEdit->SplitterDistance = 387;
+			this->splitContainer_OrdersEdit->TabIndex = 4;
 			// 
 			// dataGridView_OrdersClients
 			// 
@@ -1051,9 +1162,11 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridView_OrdersClients->AllowUserToDeleteRows = false;
 			this->dataGridView_OrdersClients->BackgroundColor = System::Drawing::SystemColors::Menu;
 			this->dataGridView_OrdersClients->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView_OrdersClients->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+			this->dataGridView_OrdersClients->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
 				this->dataGridViewTextBoxColumn_OrdersClientsID,
-					this->dataGridViewTextBoxColumn_OrdersClientsFirstname, this->dataGridViewTextBoxColumn_OrdersClientsLastname, this->dataGridViewTextBoxColumn_OrdersClientsBirthdate
+					this->dataGridViewTextBoxColumn_OrdersClientsLastname, this->dataGridViewTextBoxColumn_OrdersClientsFirstname, this->dataGridViewTextBoxColumn_OrdersClientsPhone,
+					this->dataGridViewTextBoxColumn_OrdersClientsEmail, this->dataGridViewTextBoxColumn_OrdersClientsBirthdate, this->dataGridViewTextBoxColumn_OrdersClientsLogo,
+					this->dataGridViewTextBoxColumn_OrdersClientsCompany
 			});
 			this->dataGridView_OrdersClients->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->dataGridView_OrdersClients->Enabled = false;
@@ -1062,44 +1175,85 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridView_OrdersClients->ReadOnly = true;
 			this->dataGridView_OrdersClients->RowHeadersWidth = 51;
 			this->dataGridView_OrdersClients->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView_OrdersClients->Size = System::Drawing::Size(365, 246);
+			this->dataGridView_OrdersClients->Size = System::Drawing::Size(387, 247);
 			this->dataGridView_OrdersClients->TabIndex = 3;
+			this->dataGridView_OrdersClients->RowHeaderMouseClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &MainForm::dataGridView_OrdersClients_RowHeaderMouseClick);
 			// 
 			// dataGridViewTextBoxColumn_OrdersClientsID
 			// 
 			this->dataGridViewTextBoxColumn_OrdersClientsID->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersClientsID->DataPropertyName = L"id";
 			this->dataGridViewTextBoxColumn_OrdersClientsID->HeaderText = L"ID";
 			this->dataGridViewTextBoxColumn_OrdersClientsID->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_OrdersClientsID->Name = L"dataGridViewTextBoxColumn_OrdersClientsID";
 			this->dataGridViewTextBoxColumn_OrdersClientsID->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersClientsID->Width = 52;
-			// 
-			// dataGridViewTextBoxColumn_OrdersClientsFirstname
-			// 
-			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->FillWeight = 125;
-			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->HeaderText = L"Firstname";
-			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->MinimumWidth = 80;
-			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->Name = L"dataGridViewTextBoxColumn_OrdersClientsFirstname";
-			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_OrdersClientsID->Width = 43;
 			// 
 			// dataGridViewTextBoxColumn_OrdersClientsLastname
 			// 
 			this->dataGridViewTextBoxColumn_OrdersClientsLastname->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->dataGridViewTextBoxColumn_OrdersClientsLastname->DataPropertyName = L"lastname";
 			this->dataGridViewTextBoxColumn_OrdersClientsLastname->FillWeight = 75;
 			this->dataGridViewTextBoxColumn_OrdersClientsLastname->HeaderText = L"Lastname";
 			this->dataGridViewTextBoxColumn_OrdersClientsLastname->MinimumWidth = 80;
 			this->dataGridViewTextBoxColumn_OrdersClientsLastname->Name = L"dataGridViewTextBoxColumn_OrdersClientsLastname";
 			this->dataGridViewTextBoxColumn_OrdersClientsLastname->ReadOnly = true;
 			// 
+			// dataGridViewTextBoxColumn_OrdersClientsFirstname
+			// 
+			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->DataPropertyName = L"firstname";
+			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->FillWeight = 125;
+			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->HeaderText = L"Firstname";
+			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->MinimumWidth = 80;
+			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->Name = L"dataGridViewTextBoxColumn_OrdersClientsFirstname";
+			this->dataGridViewTextBoxColumn_OrdersClientsFirstname->ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn_OrdersClientsPhone
+			// 
+			this->dataGridViewTextBoxColumn_OrdersClientsPhone->DataPropertyName = L"phone";
+			this->dataGridViewTextBoxColumn_OrdersClientsPhone->HeaderText = L"Phone";
+			this->dataGridViewTextBoxColumn_OrdersClientsPhone->MinimumWidth = 8;
+			this->dataGridViewTextBoxColumn_OrdersClientsPhone->Name = L"dataGridViewTextBoxColumn_OrdersClientsPhone";
+			this->dataGridViewTextBoxColumn_OrdersClientsPhone->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_OrdersClientsPhone->Width = 150;
+			// 
+			// dataGridViewTextBoxColumn_OrdersClientsEmail
+			// 
+			this->dataGridViewTextBoxColumn_OrdersClientsEmail->DataPropertyName = L"email";
+			this->dataGridViewTextBoxColumn_OrdersClientsEmail->HeaderText = L"Email";
+			this->dataGridViewTextBoxColumn_OrdersClientsEmail->MinimumWidth = 8;
+			this->dataGridViewTextBoxColumn_OrdersClientsEmail->Name = L"dataGridViewTextBoxColumn_OrdersClientsEmail";
+			this->dataGridViewTextBoxColumn_OrdersClientsEmail->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_OrdersClientsEmail->Width = 150;
+			// 
 			// dataGridViewTextBoxColumn_OrdersClientsBirthdate
 			// 
 			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->DataPropertyName = L"birthdate";
 			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->HeaderText = L"Birthdate";
 			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->Name = L"dataGridViewTextBoxColumn_OrdersClientsBirthdate";
 			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->Width = 94;
+			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->Width = 79;
+			// 
+			// dataGridViewTextBoxColumn_OrdersClientsLogo
+			// 
+			this->dataGridViewTextBoxColumn_OrdersClientsLogo->DataPropertyName = L"logo";
+			this->dataGridViewTextBoxColumn_OrdersClientsLogo->HeaderText = L"Logo";
+			this->dataGridViewTextBoxColumn_OrdersClientsLogo->MinimumWidth = 8;
+			this->dataGridViewTextBoxColumn_OrdersClientsLogo->Name = L"dataGridViewTextBoxColumn_OrdersClientsLogo";
+			this->dataGridViewTextBoxColumn_OrdersClientsLogo->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_OrdersClientsLogo->Width = 150;
+			// 
+			// dataGridViewTextBoxColumn_OrdersClientsCompany
+			// 
+			this->dataGridViewTextBoxColumn_OrdersClientsCompany->DataPropertyName = L"company";
+			this->dataGridViewTextBoxColumn_OrdersClientsCompany->HeaderText = L"Company";
+			this->dataGridViewTextBoxColumn_OrdersClientsCompany->MinimumWidth = 8;
+			this->dataGridViewTextBoxColumn_OrdersClientsCompany->Name = L"dataGridViewTextBoxColumn_OrdersClientsCompany";
+			this->dataGridViewTextBoxColumn_OrdersClientsCompany->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_OrdersClientsCompany->Width = 150;
 			// 
 			// panel_OrdersClientsSearch
 			// 
@@ -1108,14 +1262,14 @@ namespace Groupe3ProjetBlocPOO {
 			this->panel_OrdersClientsSearch->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel_OrdersClientsSearch->Location = System::Drawing::Point(0, 0);
 			this->panel_OrdersClientsSearch->Name = L"panel_OrdersClientsSearch";
-			this->panel_OrdersClientsSearch->Size = System::Drawing::Size(365, 34);
+			this->panel_OrdersClientsSearch->Size = System::Drawing::Size(387, 34);
 			this->panel_OrdersClientsSearch->TabIndex = 2;
 			// 
 			// button_OrdersClientsUpdate
 			// 
 			this->button_OrdersClientsUpdate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->button_OrdersClientsUpdate->Enabled = false;
-			this->button_OrdersClientsUpdate->Location = System::Drawing::Point(270, 6);
+			this->button_OrdersClientsUpdate->Location = System::Drawing::Point(328, 6);
 			this->button_OrdersClientsUpdate->Name = L"button_OrdersClientsUpdate";
 			this->button_OrdersClientsUpdate->Size = System::Drawing::Size(56, 23);
 			this->button_OrdersClientsUpdate->TabIndex = 1;
@@ -1131,7 +1285,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->textBox_OrdersClientsSearch->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->textBox_OrdersClientsSearch->Location = System::Drawing::Point(6, 6);
 			this->textBox_OrdersClientsSearch->Name = L"textBox_OrdersClientsSearch";
-			this->textBox_OrdersClientsSearch->Size = System::Drawing::Size(258, 26);
+			this->textBox_OrdersClientsSearch->Size = System::Drawing::Size(316, 22);
 			this->textBox_OrdersClientsSearch->TabIndex = 0;
 			// 
 			// dataGridView_OrdersStock
@@ -1140,33 +1294,38 @@ namespace Groupe3ProjetBlocPOO {
 			this->dataGridView_OrdersStock->AllowUserToDeleteRows = false;
 			this->dataGridView_OrdersStock->BackgroundColor = System::Drawing::SystemColors::Menu;
 			this->dataGridView_OrdersStock->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView_OrdersStock->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+			this->dataGridView_OrdersStock->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
 				this->dataGridViewTextBoxColumn_OrdersStockID,
-					this->dataGridViewTextBoxColumn_OrdersStockName, this->dataGridViewTextBoxColumn_OrdersStockCost, this->dataGridViewTextBoxColumn_OrdersQuantity,
-					this->dataGridViewTextBoxColumn_OrdersStock
+					this->dataGridViewTextBoxColumn_OrdersStockName, this->dataGridViewTextBoxColumn_OrdersStockCost, this->dataGridViewTextBoxColumn_OrdersStockDescription,
+					this->dataGridViewTextBoxColumn_OrdersStockType, this->dataGridViewTextBoxColumn_OrdersStockTax, this->dataGridViewTextBoxColumn_OrdersStockStock,
+					this->dataGridViewTextBoxColumn_OrdersQuantity
 			});
 			this->dataGridView_OrdersStock->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->dataGridView_OrdersStock->Enabled = false;
 			this->dataGridView_OrdersStock->Location = System::Drawing::Point(0, 34);
 			this->dataGridView_OrdersStock->Name = L"dataGridView_OrdersStock";
-			this->dataGridView_OrdersStock->ReadOnly = true;
 			this->dataGridView_OrdersStock->RowHeadersWidth = 51;
 			this->dataGridView_OrdersStock->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView_OrdersStock->Size = System::Drawing::Size(466, 246);
+			this->dataGridView_OrdersStock->Size = System::Drawing::Size(495, 247);
 			this->dataGridView_OrdersStock->TabIndex = 4;
+			this->dataGridView_OrdersStock->CellBeginEdit += gcnew System::Windows::Forms::DataGridViewCellCancelEventHandler(this, &MainForm::dataGridView_OrdersStock_CellBeginEdit);
+			this->dataGridView_OrdersStock->CellEndEdit += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MainForm::dataGridView_OrdersStock_CellEndEdit);
+			this->dataGridView_OrdersStock->CellValueChanged += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MainForm::dataGridView_OrdersStock_CellValueChanged);
 			// 
 			// dataGridViewTextBoxColumn_OrdersStockID
 			// 
 			this->dataGridViewTextBoxColumn_OrdersStockID->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersStockID->DataPropertyName = L"id";
 			this->dataGridViewTextBoxColumn_OrdersStockID->HeaderText = L"ID";
 			this->dataGridViewTextBoxColumn_OrdersStockID->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_OrdersStockID->Name = L"dataGridViewTextBoxColumn_OrdersStockID";
 			this->dataGridViewTextBoxColumn_OrdersStockID->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersStockID->Width = 52;
+			this->dataGridViewTextBoxColumn_OrdersStockID->Width = 43;
 			// 
 			// dataGridViewTextBoxColumn_OrdersStockName
 			// 
 			this->dataGridViewTextBoxColumn_OrdersStockName->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->dataGridViewTextBoxColumn_OrdersStockName->DataPropertyName = L"name";
 			this->dataGridViewTextBoxColumn_OrdersStockName->HeaderText = L"Name";
 			this->dataGridViewTextBoxColumn_OrdersStockName->MinimumWidth = 80;
 			this->dataGridViewTextBoxColumn_OrdersStockName->Name = L"dataGridViewTextBoxColumn_OrdersStockName";
@@ -1175,27 +1334,49 @@ namespace Groupe3ProjetBlocPOO {
 			// dataGridViewTextBoxColumn_OrdersStockCost
 			// 
 			this->dataGridViewTextBoxColumn_OrdersStockCost->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersStockCost->DataPropertyName = L"cost";
 			this->dataGridViewTextBoxColumn_OrdersStockCost->HeaderText = L"Cost";
 			this->dataGridViewTextBoxColumn_OrdersStockCost->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_OrdersStockCost->Name = L"dataGridViewTextBoxColumn_OrdersStockCost";
 			this->dataGridViewTextBoxColumn_OrdersStockCost->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersStockCost->Width = 66;
+			this->dataGridViewTextBoxColumn_OrdersStockCost->Width = 55;
+			// 
+			// dataGridViewTextBoxColumn_OrdersStockDescription
+			// 
+			this->dataGridViewTextBoxColumn_OrdersStockDescription->DataPropertyName = L"description";
+			this->dataGridViewTextBoxColumn_OrdersStockDescription->HeaderText = L"Description";
+			this->dataGridViewTextBoxColumn_OrdersStockDescription->Name = L"dataGridViewTextBoxColumn_OrdersStockDescription";
+			this->dataGridViewTextBoxColumn_OrdersStockDescription->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_OrdersStockDescription->Visible = false;
+			// 
+			// dataGridViewTextBoxColumn_OrdersStockType
+			// 
+			this->dataGridViewTextBoxColumn_OrdersStockType->DataPropertyName = L"type";
+			this->dataGridViewTextBoxColumn_OrdersStockType->HeaderText = L"Type";
+			this->dataGridViewTextBoxColumn_OrdersStockType->Name = L"dataGridViewTextBoxColumn_OrdersStockType";
+			this->dataGridViewTextBoxColumn_OrdersStockType->ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn_OrdersStockTax
+			// 
+			this->dataGridViewTextBoxColumn_OrdersStockTax->DataPropertyName = L"tax";
+			this->dataGridViewTextBoxColumn_OrdersStockTax->HeaderText = L"Tax";
+			this->dataGridViewTextBoxColumn_OrdersStockTax->Name = L"dataGridViewTextBoxColumn_OrdersStockTax";
+			this->dataGridViewTextBoxColumn_OrdersStockTax->ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn_OrdersStockStock
+			// 
+			this->dataGridViewTextBoxColumn_OrdersStockStock->DataPropertyName = L"stock";
+			this->dataGridViewTextBoxColumn_OrdersStockStock->HeaderText = L"Stock";
+			this->dataGridViewTextBoxColumn_OrdersStockStock->Name = L"dataGridViewTextBoxColumn_OrdersStockStock";
+			this->dataGridViewTextBoxColumn_OrdersStockStock->ReadOnly = true;
 			// 
 			// dataGridViewTextBoxColumn_OrdersQuantity
 			// 
+			this->dataGridViewTextBoxColumn_OrdersQuantity->DataPropertyName = L"quantity";
 			this->dataGridViewTextBoxColumn_OrdersQuantity->HeaderText = L"Quantity";
 			this->dataGridViewTextBoxColumn_OrdersQuantity->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_OrdersQuantity->Name = L"dataGridViewTextBoxColumn_OrdersQuantity";
-			this->dataGridViewTextBoxColumn_OrdersQuantity->ReadOnly = true;
 			this->dataGridViewTextBoxColumn_OrdersQuantity->Width = 125;
-			// 
-			// dataGridViewTextBoxColumn_OrdersStock
-			// 
-			this->dataGridViewTextBoxColumn_OrdersStock->HeaderText = L"Stock";
-			this->dataGridViewTextBoxColumn_OrdersStock->MinimumWidth = 6;
-			this->dataGridViewTextBoxColumn_OrdersStock->Name = L"dataGridViewTextBoxColumn_OrdersStock";
-			this->dataGridViewTextBoxColumn_OrdersStock->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersStock->Width = 125;
 			// 
 			// panel_OrdersStockSearch
 			// 
@@ -1204,14 +1385,14 @@ namespace Groupe3ProjetBlocPOO {
 			this->panel_OrdersStockSearch->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel_OrdersStockSearch->Location = System::Drawing::Point(0, 0);
 			this->panel_OrdersStockSearch->Name = L"panel_OrdersStockSearch";
-			this->panel_OrdersStockSearch->Size = System::Drawing::Size(466, 34);
+			this->panel_OrdersStockSearch->Size = System::Drawing::Size(495, 34);
 			this->panel_OrdersStockSearch->TabIndex = 3;
 			// 
 			// button_OrdersStockUpdate
 			// 
 			this->button_OrdersStockUpdate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->button_OrdersStockUpdate->Enabled = false;
-			this->button_OrdersStockUpdate->Location = System::Drawing::Point(369, 6);
+			this->button_OrdersStockUpdate->Location = System::Drawing::Point(436, 6);
 			this->button_OrdersStockUpdate->Name = L"button_OrdersStockUpdate";
 			this->button_OrdersStockUpdate->Size = System::Drawing::Size(56, 23);
 			this->button_OrdersStockUpdate->TabIndex = 1;
@@ -1227,11 +1408,12 @@ namespace Groupe3ProjetBlocPOO {
 			this->textBox_OrdersStockSearch->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->textBox_OrdersStockSearch->Location = System::Drawing::Point(6, 6);
 			this->textBox_OrdersStockSearch->Name = L"textBox_OrdersStockSearch";
-			this->textBox_OrdersStockSearch->Size = System::Drawing::Size(357, 26);
+			this->textBox_OrdersStockSearch->Size = System::Drawing::Size(424, 22);
 			this->textBox_OrdersStockSearch->TabIndex = 0;
 			// 
 			// panel_OrdersInfos
 			// 
+			this->panel_OrdersInfos->Controls->Add(this->panel_ordersDelete);
 			this->panel_OrdersInfos->Controls->Add(this->panel_OrdersTotal);
 			this->panel_OrdersInfos->Controls->Add(this->panel_OrdersGap4);
 			this->panel_OrdersInfos->Controls->Add(this->panel_OrdersTax);
@@ -1244,11 +1426,46 @@ namespace Groupe3ProjetBlocPOO {
 			this->panel_OrdersInfos->Controls->Add(this->panel_OrdersGap5);
 			this->panel_OrdersInfos->Controls->Add(this->panel_OrdersInfoButtons);
 			this->panel_OrdersInfos->Dock = System::Windows::Forms::DockStyle::Right;
-			this->panel_OrdersInfos->Location = System::Drawing::Point(835, 0);
+			this->panel_OrdersInfos->Location = System::Drawing::Point(886, 0);
 			this->panel_OrdersInfos->Name = L"panel_OrdersInfos";
 			this->panel_OrdersInfos->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
-			this->panel_OrdersInfos->Size = System::Drawing::Size(250, 280);
+			this->panel_OrdersInfos->Size = System::Drawing::Size(250, 349);
 			this->panel_OrdersInfos->TabIndex = 2;
+			// 
+			// panel_ordersDelete
+			// 
+			this->panel_ordersDelete->Controls->Add(this->button_OrdersDelete);
+			this->panel_ordersDelete->Controls->Add(this->button_OrdersAdd);
+			this->panel_ordersDelete->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->panel_ordersDelete->Location = System::Drawing::Point(10, 259);
+			this->panel_ordersDelete->Name = L"panel_ordersDelete";
+			this->panel_ordersDelete->Padding = System::Windows::Forms::Padding(20, 10, 20, 10);
+			this->panel_ordersDelete->Size = System::Drawing::Size(240, 45);
+			this->panel_ordersDelete->TabIndex = 23;
+			// 
+			// button_OrdersDelete
+			// 
+			this->button_OrdersDelete->Dock = System::Windows::Forms::DockStyle::Right;
+			this->button_OrdersDelete->Enabled = false;
+			this->button_OrdersDelete->Location = System::Drawing::Point(145, 10);
+			this->button_OrdersDelete->Name = L"button_OrdersDelete";
+			this->button_OrdersDelete->Size = System::Drawing::Size(75, 25);
+			this->button_OrdersDelete->TabIndex = 14;
+			this->button_OrdersDelete->Text = L"Delete";
+			this->button_OrdersDelete->UseVisualStyleBackColor = true;
+			this->button_OrdersDelete->Click += gcnew System::EventHandler(this, &MainForm::button_OrdersDelete_Click);
+			// 
+			// button_OrdersAdd
+			// 
+			this->button_OrdersAdd->Dock = System::Windows::Forms::DockStyle::Left;
+			this->button_OrdersAdd->Enabled = false;
+			this->button_OrdersAdd->Location = System::Drawing::Point(20, 10);
+			this->button_OrdersAdd->Name = L"button_OrdersAdd";
+			this->button_OrdersAdd->Size = System::Drawing::Size(75, 25);
+			this->button_OrdersAdd->TabIndex = 13;
+			this->button_OrdersAdd->Text = L"Add";
+			this->button_OrdersAdd->UseVisualStyleBackColor = true;
+			this->button_OrdersAdd->Click += gcnew System::EventHandler(this, &MainForm::button_OrdersAdd_Click);
 			// 
 			// panel_OrdersTotal
 			// 
@@ -1268,7 +1485,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->textBox_OrdersTotal->Location = System::Drawing::Point(64, 0);
 			this->textBox_OrdersTotal->Name = L"textBox_OrdersTotal";
 			this->textBox_OrdersTotal->ReadOnly = true;
-			this->textBox_OrdersTotal->Size = System::Drawing::Size(154, 26);
+			this->textBox_OrdersTotal->Size = System::Drawing::Size(154, 22);
 			this->textBox_OrdersTotal->TabIndex = 7;
 			// 
 			// label_OrdersTotalUnit
@@ -1278,7 +1495,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->label_OrdersTotalUnit->Name = L"label_OrdersTotalUnit";
 			this->label_OrdersTotalUnit->Size = System::Drawing::Size(22, 22);
 			this->label_OrdersTotalUnit->TabIndex = 3;
-			this->label_OrdersTotalUnit->Text = L"�";
+			this->label_OrdersTotalUnit->Text = L"€";
 			this->label_OrdersTotalUnit->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label_OrdersTotal
@@ -1317,7 +1534,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->textBox_OrdersTax->Location = System::Drawing::Point(64, 0);
 			this->textBox_OrdersTax->Name = L"textBox_OrdersTax";
 			this->textBox_OrdersTax->ReadOnly = true;
-			this->textBox_OrdersTax->Size = System::Drawing::Size(154, 26);
+			this->textBox_OrdersTax->Size = System::Drawing::Size(154, 22);
 			this->textBox_OrdersTax->TabIndex = 7;
 			// 
 			// label_OrdersTaxUnit
@@ -1327,7 +1544,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->label_OrdersTaxUnit->Name = L"label_OrdersTaxUnit";
 			this->label_OrdersTaxUnit->Size = System::Drawing::Size(22, 22);
 			this->label_OrdersTaxUnit->TabIndex = 3;
-			this->label_OrdersTaxUnit->Text = L"�";
+			this->label_OrdersTaxUnit->Text = L"€";
 			this->label_OrdersTaxUnit->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label_OrdersTax
@@ -1351,7 +1568,7 @@ namespace Groupe3ProjetBlocPOO {
 			// panel_OrdersDiscount
 			// 
 			this->panel_OrdersDiscount->Controls->Add(this->textBox_OrdersPercentageDiscount);
-			this->panel_OrdersDiscount->Controls->Add(this->label_OrderDiscountUnit1);
+			this->panel_OrdersDiscount->Controls->Add(this->label_OrdersDiscountUnit1);
 			this->panel_OrdersDiscount->Controls->Add(this->textBox_OrdersEuroDiscount);
 			this->panel_OrdersDiscount->Controls->Add(this->label_OrdersDiscountUnit2);
 			this->panel_OrdersDiscount->Controls->Add(this->label_OrdersDiscout);
@@ -1368,18 +1585,18 @@ namespace Groupe3ProjetBlocPOO {
 			this->textBox_OrdersPercentageDiscount->Location = System::Drawing::Point(64, 0);
 			this->textBox_OrdersPercentageDiscount->Name = L"textBox_OrdersPercentageDiscount";
 			this->textBox_OrdersPercentageDiscount->ReadOnly = true;
-			this->textBox_OrdersPercentageDiscount->Size = System::Drawing::Size(64, 26);
+			this->textBox_OrdersPercentageDiscount->Size = System::Drawing::Size(64, 22);
 			this->textBox_OrdersPercentageDiscount->TabIndex = 10;
 			// 
-			// label_OrderDiscountUnit1
+			// label_OrdersDiscountUnit1
 			// 
-			this->label_OrderDiscountUnit1->Dock = System::Windows::Forms::DockStyle::Right;
-			this->label_OrderDiscountUnit1->Location = System::Drawing::Point(128, 0);
-			this->label_OrderDiscountUnit1->Name = L"label_OrderDiscountUnit1";
-			this->label_OrderDiscountUnit1->Size = System::Drawing::Size(22, 22);
-			this->label_OrderDiscountUnit1->TabIndex = 9;
-			this->label_OrderDiscountUnit1->Text = L"%";
-			this->label_OrderDiscountUnit1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->label_OrdersDiscountUnit1->Dock = System::Windows::Forms::DockStyle::Right;
+			this->label_OrdersDiscountUnit1->Location = System::Drawing::Point(128, 0);
+			this->label_OrdersDiscountUnit1->Name = L"label_OrdersDiscountUnit1";
+			this->label_OrdersDiscountUnit1->Size = System::Drawing::Size(22, 22);
+			this->label_OrdersDiscountUnit1->TabIndex = 9;
+			this->label_OrdersDiscountUnit1->Text = L"%";
+			this->label_OrdersDiscountUnit1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// textBox_OrdersEuroDiscount
 			// 
@@ -1388,7 +1605,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->textBox_OrdersEuroDiscount->Location = System::Drawing::Point(150, 0);
 			this->textBox_OrdersEuroDiscount->Name = L"textBox_OrdersEuroDiscount";
 			this->textBox_OrdersEuroDiscount->ReadOnly = true;
-			this->textBox_OrdersEuroDiscount->Size = System::Drawing::Size(68, 26);
+			this->textBox_OrdersEuroDiscount->Size = System::Drawing::Size(68, 22);
 			this->textBox_OrdersEuroDiscount->TabIndex = 8;
 			// 
 			// label_OrdersDiscountUnit2
@@ -1398,7 +1615,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->label_OrdersDiscountUnit2->Name = L"label_OrdersDiscountUnit2";
 			this->label_OrdersDiscountUnit2->Size = System::Drawing::Size(22, 22);
 			this->label_OrdersDiscountUnit2->TabIndex = 3;
-			this->label_OrdersDiscountUnit2->Text = L"�";
+			this->label_OrdersDiscountUnit2->Text = L"€";
 			this->label_OrdersDiscountUnit2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label_OrdersDiscout
@@ -1437,7 +1654,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->textBox_OrdersPrice->Location = System::Drawing::Point(64, 0);
 			this->textBox_OrdersPrice->Name = L"textBox_OrdersPrice";
 			this->textBox_OrdersPrice->ReadOnly = true;
-			this->textBox_OrdersPrice->Size = System::Drawing::Size(154, 26);
+			this->textBox_OrdersPrice->Size = System::Drawing::Size(154, 22);
 			this->textBox_OrdersPrice->TabIndex = 7;
 			// 
 			// label_OrdersPriceUnit
@@ -1447,7 +1664,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->label_OrdersPriceUnit->Name = L"label_OrdersPriceUnit";
 			this->label_OrdersPriceUnit->Size = System::Drawing::Size(22, 22);
 			this->label_OrdersPriceUnit->TabIndex = 3;
-			this->label_OrdersPriceUnit->Text = L"�";
+			this->label_OrdersPriceUnit->Text = L"€";
 			this->label_OrdersPriceUnit->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label_OrdersPrice
@@ -1486,7 +1703,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->textBox_OrdersNumberOfProducts->Location = System::Drawing::Point(64, 0);
 			this->textBox_OrdersNumberOfProducts->Name = L"textBox_OrdersNumberOfProducts";
 			this->textBox_OrdersNumberOfProducts->ReadOnly = true;
-			this->textBox_OrdersNumberOfProducts->Size = System::Drawing::Size(154, 26);
+			this->textBox_OrdersNumberOfProducts->Size = System::Drawing::Size(154, 22);
 			this->textBox_OrdersNumberOfProducts->TabIndex = 3;
 			// 
 			// label_OrdersNumberOfProductsUnit
@@ -1521,19 +1738,19 @@ namespace Groupe3ProjetBlocPOO {
 			this->panel_OrdersInfoButtons->Controls->Add(this->button_OrdersQuote);
 			this->panel_OrdersInfoButtons->Controls->Add(this->button_OrdersSubmit);
 			this->panel_OrdersInfoButtons->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->panel_OrdersInfoButtons->Location = System::Drawing::Point(10, 212);
+			this->panel_OrdersInfoButtons->Location = System::Drawing::Point(10, 304);
 			this->panel_OrdersInfoButtons->Name = L"panel_OrdersInfoButtons";
-			this->panel_OrdersInfoButtons->Padding = System::Windows::Forms::Padding(20);
-			this->panel_OrdersInfoButtons->Size = System::Drawing::Size(240, 68);
+			this->panel_OrdersInfoButtons->Padding = System::Windows::Forms::Padding(20, 10, 20, 10);
+			this->panel_OrdersInfoButtons->Size = System::Drawing::Size(240, 45);
 			this->panel_OrdersInfoButtons->TabIndex = 12;
 			// 
 			// button_OrdersQuote
 			// 
 			this->button_OrdersQuote->Dock = System::Windows::Forms::DockStyle::Right;
 			this->button_OrdersQuote->Enabled = false;
-			this->button_OrdersQuote->Location = System::Drawing::Point(145, 20);
+			this->button_OrdersQuote->Location = System::Drawing::Point(145, 10);
 			this->button_OrdersQuote->Name = L"button_OrdersQuote";
-			this->button_OrdersQuote->Size = System::Drawing::Size(75, 28);
+			this->button_OrdersQuote->Size = System::Drawing::Size(75, 25);
 			this->button_OrdersQuote->TabIndex = 13;
 			this->button_OrdersQuote->Text = L"Quote";
 			this->button_OrdersQuote->UseVisualStyleBackColor = true;
@@ -1542,12 +1759,13 @@ namespace Groupe3ProjetBlocPOO {
 			// 
 			this->button_OrdersSubmit->Dock = System::Windows::Forms::DockStyle::Left;
 			this->button_OrdersSubmit->Enabled = false;
-			this->button_OrdersSubmit->Location = System::Drawing::Point(20, 20);
+			this->button_OrdersSubmit->Location = System::Drawing::Point(20, 10);
 			this->button_OrdersSubmit->Name = L"button_OrdersSubmit";
-			this->button_OrdersSubmit->Size = System::Drawing::Size(75, 28);
+			this->button_OrdersSubmit->Size = System::Drawing::Size(75, 25);
 			this->button_OrdersSubmit->TabIndex = 12;
 			this->button_OrdersSubmit->Text = L"Submit";
 			this->button_OrdersSubmit->UseVisualStyleBackColor = true;
+			this->button_OrdersSubmit->Click += gcnew System::EventHandler(this, &MainForm::button_OrdersSubmit_Click);
 			// 
 			// panel_OrdersSearch
 			// 
@@ -1556,14 +1774,14 @@ namespace Groupe3ProjetBlocPOO {
 			this->panel_OrdersSearch->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel_OrdersSearch->Location = System::Drawing::Point(0, 0);
 			this->panel_OrdersSearch->Name = L"panel_OrdersSearch";
-			this->panel_OrdersSearch->Size = System::Drawing::Size(1085, 34);
+			this->panel_OrdersSearch->Size = System::Drawing::Size(1136, 34);
 			this->panel_OrdersSearch->TabIndex = 1;
 			// 
 			// button_OrdersUpdate
 			// 
 			this->button_OrdersUpdate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->button_OrdersUpdate->Enabled = false;
-			this->button_OrdersUpdate->Location = System::Drawing::Point(909, 6);
+			this->button_OrdersUpdate->Location = System::Drawing::Point(1034, 6);
 			this->button_OrdersUpdate->Name = L"button_OrdersUpdate";
 			this->button_OrdersUpdate->Size = System::Drawing::Size(99, 23);
 			this->button_OrdersUpdate->TabIndex = 1;
@@ -1579,14 +1797,99 @@ namespace Groupe3ProjetBlocPOO {
 			this->textBox_OrdersSearch->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->textBox_OrdersSearch->Location = System::Drawing::Point(6, 6);
 			this->textBox_OrdersSearch->Name = L"textBox_OrdersSearch";
-			this->textBox_OrdersSearch->Size = System::Drawing::Size(893, 26);
+			this->textBox_OrdersSearch->Size = System::Drawing::Size(1022, 22);
 			this->textBox_OrdersSearch->TabIndex = 0;
+			// 
+			// dataGridViewTextBoxColumn_OrdersID
+			// 
+			this->dataGridViewTextBoxColumn_OrdersID->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersID->DataPropertyName = L"id";
+			this->dataGridViewTextBoxColumn_OrdersID->HeaderText = L"ID";
+			this->dataGridViewTextBoxColumn_OrdersID->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn_OrdersID->Name = L"dataGridViewTextBoxColumn_OrdersID";
+			this->dataGridViewTextBoxColumn_OrdersID->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_OrdersID->Width = 43;
+			// 
+			// dataGridViewTextBoxColumn_OrdersPaymentDate
+			// 
+			this->dataGridViewTextBoxColumn_OrdersPaymentDate->DataPropertyName = L"paymentdate";
+			this->dataGridViewTextBoxColumn_OrdersPaymentDate->HeaderText = L"Payment Date";
+			this->dataGridViewTextBoxColumn_OrdersPaymentDate->MinimumWidth = 8;
+			this->dataGridViewTextBoxColumn_OrdersPaymentDate->Name = L"dataGridViewTextBoxColumn_OrdersPaymentDate";
+			this->dataGridViewTextBoxColumn_OrdersPaymentDate->Width = 150;
+			// 
+			// dataGridViewTextBoxColumn_OrdersCreationDate
+			// 
+			this->dataGridViewTextBoxColumn_OrdersCreationDate->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->dataGridViewTextBoxColumn_OrdersCreationDate->DataPropertyName = L"creationdate";
+			this->dataGridViewTextBoxColumn_OrdersCreationDate->HeaderText = L"Creation Date";
+			this->dataGridViewTextBoxColumn_OrdersCreationDate->MinimumWidth = 150;
+			this->dataGridViewTextBoxColumn_OrdersCreationDate->Name = L"dataGridViewTextBoxColumn_OrdersCreationDate";
+			this->dataGridViewTextBoxColumn_OrdersCreationDate->ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn_OrdersDeliveryDate
+			// 
+			this->dataGridViewTextBoxColumn_OrdersDeliveryDate->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersDeliveryDate->DataPropertyName = L"deliverydate";
+			this->dataGridViewTextBoxColumn_OrdersDeliveryDate->HeaderText = L"Delivery Date";
+			this->dataGridViewTextBoxColumn_OrdersDeliveryDate->MinimumWidth = 200;
+			this->dataGridViewTextBoxColumn_OrdersDeliveryDate->Name = L"dataGridViewTextBoxColumn_OrdersDeliveryDate";
+			this->dataGridViewTextBoxColumn_OrdersDeliveryDate->Width = 200;
+			// 
+			// dataGridViewTextBoxColumn_OrdersAmount
+			// 
+			this->dataGridViewTextBoxColumn_OrdersAmount->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersAmount->DataPropertyName = L"amount";
+			this->dataGridViewTextBoxColumn_OrdersAmount->HeaderText = L"Amount";
+			this->dataGridViewTextBoxColumn_OrdersAmount->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn_OrdersAmount->Name = L"dataGridViewTextBoxColumn_OrdersAmount";
+			this->dataGridViewTextBoxColumn_OrdersAmount->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_OrdersAmount->Width = 73;
+			// 
+			// dataGridViewTextBoxColumn_OrdersPaymentMethod
+			// 
+			this->dataGridViewTextBoxColumn_OrdersPaymentMethod->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersPaymentMethod->DataPropertyName = L"paymentmethod";
+			this->dataGridViewTextBoxColumn_OrdersPaymentMethod->HeaderText = L"Payment Method";
+			this->dataGridViewTextBoxColumn_OrdersPaymentMethod->MinimumWidth = 200;
+			this->dataGridViewTextBoxColumn_OrdersPaymentMethod->Name = L"dataGridViewTextBoxColumn_OrdersPaymentMethod";
+			this->dataGridViewTextBoxColumn_OrdersPaymentMethod->Width = 200;
+			// 
+			// dataGridViewTextBoxColumn_OrdersBillingAddress
+			// 
+			this->dataGridViewTextBoxColumn_OrdersBillingAddress->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersBillingAddress->DataPropertyName = L"billingaddress";
+			this->dataGridViewTextBoxColumn_OrdersBillingAddress->HeaderText = L"Billing Address";
+			this->dataGridViewTextBoxColumn_OrdersBillingAddress->MinimumWidth = 8;
+			this->dataGridViewTextBoxColumn_OrdersBillingAddress->Name = L"dataGridViewTextBoxColumn_OrdersBillingAddress";
+			this->dataGridViewTextBoxColumn_OrdersBillingAddress->Visible = false;
+			this->dataGridViewTextBoxColumn_OrdersBillingAddress->Width = 108;
+			// 
+			// dataGridViewTextBoxColumn_OrdersDeliveryAddress
+			// 
+			this->dataGridViewTextBoxColumn_OrdersDeliveryAddress->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersDeliveryAddress->DataPropertyName = L"deliveryaddress";
+			this->dataGridViewTextBoxColumn_OrdersDeliveryAddress->HeaderText = L"Delivery Address";
+			this->dataGridViewTextBoxColumn_OrdersDeliveryAddress->MinimumWidth = 8;
+			this->dataGridViewTextBoxColumn_OrdersDeliveryAddress->Name = L"dataGridViewTextBoxColumn_OrdersDeliveryAddress";
+			this->dataGridViewTextBoxColumn_OrdersDeliveryAddress->Visible = false;
+			this->dataGridViewTextBoxColumn_OrdersDeliveryAddress->Width = 116;
+			// 
+			// dataGridViewTextBoxColumn_OrdersCustomer
+			// 
+			this->dataGridViewTextBoxColumn_OrdersCustomer->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_OrdersCustomer->DataPropertyName = L"customer";
+			this->dataGridViewTextBoxColumn_OrdersCustomer->HeaderText = L"Customer";
+			this->dataGridViewTextBoxColumn_OrdersCustomer->MinimumWidth = 8;
+			this->dataGridViewTextBoxColumn_OrdersCustomer->Name = L"dataGridViewTextBoxColumn_OrdersCustomer";
+			this->dataGridViewTextBoxColumn_OrdersCustomer->Visible = false;
+			this->dataGridViewTextBoxColumn_OrdersCustomer->Width = 81;
 			// 
 			// MainForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 19);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1093, 496);
+			this->ClientSize = System::Drawing::Size(1144, 620);
 			this->Controls->Add(this->tabControl_Tabs);
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -1616,6 +1919,11 @@ namespace Groupe3ProjetBlocPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer_Orders))->EndInit();
 			this->splitContainer_Orders->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_Orders))->EndInit();
+			this->splitContainer_OrdersEditMain->Panel1->ResumeLayout(false);
+			this->splitContainer_OrdersEditMain->Panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer_OrdersEditMain))->EndInit();
+			this->splitContainer_OrdersEditMain->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_OrdersAddresses))->EndInit();
 			this->splitContainer_OrdersEdit->Panel1->ResumeLayout(false);
 			this->splitContainer_OrdersEdit->Panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer_OrdersEdit))->EndInit();
@@ -1627,6 +1935,7 @@ namespace Groupe3ProjetBlocPOO {
 			this->panel_OrdersStockSearch->ResumeLayout(false);
 			this->panel_OrdersStockSearch->PerformLayout();
 			this->panel_OrdersInfos->ResumeLayout(false);
+			this->panel_ordersDelete->ResumeLayout(false);
 			this->panel_OrdersTotal->ResumeLayout(false);
 			this->panel_OrdersTotal->PerformLayout();
 			this->panel_OrdersTax->ResumeLayout(false);
@@ -1657,11 +1966,19 @@ namespace Groupe3ProjetBlocPOO {
 	protected: virtual System::Void dataGridView_Clients_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) {	}
 	protected: virtual System::Void dataGridView_ClientsAddresses_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) { }
 	protected: virtual System::Void dataGridView_Clients_SelectionChanged(System::Object^ sender, System::EventArgs^ e) { }
-
-
-	protected: virtual System::Void button_OrdersUpdate_Click(System::Object^ sender, System::EventArgs^ e) {}
-	protected: virtual System::Void button_OrdersClientsUpdate_Click(System::Object^ sender, System::EventArgs^ e) {}
-	protected: virtual System::Void button_OrdersStockUpdate_Click(System::Object^ sender, System::EventArgs^ e) {}
-	protected: virtual System::Void dataGridView_Orders_SelectionChanged(System::Object^ sender, System::EventArgs^ e) {}
-};
+	protected: virtual System::Void button_OrdersUpdate_Click(System::Object^ sender, System::EventArgs^ e) { }
+	protected: virtual System::Void dataGridView_Orders_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) { }
+	protected: virtual System::Void button_OrdersClientsUpdate_Click(System::Object^ sender, System::EventArgs^ e) { }
+	protected: virtual System::Void button_OrdersStockUpdate_Click(System::Object^ sender, System::EventArgs^ e) { }
+	protected: virtual System::Void dataGridView_OrdersStock_CellValueChanged(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) { }
+	protected: virtual System::Void dataGridView_OrdersStock_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) { }
+	protected: virtual System::Void button_OrdersAdd_Click(System::Object^ sender, System::EventArgs^ e) { }
+	protected: virtual System::Void dataGridView_OrdersStock_CellEndEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) { }
+	protected: virtual System::Void dataGridView_OrdersClients_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) { }
+	protected: virtual System::Void dataGridView_OrdersAddresses_CellValueChanged(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) { }
+	protected: virtual System::Void dataGridView_OrdersAddresses_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) { }
+	protected: virtual System::Void button_OrdersSubmit_Click(System::Object^ sender, System::EventArgs^ e) { }
+	protected: virtual System::Void button_OrdersDelete_Click(System::Object^ sender, System::EventArgs^ e) { }
+	protected: virtual System::Void dataGridView_Orders_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) { }
+	};
 }

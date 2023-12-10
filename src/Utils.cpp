@@ -168,12 +168,7 @@ void Groupe3ProjetBlocPOO::Utils::ElementsCustomization::SearchInputBox::__onTex
 	this->__dataGridView->DataSource = newDataSet;
 
 	//for (int i = 0; i < scores->Length; i++) {
-	//	if (scores[i][1] == 0) {
-	//		this->__dataGridView->Rows[i]->Visible = false;
-	//	}
-	//	else {
-	//		this->__dataGridView->Rows[i]->Visible = true;
-	//	}
+	//	this->__dataGridView->Rows[i]->Visible = scores[i][1] != 0;
 	//}
 }
 

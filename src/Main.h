@@ -1,11 +1,17 @@
 #pragma once
 
 #include "./Utils.h"
+#include "./Components/DataType/Address.h"
+#include "./Components/DataType/Client.h"
+#include "./Components/DataType/Order.h"
+#include "./Components/DataType/Product.h"
 #include "./Components/Database.h"
 #include "./Services/OrdersService.h"
 #include "./Services/ClientsService.h"
 #include "./Services/ProductsService.h"
 #include "./Components/Forms/MainForm.h"
+#include "./Components/Forms/SettingsForm.h"
+#include "./Components/Forms/StartForm.h"
 
 using namespace System::Data;
 using namespace Groupe3ProjetBlocPOO;
@@ -41,15 +47,25 @@ namespace Groupe3ProjetBlocPOO {
 		void dataGridView_Clients_SelectionChanged(System::Object^ sender, System::EventArgs^ e) override;
 
 		void button_OrdersUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void dataGridView_Orders_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) override;
 		void button_OrdersClientsUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
-		void button_OrdersProductsUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
-		void dataGridView_Orders_SelectionChanged(System::Object^ sender, System::EventArgs^ e) override;
+		void button_OrdersStockUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void dataGridView_OrdersStock_CellValueChanged(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) override;
+		void dataGridView_OrdersStock_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) override;
+		void button_OrdersAdd_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void dataGridView_OrdersStock_CellEndEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) override;
+		void dataGridView_OrdersClients_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) override;
+		void dataGridView_OrdersAddresses_CellValueChanged(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) override;
+		void dataGridView_OrdersAddresses_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) override;
+		void button_OrdersSubmit_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void button_OrdersDelete_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void dataGridView_Orders_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) override;
 
 	private:
 		Database^ __database;
 
 		ClientService^ __clientService;
-		//ProductService^ __productService;
+		ProductService^ __productService;
 		OrderService^ __orderService;
 
 		array<Client^>^ __selectedClients;
@@ -64,22 +80,28 @@ namespace Groupe3ProjetBlocPOO {
 		void __updateClients();
 		void __updateClientsAddresses();
 
-		void __startOrderEdition();
-		void __cancelOrderEdition();
-		void __finishOrderEdition();
-		void __updateOrders();
-		void __updateOrdersClients();
-		void __updateOrdersProducts();
-
-
 		bool __isClientEditing;
 
-		bool __isOrderEditing;
-		bool __isOrderProductsEditing;
+		void __updateOrders();
+		void __cancelOrderEdition();
+		void __finishOrderEdition();
+		void __showOrdersDetails();
+		void __showNewOrdersDetails();
+		void __showOrderPriceDetails(Client^ client, array<Product^>^ products);
 
+		bool __isOrderEditing;
+		bool __isNewOrder;
+		DataGridViewRow^ __selectedOrderRowBeforeEdition;
+		DataGridViewRow^ __selectedOrderClientRow;
+		array<Product^>^ __orderProductsBeforeEdition;
+		array<Address^>^ __orderAddressesBeforeEdition;
 
 		static Dictionary<String^, String^>^ __clientsPropertiesRegex = gcnew Dictionary<String^, String^>();
 		static Dictionary<String^, String^>^ __addressesPropertiesRegex = gcnew Dictionary<String^, String^>();
+		static Dictionary<String^, String^>^ __ordersPropertiesRegex = gcnew Dictionary<String^, String^>();
+		static Dictionary<String^, String^>^ __productsPropertiesRegex = gcnew Dictionary<String^, String^>();
+		static String^ __dateRegex = "^(?:(?:(?:(?<dayoftheweek>lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche) )?(?:(?<day>0[1-9]|[1-2][0-9]|3[0-1]) (?<month>janvier|mars|mai|juillet|ao[uû]t|octobre|d[ée]cembre)|(?<day>0[1-9]|[1-2][0-9]) (?<month>f[ée]vrier)|(?<day>0[1-9]|[1-2][0-9]|30) (?<month>avril|juin|septembre|novembre))(?: (?<year>[0-9]{4}))?)|(?:(?:(?<day>0?[1-9]|[1-2][0-9]|3[0-1])/(?<month>0?[13578]|1[02])|(?<day>0?[1-9]|[1-2][0-9])/(?<month>0?2)|(?<day>0?[1-9]|[1-2][0-9]|30)/(?<month>0?[469]|11))/(?<year>(?:19|20)?[0-9]{2})))$";
+		static array<String^>^ __months = gcnew array<String^> { "janvier", "f[ée]vrier", "mars", "avril", "mai", "juin", "juillet", "ao[uû]t", "septembre", "octobre", "novembre", "d[ée]cembre" };
 	};
 
 }
