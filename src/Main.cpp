@@ -129,7 +129,13 @@ void App::button_ClientsUpdate_Click(System::Object^ sender, System::EventArgs^ 
 	this->__updateClients();
 }
 void App::dataGridView_Clients_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) {
-	if (this->__isClientEditing) {
+	if (this->__isClientEditing && ((
+		this->dataGridView_Clients->SelectedRows->Count != 0 &&
+		!this->dataGridView_Clients->SelectedRows[0]->Equals(this->__selectedClientRow)
+		) || (
+			this->dataGridView_Clients->SelectedCells->Count == 1 &&
+			!this->dataGridView_Clients->Rows[this->dataGridView_Clients->SelectedCells[0]->RowIndex]->Equals(this->__selectedClientRow)
+			))) {
 		if (MessageBox::Show("Editing a current customer, do you want to abandon it?", "Cancel", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
 			this->__cancelClientEdition();
 		}
@@ -318,7 +324,48 @@ void App::button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ 
 		}
 	}
 
+	// ========= Vérification des adresses =========
+	// Check de la ville et du pays
+	for (int i = 0; i < this->dataGridView_ClientsAddresses->Rows->Count; i++) {
+		if (this->dataGridView_ClientsAddresses->Rows[i]->IsNewRow) continue;
+
+		String^ city = this->dataGridView_ClientsAddresses->Rows[i]->Cells[4]->Value->ToString()->Trim();
+		String^ country = this->dataGridView_ClientsAddresses->Rows[i]->Cells[6]->Value->ToString()->Trim();
+
+		int rsp = __clientService->getCityId(city);
+
+		if (rsp == -1) {
+			MessageBox::Show(
+				"The city \"" + city + "\" does not exist.",
+				"Error",
+				MessageBoxButtons::OK,
+				MessageBoxIcon::Error
+			);
+			return;
+		}
+		if (__clientService->getCountryId(country) == -1) {
+			MessageBox::Show(
+				"The country \"" + country + "\" does not exist.",
+				"Error",
+				MessageBoxButtons::OK,
+				MessageBoxIcon::Error
+			);
+			return;
+		}
+		if (__clientService->getCityInCountry(city, country) == -1) {
+			MessageBox::Show(
+				"The city \"" + city + "\" does not exist in the country \"" + country + "\".",
+				"Error",
+				MessageBoxButtons::OK,
+				MessageBoxIcon::Error
+			);
+			return;
+		}
+	}
+
 	Client^ client = gcnew Client(row);
+
+	client = this->__clientService->updateClient(client);
 
 	for (int i = 0; i < this->dataGridView_ClientsAddresses->Rows->Count; i++) {
 		if (this->dataGridView_ClientsAddresses->Rows[i]->IsNewRow) continue;
@@ -326,9 +373,8 @@ void App::button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ 
 	}
 
 	array<Address^>^ addresses = Address::toArray(this->dataGridView_ClientsAddresses->Rows);
-
+	
 	this->__clientService->updateAddresses(addresses);
-	this->__clientService->updateClient(client);
 
 	this->__finishClientEdition();
 }
