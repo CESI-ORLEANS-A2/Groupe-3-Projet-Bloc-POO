@@ -42,6 +42,9 @@ namespace Groupe3ProjetBlocPOO {
 			array<Address^>^ deleteAddresses(int clientId);
 			array<Address^>^ deleteAddresses(array<Address^>^ addresses);
 
+			Address^ getAddress(int id);
+			DataTable^ getCities();
+
 			int getCityId(String^ city);
 			int getCountryId(String^ country);
 

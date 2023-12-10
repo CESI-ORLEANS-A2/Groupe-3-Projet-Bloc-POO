@@ -13,6 +13,7 @@ namespace Groupe3ProjetBlocPOO {
 			public:
 				static array<Order^>^ toArray(DataRowCollection^);
 				static array<Order^>^ toArray(DataGridViewRowCollection^);
+				static array<Order^>^ toArray(DataGridViewSelectedRowCollection^);
 				static DataTable^ toDataTable(array<Order^>^);
 				static DataSet^ toDataSet(array<Order^>^, String^ tableName);
 				static DataGridView^ toDataGridView(array<Order^>^);
@@ -20,26 +21,19 @@ namespace Groupe3ProjetBlocPOO {
 				static DataTable^ dataTableSchema();
 				static DataRow^ newDataRow();
 
-			public:
 				Order();
 				Order(int id);
-				Order(int id, Order^ order);
 				Order(DataRow^);
 				Order(DataGridViewRow^);
+				Order(int id, Order^ order);
 
 				int id();
-				DateTime^ paymentDate();
-				void paymentDate(DateTime^);
-				//void paymentDate(String^);
-				void paymentDate(Int64);
-				DateTime^ creationDate();
-				void creationDate(DateTime^);
-				//void creationDate(String^);
-				void creationDate(Int64);
-				DateTime^ deliveryDate();
-				void deliveryDate(DateTime^);
-				//void deliveryDate(String^);
-				void deliveryDate(Int64);
+				String^ paymentDate();
+				void paymentDate(String^);
+				String^ creationDate();
+				void creationDate(String^);
+				String^ deliveryDate();
+				void deliveryDate(String^);
 				double amount();
 				void amount(double);
 				String^ paymentMethod();
@@ -56,9 +50,9 @@ namespace Groupe3ProjetBlocPOO {
 
 			private:
 				int __id;
-				DateTime^ __paymentDate;
-				DateTime^ __creationDate;
-				DateTime^ __deliveryDate;
+				String^ __paymentDate;
+				String^ __creationDate;
+				String^ __deliveryDate;
 				double __amount;
 				String^ __paymentMethod;
 				int __billingAddress;

@@ -22,6 +22,10 @@ namespace Groupe3ProjetBlocPOO {
 				static Request^ deleteAddresses();
 				static Request^ getCityId(String^ city);
 				static Request^ getCountryId(String^ country);
+
+				static Request^ cleanAddresses();
+
+				static Request^ getCities();
 			};
 		}
 	}

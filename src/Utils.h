@@ -42,6 +42,7 @@ namespace Groupe3ProjetBlocPOO {
 
 			protected:
 				DataGridView^ __dataGridView;
+				//DataSet^ __originalDataSet;
 
 				void __onKeyDown(Object^ sender, KeyEventArgs^ e);
 				void __onTextChanged(Object^ sender, EventArgs^ e);
@@ -63,7 +64,7 @@ namespace Groupe3ProjetBlocPOO {
 				virtual int Compare(Object^ a, Object^ b) {
 					return 0;
 				}
-			private: 
+			private:
 				array<array<int>^>^ __scores;
 			};
 		}
