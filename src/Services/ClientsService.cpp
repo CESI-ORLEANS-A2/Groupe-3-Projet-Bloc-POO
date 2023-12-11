@@ -85,11 +85,11 @@ Client^ Groupe3ProjetBlocPOO::Services::ClientService::createClient(String^ firs
 Client^ Groupe3ProjetBlocPOO::Services::ClientService::updateClient(Client^ client) {
 	int id;
 	if (client->id()) {
-		id = Convert::ToInt32(this->__database->runScalar(ClientRequestMapping::updateClient(client)));
+		this->__database->runScalar(ClientRequestMapping::updateClient(client));
+		id = client->id();
 	}
 	else {
-		this->__database->runScalar(ClientRequestMapping::addClient(client));
-		id = client->id();
+		id = Convert::ToInt32(this->__database->runScalar(ClientRequestMapping::addClient(client)));
 	}
 	return gcnew Client(this->__database->runQuery(ClientRequestMapping::getClient(id))->Rows[0]);
 }
@@ -233,8 +233,22 @@ DataTable^ Groupe3ProjetBlocPOO::Services::ClientService::getCities() {
 }
 
 int Groupe3ProjetBlocPOO::Services::ClientService::getCityId(String^ city) {
-	return Convert::ToInt32(this->__database->runScalar(AddressRequestMapping::getCityId(city)));
+	Object^ r = this->__database->runScalarData(AddressRequestMapping::getCityId(city));
+	if (r == nullptr)
+		return -1;
+	return Convert::ToInt32(r);
 }
+
 int Groupe3ProjetBlocPOO::Services::ClientService::getCountryId(String^ country) {
-	return Convert::ToInt32(this->__database->runScalar(AddressRequestMapping::getCountryId(country)));
+	Object^ r = this->__database->runScalarData(AddressRequestMapping::getCountryId(country));
+	if (r == nullptr)
+		return -1;
+	return Convert::ToInt32(r);
+}
+
+int Groupe3ProjetBlocPOO::Services::ClientService::getCityInCountry(String^ city, String^ country) {
+	Object^ r = this->__database->runScalarData(AddressRequestMapping::getCityInCountry(city, country));
+	if (r == nullptr)
+		return -1;
+	return Convert::ToInt32(r);
 }

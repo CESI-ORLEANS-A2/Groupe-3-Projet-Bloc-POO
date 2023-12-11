@@ -1,6 +1,5 @@
 #include "./ProductsService.h"
 
-
 Groupe3ProjetBlocPOO::Services::ProductService::ProductService(Groupe3ProjetBlocPOO::Components::Database^ database) {
 
 	this->__database = database;
@@ -21,35 +20,44 @@ Groupe3ProjetBlocPOO::Services::ProductService::ProductService(Groupe3ProjetBloc
 	this->__database->createTable("Product", productSchema);
 }
 
-Product^ Groupe3ProjetBlocPOO::Services::ProductService::getProduct(int id)
+Product^ ProductService::getProduct(int id)
 {
-	return gcnew Product(this->__database->runQuery(Groupe3ProjetBlocPOO::Components::Mapping::ProductRequestMapping::getProduct(id))->Rows[0]);
+	return gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(id))->Rows[0]);
 }
 
-Product^ Groupe3ProjetBlocPOO::Services::ProductService::getProduct(Product^ product)
+Product^ ProductService::getProduct(Product^ product)
 {
-	return gcnew Product(this->__database->runQuery(Groupe3ProjetBlocPOO::Components::Mapping::ProductRequestMapping::getProduct(product->id()))->Rows[0]);
+	return gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(product->id()))->Rows[0]);
 }
 
-array<Product^>^ Groupe3ProjetBlocPOO::Services::ProductService::getProducts()
+array<Product^>^ ProductService::getProducts()
 {
-	Data::DataTable^ product = this->__database->runQuery(Groupe3ProjetBlocPOO::Components::Mapping::ProductRequestMapping::getProducts());
+	Data::DataTable^ product = this->__database->runQuery(ProductRequestMapping::getProducts());
 	return Product::toArray(product->Rows);
 }
 
-array<Product^>^ Groupe3ProjetBlocPOO::Services::ProductService::getProducts(int rows)
+array<Product^>^ ProductService::getProducts(int rows)
 {
-	Data::DataTable^ product = this->__database->runQuery(Groupe3ProjetBlocPOO::Components::Mapping::ProductRequestMapping::getProducts(rows));
+	Data::DataTable^ product = this->__database->runQuery(ProductRequestMapping::getProducts(rows));
 	return Product::toArray(product->Rows);
 }
 
-Product^ Groupe3ProjetBlocPOO::Services::ProductService::addProduct(Product^ product) {
-	int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::addProduct(product->name(), product->cost(), product->quantity())));;
+array<Product^>^ ProductService::getOrderProducts(int limit, int id)
+{
+	Data::DataTable^ product = this->__database->runQuery(ProductRequestMapping::getOrderProducts(limit, id));
+	return Product::toArray(product->Rows);
+}
+
+Product^ ProductService::addProduct(Product^ product) {
+	if (product->id() > 0) {
+		return this->updateProduct(product);
+	}
+	int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::addProduct(product->name(), product->cost(), product->quantity(), product->productType())));;
 	return gcnew Product(id, product);
 }
 
-Product^ Groupe3ProjetBlocPOO::Services::ProductService::addProduct(String^ name, float cost, int quantity) {
-	int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::addProduct(name, cost, quantity)));
+Product^ ProductService::addProduct(String^ name, float cost, int quantity, int productType) {
+	int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::addProduct(name, cost, quantity, productType)));
 	Product^ product = gcnew Product(id);
 	product->name(name);
 	product->quantity(quantity);
@@ -73,7 +81,6 @@ Product^ Groupe3ProjetBlocPOO::Services::ProductService::addOrderProduct(int pro
 		}
 	}
 }
-
 array<Product^>^ Groupe3ProjetBlocPOO::Services::ProductService::getOrderProducts(int orderId) {
 	Data::DataTable^ product = this->__database->runQuery(ProductRequestMapping::getOrderProducts(orderId));
 	return Product::toArray(product->Rows);
@@ -84,7 +91,7 @@ array<Product^>^ Groupe3ProjetBlocPOO::Services::ProductService::getOrderProduct
 	return Product::toArray(product->Rows);
 }
 
-Product^ Groupe3ProjetBlocPOO::Services::ProductService::addProduct(String^ name, float cost) {
+Product^ ProductService::addProduct(String^ name, float cost) {
 	int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::addProduct(name, cost)));
 	Product^ product = gcnew Product(id);
 	product->name(name);
@@ -92,26 +99,24 @@ Product^ Groupe3ProjetBlocPOO::Services::ProductService::addProduct(String^ name
 	return product;
 }
 
-
-Product^ Groupe3ProjetBlocPOO::Services::ProductService::updateProduct(Product^ product) {
-	this->__database->runQuery(ProductRequestMapping::updateProduct(product->id(), product->name(), product->cost(), product->quantity()))->Rows[0];
+Product^ ProductService::updateProduct(Product^ product) {
+	int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::updateProduct(product->id(), product->name(), product->cost(), product->quantity(), product->productType())));
 	return gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(product->id()))->Rows[0]);
 }
 
-Product^ Groupe3ProjetBlocPOO::Services::ProductService::updateProduct(int id, String^ name/*, String^ description*/, float cost, int stock) {
-	this->__database->runScalar(ProductRequestMapping::updateProduct(id, name, cost, stock));
+Product^ ProductService::updateProduct(int id, String^ name, String^ description, float cost, int stock, int productType) {
+	this->__database->runQuery(ProductRequestMapping::updateProduct(id, name, cost, stock, productType))->Rows[0];
 	return gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(id))->Rows[0]);
 }
 
-
-Product^ Groupe3ProjetBlocPOO::Services::ProductService::removeProduct(Product^ product) {
-	Product^ newProduct = gcnew Product(Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::deleteProduct(product->id()))));
+Product^ ProductService::removeProduct(Product^ product) {
+	Product^ newProduct = gcnew Product(this->__database->runQuery(ProductRequestMapping::deleteProduct(product->id()))->Rows[0]);
 	return newProduct;
 }
 
-Product^ Groupe3ProjetBlocPOO::Services::ProductService::removeProduct(int id) {
+Product^ ProductService::removeProduct(int id) {
 	Product^ product = gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(id))->Rows[0]);
-	this->__database->runScalar(ProductRequestMapping::deleteProduct(id));
+	this->__database->runQuery(ProductRequestMapping::deleteProduct(id));
 	return product;
 }
 

@@ -62,3 +62,4 @@ namespace Groupe3ProjetBlocPOO {
 using namespace Groupe3ProjetBlocPOO;
 using namespace Groupe3ProjetBlocPOO::Components;
 using namespace Groupe3ProjetBlocPOO::Components::DataType;
+

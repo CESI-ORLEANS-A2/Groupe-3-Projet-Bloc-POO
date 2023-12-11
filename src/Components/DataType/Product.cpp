@@ -6,6 +6,15 @@ Groupe3ProjetBlocPOO::Components::DataType::Product::Product(int id) {
 	this->__id = id;
 }
 
+Groupe3ProjetBlocPOO::Components::DataType::Product::Product(int id, Product^ product)
+{
+	this->__id = id;
+	this->__name = product->name();
+	this->__cost = product->cost();
+	this->__quantity = product->quantity();
+	this->__productType = product->productType();
+}
+
 Groupe3ProjetBlocPOO::Components::DataType::Product::Product(DataRow^ row) {
 	this->__id = Convert::ToInt32(row["id"]);
 	this->__name = Convert::ToString(row["name"]);
@@ -18,7 +27,10 @@ Groupe3ProjetBlocPOO::Components::DataType::Product::Product(DataRow^ row) {
 }
 
 Groupe3ProjetBlocPOO::Components::DataType::Product::Product(DataGridViewRow^ row) {
-	this->__id = Convert::ToInt32(row->Cells[1]->Value->ToString());
+	this->__id = -1;
+  if (row->Cells[0]->Value->ToString()->Length != 0) {
+	    this->__id = Convert::ToInt32(row->Cells[1]->Value->ToString());
+  }
 	this->__name = row->Cells[2]->Value->ToString();
 	//this->__description = row->Cells[0]->Value->ToString();
 	this->__cost = Convert::ToInt32(row->Cells[3]->Value->ToString());
@@ -62,13 +74,6 @@ String^ Groupe3ProjetBlocPOO::Components::DataType::Product::name() {
 	return __name;
 }
 
-//void Groupe3ProjetBlocPOO::Components::DataType::Product::description(String^ description) {
-//	__description = description;
-//}
-
-//String^ Groupe3ProjetBlocPOO::Components::DataType::Product::description() {
-//	return __description;
-//}
 
 void Groupe3ProjetBlocPOO::Components::DataType::Product::cost(float cost) {
 	__cost = cost;
@@ -100,6 +105,21 @@ void Groupe3ProjetBlocPOO::Components::DataType::Product::quantity(int quantity)
 
 int Groupe3ProjetBlocPOO::Components::DataType::Product::quantity(void) {
 	return __quantity;
+}
+
+Windows::Forms::DataGridView^ Product::toDataGridView(array<Product^>^product) {
+	Windows::Forms::DataGridView^ table = gcnew Windows::Forms::DataGridView;
+
+	table->Columns->Add("id", "id");
+	table->Columns->Add("name", "name");
+	table->Columns->Add("cost", "cost");
+	table->Columns->Add("quantity", "quantity");
+	table->Columns->Add("productType", "productType");
+
+	for (int i = 0; i < product->Length; i++) {
+		table->Rows->Add(product[i]->toDataGridViewRow());
+	}
+	return table;
 }
 
 void Groupe3ProjetBlocPOO::Components::DataType::Product::stock(int stock) {

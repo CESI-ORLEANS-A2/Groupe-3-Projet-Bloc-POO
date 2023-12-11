@@ -1,9 +1,9 @@
-#pragma once
-
 #include "../Request.h"
-
+#include <string>
+#pragma once
 using namespace System;
 using namespace System::Windows::Forms;
+
 using namespace MySql::Data::MySqlClient;
 using namespace Groupe3ProjetBlocPOO::Components;
 
@@ -15,9 +15,9 @@ namespace Groupe3ProjetBlocPOO {
 				static Request^ getProducts();
 				static Request^ getProducts(int);
 				static Request^ getProduct(int);
-				static Request^ addProduct(String^, float, int);
+				static Request^ addProduct(String^, float, int, int);
 				static Request^ addProduct(String^, float);
-				static Request^ updateProduct(int, String^, float, int);
+				static Request^ updateProduct(int, String^, float, int, int);
 				static Request^ deleteProduct(int);
 				static Request^ getOrderProducts(int);
 				static Request^ getOrderProducts();

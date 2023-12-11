@@ -1,6 +1,6 @@
 #include "./Address.h"
 
-array<Groupe3ProjetBlocPOO::Components::DataType::Address^>^ Groupe3ProjetBlocPOO::Components::DataType::Address::toArray(DataRowCollection^ collection) {
+array<Groupe3ProjetBlocPOO::Components::DataType::Address^> ^ Groupe3ProjetBlocPOO::Components::DataType::Address::toArray(DataRowCollection ^ collection) {
 	array<Address^>^ addresses = gcnew array<Address^>(collection->Count);
 	for (int i = 0; i < collection->Count; i++) {
 		addresses[i] = gcnew Address(collection[i]);

@@ -28,6 +28,7 @@ namespace Groupe3ProjetBlocPOO {
 				delete components;
 			}
 		}
+    
 	protected: System::Windows::Forms::TabControl^ tabControl_Tabs;
 	protected: System::Windows::Forms::TabPage^ tabPage_Home;
 	protected: System::Windows::Forms::TabPage^ tabPage_Clients;
@@ -86,7 +87,6 @@ namespace Groupe3ProjetBlocPOO {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressZip;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressCountry;
 	private: System::Windows::Forms::SplitContainer^ splitContainer_OrdersEditMain;
-
 	protected: System::Windows::Forms::SplitContainer^ splitContainer_OrdersEdit;
 	protected: System::Windows::Forms::DataGridView^ dataGridView_OrdersClients;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersClientsID;
@@ -143,19 +143,46 @@ namespace Groupe3ProjetBlocPOO {
 	protected: System::Windows::Forms::Label^ label_OrdersNumberOfProductsUnit;
 	protected: System::Windows::Forms::Label^ label_OrdersNumberOfProducts;
 	protected: System::Windows::Forms::Panel^ panel_OrdersGap5;
+	protected: System::Windows::Forms::Panel^ panel_OrdersTotal;
+	protected: System::Windows::Forms::TextBox^ textBox_OrdersTotal;
+	protected: System::Windows::Forms::Label^ label_OrdersTotalUnit;
+	protected: System::Windows::Forms::Label^ label_OrdersTotal;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersID;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersCreationDate;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersCost;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersDeliveryDate;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersPaymentDate;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersPaymentMethod;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsFirstname;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsLastname;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsPhone;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsEmail;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsBirthday;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsLogo;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsCompany;
+	protected: System::Windows::Forms::DataGridView^ dataGridView_ClientsAddresses;
+	protected: System::Windows::Forms::Panel^ panel_Client;
+	protected: System::Windows::Forms::Button^ button_ClientsSubmit;
+	protected: System::Windows::Forms::Button^ button_ClientsDelete;
+	protected: System::Windows::Forms::Panel^ panel_ClientsGap;
+	protected: System::Windows::Forms::Button^ button_ClientsAdd;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressClientId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressNumber;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressStreet;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressCity;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressZip;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_ClientsAddressCountry;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_StockId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_StockName;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_StockCost;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_StockQuantity;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_StockProductType;
 	protected: System::Windows::Forms::Panel^ panel_OrdersInfoButtons;
 	protected: System::Windows::Forms::Button^ button_OrdersQuote;
 	protected: System::Windows::Forms::Button^ button_OrdersSubmit;
 	protected: System::Windows::Forms::DataGridView^ dataGridView_OrdersAddresses;
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesName;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesId;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesClientId;
@@ -164,32 +191,16 @@ namespace Groupe3ProjetBlocPOO {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesCity;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesZip;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAddressesCountry;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersID;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersPaymentDate;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersCreationDate;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersDeliveryDate;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAmount;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersPaymentMethod;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersBillingAddress;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersDeliveryAddress;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersCustomer;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersID;
+  private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersPaymentDate;
+  private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersCreationDate;
+  private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersDeliveryDate;
+  private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersAmount;
+  private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersPaymentMethod;
+  private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersBillingAddress;
+  private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersDeliveryAddress;
+  private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn_OrdersCustomer;
+  
 	protected:
 		/// <summary>
 		/// Required designer variable.
@@ -247,10 +258,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->panel_StockGap = (gcnew System::Windows::Forms::Panel());
 			this->button_StockAdd = (gcnew System::Windows::Forms::Button());
 			this->dataGridView_Stock = (gcnew System::Windows::Forms::DataGridView());
-			this->dataGridViewTextBoxColumn_StockId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_StockName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_StockCost = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn_StockQuantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->panel_StockSearch = (gcnew System::Windows::Forms::Panel());
 			this->button_StockUpdate = (gcnew System::Windows::Forms::Button());
 			this->textBox_StockSearch = (gcnew System::Windows::Forms::TextBox());
@@ -329,6 +336,11 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->panel_OrdersSearch = (gcnew System::Windows::Forms::Panel());
 			this->button_OrdersUpdate = (gcnew System::Windows::Forms::Button());
 			this->textBox_OrdersSearch = (gcnew System::Windows::Forms::TextBox());
+			this->dataGridViewTextBoxColumn_StockId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_StockName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_StockCost = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_StockQuantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn_StockProductType = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn_OrdersID = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn_OrdersPaymentDate = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn_OrdersCreationDate = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -412,7 +424,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->tabPage_Home->Controls->Add(this->linkLabel_AuthorBeboudu32);
 			this->tabPage_Home->Controls->Add(this->linkLabel_Author0xybo);
 			this->tabPage_Home->Controls->Add(this->linkLabel_HomeGap);
-			this->tabPage_Home->Location = System::Drawing::Point(4, 22);
+			this->tabPage_Home->Location = System::Drawing::Point(4, 28);
 			this->tabPage_Home->Name = L"tabPage_Home";
 			this->tabPage_Home->Size = System::Drawing::Size(1136, 594);
 			this->tabPage_Home->TabIndex = 0;
@@ -524,7 +536,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			// 
 			this->tabPage_Clients->Controls->Add(this->splitContainer_Clients);
 			this->tabPage_Clients->Controls->Add(this->panel_ClientSearch);
-			this->tabPage_Clients->Location = System::Drawing::Point(4, 22);
+			this->tabPage_Clients->Location = System::Drawing::Point(4, 28);
 			this->tabPage_Clients->Name = L"tabPage_Clients";
 			this->tabPage_Clients->Size = System::Drawing::Size(1136, 594);
 			this->tabPage_Clients->TabIndex = 1;
@@ -586,7 +598,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridViewTextBoxColumn_ClientsId->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsId->Name = L"dataGridViewTextBoxColumn_ClientsId";
 			this->dataGridViewTextBoxColumn_ClientsId->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_ClientsId->Width = 43;
+			this->dataGridViewTextBoxColumn_ClientsId->Width = 52;
 			// 
 			// dataGridViewTextBoxColumn_ClientsFirstname
 			// 
@@ -620,7 +632,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridViewTextBoxColumn_ClientsEmail->HeaderText = L"Email";
 			this->dataGridViewTextBoxColumn_ClientsEmail->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsEmail->Name = L"dataGridViewTextBoxColumn_ClientsEmail";
-			this->dataGridViewTextBoxColumn_ClientsEmail->Width = 59;
+			this->dataGridViewTextBoxColumn_ClientsEmail->Width = 70;
 			// 
 			// dataGridViewTextBoxColumn_ClientsBirthday
 			// 
@@ -630,7 +642,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridViewTextBoxColumn_ClientsBirthday->HeaderText = L"Birthdate";
 			this->dataGridViewTextBoxColumn_ClientsBirthday->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsBirthday->Name = L"dataGridViewTextBoxColumn_ClientsBirthday";
-			this->dataGridViewTextBoxColumn_ClientsBirthday->Width = 79;
+			this->dataGridViewTextBoxColumn_ClientsBirthday->Width = 94;
 			// 
 			// dataGridViewTextBoxColumn_ClientsLogo
 			// 
@@ -639,7 +651,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridViewTextBoxColumn_ClientsLogo->HeaderText = L"Logo";
 			this->dataGridViewTextBoxColumn_ClientsLogo->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsLogo->Name = L"dataGridViewTextBoxColumn_ClientsLogo";
-			this->dataGridViewTextBoxColumn_ClientsLogo->Width = 58;
+			this->dataGridViewTextBoxColumn_ClientsLogo->Width = 69;
 			// 
 			// dataGridViewTextBoxColumn_ClientsCompany
 			// 
@@ -648,7 +660,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridViewTextBoxColumn_ClientsCompany->HeaderText = L"Company";
 			this->dataGridViewTextBoxColumn_ClientsCompany->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_ClientsCompany->Name = L"dataGridViewTextBoxColumn_ClientsCompany";
-			this->dataGridViewTextBoxColumn_ClientsCompany->Width = 80;
+			this->dataGridViewTextBoxColumn_ClientsCompany->Width = 97;
 			// 
 			// dataGridView_ClientsAddresses
 			// 
@@ -680,6 +692,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridViewTextBoxColumn_ClientsAddressId->Name = L"dataGridViewTextBoxColumn_ClientsAddressId";
 			this->dataGridViewTextBoxColumn_ClientsAddressId->ReadOnly = true;
 			this->dataGridViewTextBoxColumn_ClientsAddressId->Visible = false;
+			this->dataGridViewTextBoxColumn_ClientsAddressId->Width = 125;
 			// 
 			// dataGridViewTextBoxColumn_ClientsAddressClientId
 			// 
@@ -834,7 +847,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->tabPage_Stock->Controls->Add(this->panel_Stock);
 			this->tabPage_Stock->Controls->Add(this->dataGridView_Stock);
 			this->tabPage_Stock->Controls->Add(this->panel_StockSearch);
-			this->tabPage_Stock->Location = System::Drawing::Point(4, 22);
+			this->tabPage_Stock->Location = System::Drawing::Point(4, 28);
 			this->tabPage_Stock->Name = L"tabPage_Stock";
 			this->tabPage_Stock->Size = System::Drawing::Size(1136, 594);
 			this->tabPage_Stock->TabIndex = 2;
@@ -864,6 +877,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->button_StockSubmit->TabIndex = 4;
 			this->button_StockSubmit->Text = L"Submit";
 			this->button_StockSubmit->UseVisualStyleBackColor = true;
+			this->button_StockSubmit->Click += gcnew System::EventHandler(this, &MainForm::button_StockSubmit_Click);
 			// 
 			// button_StockDelete
 			// 
@@ -875,6 +889,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->button_StockDelete->TabIndex = 3;
 			this->button_StockDelete->Text = L"Delete";
 			this->button_StockDelete->UseVisualStyleBackColor = true;
+			this->button_StockDelete->Click += gcnew System::EventHandler(this, &MainForm::button_StockDelete_Click);
 			// 
 			// panel_StockGap
 			// 
@@ -894,6 +909,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->button_StockAdd->TabIndex = 0;
 			this->button_StockAdd->Text = L"Add";
 			this->button_StockAdd->UseVisualStyleBackColor = true;
+			this->button_StockAdd->Click += gcnew System::EventHandler(this, &MainForm::button_StockAdd_Click);
 			// 
 			// dataGridView_Stock
 			// 
@@ -902,9 +918,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->dataGridView_Stock->BackgroundColor = System::Drawing::SystemColors::Menu;
 			this->dataGridView_Stock->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView_Stock->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+			this->dataGridView_Stock->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->dataGridViewTextBoxColumn_StockId,
-					this->dataGridViewTextBoxColumn_StockName, this->dataGridViewTextBoxColumn_StockCost, this->dataGridViewTextBoxColumn_StockQuantity
+					this->dataGridViewTextBoxColumn_StockName, this->dataGridViewTextBoxColumn_StockCost, this->dataGridViewTextBoxColumn_StockQuantity,
+					this->dataGridViewTextBoxColumn_StockProductType
 			});
 			this->dataGridView_Stock->Enabled = false;
 			this->dataGridView_Stock->Location = System::Drawing::Point(0, 34);
@@ -969,6 +986,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->button_StockUpdate->TabIndex = 1;
 			this->button_StockUpdate->Text = L"Update";
 			this->button_StockUpdate->UseVisualStyleBackColor = true;
+			this->button_StockUpdate->Click += gcnew System::EventHandler(this, &MainForm::button_StockUpdate_Click);
 			// 
 			// textBox_StockSearch
 			// 
@@ -985,7 +1003,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			// 
 			this->tabPage_Orders->Controls->Add(this->splitContainer_Orders);
 			this->tabPage_Orders->Controls->Add(this->panel_OrdersSearch);
-			this->tabPage_Orders->Location = System::Drawing::Point(4, 22);
+			this->tabPage_Orders->Location = System::Drawing::Point(4, 28);
 			this->tabPage_Orders->Name = L"tabPage_Orders";
 			this->tabPage_Orders->Size = System::Drawing::Size(1136, 594);
 			this->tabPage_Orders->TabIndex = 3;
@@ -1187,7 +1205,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridViewTextBoxColumn_OrdersClientsID->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_OrdersClientsID->Name = L"dataGridViewTextBoxColumn_OrdersClientsID";
 			this->dataGridViewTextBoxColumn_OrdersClientsID->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersClientsID->Width = 43;
+			this->dataGridViewTextBoxColumn_OrdersClientsID->Width = 52;
 			// 
 			// dataGridViewTextBoxColumn_OrdersClientsLastname
 			// 
@@ -1235,7 +1253,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->Name = L"dataGridViewTextBoxColumn_OrdersClientsBirthdate";
 			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->Width = 79;
+			this->dataGridViewTextBoxColumn_OrdersClientsBirthdate->Width = 94;
 			// 
 			// dataGridViewTextBoxColumn_OrdersClientsLogo
 			// 
@@ -1320,7 +1338,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridViewTextBoxColumn_OrdersStockID->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_OrdersStockID->Name = L"dataGridViewTextBoxColumn_OrdersStockID";
 			this->dataGridViewTextBoxColumn_OrdersStockID->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersStockID->Width = 43;
+			this->dataGridViewTextBoxColumn_OrdersStockID->Width = 52;
 			// 
 			// dataGridViewTextBoxColumn_OrdersStockName
 			// 
@@ -1339,7 +1357,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->dataGridViewTextBoxColumn_OrdersStockCost->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn_OrdersStockCost->Name = L"dataGridViewTextBoxColumn_OrdersStockCost";
 			this->dataGridViewTextBoxColumn_OrdersStockCost->ReadOnly = true;
-			this->dataGridViewTextBoxColumn_OrdersStockCost->Width = 55;
+			this->dataGridViewTextBoxColumn_OrdersStockCost->Width = 66;
 			// 
 			// dataGridViewTextBoxColumn_OrdersStockDescription
 			// 
@@ -1485,7 +1503,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->textBox_OrdersTotal->Location = System::Drawing::Point(64, 0);
 			this->textBox_OrdersTotal->Name = L"textBox_OrdersTotal";
 			this->textBox_OrdersTotal->ReadOnly = true;
-			this->textBox_OrdersTotal->Size = System::Drawing::Size(154, 22);
+			this->textBox_OrdersTotal->Size = System::Drawing::Size(154, 26);
 			this->textBox_OrdersTotal->TabIndex = 7;
 			// 
 			// label_OrdersTotalUnit
@@ -1534,7 +1552,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->textBox_OrdersTax->Location = System::Drawing::Point(64, 0);
 			this->textBox_OrdersTax->Name = L"textBox_OrdersTax";
 			this->textBox_OrdersTax->ReadOnly = true;
-			this->textBox_OrdersTax->Size = System::Drawing::Size(154, 22);
+			this->textBox_OrdersTax->Size = System::Drawing::Size(154, 26);
 			this->textBox_OrdersTax->TabIndex = 7;
 			// 
 			// label_OrdersTaxUnit
@@ -1585,7 +1603,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->textBox_OrdersPercentageDiscount->Location = System::Drawing::Point(64, 0);
 			this->textBox_OrdersPercentageDiscount->Name = L"textBox_OrdersPercentageDiscount";
 			this->textBox_OrdersPercentageDiscount->ReadOnly = true;
-			this->textBox_OrdersPercentageDiscount->Size = System::Drawing::Size(64, 22);
+			this->textBox_OrdersPercentageDiscount->Size = System::Drawing::Size(64, 26);
 			this->textBox_OrdersPercentageDiscount->TabIndex = 10;
 			// 
 			// label_OrdersDiscountUnit1
@@ -1605,7 +1623,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->textBox_OrdersEuroDiscount->Location = System::Drawing::Point(150, 0);
 			this->textBox_OrdersEuroDiscount->Name = L"textBox_OrdersEuroDiscount";
 			this->textBox_OrdersEuroDiscount->ReadOnly = true;
-			this->textBox_OrdersEuroDiscount->Size = System::Drawing::Size(68, 22);
+			this->textBox_OrdersEuroDiscount->Size = System::Drawing::Size(68, 26);
 			this->textBox_OrdersEuroDiscount->TabIndex = 8;
 			// 
 			// label_OrdersDiscountUnit2
@@ -1654,7 +1672,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->textBox_OrdersPrice->Location = System::Drawing::Point(64, 0);
 			this->textBox_OrdersPrice->Name = L"textBox_OrdersPrice";
 			this->textBox_OrdersPrice->ReadOnly = true;
-			this->textBox_OrdersPrice->Size = System::Drawing::Size(154, 22);
+			this->textBox_OrdersPrice->Size = System::Drawing::Size(154, 26);
 			this->textBox_OrdersPrice->TabIndex = 7;
 			// 
 			// label_OrdersPriceUnit
@@ -1703,7 +1721,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->textBox_OrdersNumberOfProducts->Location = System::Drawing::Point(64, 0);
 			this->textBox_OrdersNumberOfProducts->Name = L"textBox_OrdersNumberOfProducts";
 			this->textBox_OrdersNumberOfProducts->ReadOnly = true;
-			this->textBox_OrdersNumberOfProducts->Size = System::Drawing::Size(154, 22);
+			this->textBox_OrdersNumberOfProducts->Size = System::Drawing::Size(154, 26);
 			this->textBox_OrdersNumberOfProducts->TabIndex = 3;
 			// 
 			// label_OrdersNumberOfProductsUnit
@@ -1797,6 +1815,55 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			this->textBox_OrdersSearch->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->textBox_OrdersSearch->Location = System::Drawing::Point(6, 6);
 			this->textBox_OrdersSearch->Name = L"textBox_OrdersSearch";
+			this->textBox_OrdersSearch->Size = System::Drawing::Size(893, 26);
+			this->textBox_OrdersSearch->TabIndex = 0;
+			// 
+			// dataGridViewTextBoxColumn_StockId
+			// 
+			this->dataGridViewTextBoxColumn_StockId->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_StockId->DataPropertyName = L"id";
+			this->dataGridViewTextBoxColumn_StockId->FillWeight = 20;
+			this->dataGridViewTextBoxColumn_StockId->HeaderText = L"ID";
+			this->dataGridViewTextBoxColumn_StockId->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn_StockId->Name = L"dataGridViewTextBoxColumn_StockId";
+			this->dataGridViewTextBoxColumn_StockId->ReadOnly = true;
+			this->dataGridViewTextBoxColumn_StockId->Width = 52;
+			// 
+			// dataGridViewTextBoxColumn_StockName
+			// 
+			this->dataGridViewTextBoxColumn_StockName->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->dataGridViewTextBoxColumn_StockName->DataPropertyName = L"name";
+			this->dataGridViewTextBoxColumn_StockName->HeaderText = L"Name";
+			this->dataGridViewTextBoxColumn_StockName->MinimumWidth = 400;
+			this->dataGridViewTextBoxColumn_StockName->Name = L"dataGridViewTextBoxColumn_StockName";
+			// 
+			// dataGridViewTextBoxColumn_StockCost
+			// 
+			this->dataGridViewTextBoxColumn_StockCost->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_StockCost->DataPropertyName = L"cost";
+			this->dataGridViewTextBoxColumn_StockCost->FillWeight = 20;
+			this->dataGridViewTextBoxColumn_StockCost->HeaderText = L"Cost";
+			this->dataGridViewTextBoxColumn_StockCost->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn_StockCost->Name = L"dataGridViewTextBoxColumn_StockCost";
+			this->dataGridViewTextBoxColumn_StockCost->Width = 66;
+			// 
+			// dataGridViewTextBoxColumn_StockQuantity
+			// 
+			this->dataGridViewTextBoxColumn_StockQuantity->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			this->dataGridViewTextBoxColumn_StockQuantity->DataPropertyName = L"quantity";
+			this->dataGridViewTextBoxColumn_StockQuantity->FillWeight = 20;
+			this->dataGridViewTextBoxColumn_StockQuantity->HeaderText = L"Quantity";
+			this->dataGridViewTextBoxColumn_StockQuantity->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn_StockQuantity->Name = L"dataGridViewTextBoxColumn_StockQuantity";
+			this->dataGridViewTextBoxColumn_StockQuantity->Width = 92;
+			// 
+			// dataGridViewTextBoxColumn_StockProductType
+			// 
+			this->dataGridViewTextBoxColumn_StockProductType->DataPropertyName = L"producttype";
+			this->dataGridViewTextBoxColumn_StockProductType->HeaderText = L"ProductType";
+			this->dataGridViewTextBoxColumn_StockProductType->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn_StockProductType->Name = L"dataGridViewTextBoxColumn_StockProductType";
+			this->dataGridViewTextBoxColumn_StockProductType->Width = 125;
 			this->textBox_OrdersSearch->Size = System::Drawing::Size(1022, 22);
 			this->textBox_OrdersSearch->TabIndex = 0;
 			// 
@@ -1887,7 +1954,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			// 
 			// MainForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 19);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1144, 620);
 			this->Controls->Add(this->tabControl_Tabs);
@@ -1966,6 +2033,14 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 	protected: virtual System::Void dataGridView_Clients_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) {	}
 	protected: virtual System::Void dataGridView_ClientsAddresses_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) { }
 	protected: virtual System::Void dataGridView_Clients_SelectionChanged(System::Object^ sender, System::EventArgs^ e) { }
+
+	protected: virtual System::Void button_StockUpdate_Click(System::Object^ sender, System::EventArgs^ e) {}
+	protected: virtual System::Void button_StockAdd_Click(System::Object^ sender, System::EventArgs^ e) {}
+	protected: virtual System::Void button_StockDelete_Click(System::Object^ sender, System::EventArgs^ e) {}
+	protected: virtual System::Void button_StockSubmit_Click(System::Object^ sender, System::EventArgs^ e) {}
+	protected: virtual System::Void dataGridView_Stock_SelectionChanged(System::Object^ sender, System::EventArgs^ e) {}
+	protected: virtual System::Void dataGridView_Stock_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) {}
+
 	protected: virtual System::Void button_OrdersUpdate_Click(System::Object^ sender, System::EventArgs^ e) { }
 	protected: virtual System::Void dataGridView_Orders_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) { }
 	protected: virtual System::Void button_OrdersClientsUpdate_Click(System::Object^ sender, System::EventArgs^ e) { }
@@ -1980,5 +2055,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 	protected: virtual System::Void button_OrdersSubmit_Click(System::Object^ sender, System::EventArgs^ e) { }
 	protected: virtual System::Void button_OrdersDelete_Click(System::Object^ sender, System::EventArgs^ e) { }
 	protected: virtual System::Void dataGridView_Orders_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) { }
+
 	};
 }

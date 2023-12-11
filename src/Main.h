@@ -46,6 +46,13 @@ namespace Groupe3ProjetBlocPOO {
 		void button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ e) override;
 		void dataGridView_Clients_SelectionChanged(System::Object^ sender, System::EventArgs^ e) override;
 
+		void button_StockUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void button_StockAdd_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void button_StockDelete_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void button_StockSubmit_Click(System::Object^ sender, System::EventArgs^ e) override;
+		void dataGridView_Stock_CellBeginEdit(System::Object^ sender, System::Windows::Forms::DataGridViewCellCancelEventArgs^ e) override;
+		void dataGridView_Stock_SelectionChanged(System::Object^ sender, System::EventArgs^ e) override;
+
 		void button_OrdersUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
 		void dataGridView_Orders_RowHeaderMouseClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) override;
 		void button_OrdersClientsUpdate_Click(System::Object^ sender, System::EventArgs^ e) override;
@@ -82,6 +89,13 @@ namespace Groupe3ProjetBlocPOO {
 
 		bool __isClientEditing;
 
+		void __startProductEdition();
+		void __cancelProductEdition();
+		void __finishProductEdition();
+		void __updateProducts();
+
+		bool __isProductEditing;
+
 		void __updateOrders();
 		void __cancelOrderEdition();
 		void __finishOrderEdition();
@@ -100,9 +114,8 @@ namespace Groupe3ProjetBlocPOO {
 		static Dictionary<String^, String^>^ __addressesPropertiesRegex = gcnew Dictionary<String^, String^>();
 		static Dictionary<String^, String^>^ __ordersPropertiesRegex = gcnew Dictionary<String^, String^>();
 		static Dictionary<String^, String^>^ __productsPropertiesRegex = gcnew Dictionary<String^, String^>();
-		static String^ __dateRegex = "^(?:(?:(?:(?<dayoftheweek>lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche) )?(?:(?<day>0[1-9]|[1-2][0-9]|3[0-1]) (?<month>janvier|mars|mai|juillet|ao[uû]t|octobre|d[ée]cembre)|(?<day>0[1-9]|[1-2][0-9]) (?<month>f[ée]vrier)|(?<day>0[1-9]|[1-2][0-9]|30) (?<month>avril|juin|septembre|novembre))(?: (?<year>[0-9]{4}))?)|(?:(?:(?<day>0?[1-9]|[1-2][0-9]|3[0-1])/(?<month>0?[13578]|1[02])|(?<day>0?[1-9]|[1-2][0-9])/(?<month>0?2)|(?<day>0?[1-9]|[1-2][0-9]|30)/(?<month>0?[469]|11))/(?<year>(?:19|20)?[0-9]{2})))$";
-		static array<String^>^ __months = gcnew array<String^> { "janvier", "f[ée]vrier", "mars", "avril", "mai", "juin", "juillet", "ao[uû]t", "septembre", "octobre", "novembre", "d[ée]cembre" };
+		static String^ __dateRegex = "^(?:(?:(?:(?<dayoftheweek>lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche) )?(?:(?<day>0[1-9]|[1-2][0-9]|3[0-1]) (?<month>janvier|mars|mai|juillet|ao[uÃ»]t|octobre|d[Ã©e]cembre)|(?<day>0[1-9]|[1-2][0-9]) (?<month>f[Ã©e]vrier)|(?<day>0[1-9]|[1-2][0-9]|30) (?<month>avril|juin|septembre|novembre))(?: (?<year>[0-9]{4}))?)|(?:(?:(?<day>0?[1-9]|[1-2][0-9]|3[0-1])/(?<month>0?[13578]|1[02])|(?<day>0?[1-9]|[1-2][0-9])/(?<month>0?2)|(?<day>0?[1-9]|[1-2][0-9]|30)/(?<month>0?[469]|11))/(?<year>(?:19|20)?[0-9]{2})))$";
+		static array<String^>^ __months = gcnew array<String^> { "janvier", "f[Ã©e]vrier", "mars", "avril", "mai", "juin", "juillet", "ao[uÃ»]t", "septembre", "octobre", "novembre", "d[Ã©e]cembre" };
 	};
 
 }
-

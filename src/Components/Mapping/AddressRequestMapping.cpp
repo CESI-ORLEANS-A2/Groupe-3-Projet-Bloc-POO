@@ -123,6 +123,15 @@ Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getCo
 	return gcnew Request(cmd);
 }
 
+// Get if the city is in the country
+Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::getCityInCountry(String^ city, String^ country) {
+	MySqlCommand^ cmd = gcnew MySqlCommand();
+	cmd->CommandText = "SELECT cities.id FROM cities WHERE cities.name = @city AND cities.country_id = (SELECT countries.id FROM countries WHERE countries.name = @country)";
+	cmd->Parameters->AddWithValue("@city", city);
+	cmd->Parameters->AddWithValue("@country", country);
+	return gcnew Request(cmd);
+}
+
 Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::cleanAddresses() {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText =

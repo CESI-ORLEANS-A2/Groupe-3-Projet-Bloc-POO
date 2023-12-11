@@ -34,12 +34,21 @@ Object^ Groupe3ProjetBlocPOO::Components::Database::runScalar(String^ query) {
 	Object^ result = cmd->ExecuteScalar();
 	return result;
 }
+
 Object^ Groupe3ProjetBlocPOO::Components::Database::runScalar(Request^ query) {
 	MySqlCommand^ cmd = query->mySqlCmd();
 	//cmd->CommandText += "SELECT LAST_INSERT_ID();";
 	cmd->Connection = this->__connection;
 	cmd->ExecuteScalar();
-	return  cmd->LastInsertedId;
+	return cmd->LastInsertedId;
+}
+
+Object^ Groupe3ProjetBlocPOO::Components::Database::runScalarData(Request^ query) {
+	MySqlCommand^ cmd = query->mySqlCmd();
+	//cmd->CommandText += "SELECT LAST_INSERT_ID();";
+	cmd->Connection = this->__connection;
+	Object^ r = cmd->ExecuteScalar();
+	return r;
 }
 
 void Groupe3ProjetBlocPOO::Components::Database::createTable(String^ table, Dictionary<String^, String^>^ schema) {

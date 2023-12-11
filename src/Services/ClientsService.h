@@ -48,6 +48,8 @@ namespace Groupe3ProjetBlocPOO {
 			int getCityId(String^ city);
 			int getCountryId(String^ country);
 
+			int getCityInCountry(String^ city, String^ country);
+
 		private:
 			Database^ __database;
 		};

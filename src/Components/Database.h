@@ -19,6 +19,7 @@ namespace Groupe3ProjetBlocPOO {
 			Data::DataTable^ runQuery(String^ query);
 			Object^ runScalar(String^ query);
 			Object^ runScalar(Request^);
+			Object^ runScalarData(Request^ query);
 		};
 	}
 }
