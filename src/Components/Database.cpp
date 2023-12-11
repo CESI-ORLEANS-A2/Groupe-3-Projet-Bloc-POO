@@ -11,6 +11,9 @@ Groupe3ProjetBlocPOO::Components::Database::Database(String^ connectionString) {
 			"Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 }
+Groupe3ProjetBlocPOO::Components::Database::Database(String^ server, String^ username, String^ password){
+	this->__connection = gcnew MySqlConnection("server=" + server + ";user=" + username + ";password=" + password + ";");
+}
 DataTable^ Groupe3ProjetBlocPOO::Components::Database::runQuery(String^ query) {
 	Data::DataSet^ dataset = gcnew DataSet();
 	MySqlDataAdapter^ adapter = gcnew MySqlDataAdapter();
@@ -49,6 +52,18 @@ Object^ Groupe3ProjetBlocPOO::Components::Database::runScalarData(Request^ query
 	cmd->Connection = this->__connection;
 	Object^ r = cmd->ExecuteScalar();
 	return r;
+}
+
+bool Groupe3ProjetBlocPOO::Components::Database::testConnection(void){
+	try {
+		this->__connection->Open();
+		return true;
+	}
+	catch (MySql::Data::MySqlClient::MySqlException^ ex) {
+		MessageBox::Show("Error" + ex->Number + " has occurred: " + ex->Message,
+						"Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		return false;
+	}
 }
 
 void Groupe3ProjetBlocPOO::Components::Database::createTable(String^ table, Dictionary<String^, String^>^ schema) {

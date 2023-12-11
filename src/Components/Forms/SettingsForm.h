@@ -11,6 +11,8 @@ using namespace System::Drawing;
 using namespace System::Text::RegularExpressions;
 using namespace System::Configuration;
 
+using namespace Groupe3ProjetBlocPOO::Components;
+
 namespace Groupe3ProjetBlocPOO {
 	/// <summary>
 	/// Summary for SettingsForm
@@ -245,13 +247,12 @@ namespace Groupe3ProjetBlocPOO {
 			String^ username = textBox_username->Text->Trim();
 			String^ password = textBox_password->Text->Trim();
 
-			/*database = gcnew Database(hostname, username, password);
-			int code = database->testConnection();*/
+			Database^ database = gcnew Database(hostname, username, password);
+			int code = database->testConnection();
 
-			int code = 0;
-
-			if (code) {
+			if (!code) {
 				this->panel_testIcon->BackgroundImage = images[1];
+				return;
 			}
 
 			this->panel_testIcon->BackgroundImage = images[0];

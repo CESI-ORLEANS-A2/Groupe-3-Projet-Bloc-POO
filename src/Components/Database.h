@@ -14,12 +14,14 @@ namespace Groupe3ProjetBlocPOO {
 			MySqlConnection^ __connection;
 		public:
 			Database(String^ connectionString);
+			Database(String^ server, String^ username, String^ password);
 			void createTable(String^, Dictionary<String^, String^>^ schema);
 			Data::DataTable^ runQuery(Request^);
 			Data::DataTable^ runQuery(String^ query);
 			Object^ runScalar(String^ query);
 			Object^ runScalar(Request^);
 			Object^ runScalarData(Request^ query);
+			bool testConnection(void);
 		};
 	}
 }
