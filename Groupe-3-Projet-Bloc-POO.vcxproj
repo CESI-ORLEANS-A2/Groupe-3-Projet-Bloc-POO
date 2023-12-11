@@ -117,6 +117,9 @@
     <Link>
       <AdditionalDependencies />
     </Link>
+    <PostBuildEvent>
+      <Command>copy app.config "$(TargetPath).config"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
@@ -196,6 +199,8 @@
   <ItemGroup>
     <Image Include="baseline_check_circle_outline_black_36dp.png" />
     <Image Include="baseline_more_horiz_black_36dp.png" />
+    <Image Include="CancelIconOutLined_36x36.png" />
+    <Image Include="CheckIconOutLined_36x36.png" />
     <Image Include="outline_cancel_black_36dp.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
