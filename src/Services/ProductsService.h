@@ -22,12 +22,12 @@ namespace Groupe3ProjetBlocPOO {
 			array<Product^>^ getProducts(int);
 			Product^ addProduct(Product^);
 			Product^ addProduct(String^, float);
-			Product^ addProduct(String^, float, int);
+			Product^ addProduct(String^, float, int, int);
 			Product^ addOrderProduct(int, int);
 			array<Product^>^ getOrderProducts(int orderId);
 			array<Product^>^ getOrderProducts();
 			Product^ updateProduct(Product^);
-			Product^ updateProduct(int, String^/*, String^*/, float, int);
+			Product^ updateProduct(int, String^/*, String^*/, float, int, int);
 			Product^ removeProduct(Product^);
 			Product^ removeProduct(int);
 			Product^ removeOrderProduct(int);

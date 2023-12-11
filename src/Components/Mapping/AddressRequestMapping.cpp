@@ -69,7 +69,6 @@ Request^ Groupe3ProjetBlocPOO::Components::Mapping::AddressRequestMapping::addAd
 
 	cmd->CommandText += "))";
 
-	cmd->Parameters->AddWithValue("@client_id", client_id);
 	cmd->Parameters->AddWithValue("@number", number);
 	cmd->Parameters->AddWithValue("@street", street);
 	cmd->Parameters->AddWithValue("@city", city);

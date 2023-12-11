@@ -20,7 +20,7 @@ App::App() {
 
 	App::__clientsPropertiesRegex->Add("firstname", "^[a-z0-9\\s\\-'`]+$");
 	App::__clientsPropertiesRegex->Add("lastname", "^[a-z0-9\\s\\-'`]+$");
-	App::__clientsPropertiesRegex->Add("phone", "^[0-9\s]+$");
+	App::__clientsPropertiesRegex->Add("phone", "^[0-9\\s]+$");
 	App::__clientsPropertiesRegex->Add("email", "^[a-z0-9\\.-_]+@[a-z0-9\\.]+\\.[a-z0-9]{2,3}$");
 	App::__clientsPropertiesRegex->Add("birthdate", App::__dateRegex);
 	App::__clientsPropertiesRegex->Add("logo", "^[^']*$");
@@ -30,6 +30,7 @@ App::App() {
 	App::__addressesPropertiesRegex->Add("street", "^[^']+$");
 	App::__addressesPropertiesRegex->Add("city", "^[^']+$");
 	App::__addressesPropertiesRegex->Add("zip", "^[0-9]{5}$");
+	App::__addressesPropertiesRegex->Add("country", "^[^']+$");
 
 	App::__ordersPropertiesRegex->Add("paymentDate", App::__dateRegex);
 	App::__ordersPropertiesRegex->Add("deliveryDate", App::__dateRegex);
@@ -42,7 +43,7 @@ App::App() {
 	App::__productsPropertiesRegex->Add("tax", "^[0-9]+$");
 	App::__productsPropertiesRegex->Add("stock", "^[0-9]+$");
 	App::__productsPropertiesRegex->Add("quantity", "^[0-9]+$");
-	App::__productsPropertiesRegex->Add("producttype", "^[1-4]{1}$");
+	App::__productsPropertiesRegex->Add("producttype", "^[0-9]+$");
 
 	// Initialisation de la connexion à la base de données
 	this->__database = gcnew Database(ConfigurationManager::AppSettings["connection_string"]);
@@ -400,7 +401,7 @@ void App::button_ClientsSubmit_Click(System::Object^ sender, System::EventArgs^ 
 	}
 
 	array<Address^>^ addresses = Address::toArray(this->dataGridView_ClientsAddresses->Rows);
-	
+
 	this->__clientService->updateAddresses(addresses);
 
 	this->__finishClientEdition();
@@ -534,7 +535,7 @@ void App::__updateProducts() {
 	this->dataGridView_Stock->Refresh();
 }
 
-void App::button_StockUpdate_Click(System::Object^ sender, System::EventArgs^ e){
+void App::button_StockUpdate_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->__updateProducts();
 }
 
@@ -570,7 +571,7 @@ void App::button_StockDelete_Click(System::Object^ sender, System::EventArgs^ e)
 	}
 }
 
-void Groupe3ProjetBlocPOO::App::button_StockSubmit_Click(System::Object^ sender, System::EventArgs^ e){
+void Groupe3ProjetBlocPOO::App::button_StockSubmit_Click(System::Object^ sender, System::EventArgs^ e) {
 	DataGridViewRow^ row;
 	if (this->dataGridView_Stock->SelectedRows->Count == 0) {
 		if (this->dataGridView_Stock->SelectedCells->Count != 1) return;
@@ -585,6 +586,7 @@ void Groupe3ProjetBlocPOO::App::button_StockSubmit_Click(System::Object^ sender,
 	// ========= Vérification du produit =========
 	for (int j = 0; j < this->dataGridView_Stock->Columns->Count; j++) {
 		if (j == 0) continue; // On ne vérifie pas l'id (auto-incrémenté)
+		if (j == 3 || j == 4 || j == 6) continue;
 
 		// Récupération de la valeur de la cellule (en string)
 		String^ value = row->Cells[j]->Value->ToString()->Trim();
@@ -811,7 +813,7 @@ void App::dataGridView_OrdersStock_CellValueChanged(System::Object^ sender, Syst
 
 	DataGridViewRow^ row = this->dataGridView_OrdersStock->Rows[e->RowIndex];
 	int value = Convert::ToInt32(row->Cells[e->ColumnIndex]->Value->ToString());
-	int productId = Convert::ToInt32(row->Cells[1]->Value->ToString());
+	int productId = Convert::ToInt32(row->Cells[0]->Value->ToString());
 
 	if (this->__isNewOrder) {
 		row->DefaultCellStyle->BackColor = Color::FromArgb(252, 214, 99);
@@ -984,7 +986,7 @@ void App::button_OrdersSubmit_Click(System::Object^ sender, System::EventArgs^ e
 	// ========= Vérification des produits =========
 	for (int i = 0; i < this->dataGridView_OrdersStock->Rows->Count; i++) {
 
-		String^ quantityString = this->dataGridView_OrdersStock->Rows[i]->Cells[6]->Value->ToString();
+		String^ quantityString = this->dataGridView_OrdersStock->Rows[i]->Cells[5]->Value->ToString();
 
 		if (!Regex::IsMatch(quantityString,
 			this->__productsPropertiesRegex["quantity"],
@@ -998,12 +1000,12 @@ void App::button_OrdersSubmit_Click(System::Object^ sender, System::EventArgs^ e
 			return;
 		}
 
-		int stock = Convert::ToInt32(this->dataGridView_OrdersStock->Rows[i]->Cells[7]->Value->ToString());
+		int stock = Convert::ToInt32(this->dataGridView_OrdersStock->Rows[i]->Cells[6]->Value->ToString());
 		int quantity = Convert::ToInt32(quantityString);
 
 		if (stock < quantity) {
 			MessageBox::Show(
-				"The quantity of the product " + this->dataGridView_OrdersStock->Rows[i]->Cells[2]->Value->ToString() + " is too high.",
+				"The quantity of the product " + this->dataGridView_OrdersStock->Rows[i]->Cells[1]->Value->ToString() + " is too high.",
 				"Error",
 				MessageBoxButtons::OK,
 				MessageBoxIcon::Error

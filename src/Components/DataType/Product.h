@@ -14,6 +14,7 @@ namespace Groupe3ProjetBlocPOO {
 				//String^ __description;
 				float __cost;
 				String^ __type;
+				int __productType;
 				float __tax;
 				int __quantity;
 				int __stock;
@@ -37,6 +38,8 @@ namespace Groupe3ProjetBlocPOO {
 				float cost();
 				void type(String^);
 				String^ type();
+				void productType(int);
+				int productType();
 				void tax(float);
 				float tax();
 				void quantity(int);
@@ -54,6 +57,8 @@ namespace Groupe3ProjetBlocPOO {
 
 				static DataTable^ dataTableSchema();
 				static DataRow^ newDataRow();
+				Windows::Forms::DataGridView^ toDataGridView(array<Product^>^ product);
+				Windows::Forms::DataGridViewRow^ toDataGridViewRow();
 			};
 		}
 	}

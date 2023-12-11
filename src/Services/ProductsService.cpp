@@ -42,12 +42,6 @@ array<Product^>^ ProductService::getProducts(int rows)
 	return Product::toArray(product->Rows);
 }
 
-array<Product^>^ ProductService::getOrderProducts(int limit, int id)
-{
-	Data::DataTable^ product = this->__database->runQuery(ProductRequestMapping::getOrderProducts(limit, id));
-	return Product::toArray(product->Rows);
-}
-
 Product^ ProductService::addProduct(Product^ product) {
 	if (product->id() > 0) {
 		return this->updateProduct(product);
@@ -104,7 +98,7 @@ Product^ ProductService::updateProduct(Product^ product) {
 	return gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(product->id()))->Rows[0]);
 }
 
-Product^ ProductService::updateProduct(int id, String^ name, String^ description, float cost, int stock, int productType) {
+Product^ ProductService::updateProduct(int id, String^ name/*, String^ description*/, float cost, int stock, int productType) {
 	this->__database->runQuery(ProductRequestMapping::updateProduct(id, name, cost, stock, productType))->Rows[0];
 	return gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(id))->Rows[0]);
 }

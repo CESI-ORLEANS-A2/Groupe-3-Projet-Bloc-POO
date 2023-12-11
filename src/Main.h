@@ -78,6 +78,9 @@ namespace Groupe3ProjetBlocPOO {
 		array<Client^>^ __selectedClients;
 		DataGridViewRow^ __selectedClientRow;
 
+		Product^ __selectedProduct;
+		DataGridViewRow^ __selectedProductRow;
+
 		array<Order^>^ __selectedOrders;
 		DataGridViewRow^ __selectedOrderRow;
 

@@ -133,7 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Components\DataType\Product.cpp" />
-    <ClCompile Include="src\Components\Mapping\AdressRequestMapping.cpp" />
     <ClCompile Include="src\Components\Database.cpp" />
     <ClCompile Include="src\Components\DataType\Address.cpp" />
     <ClCompile Include="src\Components\DataType\Client.cpp" />
@@ -155,7 +154,6 @@
   <ItemGroup>
     <ClInclude Include="src\Components\DataType\DataType.h" />
     <ClInclude Include="src\Components\DataType\Product.h" />
-    <ClInclude Include="src\Components\Mapping\AdressRequestMapping.h" />
     <ClInclude Include="src\Components\Database.h" />
     <ClInclude Include="src\Components\DataType\Address.h" />
     <ClInclude Include="src\Components\DataType\Client.h" />

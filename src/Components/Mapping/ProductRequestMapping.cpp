@@ -1,17 +1,17 @@
 #include "./ProductRequestMapping.h"
 
-Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::getProducts(){
+Groupe3ProjetBlocPOO::Components::Request^ Groupe3ProjetBlocPOO::Components::Mapping::ProductRequestMapping::getProducts() {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
-	cmd->CommandText = 
+	cmd->CommandText =
 		"SELECT * FROM Product "
 		"JOIN ProductType "
 		"	ON Product.productType = ProductType.productType";
 	return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd);
 }
 
-Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::getProducts(int rows) {
+Groupe3ProjetBlocPOO::Components::Request^ Groupe3ProjetBlocPOO::Components::Mapping::ProductRequestMapping::getProducts(int rows) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
-	cmd->CommandText = 
+	cmd->CommandText =
 		"SELECT * FROM Product "
 		"JOIN ProductType "
 		"	ON Product.productType = ProductType.productType "
@@ -112,14 +112,14 @@ Request^ Groupe3ProjetBlocPOO::Components::Mapping::ProductRequestMapping::delet
 	}
 }
 
-Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::getProduct(int id) {
+Groupe3ProjetBlocPOO::Components::Request^ Groupe3ProjetBlocPOO::Components::Mapping::ProductRequestMapping::getProduct(int id) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText = "SELECT * FROM Product JOIN ProductType ON Product.productType= ProductType.productType WHERE id = @id";
 	cmd->Parameters->AddWithValue("@id", id);
 	return gcnew Groupe3ProjetBlocPOO::Components::Request(cmd);
 }
 
-Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::addProduct(String^ name, float cost, int quantity, int productType) {
+Groupe3ProjetBlocPOO::Components::Request^ Groupe3ProjetBlocPOO::Components::Mapping::ProductRequestMapping::addProduct(String^ name, float cost, int quantity, int productType) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText = "INSERT INTO Product (name, cost, quantity, productType) VALUES(@name, @cost, @quantity, @productType)";
 	cmd->Parameters->AddWithValue("@name", name);
@@ -130,7 +130,7 @@ Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::addProduct(Str
 
 }
 
-Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::addProduct(String^ name, float cost) {
+Groupe3ProjetBlocPOO::Components::Request^ Groupe3ProjetBlocPOO::Components::Mapping::ProductRequestMapping::addProduct(String^ name, float cost) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText = "INSERT INTO Product VALUES(name,description,cost,quantity)";
 	cmd->Parameters->AddWithValue("@name", name);
@@ -139,7 +139,7 @@ Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::addProduct(Str
 
 }
 
-Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::updateProduct(int id, String^ name, float cost, int quantity, int productType) {
+Groupe3ProjetBlocPOO::Components::Request^ Groupe3ProjetBlocPOO::Components::Mapping::ProductRequestMapping::updateProduct(int id, String^ name, float cost, int quantity, int productType) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText = "UPDATE product SET name = @name, cost = @cost, quantity = @quantity, productType = @productType WHERE id = @id;";
 	cmd->Parameters->AddWithValue("@name", name);
@@ -151,7 +151,7 @@ Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::updateProduct(
 
 }
 
-Groupe3ProjetBlocPOO::Components::Request^ ProductRequestMapping::deleteProduct(int id) {
+Groupe3ProjetBlocPOO::Components::Request^ Groupe3ProjetBlocPOO::Components::Mapping::ProductRequestMapping::deleteProduct(int id) {
 	MySqlCommand^ cmd = gcnew MySqlCommand();
 	cmd->CommandText = "DELETE FROM Product WHERE id = @id ";
 	cmd->Parameters->AddWithValue("@id", id);
