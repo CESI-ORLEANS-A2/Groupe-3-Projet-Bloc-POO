@@ -82,13 +82,15 @@ Groupe3ProjetBlocPOO::Components::DataType::Address::Address() {
 	this->__id = -1;
 }
 Groupe3ProjetBlocPOO::Components::DataType::Address::Address(DataRow^ row) {
-	this->__id = Convert::ToInt32(row->ItemArray[0]);
-	this->__clientId = Convert::ToInt32(row->ItemArray[1]);
-	this->__number = Convert::ToString(row->ItemArray[2]);
-	this->__street = Convert::ToString(row->ItemArray[3]);
-	this->__city = Convert::ToString(row->ItemArray[4]);
-	this->__zip = Convert::ToInt32(row->ItemArray[5]);
-	this->__country = Convert::ToString(row->ItemArray[6]);
+	if (row->Table->Columns->Contains("id") && row["id"]->ToString() != "")
+		this->__id = Convert::ToInt32(row["id"]);
+	if (row->Table->Columns->Contains("clientId") && row["clientId"]->ToString() != "")
+		this->__clientId = Convert::ToInt32(row["clientId"]);
+	this->__number = Convert::ToString(row["number"]);
+	this->__street = Convert::ToString(row["street"]);
+	this->__city = Convert::ToString(row["city"]);
+	this->__zip = Convert::ToInt32(row["zip"]);
+	this->__country = Convert::ToString(row["country"]);
 }
 Groupe3ProjetBlocPOO::Components::DataType::Address::Address(DataGridViewRow^ row) {
 	if (row->Cells[0]->Value->ToString() != "") {
@@ -103,6 +105,19 @@ Groupe3ProjetBlocPOO::Components::DataType::Address::Address(DataGridViewRow^ ro
 	this->__zip = Convert::ToInt32(row->Cells[5]->Value);
 	this->__country = Convert::ToString(row->Cells[6]->Value);
 }
+//Groupe3ProjetBlocPOO::Components::DataType::Address::Address(DataGridViewRow^ row, String^prefix) {
+//	if (row->Cells[prefix + "Id"]->Value->ToString() != "") {
+//		this->__id = Convert::ToInt32(row->Cells[prefix+"Id"]->Value);
+//	}
+//	if (row->Cells[prefix + "ClientId"]->Value->ToString() != "") {
+//		this->__clientId = Convert::ToInt32(row->Cells[prefix + "ClientId"]->Value);
+//	}
+//	this->__number = Convert::ToString(row->Cells[prefix + "Number"]->Value);
+//	this->__street = Convert::ToString(row->Cells[prefix + "Street"]->Value);
+//	this->__city = Convert::ToString(row->Cells[prefix + "City"]->Value);
+//	this->__zip = Convert::ToInt32(row->Cells[prefix + "Zip"]->Value);
+//	this->__country = Convert::ToString(row->Cells[prefix + "Country"]->Value);
+//}
 Groupe3ProjetBlocPOO::Components::DataType::Address::Address(int id, Address^ address) {
 	this->__id = id;
 	this->__clientId = address->clientId();

@@ -27,7 +27,7 @@ Groupe3ProjetBlocPOO::Services::ClientService::ClientService(Database^ database)
 
 	Dictionary<String^, String^>^ addressesSchema = gcnew Dictionary<String^, String^>();
 	addressesSchema->Add("id", "INT PRIMARY KEY AUTO_INCREMENT");
-	addressesSchema->Add("client_id", "INT NOT NULL, FOREIGN KEY (client_id) REFERENCES clients(id)");
+	addressesSchema->Add("client_id", "INT, FOREIGN KEY (client_id) REFERENCES clients(id)");
 	addressesSchema->Add("number", "VARCHAR(10)");
 	addressesSchema->Add("street", "VARCHAR(100)");
 	addressesSchema->Add("city_id", "INT NOT NULL, FOREIGN KEY (city_id) REFERENCES cities(id)");
@@ -223,6 +223,13 @@ array<Address^>^ Groupe3ProjetBlocPOO::Services::ClientService::deleteAddresses(
 		deletedAddresses[i] = this->deleteAddress(addresses[i]);
 	}
 	return deletedAddresses;
+}
+Address^ Groupe3ProjetBlocPOO::Services::ClientService::getAddress(int id) {
+	return gcnew Address(this->__database->runQuery(AddressRequestMapping::getAddress(id))->Rows[0]);
+}
+
+DataTable^ Groupe3ProjetBlocPOO::Services::ClientService::getCities() {
+	return this->__database->runQuery(AddressRequestMapping::getCities());
 }
 
 int Groupe3ProjetBlocPOO::Services::ClientService::getCityId(String^ city) {

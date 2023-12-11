@@ -118,13 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CancelIconOutLined_36x36" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>.\src\Icons\navigation\cancel\materialiconsoutlined\36dp\1x\outline_cancel_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="CheckIconOutlLined_36x36" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>.\src\Icons\action\check_circle_outline\materialicons\36dp\1x\baseline_check_circle_outline_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>baseline_check_circle_outline_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DotsHIcon_36x36" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>.\src\Icons\navigation\more_horiz\materialicons\36dp\1x\baseline_more_horiz_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>baseline_more_horiz_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

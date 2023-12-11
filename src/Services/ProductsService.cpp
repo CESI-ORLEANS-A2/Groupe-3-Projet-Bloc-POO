@@ -1,20 +1,22 @@
 #include "./ProductsService.h"
 
-ProductService::ProductService(Groupe3ProjetBlocPOO::Components::Database^ database) {
+Groupe3ProjetBlocPOO::Services::ProductService::ProductService(Groupe3ProjetBlocPOO::Components::Database^ database) {
 
 	this->__database = database;
 
 	Dictionary<String^, String^>^ productTypeSchema = gcnew Dictionary<String^, String^>();
-	productTypeSchema->Add("productType", "INT NOT NULL PRIMARY KEY");
+	productTypeSchema->Add("productType", "INT PRIMARY KEY AUTO_INCREMENT");
+	productTypeSchema->Add("name", "VARCHAR(100)");
 	productTypeSchema->Add("rateTVA", "INT NOT NULL");
 	this->__database->createTable("ProductType", productTypeSchema);
 
 	Dictionary<String^, String^>^ productSchema = gcnew Dictionary<String^, String^>();
 	productSchema->Add("id", "INT PRIMARY KEY AUTO_INCREMENT");
 	productSchema->Add("name", "VARCHAR(100)");
+	productSchema->Add("description", "VARCHAR(100)");
 	productSchema->Add("cost", "FLOAT NOT NULL");
 	productSchema->Add("quantity", "INT NOT NULL");
-	productSchema->Add("productType", "INT NOT NULL, FOREIGN KEY(productType) REFERENCES ProductType(productType)");
+	productSchema->Add("productType ", "INT NOT NULL, FOREIGN KEY(productType) REFERENCES ProductType(productType) ");
 	this->__database->createTable("Product", productSchema);
 }
 
@@ -63,7 +65,8 @@ Product^ ProductService::addProduct(String^ name, float cost, int quantity, int 
 	return product;
 }
 
-Product^ ProductService::addOrderProduct(int productId, int orderId) {
+Product^ Groupe3ProjetBlocPOO::Services::ProductService::addOrderProduct(int productId, int orderId)
+{
 	Windows::Forms::DataGridView^ dataGridView = gcnew Windows::Forms::DataGridView();
 	Windows::Forms::DataGridViewRowCollection^ dataGridViewRowCollection = gcnew Windows::Forms::DataGridViewRowCollection(dataGridView);
 	Windows::Forms::DataGridViewRow^ dataGridViewRow = gcnew Windows::Forms::DataGridViewRow();
@@ -78,6 +81,15 @@ Product^ ProductService::addOrderProduct(int productId, int orderId) {
 		}
 	}
 }
+array<Product^>^ Groupe3ProjetBlocPOO::Services::ProductService::getOrderProducts(int orderId) {
+	Data::DataTable^ product = this->__database->runQuery(ProductRequestMapping::getOrderProducts(orderId));
+	return Product::toArray(product->Rows);
+}
+
+array<Product^>^ Groupe3ProjetBlocPOO::Services::ProductService::getOrderProducts() {
+	Data::DataTable^ product = this->__database->runQuery(ProductRequestMapping::getOrderProducts());
+	return Product::toArray(product->Rows);
+}
 
 Product^ ProductService::addProduct(String^ name, float cost) {
 	int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::addProduct(name, cost)));
@@ -86,7 +98,6 @@ Product^ ProductService::addProduct(String^ name, float cost) {
 	product->cost(cost);
 	return product;
 }
-
 
 Product^ ProductService::updateProduct(Product^ product) {
 	int id = Convert::ToInt32(this->__database->runScalar(ProductRequestMapping::updateProduct(product->id(), product->name(), product->cost(), product->quantity(), product->productType())));
@@ -97,7 +108,6 @@ Product^ ProductService::updateProduct(int id, String^ name, String^ description
 	this->__database->runQuery(ProductRequestMapping::updateProduct(id, name, cost, stock, productType))->Rows[0];
 	return gcnew Product(this->__database->runQuery(ProductRequestMapping::getProduct(id))->Rows[0]);
 }
-
 
 Product^ ProductService::removeProduct(Product^ product) {
 	Product^ newProduct = gcnew Product(this->__database->runQuery(ProductRequestMapping::deleteProduct(product->id()))->Rows[0]);
@@ -110,9 +120,9 @@ Product^ ProductService::removeProduct(int id) {
 	return product;
 }
 
-Product^ ProductService::removeOrderProduct(int id)
+Product^ Groupe3ProjetBlocPOO::Services::ProductService::removeOrderProduct(int id)
 {
 	Product^ product = gcnew Product(this->__database->runQuery(ProductRequestMapping::getOrderProducts(id))->Rows[0]);
-	this->__database->runQuery(ProductRequestMapping::deleteOrderProduct(id));
+	this->__database->runScalar(ProductRequestMapping::deleteOrderProduct(id));
 	return product;
 }

@@ -5,18 +5,25 @@ using namespace System;
 using namespace System::Windows::Forms;
 
 using namespace MySql::Data::MySqlClient;
-ref class ProductRequestMapping {
+using namespace Groupe3ProjetBlocPOO::Components;
 
-public:
-	static Groupe3ProjetBlocPOO::Components::Request^ getProducts();
-	static Groupe3ProjetBlocPOO::Components::Request^ getProducts(int);
-	static Groupe3ProjetBlocPOO::Components::Request^ getOrderProducts(int);
-	static Groupe3ProjetBlocPOO::Components::Request^ getOrderProducts(int, int);
-	static Groupe3ProjetBlocPOO::Components::Request^ getProduct(int);
-	static Groupe3ProjetBlocPOO::Components::Request^ addOrderProduct(int, int);
-	static Groupe3ProjetBlocPOO::Components::Request^ addProduct(String^, float);
-	static Groupe3ProjetBlocPOO::Components::Request^ addProduct(String^, float, int, int);
-	static Groupe3ProjetBlocPOO::Components::Request^ updateProduct(int, String^, float, int, int);
-	static Groupe3ProjetBlocPOO::Components::Request^ deleteProduct(int);
-	static Groupe3ProjetBlocPOO::Components::Request^ deleteOrderProduct(int);
-};
+namespace Groupe3ProjetBlocPOO {
+	namespace Components {
+		namespace Mapping {
+			ref class ProductRequestMapping {
+			public:
+				static Request^ getProducts();
+				static Request^ getProducts(int);
+				static Request^ getProduct(int);
+				static Request^ addProduct(String^, float, int, int);
+				static Request^ addProduct(String^, float);
+				static Request^ updateProduct(int, String^, float, int, int);
+				static Request^ deleteProduct(int);
+				static Request^ getOrderProducts(int);
+				static Request^ getOrderProducts();
+				static Request^ addOrderProduct(int, int);
+				static Request^ deleteOrderProduct(int);
+			};
+		}
+	}
+}
