@@ -7,6 +7,7 @@
 # Sommaire
 
 - [Sommaire](#sommaire)
+- [Contexte](#contexte)
 - [Conception](#conception)
   - [Diagramme de cas d'utilisation](#diagramme-de-cas-dutilisation)
     - [Client](#client)
@@ -23,6 +24,10 @@
   - [Diagramme MLD](#diagramme-mld)
   - [Schéma de l'interface](#schéma-de-linterface)
 - [Captures d'écran](#captures-décran)
+
+# Contexte
+
+Une nouvelle entreprise développe son système d’information. Son cœur d’activité est la vente en ligne de composants électroniques. Elle nous demande alors de concevoir une application permettant de digitaliser certains de ses processus. Avant de passer à la conception de cette application nous devons organiser la structurer même de celle-ci.
 
 # Conception
 
